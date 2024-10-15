@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "next/link";
-import { buttonVariants } from "@/components/ui/button"
-import Table from "@/components/table"
-import Chart from "@/components/chart"
+import { buttonVariants } from "@/components/ui/button";
+import Table from "@/components/table";
+import Chart from "@/components/chart";
 
 export default function Home() {
   return (
@@ -12,15 +12,21 @@ export default function Home() {
           DeFi Pulse
         </h1>
         <p className="-mt-6">
-          DeFi Pulse provides verifiable insights into the stage of decentralization and related risks of DeFi protocols. 
+          DeFi Pulse provides verifiable insights into the stage of
+          decentralization and related risks of DeFi protocols.
         </p>
         <div className="-mt-6">
-          <Link className={buttonVariants({ variant: "outline" })} href="/about">Submit report</Link>
+          <Link
+            className={buttonVariants({ variant: "outline" })}
+            href="/about"
+          >
+            Submit report
+          </Link>
         </div>
-        <div className="space-x-4">
+        <div className="space-x-4 my-4">
           <Chart />
         </div>
-        <div className="space-x-4">
+        <div className="space-x-4 mb-32">
           <Table />
         </div>
       </div>
