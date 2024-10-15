@@ -1,26 +1,27 @@
-"use client"
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import { Area, AreaChart, CartesianGrid, XAxis } from "recharts"
+import React, { useState, useEffect } from "react";
+import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
 
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
-} from "@/components/ui/card"
+} from "@/components/ui/card";
 import {
   ChartConfig,
   ChartContainer,
   ChartTooltip,
-  ChartTooltipContent
-} from "@/components/ui/chart"
+  ChartTooltipContent,
+} from "@/components/ui/chart";
 
 // Fetch defi stats from defillama
 const fetchDefiStats = async () => {
-    const response = await fetch('https://api.llama.fi/v2/historicalChainTvl');
-    const data = await response.json();
-    return data.filter(x => x.date > 1577833200);
+  const response = await fetch("https://api.llama.fi/v2/historicalChainTvl");
+  const data = await response.json();
+  console.log(data);
+  return data.filter((x: { date: number; tvl: number }) => x.date > 1577833200);
 };
 
 const chartConfig = {
@@ -28,25 +29,23 @@ const chartConfig = {
     label: "TVL",
     color: "hsl(var(--chart-1))",
   },
-} satisfies ChartConfig
+} satisfies ChartConfig;
 
 function Chart() {
   const [data, setData] = useState();
   useEffect(() => {
-     const fetchData = async () => {
-         const data = await fetchDefiStats()
-         setData(data)
-     };
-     fetchData();
-  })
+    const fetchData = async () => {
+      const data = await fetchDefiStats();
+      setData(data);
+    };
+    fetchData();
+  });
 
   return (
     <Card>
       <CardHeader>
         <div className="-mt-4 -mb-8">
-          <CardDescription>
-            Total Value Locked (TVL) in DeFi
-          </CardDescription>
+          <CardDescription>Total Value Locked (TVL) in DeFi</CardDescription>
         </div>
       </CardHeader>
       <CardContent className="px-2 sm:p-6">
@@ -70,8 +69,8 @@ function Chart() {
               tickMargin={8}
               minTickGap={32}
               tickFormatter={(value) => {
-                const date = new Date(value * 1000)
-                return date.toLocaleDateString("en-US")
+                const date = new Date(value * 1000);
+                return date.toLocaleDateString("en-US");
               }}
             />
             <ChartTooltip
@@ -83,7 +82,7 @@ function Chart() {
         </ChartContainer>
       </CardContent>
     </Card>
-  )
+  );
 }
 
 export default Chart;
