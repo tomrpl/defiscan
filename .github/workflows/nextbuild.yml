@@ -1,0 +1,31 @@
+name: Next.js Build
+
+# Run the workflow when pushing to the main branch
+on:
+  push:
+    branches:
+      - main
+
+# Define the jobs to be executed in the workflow
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18" # Adjust this version to match your project's Node version
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Build the project
+      - name: Build the project
+        run: npm run build
