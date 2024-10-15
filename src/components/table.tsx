@@ -43,6 +43,7 @@ const Table: React.FC = () => {
           <th className="border-b px-4 py-2"></th>
           <th className="border-b px-4 py-2">Protocol</th>
           <th className="border-b px-4 py-2">Type</th>
+          <th className="border-b px-4 py-2">Chain</th>
           <th className="border-b px-4 py-2">Stage</th>
           <th className="border-b px-4 py-2">Risks</th>
           <th className="border-b px-4 py-2">TVL</th>
@@ -73,6 +74,7 @@ const Table: React.FC = () => {
               </td>
               <td className="border-b px-4 py-2">{protocol.protocol}</td>
               <td className="border-b px-4 py-2">{protocol.type}</td>
+              <td className="border-b px-4 py-2">{protocol.chain}</td>
               <td className="border-b px-4 py-2">
                 <Badge
                   className={`${
