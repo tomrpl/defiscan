@@ -2,7 +2,6 @@
 
 import { Sentiment } from "../types";
 
-// TODO: update with real texts
 const riskMatrix = {
   Chain: {
     H: "Chain is sufficiently decentralized.",
@@ -31,9 +30,6 @@ const riskMatrix = {
   },
 };
 
-// Define the risk categories and levels from the input array
-const risks = "['H','L','L','L','M']";
-
 // Parse the risks string into an array
 
 type Level = "H" | "M" | "L";
@@ -54,10 +50,6 @@ type Category =
 
 const categories = Object.keys(riskMatrix) as Category[];
 
-// TODO: update to include "sentiment" and "warning"
-// what are they actually for
-// sentiment has something to do sentimentToFillColor
-
 // Create a function to get risk descriptions
 export function getRiskDescriptions(risks: string): {
   name: string;
@@ -74,8 +66,3 @@ export function getRiskDescriptions(risks: string): {
     };
   });
 }
-
-// Get the risk descriptions for each category and level
-const riskDescriptions = getRiskDescriptions(risks);
-
-console.log(riskDescriptions);

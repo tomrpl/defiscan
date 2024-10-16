@@ -20,7 +20,6 @@ import {
 const fetchDefiStats = async () => {
   const response = await fetch("https://api.llama.fi/v2/historicalChainTvl");
   const data = await response.json();
-  console.log(data);
   return data.filter((x: { date: number; tvl: number }) => x.date > 1577833200);
 };
 

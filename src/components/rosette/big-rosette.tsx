@@ -95,7 +95,7 @@ function RosetteTooltipContent() {
     >
       <SentimentText
         sentiment={content.risk.sentiment}
-        className="mb-2 flex items-center gap-1 font-medium"
+        className="flex items-center gap-1 font-medium"
       >
         {content.risk.value || ""}
       </SentimentText>

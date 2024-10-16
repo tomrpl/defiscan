@@ -1,7 +1,13 @@
-import * as React from "react"
-import { cva, type VariantProps } from "class-variance-authority"
+import * as React from "react";
+import { cva, type VariantProps } from "class-variance-authority";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "../rosette/tooltip/tooltip";
+import { stageToRequisites } from "@/app/protocols/stageToRequisites";
 
 const badgeVariants = cva(
   "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
@@ -21,16 +27,46 @@ const badgeVariants = cva(
       variant: "default",
     },
   }
-)
+);
 
 export interface BadgeProps
   extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof badgeVariants> {}
-
-function Badge({ className, variant, ...props }: BadgeProps) {
-  return (
-    <div className={cn(badgeVariants({ variant }), className)} {...props} />
-  )
+    VariantProps<typeof badgeVariants> {
+  stage: number;
 }
 
-export { Badge, badgeVariants }
+// Badge component
+function Badge({ className, variant, stage, ...props }: BadgeProps) {
+  return (
+    <Tooltip>
+      <TooltipTrigger className="flex size-full items-center justify-start pl-2">
+        <div className={cn(badgeVariants({ variant }), className)} {...props} />
+      </TooltipTrigger>
+      <TooltipContent fitContent>
+        <BadgeTooltip stage={stage} />
+      </TooltipContent>
+    </Tooltip>
+  );
+}
+
+// BadgeTooltip component
+export function BadgeTooltip({ stage }: { stage: number }) {
+  return (
+    <div className="flex flex-col">
+      <span className="text-base font-bold">
+        <span className="mr-2">Stage of Decentralisation</span>
+      </span>
+      <div className="flex items-center gap-6">
+        <div className="relative flex flex-col justify-center p-4 shadow-md max-w-md">
+          {stageToRequisites[stage].map((item, index) => (
+            <div key={index} className="mt-1">
+              {item}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export { Badge, badgeVariants };

@@ -1,5 +1,4 @@
 import { UnderReviewBadge } from "./badge/under-review-badge";
-import { RiskValue } from "./risk-value";
 import { type PizzaRosetteCellProps } from "./rosette-cell";
 import { PizzaRosetteIcon } from "./rosette-icon";
 import { PizzaRosetteLabels } from "./rosette-labels";

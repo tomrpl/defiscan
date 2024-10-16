@@ -10,6 +10,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { BigPizzaRosette } from "@/components/rosette/big-rosette";
 import { getRiskDescriptions } from "@/components/rosette/data-converter/data-converter";
 import { TooltipProvider } from "@/components/rosette/tooltip/tooltip";
+import { Badge } from "@/components/ui/badge";
 
 interface ProtocolPageItemProps {
   params: {
@@ -109,11 +110,32 @@ export default async function ProtocolPageItem({
               <td>Date</td>
               <td>{protocol.date.split("T")[0]}</td>
             </tr>
+            <tr className="">
+              <td>Stage</td>
+              <td>
+                <TooltipProvider>
+                  <Badge
+                    stage={protocol.stage}
+                    className={`${
+                      protocol.stage === 0
+                        ? "bg-red-500"
+                        : protocol.stage === 1
+                          ? "bg-yellow-500"
+                          : "bg-green-500"
+                    } text-white px-2 py-1 rounded`}
+                  >
+                    {"Stage " + protocol.stage}
+                  </Badge>
+                </TooltipProvider>
+              </td>
+            </tr>
           </tbody>
         </table>
+
         <h1 className="mt-10 mb-4 scroll-m-20 text-4xl font-bold text-primary tracking-tight">
           Scores
         </h1>
+
         <TooltipProvider>
           <BigPizzaRosette
             className="mt-auto max-lg:hidden"

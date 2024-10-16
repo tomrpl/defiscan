@@ -77,17 +77,20 @@ const Table: React.FC = () => {
               </td>
               <td className="border-b px-4 py-2">{protocol.protocol}</td>
               <td className="border-b px-4 py-2">
-                <Badge
-                  className={`${
-                    protocol.stage === 0
-                      ? "bg-red-500"
-                      : protocol.stage === 1
-                        ? "bg-yellow-500"
-                        : "bg-green-500"
-                  } text-white px-2 py-1 rounded`}
-                >
-                  {"Stage " + protocol.stage}
-                </Badge>
+                <TooltipProvider>
+                  <Badge
+                    stage={protocol.stage}
+                    className={`${
+                      protocol.stage === 0
+                        ? "bg-red-500"
+                        : protocol.stage === 1
+                          ? "bg-yellow-500"
+                          : "bg-green-500"
+                    } text-white px-2 py-1 rounded`}
+                  >
+                    {"Stage " + protocol.stage}
+                  </Badge>
+                </TooltipProvider>
               </td>
               <td className="border-b px-4 py-2">
                 <TooltipProvider>
