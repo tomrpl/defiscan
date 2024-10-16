@@ -41,7 +41,7 @@ export async function generateMetadata({
 
   return {
     title: protocol.protocol,
-    description: "DeFi Pulse decentralization report for " + protocol.protocol,
+    description: "DeFi Scan decentralization report for " + protocol.protocol,
     authors: {
       name: protocol.author,
     },

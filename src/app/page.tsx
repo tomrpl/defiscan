@@ -9,10 +9,10 @@ export default function Home() {
     <section className="space-y-10 pb-8 md:pb-12 md:pt-10 lg:py-10">
       <div className="container mt-6 flex max-w-5xl flex-col gap-10 text-left xl:mt-0">
         <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
-          DeFi Pulse
+          DeFi Scan
         </h1>
         <p className="-mt-6">
-          DeFi Pulse provides verifiable insights into the stage of
+          DeFi Scan provides verifiable insights into the stage of
           decentralization and related risks of DeFi protocols.
         </p>
         <div className="-mt-6">
