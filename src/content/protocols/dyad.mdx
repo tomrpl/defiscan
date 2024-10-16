@@ -109,7 +109,7 @@ DYAD is deployed on Ethereum mainnet.
 
 ## Upgradeability
 
-DYAD Protocol relies on a multisig structure to control upgrades and critical contract functions. The **VaultManagerV4 **contract is upgradeable through the ERC-1967 and UUPS proxy patterns, which means its logic can be altered at any time. This introduces a risk that upgrades could lead to temporary freezing of assets or disruptions, especially since there are no timelocks in place to delay upgrades or give users time to react. \
+DYAD Protocol relies on a multisig structure to control upgrades and critical contract functions. The **VaultManagerV4** contract is upgradeable through the ERC-1967 and UUPS proxy patterns, which means its logic can be altered at any time. This introduces a risk that upgrades could lead to temporary freezing of assets or disruptions, especially since there are no timelocks in place to delay upgrades or give users time to react. \
 The **VaultLicenser** allows the multisig to add or remove vaults, and removing a vault from the registry freezes the associated collateral, preventing users from accessing their funds. This centralized control over key contract functions and immediate upgrade potential introduces the possibility of temporary freezing of assets or changes to the protocol’s performance.
 
 ## Autonomy
@@ -145,10 +145,6 @@ Dyad Protocol offers a single user interface accessible through its main web app
 | Account                                                                                                               | Type         |
 | --------------------------------------------------------------------------------------------------------------------- | ------------ |
 | [0xDeD796De6a14E255487191963dEe436c45995813](https://etherscan.io/address/0xDeD796De6a14E255487191963dEe436c45995813) | Multisig 2/3 |
-
-## System Outline
-
-Add protocol diagram here
 
 ## Permissions
 

@@ -7,6 +7,9 @@ import { Mdx } from "@/components/mdx-component";
 import { ChevronLeft } from "lucide-react";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
+import { BigPizzaRosette } from "@/components/rosette/big-rosette";
+import { getRiskDescriptions } from "@/components/rosette/data-converter/data-converter";
+import { TooltipProvider } from "@/components/rosette/tooltip/tooltip";
 
 interface ProtocolPageItemProps {
   params: {
@@ -104,11 +107,19 @@ export default async function ProtocolPageItem({
             </tr>
             <tr className="">
               <td>Date</td>
-              <td>{protocol.date}</td>
+              <td>{protocol.date.split("T")[0]}</td>
             </tr>
           </tbody>
         </table>
-
+        <h1 className="mt-10 mb-4 scroll-m-20 text-4xl font-bold text-primary tracking-tight">
+          Scores
+        </h1>
+        <TooltipProvider>
+          <BigPizzaRosette
+            className="mt-auto max-lg:hidden"
+            values={getRiskDescriptions(protocol.risks)}
+          />
+        </TooltipProvider>
         <Mdx code={protocol.body} />
         <hr className="mt-12" />
         <div className="flex justify-center py-6 lg:py-10">
