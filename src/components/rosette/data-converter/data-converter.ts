@@ -5,29 +5,29 @@ import { Sentiment } from "../types";
 // TODO: update with real texts
 const riskMatrix = {
   Chain: {
-    H: "Protocol is not upgradeable or upgrades cannot materially change the expected performance.",
-    M: "Possible protocol upgrades can result in interruptions or otherwise materially change the expected performance of the protocol.",
-    L: "Possible protocol upgrades can result in loss or temporary freezing of assets.",
+    H: "Chain is sufficiently decentralized.",
+    M: "Chain is on the journey to become sufficiently decentralized.",
+    L: "Chain is not sufficiently decentralized.",
   },
   Upgradeability: {
-    H: "There is no timelock to delay contract upgrades.",
-    M: "Contract upgradeability has moderate checks.",
-    L: "Contracts have stringent timelocks for upgradeability.",
+    H: "Protocol is not upgradeable or upgrades cannot materially change the expected performance.",
+    M: "Possible protocol upgrades can result in interruptions or otherwise materially change the expected performance of the protocol. This includes loss or freezing of unclaimed yield.",
+    L: "Possible protocol upgrades can result in loss or temporary freezing of assets.",
   },
   Autonomy: {
-    H: "Users can lose access to core protocol functions at any time.",
-    M: "Access to protocol functions may be temporarily disrupted.",
-    L: "Users are unlikely to lose access to core protocol functions.",
+    H: "Protocol does not have external dependencies, has independent fallbacks in place or failure does not materially change the expected performance.",
+    M: "Failure of a protocol dependency can result in interruptions or otherwise materially change the expected performance of the protocol.",
+    L: "Failure of a protocol dependency can result in the loss or temporary freezing of assets.",
   },
   ExitWindow: {
-    H: "User assets can be frozen without notice.",
-    M: "Possible temporary freezing of assets.",
-    L: "Low likelihood of assets being frozen.",
+    H: "Contracts are not upgradable or a sufficiently long exit window is enforced.",
+    M: "An exit window is enforced but is not sufficiently long.",
+    L: "Users have no window to exit in case of an unwanted upgrade or change because contracts can be upgraded or changes made instantaneously.",
   },
   Accessibility: {
-    H: "No exit window is provided during major changes.",
-    M: "An exit window exists, but with limited notice.",
-    L: "Users are guaranteed an exit window for all major changes.",
+    H: "Users are able to access the protocol through multiple, independent user interfaces (websites, wallets, local apps).",
+    M: "A single user interface exists with access to backup solutions such as a self-hosting app.",
+    L: "Only a single user interface exists without a backup solution.",
   },
 };
 
