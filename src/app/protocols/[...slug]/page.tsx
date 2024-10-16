@@ -63,48 +63,50 @@ export default async function ProtocolPageItem({
   }
 
   return (
-    <article className="container relative max-w-3xl py-6 lg:py-10">
+    <article className="container relative mx-auto py-6 lg:py-10">
       <div>
         <h1 className="mt-2 mb-8 inline-block text-4xl font-bold capitalize leading-tight text-primary lg:text-5xl">
           {protocol.protocol}
         </h1>
 
         <table className="table-auto border-separate border-spacing-y-2 border-spacing-x-4 -ml-4">
-          <tr className="">
-            <td>Website</td>
-            <td>
-              <a
-                href={protocol.website}
-                className="text-blue-500 hover:underline"
-              >
-                {protocol.website}
-              </a>
-            </td>
-          </tr>
-          <tr className="">
-            <td>X (Twitter)</td>
-            <td>
-              <a href={protocol.x} className="text-blue-500 hover:underline">
-                {protocol.x}
-              </a>
-            </td>
-          </tr>
-          <tr className="">
-            <td>Type</td>
-            <td>{protocol.type}</td>
-          </tr>
-          <tr className="">
-            <td>Chain</td>
-            <td>{protocol.chain}</td>
-          </tr>
-          <tr className="">
-            <td>Author</td>
-            <td>{protocol.author}</td>
-          </tr>
-          <tr className="">
-            <td>Date</td>
-            <td>{protocol.date}</td>
-          </tr>
+          <tbody>
+            <tr className="">
+              <td>Website</td>
+              <td>
+                <a
+                  href={protocol.website}
+                  className="text-blue-500 hover:underline"
+                >
+                  {protocol.website}
+                </a>
+              </td>
+            </tr>
+            <tr className="">
+              <td>X (Twitter)</td>
+              <td>
+                <a href={protocol.x} className="text-blue-500 hover:underline">
+                  {protocol.x}
+                </a>
+              </td>
+            </tr>
+            <tr className="">
+              <td>Type</td>
+              <td>{protocol.type}</td>
+            </tr>
+            <tr className="">
+              <td>Chain</td>
+              <td>{protocol.chain}</td>
+            </tr>
+            <tr className="">
+              <td>Author</td>
+              <td>{protocol.author}</td>
+            </tr>
+            <tr className="">
+              <td>Date</td>
+              <td>{protocol.date}</td>
+            </tr>
+          </tbody>
         </table>
 
         <Mdx code={protocol.body} />

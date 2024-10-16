@@ -16,7 +16,7 @@ export function PizzaRosetteCell(props: PizzaRosetteCellProps) {
 
   return (
     <Tooltip>
-      <TooltipTrigger className="flex size-full items-center justify-center">
+      <TooltipTrigger className="flex size-full items-center justify-start pl-2">
         <PizzaRosetteIcon
           values={props.values}
           className="size-6 md:size-8"
