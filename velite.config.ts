@@ -15,14 +15,15 @@ const protocols = defineCollection({
     .object({
       slug: s.path(),
       protocol: s.string().max(99),
-      date: s.isodate(),
-      author: s.string(),
-      type: s.string(),
       website: s.string(),
       x: s.string(),
       defillama_slug: s.string(),
+      type: s.string(),
+      chain: s.string(),
       stage: s.number(),
       risks: s.string(),
+      author: s.string(),
+      date: s.isodate(),
       body: s.mdx(),
     })
     .transform(computedFields),

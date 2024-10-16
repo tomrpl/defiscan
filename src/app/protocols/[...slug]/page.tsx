@@ -66,6 +66,34 @@ export default async function ProtocolPageItem({ params }: ProtocolPageItemProps
           {protocol.protocol}
         </h1>
 
+        <table>
+          <tr>
+          <td>Website</td>
+          <td><a href={protocol.website}>{protocol.website}</a></td>
+          </tr>
+          <tr>
+          <td>X (Twitter)</td>
+          <td><a href={protocol.x}>{protocol.x}</a></td>
+          </tr>
+          <tr>
+          <td>Type</td>
+          <td>{protocol.type}</td>
+          </tr>
+          <tr>
+          <td>Chain</td>
+          <td>{protocol.chain}</td>
+          </tr>
+          <tr>
+          <td>Author</td>
+          <td>{protocol.author}</td>
+          </tr>
+          <tr>
+          <td>Date</td>
+          <td>{protocol.date}</td>
+          </tr>
+        </table>
+
+
         <Mdx code={protocol.body} />
         <hr className="mt-12" />
         <div className="flex justify-center py-6 lg:py-10">
