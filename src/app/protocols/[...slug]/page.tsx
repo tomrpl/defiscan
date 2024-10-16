@@ -16,7 +16,9 @@ interface ProtocolPageItemProps {
 
 async function getProtocolFromParams(params: ProtocolPageItemProps["params"]) {
   const slug = params?.slug.join("/");
-  const protocol = allProtocols.find((protocol) => protocol.slugAsParams === slug);
+  const protocol = allProtocols.find(
+    (protocol) => protocol.slugAsParams === slug
+  );
 
   if (!protocol) {
     return null;
@@ -51,7 +53,9 @@ export async function generateStaticParams(): Promise<
   }));
 }
 
-export default async function ProtocolPageItem({ params }: ProtocolPageItemProps) {
+export default async function ProtocolPageItem({
+  params,
+}: ProtocolPageItemProps) {
   const protocol = await getProtocolFromParams(params);
 
   if (!protocol) {
@@ -61,46 +65,52 @@ export default async function ProtocolPageItem({ params }: ProtocolPageItemProps
   return (
     <article className="container relative max-w-3xl py-6 lg:py-10">
       <div>
-
-        <h1 className="mt-2 inline-block text-4xl font-bold capitalize leading-tight text-primary lg:text-5xl">
+        <h1 className="mt-2 mb-8 inline-block text-4xl font-bold capitalize leading-tight text-primary lg:text-5xl">
           {protocol.protocol}
         </h1>
 
-        <table>
-          <tr>
-          <td>Website</td>
-          <td><a href={protocol.website}>{protocol.website}</a></td>
+        <table className="table-auto border-separate border-spacing-y-2 border-spacing-x-4 -ml-4">
+          <tr className="">
+            <td>Website</td>
+            <td>
+              <a
+                href={protocol.website}
+                className="text-blue-500 hover:underline"
+              >
+                {protocol.website}
+              </a>
+            </td>
           </tr>
-          <tr>
-          <td>X (Twitter)</td>
-          <td><a href={protocol.x}>{protocol.x}</a></td>
+          <tr className="">
+            <td>X (Twitter)</td>
+            <td>
+              <a href={protocol.x} className="text-blue-500 hover:underline">
+                {protocol.x}
+              </a>
+            </td>
           </tr>
-          <tr>
-          <td>Type</td>
-          <td>{protocol.type}</td>
+          <tr className="">
+            <td>Type</td>
+            <td>{protocol.type}</td>
           </tr>
-          <tr>
-          <td>Chain</td>
-          <td>{protocol.chain}</td>
+          <tr className="">
+            <td>Chain</td>
+            <td>{protocol.chain}</td>
           </tr>
-          <tr>
-          <td>Author</td>
-          <td>{protocol.author}</td>
+          <tr className="">
+            <td>Author</td>
+            <td>{protocol.author}</td>
           </tr>
-          <tr>
-          <td>Date</td>
-          <td>{protocol.date}</td>
+          <tr className="">
+            <td>Date</td>
+            <td>{protocol.date}</td>
           </tr>
         </table>
-
 
         <Mdx code={protocol.body} />
         <hr className="mt-12" />
         <div className="flex justify-center py-6 lg:py-10">
-          <Link
-            href="/"
-            className={cn(buttonVariants({ variant: "ghost" }))}
-          >
+          <Link href="/" className={cn(buttonVariants({ variant: "ghost" }))}>
             <ChevronLeft className="mr-2 size-4" />
             See all Protocols
           </Link>
