@@ -13,7 +13,7 @@ export default function AboutPage() {
         </h1>
       <div className="flex flex-col items-center space-y-6 lg:flex-row  lg:space-x-6 lg:space-y-0">
         <p className="flex-1 text-center text-sm text-muted-foreground lg:text-start xl:text-base">
-          DeFi Pulse is an open-source project created by the DeFi Collective. 
+          DeFi Scan is an open-source project created by the DeFi Collective. 
           More information on the decentralization framework can be found on our <a href="https://deficollective.org">website</a>.
         </p>
       </div>

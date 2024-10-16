@@ -1,4 +1,4 @@
-# DeFi Pulse
+# DeFi Scan
 
 
 ## Getting started

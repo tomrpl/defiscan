@@ -9,8 +9,8 @@ const lexend = Lexend({ subsets: ["latin"], variable: "--font-lexend" });
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | DeFi Pulse",
-    default: "DeFi Pulse",
+    template: "%s | DeFi Scan",
+    default: "DeFi Scan",
   },
 };
 
