@@ -4,6 +4,9 @@ import React, { useState, useEffect } from "react";
 import { protocols } from "#site/content";
 import { formatUsd } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
+import { PizzaRosetteCell } from "./rosette/rosette-cell";
+import { getRiskDescriptions } from "./rosette/data-converter/data-converter";
+import { TooltipProvider } from "./rosette/tooltip/tooltip";
 
 // Define the type for the protocol data fetched from DeFiLlama
 interface Protocol {
@@ -86,7 +89,15 @@ const Table: React.FC = () => {
                   {"Stage " + protocol.stage}
                 </Badge>
               </td>
-              <td className="border-b px-4 py-2">{protocol.risks}</td>
+              <td className="border-b px-4 py-2">
+                <TooltipProvider>
+                  <PizzaRosetteCell
+                    values={getRiskDescriptions(protocol.risks)}
+                    isUnderReview={false}
+                  />
+                </TooltipProvider>
+                {/* {protocol.risks} */}
+              </td>
               <td className="border-b px-4 py-2">
                 {protocolData != "Loading..."
                   ? formatUsd(protocolData.tvl)
