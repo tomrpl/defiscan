@@ -25,7 +25,7 @@ const components = {
   h2: ({ className, ...props }: ComponentsProps) => (
     <h2
       className={cn(
-        "mt-10 scroll-m-20 border-b pb-1 text-3xl font-semibold text-primary tracking-tight first:mt-0",
+        "mt-10 scroll-m-20 pb-1 text-2xl font-semibold text-primary tracking-tight first:mt-0",
         className
       )}
       {...props}
@@ -34,34 +34,7 @@ const components = {
   h3: ({ className, ...props }: ComponentsProps) => (
     <h3
       className={cn(
-        "mt-8 scroll-m-20 text-2xl font-semibold text-primary tracking-tight",
-        className
-      )}
-      {...props}
-    />
-  ),
-  h4: ({ className, ...props }: ComponentsProps) => (
-    <h4
-      className={cn(
         "mt-8 scroll-m-20 text-xl font-semibold text-primary tracking-tight",
-        className
-      )}
-      {...props}
-    />
-  ),
-  h5: ({ className, ...props }: ComponentsProps) => (
-    <h5
-      className={cn(
-        "mt-8 scroll-m-20 text-lg font-semibold text-primary tracking-tight",
-        className
-      )}
-      {...props}
-    />
-  ),
-  h6: ({ className, ...props }: ComponentsProps) => (
-    <h6
-      className={cn(
-        "mt-8 scroll-m-20 text-base font-semibold text-primary tracking-tight",
         className
       )}
       {...props}

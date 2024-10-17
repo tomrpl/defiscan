@@ -110,27 +110,27 @@ export default async function ProtocolPageItem({
               <td>Date</td>
               <td>{protocol.date.split("T")[0]}</td>
             </tr>
-            <tr className="">
-              <td>Stage</td>
-              <td>
-                <TooltipProvider>
-                  <Badge
-                    stage={protocol.stage}
-                    className={`${
-                      protocol.stage === 0
-                        ? "bg-red-500"
-                        : protocol.stage === 1
-                          ? "bg-yellow-500"
-                          : "bg-green-500"
-                    } text-white px-2 py-1 rounded`}
-                  >
-                    {"Stage " + protocol.stage}
-                  </Badge>
-                </TooltipProvider>
-              </td>
-            </tr>
           </tbody>
         </table>
+
+        <h1 className="mt-10 mb-4 scroll-m-20 text-4xl font-bold text-primary tracking-tight">
+          Stage
+        </h1>
+
+        <TooltipProvider>
+          <Badge
+            stage={protocol.stage}
+            className={`${
+              protocol.stage === 0
+                ? "bg-red-500"
+                : protocol.stage === 1
+                  ? "bg-yellow-500"
+                  : "bg-green-500"
+            } text-white px-2 py-1 rounded`}
+          >
+            {"Stage " + protocol.stage}
+          </Badge>
+        </TooltipProvider>
 
         <h1 className="mt-10 mb-4 scroll-m-20 text-4xl font-bold text-primary tracking-tight">
           Scores
