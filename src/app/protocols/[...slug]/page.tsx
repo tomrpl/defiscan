@@ -95,6 +95,14 @@ export default async function ProtocolPageItem({
               </td>
             </tr>
             <tr className="">
+              <td>GitHub</td>
+              <td>
+                <a href={protocol.github} className="text-blue-500 hover:underline">
+                  {protocol.github}
+                </a>
+              </td>
+            </tr>
+            <tr className="">
               <td>Type</td>
               <td>{protocol.type}</td>
             </tr>
