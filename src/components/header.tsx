@@ -15,28 +15,49 @@ export default function Header() {
             <img src={'/images/logo.png'} width="146" height="50"/>
           </Link>
         </div>
-        <div className="flex items-center space-x-5 md:space-x-6">
+        <div className="flex items-right space-x-5 md:space-x-6">
         <Link
-          key="about-nav"
-          href="/about"
+          key="learn-more-nav"
+          href="/learn-more"
           className="font-normal hover:text-primary transition-colors flex items-center text-primary"
         >
           <span>Learn more</span>
         </Link>
-          <Button
-            variant="ghost"
-            className="p-0 text-primary hover:bg-transparent hover:text-primary md:hidden"
-            onClick={() => setIsMobileOpen(!isMobileOpen)}
-          >
-            <>
-              {isMobileOpen ? (
-                <X className="size-6" />
-              ) : (
-                <AlignLeft className="size-6" />
-              )}
-              <span className="sr-only">Menu</span>
-            </>
-          </Button>
+        <Button
+          variant="ghost"
+          className="p-0 text-primary hover:bg-transparent hover:text-primary md:hidden"
+          onClick={() => setIsMobileOpen(!isMobileOpen)}
+        >
+          <>
+            {isMobileOpen ? (
+              <X className="size-6" />
+            ) : (
+              <AlignLeft className="size-6" />
+            )}
+            <span className="sr-only">Menu</span>
+          </>
+        </Button>
+        <Link
+          key="submit-report-nav"
+          href="/submit-report"
+          className="font-normal hover:text-primary transition-colors flex items-center text-primary"
+        >
+          <span>Submit report</span>
+        </Link>
+        <Button
+          variant="ghost"
+          className="p-0 text-primary hover:bg-transparent hover:text-primary md:hidden"
+          onClick={() => setIsMobileOpen(!isMobileOpen)}
+        >
+          <>
+            {isMobileOpen ? (
+              <X className="size-6" />
+            ) : (
+              <AlignLeft className="size-6" />
+            )}
+            <span className="sr-only">Menu</span>
+          </>
+        </Button>
         </div>
       </div>
       {isMobileOpen && (

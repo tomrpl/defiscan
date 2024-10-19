@@ -8,21 +8,13 @@ export default function Home() {
   return (
     <section className="space-y-10 pb-8 md:pb-12 md:pt-10 lg:py-10">
       <div className="container mt-6 flex max-w-5xl flex-col gap-10 text-left xl:mt-0">
-        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
-          DeFi Scan
-        </h1>
-        <p className="-mt-6">
+        <p className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
+          The Heartbeat of DeFi
+        </p>
+        <p className="text-xl sm:text-xl md:text-xl lg:text-xl -mt-6">
           DeFi Scan provides verifiable insights into the stage of
           decentralization and related risks of DeFi protocols.
         </p>
-        <div className="-mt-6">
-          <Link
-            className={buttonVariants({ variant: "outline" })}
-            href="/about"
-          >
-            Submit report
-          </Link>
-        </div>
         <div className="space-x-4 my-4">
           <Chart />
         </div>
