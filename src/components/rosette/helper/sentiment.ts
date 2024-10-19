@@ -3,11 +3,11 @@ import { type Sentiment } from "../types";
 export function sentimentToFillColor(sentiment: Sentiment): string {
   switch (sentiment) {
     case "low":
-      return "fill-orange-600";
+      return "fill-green-300 dark:fill-green-450";
     case "medium":
       return "fill-yellow-200";
     case "high":
-      return "fill-green-300 dark:fill-green-450";
+      return "fill-orange-600";
     case "neutral":
     case "UnderReview":
       return "fill-gray-400 dark:fill-zinc-700";
@@ -17,11 +17,11 @@ export function sentimentToFillColor(sentiment: Sentiment): string {
 export function sentimentToBgColor(sentiment: Sentiment): string {
   switch (sentiment) {
     case "low":
-      return "bg-orange-600/15";
+      return "bg-green-300/15 dark:bg-green-450/15";
     case "medium":
       return "bg-yellow-200/15";
     case "high":
-      return "bg-green-300/15 dark:bg-green-450/15";
+      return "bg-orange-600/15";
     case "neutral":
     case "UnderReview":
       return "bg-gray-400/15 dark:bg-zinc-700/15";
@@ -34,11 +34,11 @@ export function sentimentToTextColor(
 ): string {
   switch (sentiment) {
     case "low":
-      return "text-red-550 dark:text-orange-600";
+      return "text-green-700 dark:text-green-450";
     case "medium":
       return "text-yellow-700 dark:text-yellow-200";
     case "high":
-      return opts?.vibrant ? "text-green-700 dark:text-green-450" : "";
+      return opts?.vibrant ? "text-red-550 dark:text-orange-600" : "";
     case "neutral":
     case "UnderReview":
       return "";

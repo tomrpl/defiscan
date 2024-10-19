@@ -4,29 +4,29 @@ import { Sentiment } from "../types";
 
 const riskMatrix = {
   Chain: {
-    H: "Chain is sufficiently decentralized.",
+    L: "Chain is sufficiently decentralized.",
     M: "Chain is on the journey to become sufficiently decentralized.",
-    L: "Chain is not sufficiently decentralized.",
+    H: "Chain is not sufficiently decentralized.",
   },
   Upgradeability: {
-    H: "Protocol is not upgradeable or upgrades cannot materially change the expected performance.",
-    M: "Possible protocol upgrades can result in interruptions or otherwise materially change the expected performance of the protocol. This includes loss or freezing of unclaimed yield.",
-    L: "Possible protocol upgrades can result in loss or temporary freezing of assets.",
+    L: "Possible updates do not materially change the system (or result in the theft or loss of user funds and unclaimed yield)",
+    M: "Possible updates may result in the theft or loss of unclaimed yield or may otherwise materially change the system (but user funds remain unaffected)",
+    H: "Possible updates may result in the theft or loss of user funds",
   },
   Autonomy: {
-    H: "Protocol does not have external dependencies, has independent fallbacks in place or failure does not materially change the expected performance.",
-    M: "Failure of a protocol dependency can result in interruptions or otherwise materially change the expected performance of the protocol.",
-    L: "Failure of a protocol dependency can result in the loss or temporary freezing of assets.",
+    L: "Failure of a dependency does not materially change the performance of the system (or result in the theft or loss of user funds and unclaimed yield)",
+    M: "Failure of a dependency may result in the theft or loss of unclaimed yield or may otherwise materially change the performance of the system (but user funds remain unaffected)",
+    H: "Failure of a dependency may result in the theft or loss of user funds",
   },
   ExitWindow: {
-    H: "Contracts are not upgradable or a sufficiently long exit window is enforced.",
-    M: "An exit window is enforced but is not sufficiently long.",
-    L: "Users have no window to exit in case of an unwanted upgrade or change because contracts can be upgraded or changes made instantaneously.",
+    L: "Control of the permissioned functions is fully revoked OR delegated to a robust on-chain governance system AND an exit window of at least 30 days is enforced",
+    M: "Control of the permissioned functions is delegated to a Security Council OR an exit window of at least 7 days is enforced",
+    H: "Centralized operators are in control of the permissioned functions with an exit window of less than 7 days",
   },
   Accessibility: {
-    H: "Users are able to access the protocol through multiple, independent user interfaces (websites, wallets, local apps).",
-    M: "A single user interface exists with access to backup solutions such as a self-hosting app.",
-    L: "Only a single user interface exists without a backup solution.",
+    L: "Multiple independent user interfaces exist, e.g. websites, in-wallet access, etc., guaranteeing access to user funds even if one interface is shutdown",
+    M: "A single user interface exists with public access to a backup solution such as a self-hosting app",
+    H: "A single user interface exists without a backup solutio",
   },
 };
 
