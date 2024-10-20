@@ -6,7 +6,11 @@ const Footer: React.FC = () => {
     <footer style={styles.footer}>
       <div style={styles.container}>
         <div style={styles.copyright}>
-          &copy; {new Date().getFullYear()} Built with ❤️ by DeFi Collective.
+          &copy; {new Date().getFullYear()} DeFi Collective
+        </div>
+        <div>
+          <a href="/terms" className="mr-4">Terms</a>
+          <a href="/privacy" className="ml-4">Privacy</a>
         </div>
         <div style={styles.socialLinks}>
           <a href="https://twitter.com/DeFiCollective_" target="_blank" rel="noopener noreferrer" style={styles.icon}>

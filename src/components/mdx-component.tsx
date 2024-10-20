@@ -86,7 +86,7 @@ const components = {
     <table
       className={cn(
         className,
-        "w-full table-auto border-separate border-spacing-y-2 border-spacing-x-4 -ml-4"
+        "w-full table-auto -ml-4"
       )}
       {...props}
     />

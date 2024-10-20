@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default function SubmitReportPage() {
   return (
-    <div className="container relative max-w-6xl py-6 lg:py-10">
+    <div className="container relative mb-20 max-w-6xl py-6 lg:py-10">
       <h1 className="inline-block text-4xl font-bold leading-3 tracking-tight text-primary lg:text-5xl">
           Submit Report
       </h1>
