@@ -25,7 +25,10 @@ export default function SubmitReportPage() {
           </li>
           <li>
             Copy the protocol{" "}
-            <a href="/report-template" className="text-blue-600 underline">
+            <a
+              href="https://github.com/deficollective/defi-scan/blob/main/src/content/template.md?plain=1"
+              className="text-blue-600 underline"
+            >
               Report Template
             </a>{" "}
             to a new file named after the protocol.
@@ -57,7 +60,10 @@ export default function SubmitReportPage() {
           </li>
           <li>
             Ping the team in the DeFi Collective's{" "}
-            <a href="https://discord.gg" className="text-blue-600 underline">
+            <a
+              href="https://discord.gg/Z467Ehv6VU"
+              className="text-blue-600 underline"
+            >
               Discord
             </a>{" "}
             to get the PR reviewed and merged.
