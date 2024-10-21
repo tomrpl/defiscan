@@ -60,102 +60,108 @@ export default function LearnMorePage() {
       </h1>
 
       <div className="flex-1 mt-6 text-center text-muted-foreground lg:text-start xl:text-base">
-        <table className="table-auto w-full border-collapse border border-gray-300">
-          <thead className="font-bold bg-gray-100">
+        <table className="table-auto w-full border-collapse border">
+          <thead className="border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right">
             <tr>
-              <td className="px-6 py-4 border border-gray-300">
+              <td className="border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right">
                 Risk / Scores
               </td>
-              <td className="px-6 py-4 border border-gray-300">High</td>
-              <td className="px-6 py-4 border border-gray-300">Medium</td>
-              <td className="px-6 py-4 border border-gray-300">Low</td>
+              <td className="border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right">
+                High
+              </td>
+              <td className="border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right">
+                Medium
+              </td>
+              <td className="border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right">
+                Low
+              </td>
             </tr>
           </thead>
 
           <tbody>
-            <tr className="">
-              <td className="hover:bg-gray-100 transition px-6 py-4 border border-gray-300">
+            <tr className="even:bg-secondary">
+              <td className="hover:bg-gray-100 transition px-6 py-4 border ">
                 Chain
               </td>
-              <td className="hover:bg-gray-100 transition px-6 py-4 border border-gray-300">
+              <td className="hover:bg-gray-100 transition px-6 py-4 border ">
                 L2Beat Stage 0
               </td>
-              <td className="hover:bg-gray-100 transition px-6 py-4 border border-gray-300">
+              <td className="hover:bg-gray-100 transition px-6 py-4 border ">
                 L2Beat Stage 1
               </td>
-              <td className="hover:bg-gray-100 transition px-6 py-4 border border-gray-300">
+              <td className="hover:bg-gray-100 transition px-6 py-4 border ">
                 Ethereum mainnet or a comparable L1, or L2Beat Stage 2
               </td>
             </tr>
-            <tr className="">
-              <td className="hover:bg-gray-100 transition px-6 py-4 border border-gray-300">
+            <tr className="even:bg-secondary">
+              <td className="hover:bg-gray-100 transition px-6 py-4 border ">
                 Upgradeability
               </td>
-              <td className="hover:bg-gray-100 transition px-6 py-4 border border-gray-300">
+              <td className="hover:bg-gray-100 transition px-6 py-4 border ">
                 Possible upgrades may result in the theft or loss of user funds
               </td>
-              <td className="hover:bg-gray-100 transition px-6 py-4 border border-gray-300">
+              <td className="hover:bg-gray-100 transition px-6 py-4 border ">
                 Possible upgrades may result in the theft or loss of unclaimed
                 yield or may otherwise materially change the system (but user
                 funds remain unaffected)
               </td>
-              <td className="hover:bg-gray-100 transition px-6 py-4 border border-gray-300">
+              <td className="hover:bg-gray-100 transition px-6 py-4 border ">
                 Possible upgrades do not materially change the system (or result
                 in the theft or loss of user funds and unclaimed yield)
               </td>
             </tr>
-            <tr className="">
-              <td className="hover:bg-gray-100 transition px-6 py-4 border border-gray-300">
+            <tr className="even:bg-secondary">
+              <td className="hover:bg-gray-100 transition px-6 py-4 border ">
                 Dependency
               </td>
-              <td className="hover:bg-gray-100 transition px-6 py-4 border border-gray-300">
+              <td className="hover:bg-gray-100 transition px-6 py-4 border ">
                 Failure of a dependency may result in the theft or loss of user
                 funds
               </td>
-              <td className="hover:bg-gray-100 transition px-6 py-4 border border-gray-300">
+              <td className="hover:bg-gray-100 transition px-6 py-4 border ">
                 Failure of a dependency may result in the theft or loss of
                 unclaimed yield or may otherwise materially change the
                 performance of the system (but user funds remain unaffected)
               </td>
-              <td className="hover:bg-gray-100 transition px-6 py-4 border border-gray-300">
+              <td className="hover:bg-gray-100 transition px-6 py-4 border ">
                 Failure of a dependency does not materially change the
                 performance of the system (or result in the theft or loss of
                 user funds and unclaimed yield)
               </td>
             </tr>
-            <tr className="">
-              <td className="hover:bg-gray-100 transition px-6 py-4 border border-gray-300">
+            <tr className="even:bg-secondary">
+              <td className="hover:bg-gray-100 transition px-6 py-4 border ">
                 Exit Window
               </td>
-              <td className="hover:bg-gray-100 transition px-6 py-4 border border-gray-300">
+              <td className="hover:bg-gray-100 transition px-6 py-4 border ">
                 Operators, any account not meeting the Security Council
                 requirement, are in control of the permissioned functions with
                 an exit window of less than 7 days
               </td>
-              <td className="hover:bg-gray-100 transition px-6 py-4 border border-gray-300">
+              <td className="hover:bg-gray-100 transition px-6 py-4 border ">
                 Control of the permissioned functions is delegated to a Security
                 Council OR an exit window of at least 7 days is enforced
               </td>
-              <td className="hover:bg-gray-100 transition px-6 py-4 border border-gray-300">
+              <td className="hover:bg-gray-100 transition px-6 py-4 border ">
                 Control of the permissioned functions is fully revoked OR
                 delegated to a robust on-chain governance system AND an exit
                 window of at least 30 days is enforced
               </td>
             </tr>
-            <tr className="">
-              <td className="hover:bg-gray-100 transition px-6 py-4 border border-gray-300">
+            <tr className="even:bg-secondary">
+              <td className="hover:bg-gray-100 transition px-6 py-4 border ">
                 Accessibility
               </td>
-              <td className="hover:bg-gray-100 transition px-6 py-4 border border-gray-300">
+              <td className="hover:bg-gray-100 transition px-6 py-4 border ">
                 A single user interface exists without a backup solution
                 resulting in the temporary freezing of user funds if the
                 interface is shutdown
               </td>
-              <td className="hover:bg-gray-100 transition px-6 py-4 border border-gray-300">
+              <td className="hover:bg-gray-100 transition px-6 py-4 border ">
                 A single user interface exists with public access to a backup
                 solution such as a self-hosting app
               </td>
-              <td className="hover:bg-gray-100 transition px-6 py-4 border border-gray-300">
+              <td className="hover:bg-gray-100 transition px-6 py-4 border ">
                 Multiple independent user interfaces exist, e.g. websites,
                 in-wallet access, etc., guaranteeing access to user funds even
                 if one interface is shutdown
@@ -170,21 +176,19 @@ export default function LearnMorePage() {
       </h1>
 
       <div className="flex-1 mt-6 text-center text-muted-foreground lg:text-start xl:text-base">
-        <table className="table-auto w-full border-collapse border border-gray-300">
-          <thead className="font-bold bg-gray-100">
+        <table className="table-auto w-full border-collapse border ">
+          <thead className="border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right">
             <tr>
-              <td className="px-6 py-4 border border-gray-300">Stage</td>
-              <td className="px-6 py-4 border border-gray-300">Description</td>
-              <td className="px-6 py-4 border border-gray-300">
-                Qualification
-              </td>
+              <td className="px-6 py-4 border ">Stage</td>
+              <td className="px-6 py-4 border ">Description</td>
+              <td className="px-6 py-4 border ">Qualification</td>
             </tr>
           </thead>
 
           <tbody>
-            <tr className="hover:bg-gray-100 transition">
-              <td className="px-6 py-4 border border-gray-300">Stage 0</td>
-              <td className="px-6 py-4 border border-gray-300">
+            <tr className="even:bg-secondary hover:bg-gray-100 transition">
+              <td className="px-6 py-4 border ">Stage 0</td>
+              <td className="px-6 py-4 border ">
                 This is the first stage of a DeFi protocol where basic
                 requirements give the technology a decentralized foundation.
                 Critical permissions are still controlled by centralized
@@ -192,7 +196,7 @@ export default function LearnMorePage() {
                 users. Yet, its foundation allows for the gradual
                 decentralization and elimination of these risks.
               </td>
-              <td className="px-6 py-4 border border-gray-300">
+              <td className="px-6 py-4 border ">
                 <ul className="list-disc list-inside">
                   <li>Blockchain-based, financial protocol</li>
                   <li>Assets are not in custody by centralized entity</li>
@@ -205,9 +209,9 @@ export default function LearnMorePage() {
                 </ul>
               </td>
             </tr>
-            <tr className="hover:bg-gray-100 transition">
-              <td className="px-6 py-4 border border-gray-300">Stage 1</td>
-              <td className="px-6 py-4 border border-gray-300">
+            <tr className="even:bg-secondary hover:bg-gray-100 transition">
+              <td className="px-6 py-4 border ">Stage 1</td>
+              <td className="px-6 py-4 border ">
                 In the second stage, risks from critical permissions and
                 dependencies are significantly reduced by either revoking
                 critical permissions, or establishing a Security Council to
@@ -219,14 +223,14 @@ export default function LearnMorePage() {
                 users’ transactions and a backup user interface exists
                 guaranteeing access to user funds.
               </td>
-              <td className="px-6 py-4 border border-gray-300">
+              <td className="px-6 py-4 border ">
                 At least “Medium” risk scores for all dimensions apart from
                 Upgradeability
               </td>
             </tr>
-            <tr className="hover:bg-gray-100 transition">
-              <td className="px-6 py-4 border border-gray-300">Stage 2</td>
-              <td className="px-6 py-4 border border-gray-300">
+            <tr className="even:bg-secondary hover:bg-gray-100 transition">
+              <td className="px-6 py-4 border ">Stage 2</td>
+              <td className="px-6 py-4 border ">
                 The final stage is reached when critical permissions have either
                 been revoked or delegated to an on-chain governance system with
                 ample time for users to exit in case of an unwanted protocol
@@ -236,7 +240,7 @@ export default function LearnMorePage() {
                 interfaces and a fully decentralized underlying chain guarantee
                 access to users’ funds at any time.
               </td>
-              <td className="px-6 py-4 border border-gray-300">
+              <td className="px-6 py-4 border ">
                 At least “Low” risk scores for all dimensions apart from
                 Upgradeability
               </td>
