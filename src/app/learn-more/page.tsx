@@ -140,8 +140,7 @@ export default function LearnMorePage() {
                 Permissions are protected with an exit window of at least 7 days
               </td>
               <td className="px-6 py-4 border">
-                Permissions are fully revoked OR
-                protected with an exit window of at least 30 days
+              Permissions are fully revoked OR transferred to an on-chain governance process AND protected with an exit window of at least 30 days
               </td>
             </tr>
             <tr className="hover:bg-gray-100 transition">
