@@ -39,17 +39,22 @@ The multisig governance system adds a layer of control but does not fully decent
 ## Autonomy
 
 The Maverick Protocol relies on LayerZero for cross-chain communication, which introduces a dependency on LayerZero’s DVN (Default Verifier Node) system. The DVN used by Maverick is Layer0’s default DVN (Google Cloud). While LayerZero itself is designed to be permissionless and censorship-resistant, the dependency on DVNs introduces potential risks, especially if no fallback DVNs are specified.
+
 DVNs are validators of cross-chain transaction packets, and their failure or malicious behavior could impact the performance of cross-chain communications. If the current DVN (Google Cloud) ceases operations or misbehaves, Maverick would need to update its security settings and choose a new DVN.
 Although executors in the LayerZero system can be permissionless (allowing any user to step in if designated executors fail), this still poses a risk as the protocol is dependent on the proper functioning of these third-party executors and DVNs.
 Maverick can theoretically modify its LayerZero settings (e.g., trusted remotes, trusted remote addresses, and security configurations) without user input, adding a potential risk for protocol autonomy.
+
 In conclusion, the autonomy of Maverick Protocol is medium (M) due to its reliance on LayerZero for cross-chain functionality, even though LayerZero itself is decentralized. If the DVN fails or behaves maliciously, it can cause temporary interruptions or security risks, but the protocol can mitigate these risks by updating its settings.
 
 
 ## Exit Window
 
 The only two contracts in Maverick Protocol that have upgrade/change potential are the MaverickV2Factory and the Maverick (MAV) Token.
+
 MaverickV2Factory: Since the full source code of this contract is not publicly verified, it remains unclear whether fee switches or other changes are enforced immediately or if a timelock or delay mechanism exists. This uncertainty raises concerns about the ability for users to exit in case of sudden changes.
+
 Maverick (MAV) Token: The token has no timelock for upgrades or changes. The OFT token allows the owners to modify destination addresses and security settings without any enforced exit window for users. This means that changes can be applied immediately, and users do not have an option to opt-out or withdraw assets during a waiting period before the changes take effect.
+
 Due to the lack of a defined exit window and the possibility of immediate changes to key contracts, users may have limited control and no advance warning to exit the protocol in case of unwanted modifications.
 
 ## Accessibility
@@ -123,9 +128,12 @@ Maverick Protocol supports various wallets (MetaMask, Ledger, Coinbase Wallet, T
 
 Maverick Protocol relies on LayerZero for cross-chain communication and transaction validation.
 LayerZero Protocol is itself fully permissionless and censorship resistant through its immutable nature. The protocol itself will exist indefinitely even if Layer0 Labs ceases to exist. Layer0 Labs is responsible for deploying immutable endpoints on every chain that integrates with Layer0 and the different endpoints reference each other. This means if Layer0 ceases to exist, no new blockchains are added to the cross-chain network, but new organisations can step in and create a new cross-chain network.
+
 The Protocol relies on Executors which trigger queued transaction on destination chains. The set of executors can be customised by the respective protocol, in this case maverick. However, it’s also fully permissionless, even if the designated executors do not execute the transaction on the destination chain, any user can step in and execute the transaction.
+
 DVNs are validators of transaction packets that need to move cross-chain. They are chosen by the protocol with security settings. If the DVNs cease to exist, the protocol needs to update settings and select new DVNs. The DVNs have a reputation and earn fees for the validating activity, thus are incentivised to behave correctly. Maverick uses the default DVN which is google could: 0xD56e4eAb23cb81f43168F9F45211Eb027b9aC7cc (deterministic deployed address across all chains). Any protocol that relies on layerWero could choose to run their own DVN and install a malicious verifier algorithm to it, if there is no governance or internal security process is not set up to prevent a project from doing so.
-Maverick Token is deployed according to their docs: https://docs.mav.xyz/technical-reference/contract-addresses/v2-contract-addresses to the following chains
+
+Maverick Token is deployed according to their docs [https://docs.mav.xyz/technical-reference/contract-addresses/v2-contract-addresses](https://docs.mav.xyz/technical-reference/contract-addresses/v2-contract-addresses) to the following chains:
 Arbitrum
 Base
 Mainnet
@@ -136,9 +144,11 @@ BNB Chain
 ## Exit Window
 
 The only two contracts that have some upgrade/change potential are the MaverickV2Factory and the MaverickToken.
-MaverickV2Factory
+
+MaverickV2Factory:
 Since the full source code of MaverickV2Factory is not publicly verified, it’s not clear if fee switches are enforced immediately or not.
-MaverickToken
+
+MaverickToken:
 Token has no timelock for changes/upgrades. The OFT token when ownership is not renounced allows owners to switch destination addresses and security settings. Users do not have the option to opt-out with a waiting period before the change is applied.
 
 
