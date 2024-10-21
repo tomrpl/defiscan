@@ -28,7 +28,7 @@ Note, these risks only account for observed centralization vectors and do not in
 
 ## Chain
 
-This report covers the Velodrome v2 deployment on the Optimism mainnet. As Optimism is still evolving in terms of decentralization and governance, it does not yet meet the highest standard of decentralization (Stage 1 according to L2Beat).
+This report covers Aerodrome deployment on the Base mainnet. As Base is still evolving in terms of decentralization and governance, it does not yet meet the highest standard of decentralization (Stage 0 according to L2Beat).
 
 ## Upgradeability
 
