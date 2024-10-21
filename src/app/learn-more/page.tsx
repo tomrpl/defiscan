@@ -112,7 +112,7 @@ export default function LearnMorePage() {
             </tr>
             <tr className="hover:bg-gray-100 transition">
               <td className="px-6 py-4 border">
-                Dependency
+                Autonomy
               </td>
               <td className="px-6 py-4 border">
                 Failure of a dependency may result in the theft or loss of user
