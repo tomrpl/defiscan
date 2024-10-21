@@ -146,11 +146,9 @@ BNB Chain
 The only two contracts that have some upgrade/change potential are the MaverickV2Factory and the MaverickToken.
 
 MaverickV2Factory
-
 Since the full source code of MaverickV2Factory is not publicly verified, it’s not clear if fee switches are enforced immediately or not.
 
 MaverickToken
-
 Token has no timelock for changes/upgrades. The OFT token when ownership is not renounced allows owners to switch destination addresses and security settings. Users do not have the option to opt-out with a waiting period before the change is applied.
 
 
