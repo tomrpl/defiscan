@@ -7,7 +7,7 @@ defillama_slug: "velodrome-v2"
 type: "DEX"
 chain: "Optimism"
 stage: 1
-risks: "['M','M','L','M','L']"
+risks: "['M','M','L','H','L']"
 author: "CookingCryptos, sagaciousyves"
 date: "2024-10-09"
 ---

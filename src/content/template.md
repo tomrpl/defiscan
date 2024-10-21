@@ -1,11 +1,11 @@
 ---
-protocol: "name"
+protocol: "name of the protocol appended by the version if multiple versions exist (use an '-' and no whitespace)"
 website: "https://..."
 x: "https://x.com/projecthandle"
 github: "https://github.com/projectgithub"
-defillama_slug: "give it a slug (e.g name without whitespaces)"
-type: "type"
-chain: "chain name"
+defillama_slug: "the slug used by https://defillama.com"
+type: "any of Stablecoin, DEX, Lending, Yield, Other"
+chain: "the name of the chain on which the protocol is deployed"
 stage: 0
 risks: "['x','x','x','x','x']"
 author: "your author name"
