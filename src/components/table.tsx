@@ -9,7 +9,7 @@ import { getRiskDescriptions } from "./rosette/data-converter/data-converter";
 import { TooltipProvider } from "./rosette/tooltip/tooltip";
 
 // Define the type for the protocol data fetched from DeFiLlama
-interface Protocol {
+export interface Protocol {
   slug: string;
   tvl: number;
   logo: string;
@@ -17,7 +17,7 @@ interface Protocol {
 }
 
 // Fetch protocol tvl and logo url from defillama
-const fetchProtocolTVL = async (): Promise<Protocol[]> => {
+export const fetchProtocolTVL = async (): Promise<Protocol[]> => {
   const response = await fetch("https://api.llama.fi/protocols");
   const data = await response.json();
   return data;
@@ -25,14 +25,13 @@ const fetchProtocolTVL = async (): Promise<Protocol[]> => {
 
 const Table: React.FC = () => {
   const [data, setData] = useState<Protocol[] | undefined>(undefined);
-
+  const fetchData = async () => {
+    const data = await fetchProtocolTVL();
+    setData(data);
+  };
   useEffect(() => {
-    const fetchData = async () => {
-      const data = await fetchProtocolTVL();
-      setData(data);
-    };
     fetchData();
-  });
+  }, []);
 
   // Navigate to the protocol's page when the row is clicked
   const handleRowClick = (slug: string) => {

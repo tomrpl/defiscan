@@ -26,7 +26,7 @@ const fetchDefiStats = async () => {
 const chartConfig = {
   tvl: {
     label: "TVL",
-    color: "hsl(var(--chart-1))",
+    color: "#ae7ef4",
   },
 } satisfies ChartConfig;
 
@@ -38,12 +38,12 @@ function Chart() {
       setData(data);
     };
     fetchData();
-  });
+  }, []);
 
   return (
-    <Card>
+    <Card className="w-full">
       <CardHeader>
-        <div className="-mt-4 -mb-8">
+        <div className="-mt-4 -mb-">
           <CardDescription>Total Value Locked (TVL) in DeFi</CardDescription>
         </div>
       </CardHeader>
@@ -76,7 +76,11 @@ function Chart() {
               cursor={false}
               content={<ChartTooltipContent indicator="dot" />}
             />
-            <Area dataKey="tvl" fill={`var(--color-tvl)`} />
+            <Area
+              dataKey="tvl"
+              fill={`var(--color-tvl)`}
+              stroke={`var(--color-tvl)`}
+            />
           </AreaChart>
         </ChartContainer>
       </CardContent>

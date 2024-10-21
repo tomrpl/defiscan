@@ -1,6 +1,9 @@
 import React from "react";
 import Table from "@/components/table";
 import Chart from "@/components/chart";
+import { PiechartStage } from "@/components/pie-charts/pie-stage";
+import { PiechartTvl } from "@/components/pie-charts/pie-tvl";
+import { PiechartType } from "@/components/pie-charts/pie-type";
 
 export default function Home() {
   return (
@@ -10,10 +13,32 @@ export default function Home() {
           The Heartbeat of DeFi
         </h1>
         <h2 className="text-muted-foreground leading-3 tracking-tight text-xl sm:text-xl md:text-1xl lg:text-2xl -mt-6">
-          DeFi Scan provides verifiable insights into the maturity and risks of DeFi infrastructure
+          DeFi Scan provides verifiable insights into the maturity and risks of
+          DeFi infrastructure
         </h2>
-        <div className="space-x-4 my-4">
-          <Chart />
+        <Chart />
+        <div className="flex flex-row w-full my-4">
+          <PiechartStage
+            groupByKey="stage"
+            operation="count"
+            baseColor="#ae7ef4"
+            chartTitle="# Projects by Stage"
+            labelValueDescription="Level-2 Projects"
+          />
+          <PiechartTvl
+            groupByKey="stage"
+            operation="sum"
+            baseColor="#ae7ef4"
+            chartTitle="TVL by Stage"
+            labelValueDescription="Total TVL"
+          />
+          <PiechartType
+            groupByKey="type"
+            operation="count"
+            baseColor="#ae7ef4"
+            chartTitle="# Projects by Type"
+            labelValueDescription="Total Projects"
+          />
         </div>
         <div className="space-x-4 mb-32">
           <Table />
