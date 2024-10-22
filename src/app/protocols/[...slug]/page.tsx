@@ -110,16 +110,24 @@ export default async function ProtocolPageItem({
               <td>Chain</td>
               <td>{protocol.chain}</td>
             </tr>
-            <tr className="">
-              <td>Author</td>
-              <td>{protocol.author}</td>
-            </tr>
-            <tr className="">
-              <td>Date</td>
-              <td>{protocol.date.split("T")[0]}</td>
-            </tr>
           </tbody>
         </table>
+
+        <h1 className="mt-10 mb-4 scroll-m-20 text-4xl font-bold text-primary tracking-tight">
+          Declaration
+        </h1>
+
+        <p>This review has been submitted by {protocol.author} on {protocol.submission_date.split("T")[0]}.</p>
+        <p>It was reviewed and published by the DeFi Collective team on {protocol.publish_date.split("T")[0]}.</p>
+        <p>
+          The {protocol.protocol} team has {(protocol.acknowledge_date.split("T")[0] == "1970-01-01") ? 
+          "NOT acknowledged the review" : "acknowledged the review on " + protocol.acknowledge_date.split("T")[0]}.
+        </p>
+        <p>
+          {(protocol.update_date.split("T")[0] == "1970-01-01") ? 
+          "The review has not been updated since the initial submission." : 
+          "The last update to the review was made on " + protocol.update_date.split("T")[0]}.
+        </p>
 
         <h1 className="mt-10 mb-4 scroll-m-20 text-4xl font-bold text-primary tracking-tight">
           Stage

@@ -23,7 +23,10 @@ const protocols = defineCollection({
       stage: s.number(),
       risks: s.string(),
       author: s.string(),
-      date: s.isodate(),
+      submission_date: s.isodate(),
+      publish_date: s.isodate(),
+      acknowledge_date: s.isodate(),
+      update_date: s.isodate(),
       body: s.mdx(),
     })
     .transform(computedFields),

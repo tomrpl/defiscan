@@ -262,10 +262,6 @@ export default function LearnMorePage() {
           <li>At least 7 signers</li>
           <li>At least 51% threshold</li>
           <li>At least 50% non-team signers</li>
-          <li>
-            Signer diversity (organization, jurisdiction, etc), is subjectively
-            assessed
-          </li>
           <li>Signers are publicly announced (with name or pseudonym)</li>
         </ul>
       </div>

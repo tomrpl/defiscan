@@ -8,7 +8,10 @@ chain: "Ethereum"
 stage: 0
 risks: "['L','H','H','H','M']"
 author: "CookingCryptos"
-date: "2024-10-01"
+submission_date: "2024-10-09"
+publish_date: "2024-10-09"
+acknowledge_date: "1970-01-01"
+update_date: "1970-01-01"
 ---
 
 

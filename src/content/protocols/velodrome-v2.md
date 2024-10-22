@@ -8,7 +8,10 @@ chain: "Optimism"
 stage: 1
 risks: "['M','M','L','H','L']"
 author: "CookingCryptos, sagaciousyves"
-date: "2024-10-09"
+submission_date: "2024-10-09"
+publish_date: "2024-10-09"
+acknowledge_date: "1970-01-01"
+update_date: "1970-01-01"
 ---
 
 

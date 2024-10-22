@@ -1,5 +1,5 @@
 ---
-protocol: "Possum Labs"
+protocol: "Possum-Labs"
 website: "https://www.possumlabs.io"
 x: "https://x.com/Possum_Labs"
 github: "https://github.com/PossumLabsCrypto"
@@ -8,7 +8,10 @@ chain: "Arbitrum"
 stage: 0
 risks: "['M','L','H','L','H']"
 author: "stengarl, sagaciousyves"
-date: "2024-10-04"
+submission_date: "2024-10-09"
+publish_date: "2024-10-09"
+acknowledge_date: "1970-01-01"
+update_date: "1970-01-01"
 ---
 
 
