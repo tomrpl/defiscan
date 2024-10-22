@@ -5,12 +5,31 @@ export const metadata: Metadata = {
   title: "Learn more",
 };
 
+function createIdFromTitle(title: string) {
+  return title
+    .toLowerCase()
+    .replace(/\s+/g, "-")
+    .replace(/[^\w-]+/g, "");
+}
+
 export default function LearnMorePage() {
+  const titles = [
+    "WTF is DeFiScan?",
+    "DeFi Centralization Risks",
+    "DeFi Stages Framework",
+    "Security Council Requirements",
+  ];
   return (
     <div className="container relative mb-20 max-w-6xl py-6 lg:py-10">
-      <h1 className="inline-block text-4xl font-bold leading-3 tracking-tight text-primary lg:text-5xl">
-        WTF is DeFiScan?
-      </h1>
+      <a href={`#${createIdFromTitle(titles[0])}`}>
+        <h1
+          id={createIdFromTitle(titles[0])}
+          className="inline-block text-4xl font-bold leading-3 tracking-tight text-primary lg:text-5xl"
+          style={{ scrollMarginTop: "100px" }} /* Adjust for header */
+        >
+          {titles[0]}
+        </h1>
+      </a>
 
       <div className="flex-1 mt-6 text-center text-muted-foreground lg:text-start xl:text-base">
         <p>
@@ -55,9 +74,15 @@ export default function LearnMorePage() {
         </p>
       </div>
 
-      <h1 className="inline-block mt-10 text-4xl font-bold leading-3 tracking-tight text-primary lg:text-5xl">
-        DeFi Centralization Risks
-      </h1>
+      <a href={`#${createIdFromTitle(titles[1])}`}>
+        <h1
+          id={createIdFromTitle(titles[1])}
+          className="inline-block mt-10  text-4xl font-bold leading-3 tracking-tight text-primary lg:text-5xl"
+          style={{ scrollMarginTop: "100px" }} /* Adjust for header */
+        >
+          {titles[1]}
+        </h1>
+      </a>
 
       <div className="flex-1 mt-6 text-center text-muted-foreground lg:text-start xl:text-base">
         <table className="table-auto w-full border-collapse border">
@@ -80,23 +105,15 @@ export default function LearnMorePage() {
 
           <tbody>
             <tr className="hover:bg-gray-100 transition">
-              <td className="px-6 py-4 border">
-                Chain
-              </td>
-              <td className="transition px-6 py-4 border">
-                L2Beat Stage 0
-              </td>
-              <td className="transition px-6 py-4 border">
-                L2Beat Stage 1
-              </td>
+              <td className="px-6 py-4 border">Chain</td>
+              <td className="transition px-6 py-4 border">L2Beat Stage 0</td>
+              <td className="transition px-6 py-4 border">L2Beat Stage 1</td>
               <td className="transition px-6 py-4 border">
                 Ethereum mainnet or a comparable L1, or L2Beat Stage 2
               </td>
             </tr>
             <tr className="hover:bg-gray-100 transition">
-              <td className="px-6 py-4 border">
-                Upgradeability
-              </td>
+              <td className="px-6 py-4 border">Upgradeability</td>
               <td className="px-6 py-4 border">
                 Possible upgrades may result in the theft or loss of user funds
               </td>
@@ -111,9 +128,7 @@ export default function LearnMorePage() {
               </td>
             </tr>
             <tr className="hover:bg-gray-100 transition">
-              <td className="px-6 py-4 border">
-                Autonomy
-              </td>
+              <td className="px-6 py-4 border">Autonomy</td>
               <td className="px-6 py-4 border">
                 Failure of a dependency may result in the theft or loss of user
                 funds
@@ -130,23 +145,22 @@ export default function LearnMorePage() {
               </td>
             </tr>
             <tr className="hover:bg-gray-100 transition">
+              <td className="px-6 py-4 border">Exit Window</td>
               <td className="px-6 py-4 border">
-                Exit Window
-              </td>
-              <td className="px-6 py-4 border">
-                Permissions are NOT protected with an exit window or the exit window is less than 7 days
+                Permissions are NOT protected with an exit window or the exit
+                window is less than 7 days
               </td>
               <td className="px-6 py-4 border">
                 Permissions are protected with an exit window of at least 7 days
               </td>
               <td className="px-6 py-4 border">
-              Permissions are fully revoked OR transferred to an on-chain governance process AND protected with an exit window of at least 30 days
+                Permissions are fully revoked OR transferred to an on-chain
+                governance process AND protected with an exit window of at least
+                30 days
               </td>
             </tr>
             <tr className="hover:bg-gray-100 transition">
-              <td className="px-6 py-4 border">
-                Accessibility
-              </td>
+              <td className="px-6 py-4 border">Accessibility</td>
               <td className="px-6 py-4 border">
                 A single user interface exists without a backup solution
                 resulting in the temporary freezing of user funds if the
@@ -166,9 +180,15 @@ export default function LearnMorePage() {
         </table>
       </div>
 
-      <h1 className="inline-block mt-10 text-4xl font-bold leading-3 tracking-tight text-primary lg:text-5xl">
-        DeFi Stages Framework
-      </h1>
+      <a href={`#${createIdFromTitle(titles[2])}`}>
+        <h1
+          id={createIdFromTitle(titles[2])}
+          className="inline-block mt-10  text-4xl font-bold leading-3 tracking-tight text-primary lg:text-5xl"
+          style={{ scrollMarginTop: "100px" }} /* Adjust for header */
+        >
+          {titles[2]}
+        </h1>
+      </a>
 
       <div className="flex-1 mt-6 text-center text-muted-foreground lg:text-start xl:text-base">
         <table className="table-auto w-full border-collapse border ">
@@ -196,7 +216,7 @@ export default function LearnMorePage() {
                   <li>✅ Blockchain-based, financial protocol</li>
                   <li>✅ Assets are not in custody by centralized entity</li>
                   <li>
-                  ✅ Public documentation exists that outlines the protocol
+                    ✅ Public documentation exists that outlines the protocol
                     components and expected performance
                   </li>
                   <li>✅ Source-available codebase</li>
@@ -220,8 +240,13 @@ export default function LearnMorePage() {
               </td>
               <td className="px-6 py-4 border">
                 <ul className="list-none list-inside">
-                  <li>✅ At least "Medium" risk score for Chain, Autonomy, Accessibility</li>
-                  <li>✅ IF Exit Window receives "High" risk, THEN control over permissions MUST be transferred to a Security Council
+                  <li>
+                    ✅ At least "Medium" risk score for Chain, Autonomy,
+                    Accessibility
+                  </li>
+                  <li>
+                    ✅ IF Exit Window receives "High" risk, THEN control over
+                    permissions MUST be transferred to a Security Council
                   </li>
                 </ul>
               </td>
@@ -240,7 +265,10 @@ export default function LearnMorePage() {
               </td>
               <td className="px-6 py-4 border">
                 <ul className="list-none list-inside">
-                  <li>✅ At least "Low" risk score for Chain, Autonomy, Exit Window, Accessibility</li>
+                  <li>
+                    ✅ At least "Low" risk score for Chain, Autonomy, Exit
+                    Window, Accessibility
+                  </li>
                 </ul>
               </td>
             </tr>
@@ -248,9 +276,15 @@ export default function LearnMorePage() {
         </table>
       </div>
 
-      <h1 className="inline-block mt-10 text-4xl font-bold leading-3 tracking-tight text-primary lg:text-5xl">
-        Security Council Requirements
-      </h1>
+      <a href={`#${createIdFromTitle(titles[3])}`}>
+        <h1
+          id={createIdFromTitle(titles[3])}
+          className="inline-block mt-10  text-4xl font-bold leading-3 tracking-tight text-primary lg:text-5xl"
+          style={{ scrollMarginTop: "100px" }} /* Adjust for header */
+        >
+          {titles[3]}
+        </h1>
+      </a>
 
       <div className="flex-1 my-6 text-center text-muted-foreground lg:text-start xl:text-base">
         <p>
