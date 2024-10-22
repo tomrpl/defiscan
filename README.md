@@ -1,6 +1,5 @@
 # DeFi Scan
 
-
 ## Getting started
 
 To run the website on your local machine, follow these steps:
@@ -47,8 +46,15 @@ To run the website on your local machine, follow these steps:
 
 - **Add New Protocol**:
 
- New protocols can be added as an `.mdx` file in the `content` folder.
+New protocols can be added as an `.mdx` file in the `content` folder.
 
-  `Important`: 
-  - Make sure to name the file with dash(`-`) and without space. Example: `liquity-v1.mdx`
-  - The `.mdx` file needs to follow the protocol report structure outlined [here](todo)
+`Important`:
+
+- Make sure to name the file with dash(`-`) and without space. Example: `liquity-v1.mdx`
+- The `.mdx` file needs to follow the protocol report structure outlined [here](todo)
+
+## Acknowledgement
+
+This project utilizes an the pizza diagrams developed and used inside L2Beat. We are grateful for their commitment to open access and knowledge sharing.
+
+Their original work is open-sourced under the permissive MIT License, and we acknowledge their contribution.
