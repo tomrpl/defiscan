@@ -38,19 +38,19 @@ export default function Home() {
             />
           </div>
           <div className="flex flex-col w-1/4">
-            <PiechartTvlByChain
-              groupByKey="chain"
-              operation="sum"
-              baseColor="#ae7ef4"
-              chartTitle="Covered TVL by Chain"
-              labelValueDescription="Most TVL"
-            />
             <PiechartChain
               groupByKey="chain"
               operation="count"
               baseColor="#ae7ef4"
-              chartTitle="Covered by Chain"
+              chartTitle="Projects by Chain"
               labelValueDescription="Top Source"
+            />
+            <PiechartTvlByChain
+              groupByKey="chain"
+              operation="sum"
+              baseColor="#ae7ef4"
+              chartTitle="TVL by Chain"
+              labelValueDescription="Most TVL"
             />
           </div>
         </div>
