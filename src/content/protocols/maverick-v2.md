@@ -38,13 +38,8 @@ The multisig governance system adds a layer of control but does not fully decent
 
 ## Autonomy
 
-The Maverick Protocol relies on LayerZero for cross-chain communication, which introduces a dependency on LayerZero’s DVN (Default Verifier Node) system. The DVN used by Maverick is Layer0’s default DVN (Google Cloud). While LayerZero itself is designed to be permissionless and censorship-resistant, the dependency on DVNs introduces potential risks, especially if no fallback DVNs are specified.
-
-DVNs are validators of cross-chain transaction packets, and their failure or malicious behavior could impact the performance of cross-chain communications. If the current DVN (Google Cloud) ceases operations or misbehaves, Maverick would need to update its security settings and choose a new DVN.
-Although executors in the LayerZero system can be permissionless (allowing any user to step in if designated executors fail), this still poses a risk as the protocol is dependent on the proper functioning of these third-party executors and DVNs.
-Maverick can theoretically modify its LayerZero settings (e.g., trusted remotes, trusted remote addresses, and security configurations) without user input, adding a potential risk for protocol autonomy.
-
-In conclusion, the autonomy of Maverick Protocol is medium (M) due to its reliance on LayerZero for cross-chain functionality, even though LayerZero itself is decentralized. If the DVN fails or behaves maliciously, it can cause temporary interruptions or security risks, but the protocol can mitigate these risks by updating its settings.
+Maverick Protocol relies on LayerZero for cross-chain communication, which introduces dependency risks due to its use of LayerZero’s DVN system (currently Google Cloud). If the DVN fails or behaves maliciously, it could disrupt cross-chain operations. While LayerZero’s decentralized design allows permissionless executors to step in if needed, Maverick can change key settings (e.g., trusted remotes) without user input, further affecting autonomy. 
+Overall, Maverick’s autonomy is considered medium (M) due to its reliance on external validators and the protocol’s ability to adjust settings without community approval.
 
 
 ## Exit Window
@@ -150,5 +145,16 @@ Since the full source code of MaverickV2Factory is not publicly verified, it’s
 
 MaverickToken:
 Token has no timelock for changes/upgrades. The OFT token when ownership is not renounced allows owners to switch destination addresses and security settings. Users do not have the option to opt-out with a waiting period before the change is applied.
+
+# Security Council
+
+| ✅ /❌ | Requirement                                                                |
+|------|----------------------------------------------------------------------------|
+| ✅    | At least 7 signers                                                         |
+| ✅    | At least 51% threshold                                                     |
+| ❌    | At least 50% non-team signers                                              |
+| ✅    | Signer diversity (organization, jurisdiction, etc.), subjectively assessed |
+| ✅    | Signers are publicly announced (with name or pseudonym)                    |
+
 
 

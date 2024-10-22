@@ -159,3 +159,14 @@ Certain staking assets within the Possum ecosystem are subject to centralized co
 For each type of principal there exists a portal and a related adapter contract. Adapter contracts are upgradable. The Possum Labs multisig can propose a new address, but the token owners need to accept with a majority (>50%) vote. If the vote gets through, the new implementation is enforced 7 days after vote surpassed 50%. The migration is then triggered permissionlessly via executeMigration() on the old adapter contract itself.
 No time-locks have been found. All upgrades take place immediately.
 
+# Security Council
+
+| ✅ /❌ | Requirement                                                                |
+|------|----------------------------------------------------------------------------|
+| ✅    | At least 7 signers                                                         |
+| ✅    | At least 51% threshold                                                     |
+| ❌    | At least 50% non-team signers                                              |
+| ✅    | Signer diversity (organization, jurisdiction, etc.), subjectively assessed |
+| ✅    | Signers are publicly announced (with name or pseudonym)                    |
+
+

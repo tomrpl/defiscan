@@ -67,7 +67,7 @@ Aerodrome provides multiple access points for users, including both centralized 
 | Voter                              | 0x16613524e02ad97eDfeF371bC883F2F5d6C480A5 |
 | VotingEscrow                       | 0xeBf418Fe2512e7E6bd9b87a8F0f294aCDC67e6B4 |
 | VotingRewardsFactory               | 0x45cA74858C579E717ee29A86042E0d53B252B504 |
-| GaugeFactory                       | 0xD30677bd8dd15132F251Cb54CbDA552d2A05Fb08 |
+| CLGaugeFactory                     | 0xD30677bd8dd15132F251Cb54CbDA552d2A05Fb08 |
 | GaugeImplementation                | 0xF5601F95708256A118EF5971820327F362442D2d |
 | MixedQuoter                        | 0x0A5aA5D3a4d28014f967Bf0f29EAA3FF9807D5c6 |
 | NonfungiblePositionManager         | 0x827922686190790b37229fd06084350E74485b72 |
@@ -151,3 +151,17 @@ No external dependency has been found.
 ## Exit Window
 
 No _timelocks_ or other form of exit window have been found. All upgrades take place immediately.
+
+# Security Council
+
+| ✅ /❌ | Requirement                                                                |
+|------|----------------------------------------------------------------------------|
+| ✅    | At least 7 signers                                                         |
+| ✅    | At least 51% threshold                                                     |
+| ❌    | At least 50% non-team signers                                              |
+| ✅    | Signer diversity (organization, jurisdiction, etc.), subjectively assessed |
+| ✅    | Signers are publicly announced (with name or pseudonym)                    |
+
+
+
+
