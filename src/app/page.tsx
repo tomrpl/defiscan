@@ -4,6 +4,8 @@ import Chart from "@/components/chart";
 import { PiechartStage } from "@/components/pie-charts/pie-stage";
 import { PiechartTvl } from "@/components/pie-charts/pie-tvl";
 import Table from "@/components/table/page";
+import { PiechartTvlByChain } from "@/components/pie-charts/pie-tvl-chain";
+import { PiechartChain } from "@/components/pie-charts/pie-chain";
 
 export default function Home() {
   return (
@@ -18,12 +20,13 @@ export default function Home() {
         </h2>
         <div className="flex flex-row w-full my-4">
           <Chart />
-          <div className="flex flex-col w-1/3">
+
+          <div className="flex flex-col w-1/4">
             <PiechartStage
               groupByKey="stage"
               operation="count"
               baseColor="#ae7ef4"
-              chartTitle="# Projects by Stage"
+              chartTitle="#Projects by Stage"
               labelValueDescription="Stage-2"
             />
             <PiechartTvl
@@ -32,6 +35,22 @@ export default function Home() {
               baseColor="#ae7ef4"
               chartTitle="TVL by Stage"
               labelValueDescription="Total TVL"
+            />
+          </div>
+          <div className="flex flex-col w-1/4">
+            <PiechartTvlByChain
+              groupByKey="chain"
+              operation="sum"
+              baseColor="#ae7ef4"
+              chartTitle="Covered TVL by Chain"
+              labelValueDescription="Most TVL"
+            />
+            <PiechartChain
+              groupByKey="chain"
+              operation="count"
+              baseColor="#ae7ef4"
+              chartTitle="Covered by Chain"
+              labelValueDescription="Top Source"
             />
           </div>
         </div>

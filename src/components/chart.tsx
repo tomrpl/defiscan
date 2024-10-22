@@ -41,7 +41,7 @@ function Chart() {
   }, []);
 
   return (
-    <Card className="w-full">
+    <Card className="w-2/3">
       <CardHeader>
         <div className="-mt-4 -mb-">
           <CardDescription>Total Value Locked (TVL) in DeFi</CardDescription>
