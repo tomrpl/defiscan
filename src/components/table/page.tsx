@@ -23,7 +23,7 @@ export const getData = async (): Promise<Project[]> => {
           tvl: val.tvl,
           chain: res.chain,
           stage: res.stage,
-          type: res.type,
+          type: val.category,
           risks: res.risks,
         } as Project;
       return null;
