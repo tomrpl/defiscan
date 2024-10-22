@@ -103,8 +103,8 @@ export default async function ProtocolPageItem({
               </td>
             </tr>
             <tr className="">
-              <td>Type</td>
-              <td>{protocol.type}</td>
+              <td>Defillama</td>
+              <td>{protocol.defillama_slug}</td>
             </tr>
             <tr className="">
               <td>Chain</td>

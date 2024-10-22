@@ -4,7 +4,6 @@ website: "https://www.liquity.org"
 x: "https://x.com/LiquityProtocol"
 github: "https://github.com/liquity"
 defillama_slug: "liquity"
-type: "Stablecoin"
 chain: "Ethereum"
 stage: 2
 risks: "['L','L','L','L','L']"
@@ -12,17 +11,6 @@ author: "CookingCryptos"
 date: "2024-10-01"
 ---
 
-# Risks
-
-| ✅ /❌ | Risk                                                    |
-| ------ | ------------------------------------------------------- |
-| ✅     | Users’ funds cannot be stolen, frozen or lost           |
-| ✅     | Users’ unclaimed yield cannot be stolen, frozen or lost |
-| ✅     | Users cannot be censored                                |
-| ✅     | Users can opt-out of unwanted protocol changes          |
-| ✅     | Users cannot lose access to the protocol functions      |
-
-Note, these risks only account for observed centralization vectors and do not include other sources such as economic or technical flaws in the protocol design and implementation.
 
 # Assessment
 
@@ -75,11 +63,9 @@ A list of third-party frontends can be found here: [https://www.liquity.org/fron
 | Chanlink LUSD feed    | 0x3D7aE7E594f2f2091Ad8798313450130d0Aba3a0 |
 | Tellor USD feed       | 0xAd430500ECDa11E38C9bCB08a702274b94641112 |
 
-## Permission owners
+## Permission Owners
 
-| Name | Account | Type |
-| ---- | ------- | ---- |
-| N/A  | N/A     | N/A  |
+All external permissions are revoked, the protocol is immutable.
 
 ## Permissions
 
@@ -110,3 +96,12 @@ If both Chainlink and Tellor are frozen or untrusted the last good price is used
 ## Exit Window
 
 The protocol is completely immutable, thus no exit window is required.
+
+# Security Council
+
+| ✅ /❌ | Requirement                                                                |
+| ------ |----------------------------------------------------------------------------|
+| N/A    | At least 7 signers                                                         |
+| N/A    | At least 51% threshold                                                     |
+| N/A    | At least 50% non-team signers                                              |
+| N/A    | Signers are publicly announced (with name or pseudonym)                    |

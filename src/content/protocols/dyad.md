@@ -4,7 +4,6 @@ website: "https://dyadstable.xyz"
 x: "https://x.com/0xDYAD"
 github: "https://github.com/DyadStablecoin"
 defillama_slug: "dyad"
-type: "Stablecoin"
 chain: "Ethereum"
 stage: 0
 risks: "['L','H','H','H','M']"
@@ -12,17 +11,6 @@ author: "CookingCryptos"
 date: "2024-10-01"
 ---
 
-# Risks
-
-| ✅ /❌ | Risk                                                    |
-| ------ | ------------------------------------------------------- |
-| ❌     | Users’ funds cannot be stolen, frozen or lost           |
-| ❌     | Users’ unclaimed yield cannot be stolen, frozen or lost |
-| ✅     | Users cannot be censored                                |
-| ❌     | Users can opt-out of unwanted protocol changes          |
-| ❌     | Users cannot lose access to the protocol functions      |
-
-Note, these risks only account for observed centralization vectors and do not include other sources such as economic or technical flaws in the protocol design and implementation.
 
 # Assessment
 
@@ -63,7 +51,7 @@ Dyad Protocol offers a single user interface accessible through its main web app
 | KerosineManager     | 0xfccf9d9466ed79afed2abc46350bfb78f7b47b90 |
 | KerosineDenominator | 0x4b3dd4ceb943efd7d169a1baaeec63097601e88e |
 
-## Permission owners
+## Permission Owners
 
 | Name          | Account                                                                                                               | Type         |
 | ------------- | --------------------------------------------------------------------------------------------------------------------- | ------------ |
@@ -104,9 +92,7 @@ The protocol does not offer alternatives to replace or update the oracle depende
 
 | ✅ /❌ | Requirement                                                                |
 | ------ |----------------------------------------------------------------------------|
-| ✅    | At least 7 signers                                                         |
-| ✅    | At least 51% threshold                                                     |
+| ❌    | At least 7 signers                                                         |
+| ❌    | At least 51% threshold                                                     |
 | ❌    | At least 50% non-team signers                                              |
-| ✅    | Signer diversity (organization, jurisdiction, etc.), subjectively assessed |
-| ✅    | Signers are publicly announced (with name or pseudonym)                    |
-
+| ❌    | Signers are publicly announced (with name or pseudonym)                    |

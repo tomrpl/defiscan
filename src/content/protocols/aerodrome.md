@@ -4,7 +4,6 @@ website: "https://aerodrome.finance/"
 x: "https://x.com/AerodromeFi"
 github: "https://github.com/aerodrome-finance"
 defillama_slug: "aerodrome-v1"
-type: "DEX"
 chain: "Base"
 stage: 0
 risks: "['H','M','L','H','L']"
@@ -12,17 +11,6 @@ author: "CookingCryptos, sagaciousyves"
 date: "2024-10-09"
 ---
 
-# Risks
-
-| ✅ /❌ | Risk                                                    |
-| ------ | ------------------------------------------------------- |
-| ✅     | Users’ funds cannot be stolen, frozen or lost           |
-| ❌     | Users’ unclaimed yield cannot be stolen, frozen or lost |
-| ✅     | Users cannot be censored                                |
-| ❌     | Users can opt-out of unwanted protocol changes          |
-| ✅     | Users cannot lose access to the protocol functions      |
-
-Note, these risks only account for observed centralization vectors and do not include other sources such as economic or technical flaws in the protocol design and implementation.
 
 # Assessment
 
@@ -81,7 +69,7 @@ Aerodrome provides multiple access points for users, including both centralized 
 | SwapRouter                         | 0xBE6D8f0d05cC4be24d5167a3eF062215bE6D18a5 |
 
 
-## Permission owners
+## Permission Owners
 
 | Name                                | Account                                                                                                                  | Type         |
 |-------------------------------------|--------------------------------------------------------------------------------------------------------------------------|--------------|
@@ -156,12 +144,7 @@ No _timelocks_ or other form of exit window have been found. All upgrades take p
 
 | ✅ /❌ | Requirement                                                                |
 |------|----------------------------------------------------------------------------|
-| ✅    | At least 7 signers                                                         |
-| ✅    | At least 51% threshold                                                     |
+| ❌    | At least 7 signers                                                         |
+| ❌    | At least 51% threshold                                                     |
 | ❌    | At least 50% non-team signers                                              |
-| ✅    | Signer diversity (organization, jurisdiction, etc.), subjectively assessed |
-| ✅    | Signers are publicly announced (with name or pseudonym)                    |
-
-
-
-
+| ❌    | Signers are publicly announced (with name or pseudonym)                    |

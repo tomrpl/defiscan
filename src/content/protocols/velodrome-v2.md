@@ -4,7 +4,6 @@ website: "https://velodrome.finance/"
 x: "https://twitter.com/VelodromeFi"
 github: "https://github.com/velodrome-finance"
 defillama_slug: "velodrome-v2"
-type: "DEX"
 chain: "Optimism"
 stage: 1
 risks: "['M','M','L','H','L']"
@@ -12,17 +11,6 @@ author: "CookingCryptos, sagaciousyves"
 date: "2024-10-09"
 ---
 
-# Risks
-
-| ✅ /❌ | Risk                                                    |
-| ------ | ------------------------------------------------------- |
-| ✅     | Users’ funds cannot be stolen, frozen or lost           |
-| ❌     | Users’ unclaimed yield cannot be stolen, frozen or lost |
-| ✅     | Users cannot be censored                                |
-| ❌     | Users can opt-out of unwanted protocol changes          |
-| ✅     | Users cannot lose access to the protocol functions      |
-
-Note, these risks only account for observed centralization vectors and do not include other sources such as economic or technical flaws in the protocol design and implementation.
 
 # Assessment
 
@@ -93,8 +81,7 @@ Velodrome provides several access points to the protocol, both decentralized and
 | LP Migrator                            | 0x3Fdb481B25b24824A2339a4A1AbD0B0BC7534e71 |
 
 
-
-## Permission owners
+## Permission Owners
 
 | Name              | Account                                                                                                               | Type         |
 |-------------------|-----------------------------------------------------------------------------------------------------------------------|--------------|
@@ -179,14 +166,12 @@ No external dependency has been found.
 
 No time-locks have been found. All upgrades take place immediately.
 
+
 # Security Council
 
 | ✅ /❌ | Requirement                                                                |
 |------|----------------------------------------------------------------------------|
-| ✅    | At least 7 signers                                                         |
-| ✅    | At least 51% threshold                                                     |
+| ❌    | At least 7 signers                                                         |
+| ❌    | At least 51% threshold                                                     |
 | ❌    | At least 50% non-team signers                                              |
-| ✅    | Signer diversity (organization, jurisdiction, etc.), subjectively assessed |
-| ✅    | Signers are publicly announced (with name or pseudonym)                    |
-
-
+| ❌    | Signers are publicly announced (with name or pseudonym)                    |

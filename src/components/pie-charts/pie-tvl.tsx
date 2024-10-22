@@ -56,7 +56,6 @@ export function PiechartTvl({
             tvl: val.tvl,
             chain: res.chain,
             stage: res.stage,
-            type: res.type,
           } as Project;
         return null;
       })

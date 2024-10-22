@@ -4,7 +4,6 @@ website: "https://www.possumlabs.io"
 x: "https://x.com/Possum_Labs"
 github: "https://github.com/PossumLabsCrypto"
 defillama_slug: "possum-labs"
-type: "Yield"
 chain: "Arbitrum"
 stage: 0
 risks: "['M','L','H','L','H']"
@@ -12,17 +11,6 @@ author: "stengarl, sagaciousyves"
 date: "2024-10-04"
 ---
 
-# Risks
-
-| ✅ /❌ | Risk                                                    |
-| ------ | ------------------------------------------------------- |
-| ❌     | Users’ funds cannot be stolen, frozen or lost           |
-| ❌     | Users’ unclaimed yield cannot be stolen, frozen or lost |
-| ❌     | Users cannot be censored                                |
-| ✅     | Users can opt-out of unwanted protocol changes          |
-| ✅     | Users cannot lose access to the protocol functions      |
-
-Note, these risks only account for observed centralization vectors and do not include other sources such as economic or technical flaws in the protocol design and implementation.
 
 # Assessment
 
@@ -108,7 +96,8 @@ Currently, Possum Labs offers only a single frontend without any backup solution
 | LINK Portal Adapter (AdapterV1)            | 0x0DAe61Bd94b081F65D009f7d72f8f4d48dFB1375 |
 | TimeRift                                   | 0x6df4EF024089ab148078fdD88f5BF0Ee63248D3E |
 
-## Permission owners
+
+## Permission Owners
 
 | Name          | Account                                                                                                               | Type         |
 | ------------- | --------------------------------------------------------------------------------------------------------------------- | ------------ |
@@ -163,10 +152,7 @@ No time-locks have been found. All upgrades take place immediately.
 
 | ✅ /❌ | Requirement                                                                |
 |------|----------------------------------------------------------------------------|
-| ✅    | At least 7 signers                                                         |
-| ✅    | At least 51% threshold                                                     |
+| ❌    | At least 7 signers                                                         |
+| ❌    | At least 51% threshold                                                     |
 | ❌    | At least 50% non-team signers                                              |
-| ✅    | Signer diversity (organization, jurisdiction, etc.), subjectively assessed |
-| ✅    | Signers are publicly announced (with name or pseudonym)                    |
-
-
+| ❌    | Signers are publicly announced (with name or pseudonym)                    |

@@ -4,7 +4,6 @@ website: "https://..."
 x: "https://x.com/projecthandle"
 github: "https://github.com/projectgithub"
 defillama_slug: "the slug used by https://defillama.com"
-type: "any of Stablecoin, DEX, Lending, Yield, Other"
 chain: "the name of the chain on which the protocol is deployed"
 stage: 0
 risks: "['x','x','x','x','x']"
@@ -12,19 +11,6 @@ author: "your author name"
 date: "yyyy-mm-dd"
 ---
 
-# Risks
-
-change ✅ or ❌ accordingly
-
-| ✅ /❌ | Risk                                                    |
-| ------ | ------------------------------------------------------- |
-| ✅     | Users’ funds cannot be stolen, frozen or lost           |
-| ❌     | Users’ unclaimed yield cannot be stolen, frozen or lost |
-| ✅     | Users cannot be censored                                |
-| ❌     | Users can opt-out of unwanted protocol changes          |
-| ✅     | Users cannot lose access to the protocol functions      |
-
-Note, these risks only account for observed centralization vectors and do not include other sources such as economic or technical flaws in the protocol design and implementation.
 
 # Assessment
 
@@ -83,9 +69,7 @@ change ✅ or ❌ accordingly
 
 | ✅ /❌| Requirement                                                                |
 |------|----------------------------------------------------------------------------|
-| ✅    | At least 7 signers                                                         |
+| ❌    | At least 7 signers                                                         |
 | ❌    | At least 51% threshold                                                     |
-| ✅    | At least 50% non-team signers                                              |
-| ❌    | Signer diversity (organization, jurisdiction, etc.), subjectively assessed |
-| ✅    | Signers are publicly announced (with name or pseudonym)                    |
-
+| ❌    | At least 50% non-team signers                                              |
+| ❌    | Signers are publicly announced (with name or pseudonym)                    |

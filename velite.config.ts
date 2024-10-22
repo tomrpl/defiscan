@@ -19,7 +19,6 @@ const protocols = defineCollection({
       x: s.string(),
       github: s.string(),
       defillama_slug: s.string(),
-      type: s.string(),
       chain: s.string(),
       stage: s.number(),
       risks: s.string(),

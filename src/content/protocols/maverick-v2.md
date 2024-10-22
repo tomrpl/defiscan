@@ -4,7 +4,6 @@ website: "app.mav.xyz"
 x: "https://x.com/mavprotocol"
 github: "https://github.com/maverickprotocol"
 defillama_slug: "maverick-v2"
-type: "DEX"
 chain: "Ethereum"
 stage: 0
 risks: "['L','M','M','H','H']"
@@ -12,17 +11,6 @@ author: "CookingCryptos, sagaciousyves"
 date: "2024-10-09"
 ---
 
-# Risks
-
-| ✅ /❌ | Risk                                                    |
-| ------ | ------------------------------------------------------- |
-| ❌     | Users’ funds cannot be stolen, frozen or lost           |
-| ❌     | Users’ unclaimed yield cannot be stolen, frozen or lost |
-| ✅     | Users cannot be censored                                |
-| ❌     | Users can opt-out of unwanted protocol changes          |
-| ❌     | Users cannot lose access to the protocol functions      |
-
-Note, these risks only account for observed centralization vectors and do not include other sources such as economic or technical flaws in the protocol design and implementation.
 
 # Assessment
 
@@ -85,7 +73,7 @@ Maverick Protocol supports various wallets (MetaMask, Ledger, Coinbase Wallet, T
 | MaverickV2Router                  | 0x62e31802c6145A2D5E842EeD8efe01fC224422fA |
 
 
-## Permission owners
+## Permission Owners
 
 | Name                                | Account                                                                                                                  | Type         |
 |-------------------------------------|--------------------------------------------------------------------------------------------------------------------------|--------------|
@@ -150,11 +138,7 @@ Token has no timelock for changes/upgrades. The OFT token when ownership is not 
 
 | ✅ /❌ | Requirement                                                                |
 |------|----------------------------------------------------------------------------|
-| ✅    | At least 7 signers                                                         |
-| ✅    | At least 51% threshold                                                     |
+| ❌    | At least 7 signers                                                         |
+| ❌    | At least 51% threshold                                                     |
 | ❌    | At least 50% non-team signers                                              |
-| ✅    | Signer diversity (organization, jurisdiction, etc.), subjectively assessed |
-| ✅    | Signers are publicly announced (with name or pseudonym)                    |
-
-
-
+| ❌    | Signers are publicly announced (with name or pseudonym)                    |

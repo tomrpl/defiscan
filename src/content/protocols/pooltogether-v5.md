@@ -4,26 +4,12 @@ website: "https://pooltogether.com/fr"
 x: "https://twitter.com/PoolTogether_"
 github: "https://github.com/pooltogether"
 defillama_slug: "pooltogether-v5"
-type: "Yield"
 chain: "Ethereum"
 stage: 2
 risks: "['L','L','L','L','L']"
 author: "CookingCryptos, sagaciousyves"
 date: "2024-10-09"
 ---
-
-
-# Risks
-
-| ✅ /❌ | Risk                                                    |
-|------ |--------------------------------------------------------- |
-| ✅     | Users’ funds cannot be stolen or lost                   |
-| ✅     | Users’ unclaimed yield cannot be stolen or lost         |
-| ✅     | Users cannot be censored                                |
-| ✅     | Users can opt-out of unwanted protocol changes          |
-| ✅     | Users cannot lose access to the protocol functions      |
-
-Note, these risks only account for observed centralization vectors and do not include other sources such as economic or technical flaws in the protocol design and implementation.
 
 
 # Assessment
@@ -69,9 +55,9 @@ PoolTogether provides access to the protocol through multiple independent interf
 | DrawManager                                            | 0x98305eb9a29d45ec93ce44ba02b315b631c675a7                                             |
 
 
-## Permission owners
+## Permission Owners
 
-None
+All external permissions are revoked, the protocol is immutable.
 
 ## Permissions
 
@@ -109,3 +95,13 @@ In normal conditions depositors should always expect to be able to withdraw thei
 ## Exit Window
 
 The core protocol is completely immutable, thus no exit window is required.
+
+
+# Security Council
+
+| ✅ /❌ | Requirement                                                                |
+| ------ |----------------------------------------------------------------------------|
+| N/A    | At least 7 signers                                                         |
+| N/A    | At least 51% threshold                                                     |
+| N/A    | At least 50% non-team signers                                              |
+| N/A    | Signers are publicly announced (with name or pseudonym)                    |

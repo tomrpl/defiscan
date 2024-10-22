@@ -3,7 +3,6 @@ import Table from "@/components/table";
 import Chart from "@/components/chart";
 import { PiechartStage } from "@/components/pie-charts/pie-stage";
 import { PiechartTvl } from "@/components/pie-charts/pie-tvl";
-import { PiechartType } from "@/components/pie-charts/pie-type";
 
 export default function Home() {
   return (

@@ -3,7 +3,6 @@ export interface Project {
   tvl: number;
   chain: string;
   stage: number;
-  type: string;
 }
 
 export interface VisualisedData {

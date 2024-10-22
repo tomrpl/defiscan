@@ -13,6 +13,7 @@ export interface Protocol {
   slug: string;
   tvl: number;
   logo: string;
+  category: string;
   [key: string]: any; // Add other fields that might be present in the fetched data
 }
 
@@ -98,9 +99,12 @@ const Table: React.FC = () => {
                     isUnderReview={false}
                   />
                 </TooltipProvider>
-                {/* {protocol.risks} */}
               </td>
-              <td className="border-b px-4 py-2">{protocol.type}</td>
+              <td className="border-b px-4 py-2">
+              {protocolData != "Loading..."
+                  ? protocolData.category
+                  : "N/A"}
+              </td>
               <td className="border-b px-4 py-2">{protocol.chain}</td>
               <td className="border-b px-4 py-2">
                 {protocolData != "Loading..."
