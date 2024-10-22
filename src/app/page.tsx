@@ -16,29 +16,24 @@ export default function Home() {
           DeFi Scan provides verifiable insights into the maturity and risks of
           DeFi infrastructure
         </h2>
-        <Chart />
         <div className="flex flex-row w-full my-4">
-          <PiechartStage
-            groupByKey="stage"
-            operation="count"
-            baseColor="#ae7ef4"
-            chartTitle="# Projects by Stage"
-            labelValueDescription="Level-2 Projects"
-          />
-          <PiechartTvl
-            groupByKey="stage"
-            operation="sum"
-            baseColor="#ae7ef4"
-            chartTitle="TVL by Stage"
-            labelValueDescription="Total TVL"
-          />
-          <PiechartType
-            groupByKey="type"
-            operation="count"
-            baseColor="#ae7ef4"
-            chartTitle="# Projects by Type"
-            labelValueDescription="Total Projects"
-          />
+          <Chart />
+          <div className="flex flex-col w-1/3">
+            <PiechartStage
+              groupByKey="stage"
+              operation="count"
+              baseColor="#ae7ef4"
+              chartTitle="# Projects by Stage"
+              labelValueDescription="Stage-2"
+            />
+            <PiechartTvl
+              groupByKey="stage"
+              operation="sum"
+              baseColor="#ae7ef4"
+              chartTitle="TVL by Stage"
+              labelValueDescription="Total TVL"
+            />
+          </div>
         </div>
         <div className="space-x-4 mb-32">
           <Table />

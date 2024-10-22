@@ -76,28 +76,30 @@ export function PiechartStage({
   }, []);
 
   return (
-    <div className="w-1/3">
-      <Card className="flex flex-col -mt-8">
-        <CardHeader className="items-center pb-0">
-          <CardTitle>{chartTitle}</CardTitle>{" "}
+    <div className="">
+      <Card className="flex flex-col">
+        <CardHeader className="items-center p-2 pb-0">
+          <CardTitle className="text-md">{chartTitle}</CardTitle>{" "}
           {/* Parameterized here for chartTitle */}
           {/* <CardDescription>January - June 2024</CardDescription>  */}
         </CardHeader>
         <CardContent className="flex-1 pb-0">
           <ChartContainer
             config={chartConfig}
-            className="mx-auto aspect-square max-h-[190px]"
+            className="mx-auto aspect-square h-[120px]"
           >
             <PieChart>
               <ChartTooltip
                 cursor={false}
-                content={<ChartTooltipContent hideLabel />}
+                content={
+                  <ChartTooltipContent hideLabel className="min-w-[6rem]" />
+                }
               />
               <Pie
                 data={data}
                 dataKey="value"
                 nameKey="key"
-                innerRadius={60}
+                innerRadius={30}
                 strokeWidth={5}
               >
                 <Label
@@ -109,11 +111,12 @@ export function PiechartStage({
                           y={viewBox.cy}
                           textAnchor="middle"
                           dominantBaseline="middle"
+                          className="-mb-8"
                         >
                           <tspan
                             x={viewBox.cx}
-                            y={viewBox.cy}
-                            className="fill-foreground text-3xl font-bold"
+                            y={(viewBox.cy || 0) - 2}
+                            className="fill-foreground text-md font-bold"
                           >
                             {data
                               .find((el: any) => el.key === "2")
@@ -121,7 +124,7 @@ export function PiechartStage({
                           </tspan>
                           <tspan
                             x={viewBox.cx}
-                            y={(viewBox.cy || 0) + 24}
+                            y={(viewBox.cy || 0) + 10}
                             className="fill-muted-foreground"
                           >
                             {labelValueDescription}{" "}
