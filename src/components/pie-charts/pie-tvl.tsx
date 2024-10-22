@@ -20,7 +20,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart";
-import { fetchProtocolTVL, Protocol } from "../table";
+import { fetchProtocolTVL } from "../table/page";
 import {
   aggregateByKey,
   extendWithColor,
