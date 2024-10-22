@@ -2,8 +2,10 @@
 
 import {
   ColumnDef,
+  ColumnFiltersState,
   flexRender,
   getCoreRowModel,
+  getFilteredRowModel,
   getSortedRowModel,
   SortingState,
   useReactTable,
@@ -17,6 +19,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { Input } from "@/components/ui/input";
+
 import { useState } from "react";
 
 interface DataTableProps<TData, TValue> {
@@ -29,6 +33,7 @@ export function DataTable<TData, TValue>({
   data,
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = useState<SortingState>([]);
+  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
 
   const table = useReactTable({
     data,
@@ -36,8 +41,11 @@ export function DataTable<TData, TValue>({
     getCoreRowModel: getCoreRowModel(),
     onSortingChange: setSorting,
     getSortedRowModel: getSortedRowModel(),
+    onColumnFiltersChange: setColumnFilters,
+    getFilteredRowModel: getFilteredRowModel(),
     state: {
       sorting,
+      columnFilters,
     },
     initialState: {
       sorting: [
@@ -51,6 +59,18 @@ export function DataTable<TData, TValue>({
 
   return (
     <div className="rounded-md border">
+      <div className="flex flex-row items-center py-4">
+        <Input
+          placeholder="Search protocol"
+          value={
+            (table.getColumn("protocol")?.getFilterValue() as string) ?? ""
+          }
+          onChange={(event: any) =>
+            table.getColumn("protocol")?.setFilterValue(event.target.value)
+          }
+          className="max-w-sm ml-8 pl-4 border-none"
+        />
+      </div>
       <Table>
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (
