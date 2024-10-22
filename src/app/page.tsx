@@ -1,8 +1,9 @@
 import React from "react";
-import Table from "@/components/table";
+// import Table from "@/components/table";
 import Chart from "@/components/chart";
 import { PiechartStage } from "@/components/pie-charts/pie-stage";
 import { PiechartTvl } from "@/components/pie-charts/pie-tvl";
+import Table from "@/components/table/page";
 
 export default function Home() {
   return (
