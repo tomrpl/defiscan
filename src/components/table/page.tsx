@@ -20,6 +20,7 @@ export const getData = async (): Promise<Project[]> => {
         return {
           logo: val.logo,
           protocol: res.protocol,
+          slug: res.slug,
           tvl: val.tvl,
           chain: res.chain,
           stage: res.stage,

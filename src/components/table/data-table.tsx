@@ -57,8 +57,13 @@ export function DataTable<TData, TValue>({
     },
   });
 
+  // Navigate to the protocol's page when the row is clicked
+  const handleRowClick = (slug: string) => {
+    window.location.href = slug;
+  };
+
   return (
-    <div className="rounded-md border">
+    <div className="rounded-md">
       <div className="flex flex-row items-center py-4">
         <Input
           placeholder="Search protocol"
@@ -68,16 +73,16 @@ export function DataTable<TData, TValue>({
           onChange={(event: any) =>
             table.getColumn("protocol")?.setFilterValue(event.target.value)
           }
-          className="max-w-sm ml-8 pl-4 border-none"
+          className="max-w-sm border border-grey"
         />
       </div>
-      <Table>
+      <Table className="table-auto w-full border-collapse">
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (
             <TableRow key={headerGroup.id}>
               {headerGroup.headers.map((header) => {
                 return (
-                  <TableHead key={header.id}>
+                  <TableHead key={header.id} className="border-b px-4 py-2">
                     {header.isPlaceholder
                       ? null
                       : flexRender(
@@ -95,7 +100,11 @@ export function DataTable<TData, TValue>({
             table.getRowModel().rows.map((row) => (
               <TableRow
                 key={row.id}
+                onClick={() => {
+                  handleRowClick((row as any).original.slug);
+                }}
                 data-state={row.getIsSelected() && "selected"}
+                className="hover:bg-gray-100 cursor-pointer transition"
               >
                 {row.getVisibleCells().map((cell) => (
                   <TableCell key={cell.id}>

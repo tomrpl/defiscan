@@ -12,6 +12,7 @@ import { ArrowUpDown } from "lucide-react";
 export type Project = {
   logo: string;
   protocol: string;
+  slug: string;
   stage: number;
   risks: string;
   type: string;
