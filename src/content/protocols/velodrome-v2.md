@@ -24,6 +24,8 @@ This report covers the Velodrome v2 deployment on the Optimism mainnet. As Optim
 
 The emergency council (multisig of ecosystem advocates, claimed to be credibly neutral) has a lot of control in the Velodrome system through killing and reviving gauges. Each gauge is linked to a pool. Voters and LP both incentivized through the Velodrome Flywheel are affected by a killed gauge which is linked to the deposited (LP) or voted (Voter) pool such that for the period in which the gauge was killed, the unclaimed rewards for this period are effectively lost. LPs and Voters need to re-allocate their capital and votes to earn rewards in the next period again.
 
+We want to emphasize the presence of the `undeclared multisig`, which has been assigned to the owner role in multiple contracts, particularly in the FactoryRegistry contract. This contract grants the ability to approve or unapprove factories within the Velodrome system. Claimed to allow extensibility of the system, it introduces severe risk of user funds if used maliciously. `approve()` allows the permission owner to approve a set of factories. The Router contract (`0xcF77a3Ba9A5CA399B7c97c74d54e5b1Beb874E43`) checks whether the submitted factory is approved with the function `isPoolFactoryApproved` exposed by the FactoryRegistry. If a factory is approved, the router allows swaps on the pools from this factory. LiquidityManagement (`addLiquidity()` or `removeLiquidity()`) is not affected, as it only allows pools from the original PoolFactory `0xF1046053aa5682b4F9a81b5481394DA16BE5FF5a`.
+
 ## Autonomy
 
 Velodrome v2 does not have external dependencies.
