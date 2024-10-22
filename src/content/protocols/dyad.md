@@ -99,3 +99,14 @@ The protocol does not offer alternatives to replace or update the oracle depende
   - The multisig of the protocol team can deploy vaults, list and unlist them as collateral. The vault licenser `0xfe81952a0a2c6ab603ef1b3cc69e1b6bffa92697` has no timelock for adding and removing vaults form the registry. As mentioned above in the permission section on the VaultLicenser this can result in temporary lock of user funds.
 - VaultManagerVx
   - VaultManager contract is upgradeable and currently version 4 is deployed. There is no timelock prohibiting immediately enforced upgrades to change mint, burn and liquidation implementations. This also counts for stored references to DYAD token, notes (dNft) and the vault licenser.
+
+# Security Council
+
+| ✅ /❌ | Requirement                                                                |   |   |
+| ------ |----------------------------------------------------------------------------|---|---|
+| ✅    | At least 7 signers                                                         |   |   |
+| ✅    | At least 51% threshold                                                     |   |   |
+| ❌    | At least 50% non-team signers                                              |   |   |
+| ✅    | Signer diversity (organization, jurisdiction, etc.), subjectively assessed |   |   |
+| ✅    | Signers are publicly announced (with name or pseudonym)                    |   |   |
+
