@@ -64,6 +64,8 @@ insert text
 
 # Security Council
 
+See http://localhost:3000/learn-more#security-council-requirements for guidance.
+
 change ✅ or ❌ accordingly
 
 | ✅ /❌ | Requirement                                             |
