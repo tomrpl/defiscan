@@ -104,7 +104,9 @@ export default async function ProtocolPageItem({
             </tr>
             <tr className="">
               <td>Defillama</td>
-              <td>{protocol.defillama_slug}</td>
+              <a href={"https://defillama.com/protocol/"+protocol.defillama_slug} className="text-blue-500 hover:underline">
+                {"https://defillama.com/protocol/" + protocol.defillama_slug}
+                </a>
             </tr>
             <tr className="">
               <td>Chain</td>
@@ -125,7 +127,7 @@ export default async function ProtocolPageItem({
         </p>
         <p>
           {(protocol.update_date.split("T")[0] == "1970-01-01") ? 
-          "The review has not been updated since the initial submission." : 
+          "The review has not been updated since the initial submission" : 
           "The last update to the review was made on " + protocol.update_date.split("T")[0]}.
         </p>
 
