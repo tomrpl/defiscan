@@ -151,4 +151,15 @@ Since the full source code of MaverickV2Factory is not publicly verified, it’s
 MaverickToken:
 Token has no timelock for changes/upgrades. The OFT token when ownership is not renounced allows owners to switch destination addresses and security settings. Users do not have the option to opt-out with a waiting period before the change is applied.
 
+# Security Council
+
+| ✅ /❌ | Requirement                                                                |
+|------|----------------------------------------------------------------------------|
+| ✅    | At least 7 signers                                                         |
+| ✅    | At least 51% threshold                                                     |
+| ❌    | At least 50% non-team signers                                              |
+| ✅    | Signer diversity (organization, jurisdiction, etc.), subjectively assessed |
+| ✅    | Signers are publicly announced (with name or pseudonym)                    |
+
+
 
