@@ -55,6 +55,6 @@ New protocols can be added as an `.mdx` file in the `content` folder.
 
 ## Acknowledgement
 
-This project utilizes an the pizza diagrams developed and used inside L2Beat. We are grateful for their commitment to open access and knowledge sharing.
+This project utilizes the pizza diagrams developed and used inside L2Beat. We are grateful for their commitment to open access and knowledge sharing.
 
 Their original work is open-sourced under the permissive MIT License, and we acknowledge their contribution.
