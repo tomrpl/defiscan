@@ -1,9 +1,11 @@
-import React from "react";
-import { Metadata } from "next";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Learn more",
-};
+import React from "react";
+// import { Metadata } from "next";
+
+// export const metadata: Metadata = {
+//   title: "Learn more",
+// };
 
 function createIdFromTitle(title: string) {
   return title
@@ -104,7 +106,10 @@ export default function LearnMorePage() {
           </thead>
 
           <tbody>
-            <tr className="hover:bg-gray-100 transition">
+            <tr
+              className="hover:bg-gray-100 transition"
+              onClick={() => (window.location.href = "#chain")}
+            >
               <td className="px-6 py-4 border">Chain</td>
               <td className="transition px-6 py-4 border">L2Beat Stage 0</td>
               <td className="transition px-6 py-4 border">L2Beat Stage 1</td>
@@ -112,7 +117,10 @@ export default function LearnMorePage() {
                 Ethereum mainnet or a comparable L1, or L2Beat Stage 2
               </td>
             </tr>
-            <tr className="hover:bg-gray-100 transition">
+            <tr
+              className="hover:bg-gray-100 transition"
+              onClick={() => (window.location.href = "#upgradability")}
+            >
               <td className="px-6 py-4 border">Upgradeability</td>
               <td className="px-6 py-4 border">
                 Possible upgrades may result in the theft or loss of user funds
@@ -127,7 +135,10 @@ export default function LearnMorePage() {
                 in the theft or loss of user funds and unclaimed yield)
               </td>
             </tr>
-            <tr className="hover:bg-gray-100 transition">
+            <tr
+              className="hover:bg-gray-100 transition"
+              onClick={() => (window.location.href = "#autonomy")}
+            >
               <td className="px-6 py-4 border">Autonomy</td>
               <td className="px-6 py-4 border">
                 Failure of a dependency may result in the theft or loss of user
@@ -144,7 +155,10 @@ export default function LearnMorePage() {
                 user funds and unclaimed yield)
               </td>
             </tr>
-            <tr className="hover:bg-gray-100 transition">
+            <tr
+              className="hover:bg-gray-100 transition"
+              onClick={() => (window.location.href = "#exit-window")}
+            >
               <td className="px-6 py-4 border">Exit Window</td>
               <td className="px-6 py-4 border">
                 Permissions are NOT protected with an exit window or the exit
@@ -159,7 +173,10 @@ export default function LearnMorePage() {
                 30 days
               </td>
             </tr>
-            <tr className="hover:bg-gray-100 transition">
+            <tr
+              className="hover:bg-gray-100 transition"
+              onClick={() => (window.location.href = "#accessibility")}
+            >
               <td className="px-6 py-4 border">Accessibility</td>
               <td className="px-6 py-4 border">
                 A single user interface exists without a backup solution

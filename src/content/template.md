@@ -11,28 +11,27 @@ author: "your author name"
 date: "yyyy-mm-dd"
 ---
 
-
 # Assessment
 
 ## Chain
 
-XYZ is deployed on ... .
+See http://localhost:3000/learn-more#chain for more guidance.
 
 ## Upgradeability
 
-text
+See http://localhost:3000/learn-more#upgradability for more guidance.
 
 ## Autonomy
 
-text
+See http://localhost:3000/learn-more#autonomy for more guidance.
 
 ## Exit Window
 
-text
+See http://localhost:3000/learn-more#exit-window for more guidance.
 
 ## Accessibility
 
-text
+See http://localhost:3000/learn-more#accessibility for more guidance.
 
 # Technical Analysis
 
@@ -67,9 +66,9 @@ insert text
 
 change ✅ or ❌ accordingly
 
-| ✅ /❌| Requirement                                                                |
-|------|----------------------------------------------------------------------------|
-| ❌    | At least 7 signers                                                         |
-| ❌    | At least 51% threshold                                                     |
-| ❌    | At least 50% non-team signers                                              |
-| ❌    | Signers are publicly announced (with name or pseudonym)                    |
+| ✅ /❌ | Requirement                                             |
+| ------ | ------------------------------------------------------- |
+| ❌     | At least 7 signers                                      |
+| ❌     | At least 51% threshold                                  |
+| ❌     | At least 50% non-team signers                           |
+| ❌     | Signers are publicly announced (with name or pseudonym) |
