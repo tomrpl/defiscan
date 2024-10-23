@@ -8,12 +8,11 @@ chain: "Arbitrum"
 stage: 0
 risks: "['M','L','H','L','H']"
 author: "stengarl, sagaciousyves"
-submission_date: "2024-10-09"
-publish_date: "2024-10-09"
+submission_date: "2024-10-23"
+publish_date: "2024-10-23"
 acknowledge_date: "1970-01-01"
 update_date: "1970-01-01"
 ---
-
 
 # Assessment
 
@@ -34,7 +33,6 @@ The protocol also offers additional functionality through Portals, which allow u
 Upgrade Process for Adapters:
 Although the core protocol contracts remain immutable, the AdapterV1 contracts associated with the Portals are upgradable. The multisig controlled by Possum Labs has the authority to propose a migration to a new adapter via the proposeMigrationDestination function. However, this process is not automatic. The proposed upgrade must be approved by token holders through a majority vote. This governance mechanism ensures that while upgrades are possible, they require community approval, reducing the risks associated with unilateral changes by a single entity.
 This balance between immutability for the core governance contracts and the potential for upgrades in the Portals ensures both stability and flexibility within the Possum Labs ecosystem.
-
 
 ## Autonomy
 
@@ -99,16 +97,16 @@ Currently, Possum Labs offers only a single frontend without any backup solution
 | LINK Portal Adapter (AdapterV1)            | 0x0DAe61Bd94b081F65D009f7d72f8f4d48dFB1375 |
 | TimeRift                                   | 0x6df4EF024089ab148078fdD88f5BF0Ee63248D3E |
 
-
 ## Permission Owners
 
-| Name          | Account                                                                                                               | Type         |
-| ------------- | --------------------------------------------------------------------------------------------------------------------- | ------------ |
-| Treasury      | [0xAb845D09933f52af5642FC87Dd8FBbf553fd7B33](https://etherscan.io/address/0xAb845D09933f52af5642FC87Dd8FBbf553fd7B33) | Multisig 2/3 |
+| Name     | Account                                                                                                               | Type         |
+| -------- | --------------------------------------------------------------------------------------------------------------------- | ------------ |
+| Treasury | [0xAb845D09933f52af5642FC87Dd8FBbf553fd7B33](https://etherscan.io/address/0xAb845D09933f52af5642FC87Dd8FBbf553fd7B33) | Multisig 2/3 |
 
 ## Permissions
+
 | Contract                                   | Function                    | Impact                                                                                                                                                                        | Owner                                        |
-|--------------------------------------------|-----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------|
+| ------------------------------------------ | --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------- |
 | PossumCore                                 | updateWhitelist             | The Guardian can list and delist addresses. There is at least 1 permanent address that cannot be delisted. CF can be spent to distribute PSM incentives to allowed addresses. | Treasury                                     |
 | Virtual LP                                 | registerPortal              | Function to add new Portals to the registry, for which PSM, PE, and bTokens can be swapped.                                                                                   | 0x0 (renounced)                              |
 | USDC Portal Energy Token (MintBurnToken)   | mint                        | This function allows the permission owner to mint new PE tokens for the USDC Portal.                                                                                          | USDC Portal contract (immutable reference)   |
@@ -136,7 +134,6 @@ Currently, Possum Labs offers only a single frontend without any backup solution
 | LINK Portal NFT (PortalNFT)                | redeem                      | Redeem Position NFT to receive an internal Account in Portal.                                                                                                                 | LINK Portal contract (immutable reference)   |
 | LINK Portal Adapter (AdapterV1)            | proposeMigrationDestination | Allow the contract owner to propose a new Adapter contract for migration. The principal stakers need to accept with >50% of the staked capital in an on-chain vote.           | Treasury                                     |
 
-
 ## Dependencies
 
 Smart Contract Risks
@@ -152,12 +149,12 @@ No time-locks have been found. All upgrades take place immediately.
 
 # Security Council
 
-| ✅ /❌ | Requirement                                                                |
-|------|----------------------------------------------------------------------------|
-| ❌    | At least 7 signers                                                         |
-| ✅    | At least 51% threshold                                                     |
-| ❌    | At least 50% non-team signers                                              |
-| ❌    | Signers are publicly announced (with name or pseudonym)                    |
+| ✅ /❌ | Requirement                                             |
+| ------ | ------------------------------------------------------- |
+| ❌     | At least 7 signers                                      |
+| ✅     | At least 51% threshold                                  |
+| ❌     | At least 50% non-team signers                           |
+| ❌     | Signers are publicly announced (with name or pseudonym) |
 
 [https://possum-labs.gitbook.io/docs/smart-contracts/treasury
 ](https://possum-labs.gitbook.io/docs/smart-contracts/treasury)

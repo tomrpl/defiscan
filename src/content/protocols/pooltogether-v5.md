@@ -8,12 +8,11 @@ chain: "Ethereum"
 stage: 2
 risks: "['L','L','L','L','L']"
 author: "CookingCryptos, sagaciousyves"
-submission_date: "2024-10-09"
-publish_date: "2024-10-09"
+submission_date: "2024-10-23"
+publish_date: "2024-10-23"
 acknowledge_date: "1970-01-01"
 update_date: "1970-01-01"
 ---
-
 
 # Assessment
 
@@ -42,7 +41,7 @@ PoolTogether provides access to the protocol through multiple independent interf
 ## Contracts
 
 | Contract Name                                          | Address                                                                                |
-|--------------------------------------------------------|----------------------------------------------------------------------------------------|
+| ------------------------------------------------------ | -------------------------------------------------------------------------------------- |
 | POOL (Token)                                           | 0x0cEC1A9154Ff802e7934Fc916Ed7Ca50bDE6844e                                             |
 | POOL Prize Vault (V5)                                  | 0x9eE31E845fF1358Bf6B1F914d3918c6223c75573                                             |
 | RngWitnet                                              | 0xf93329e78feff1145fce03a79d5b356588dea215                                             |
@@ -57,7 +56,6 @@ PoolTogether provides access to the protocol through multiple independent interf
 | StakingVault (underlying ERC4626 for POOL Prize Vault) | 0x68a100a3729fc04ab26fb4c0862df22ceec2f18b                                             |
 | DrawManager                                            | 0x98305eb9a29d45ec93ce44ba02b315b631c675a7                                             |
 
-
 ## Permission Owners
 
 All external permissions are revoked, the protocol is immutable.
@@ -65,12 +63,12 @@ All external permissions are revoked, the protocol is immutable.
 ## Permissions
 
 | Contract              | Function                  | Impact                                                                                                                                                       | Owner                                                          |
-|-----------------------|---------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------|
+| --------------------- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------- |
 | POOL                  | setMinter                 | The owner of the permission to call setMinter can appoint a new minter. As the name suggests, the minter is allowed to call mint and designate a new minter. | 0x0 (renounced)                                                |
 | POOL                  | mint                      | The owner of the permission is allowed to mint new Pool tokens into existence.                                                                               | 0x0 (renounced)                                                |
 | POOL Prize Vault (V5) | renounceOwnership         | Disables access to permissioned functions for everyone, freezing the parameters to their current values.                                                     | 0x0 (renounced)                                                |
-| POOL Prize Vault (V5) | transferOwnership         | Allows assigning an address to _pendingOwner. This address needs to call claimOwnership to become the owner.                                                 | 0x0 (renounced)                                                |
-| POOL Prize Vault (V5) | claimOwnership            | Can only be called by the address equivalent to the value stored at _pendingOwner.                                                                           | 0x0 (renounced)                                                |
+| POOL Prize Vault (V5) | transferOwnership         | Allows assigning an address to \_pendingOwner. This address needs to call claimOwnership to become the owner.                                                | 0x0 (renounced)                                                |
+| POOL Prize Vault (V5) | claimOwnership            | Can only be called by the address equivalent to the value stored at \_pendingOwner.                                                                          | 0x0 (renounced)                                                |
 | POOL Prize Vault (V5) | depositWithPermit         | Deposit into the Vault and mint Vault shares using permit to approve the underlying asset.                                                                   | 0x0 (renounced)                                                |
 | POOL Prize Vault (V5) | setClaimer                | Sets a claimer contract for this prize vault, allowing automated bots to claim prizes on behalf of winners.                                                  | 0x0 (renounced)                                                |
 | POOL Prize Vault (V5) | setLiquidationPair        | Sets the Liquidation Pair, responsible for auctioning yield for the prize token using a TPDA auction method.                                                 | 0x0 (renounced)                                                |
@@ -81,7 +79,6 @@ All external permissions are revoked, the protocol is immutable.
 | PrizePool             | setDrawManager            | Allows the creator to set the DrawManager contract once.                                                                                                     | 0xc516fe1fee5122d66e9427721a63d6c27e1201ca                     |
 | PrizePool             | allocateRewardFromReserve | Allows the DrawManager to allocate a reward from the reserve to a recipient.                                                                                 | DrawManager contract0x98305eb9a29D45eC93CE44bA02B315B631c675a7 |
 | PrizePool             | awardDraw                 | Allows the Manager to award a draw with the winning random number.                                                                                           | DrawManager contract0x98305eb9a29D45eC93CE44bA02B315B631c675a7 |
-
 
 ## Dependencies
 
@@ -94,17 +91,15 @@ The oracle endpoint is referenced in the RngWitnet contract without any way to c
 
 In normal conditions depositors should always expect to be able to withdraw their full deposit amount and no more as long as global withdrawal limits meet or exceed their balance. However, since the protocol is fully permissionless everyone can create a new prize vault and link yield source and utility contracts to it. The yield source and the utility contracts like LiquidationPair or Claimer can be implemented with malicious intent, stealing underlying principal or stealing prize. However, a malicious vault doesn’t affect other vaults nor the protocol in general.
 
-
 ## Exit Window
 
 The core protocol is completely immutable, thus no exit window is required.
 
-
 # Security Council
 
-| ✅ /❌ | Requirement                                                                |
-| ------ |----------------------------------------------------------------------------|
-| N/A    | At least 7 signers                                                         |
-| N/A    | At least 51% threshold                                                     |
-| N/A    | At least 50% non-team signers                                              |
-| N/A    | Signers are publicly announced (with name or pseudonym)                    |
+| ✅ /❌ | Requirement                                             |
+| ------ | ------------------------------------------------------- |
+| N/A    | At least 7 signers                                      |
+| N/A    | At least 51% threshold                                  |
+| N/A    | At least 50% non-team signers                           |
+| N/A    | Signers are publicly announced (with name or pseudonym) |

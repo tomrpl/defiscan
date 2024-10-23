@@ -8,12 +8,11 @@ chain: "Ethereum"
 stage: 0
 risks: "['L','M','M','H','H']"
 author: "CookingCryptos, sagaciousyves"
-submission_date: "2024-10-09"
-publish_date: "2024-10-09"
+submission_date: "2024-10-23"
+publish_date: "2024-10-23"
 acknowledge_date: "1970-01-01"
 update_date: "1970-01-01"
 ---
-
 
 # Assessment
 
@@ -23,15 +22,14 @@ This report covers the Maverick v2 deployment on Ethereum mainnet.
 
 ## Upgradeability
 
-Maverick Protocol demonstrates partial upgradeability. 
-While most contracts (MaverickV2IncentiveMatcher, MaverickV2PoolLens) have had ownership renounced, making them immutable, key contracts like MaverickV2Factory and the Maverick Token (OFT) remain configurable for the permission owner. These contracts allow changes to protocol fees, destination addresses, and security settings, which could potentially impact the protocol's performance. 
+Maverick Protocol demonstrates partial upgradeability.
+While most contracts (MaverickV2IncentiveMatcher, MaverickV2PoolLens) have had ownership renounced, making them immutable, key contracts like MaverickV2Factory and the Maverick Token (OFT) remain configurable for the permission owner. These contracts allow changes to protocol fees, destination addresses, and security settings, which could potentially impact the protocol's performance.
 The multisig governance system adds a layer of control but does not fully decentralize decision-making. As a result, Maverick's upgradeability presents moderate risks.
 
 ## Autonomy
 
-Maverick Protocol relies on LayerZero for cross-chain communication, which introduces dependency risks due to its use of LayerZero’s DVN system (currently Google Cloud). If the DVN fails or behaves maliciously, it could disrupt cross-chain operations. While LayerZero’s decentralized design allows permissionless executors to step in if needed, Maverick can change key settings (e.g., trusted remotes) without user input, further affecting autonomy. 
+Maverick Protocol relies on LayerZero for cross-chain communication, which introduces dependency risks due to its use of LayerZero’s DVN system (currently Google Cloud). If the DVN fails or behaves maliciously, it could disrupt cross-chain operations. While LayerZero’s decentralized design allows permissionless executors to step in if needed, Maverick can change key settings (e.g., trusted remotes) without user input, further affecting autonomy.
 Overall, Maverick’s autonomy is considered medium (M) due to its reliance on external validators and the protocol’s ability to adjust settings without community approval.
-
 
 ## Exit Window
 
@@ -46,7 +44,6 @@ Due to the lack of a defined exit window and the possibility of immediate change
 ## Accessibility
 
 Maverick Protocol supports various wallets (MetaMask, Ledger, Coinbase Wallet, Trust Wallet, WalletConnect), but all connect to the same main interface on app.mav.xyz. No independent interfaces or self-hosted backup solutions are available.
-
 
 # Technical Analysis
 
@@ -75,20 +72,17 @@ Maverick Protocol supports various wallets (MetaMask, Ledger, Coinbase Wallet, T
 | MaverickV2Quoter                  | 0xb40AfdB85a07f37aE217E7D6462e609900dD8D7A |
 | MaverickV2Router                  | 0x62e31802c6145A2D5E842EeD8efe01fC224422fA |
 
-
 ## Permission Owners
 
-| Name                                | Account                                                                                                                  | Type         |
-|-------------------------------------|--------------------------------------------------------------------------------------------------------------------------|--------------|
-| Team Multisig 1                     | [0xcAf836A03D8ADcDfF48F6d0354061F468ae8b2A3](https://etherscan.io/address/0xcAf836A03D8ADcDfF48F6d0354061F468ae8b2A3)    | Multisig 3/6 |
-| Team Multisig 2                     | [0xA2206fe97eE8d2E689EFB96aE03be5F50BFAD027](https://etherscan.io/address/0xA2206fe97eE8d2E689EFB96aE03be5F50BFAD027)    | Multisig 3/6 |
-
-
+| Name            | Account                                                                                                               | Type         |
+| --------------- | --------------------------------------------------------------------------------------------------------------------- | ------------ |
+| Team Multisig 1 | [0xcAf836A03D8ADcDfF48F6d0354061F468ae8b2A3](https://etherscan.io/address/0xcAf836A03D8ADcDfF48F6d0354061F468ae8b2A3) | Multisig 3/6 |
+| Team Multisig 2 | [0xA2206fe97eE8d2E689EFB96aE03be5F50BFAD027](https://etherscan.io/address/0xA2206fe97eE8d2E689EFB96aE03be5F50BFAD027) | Multisig 3/6 |
 
 ## Permissions
 
 | Contract                   | Function                  | Impact                                                                                                                                                                                                                                                                           | Owner                                                             |
-|----------------------------|---------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------|
+| -------------------------- | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
 | MaverickV2Factory          | setProtocolFeeRatio       | This function allows the owner of the permission to set the protocol fee. Fees are applied to every trade in the AMM.                                                                                                                                                            | Team Multisig 2                                                   |
 | MaverickV2Factory          | setProtocolLendingFeeRate | Set the protocol lending fee rate.                                                                                                                                                                                                                                               | Team Multisig 2                                                   |
 | MaverickV2Factory          | setProtocolFeeReceiver    | Set the protocol fee receiver address. If protocol fee is non-zero, user will be able to permissionlessly push protocol fee from a given pool to this address.                                                                                                                   | Team Multisig 2                                                   |
@@ -108,7 +102,6 @@ Maverick Protocol supports various wallets (MetaMask, Ledger, Coinbase Wallet, T
 | Maverick Token (OFT)       | setPayloadSizeLimit       | The owner is allowed to set a limit to the payload size, again for each destination chain individually.                                                                                                                                                                          | Team Multisig 1                                                   |
 | Maverick Token (OFT)       | renounceOwnership         | The owner can renounce ownership, making the contract immutable regarding the aforementioned settings, otherwise the contract continues to work as-is. Note: Technically the owner is now the 0-address.                                                                         | Team Multisig 1                                                   |
 | Maverick Token (OFT)       | transferOwnership         | The owner can transfer the ownership to another address, which then receives the permissions to call the aforementioned functions and change settings of the OFT token.                                                                                                          | Team Multisig 1                                                   |
-
 
 ## Dependencies
 
@@ -139,9 +132,9 @@ Token has no timelock for changes/upgrades. The OFT token when ownership is not 
 
 # Security Council
 
-| ✅ /❌ | Requirement                                                                |
-|------|----------------------------------------------------------------------------|
-| ❌    | At least 7 signers                                                         |
-| ❌    | At least 51% threshold                                                     |
-| ❌    | At least 50% non-team signers                                              |
-| ❌    | Signers are publicly announced (with name or pseudonym)                    |
+| ✅ /❌ | Requirement                                             |
+| ------ | ------------------------------------------------------- |
+| ❌     | At least 7 signers                                      |
+| ❌     | At least 51% threshold                                  |
+| ❌     | At least 50% non-team signers                           |
+| ❌     | Signers are publicly announced (with name or pseudonym) |
