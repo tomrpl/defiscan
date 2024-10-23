@@ -13,7 +13,7 @@ To run the website on your local machine, follow these steps:
    After successful cloned. Head over to the project directory
 
    ```bash
-   cd defi-pulse
+   cd defi-scan
    ```
 
 2. **Install Dependencies**:
