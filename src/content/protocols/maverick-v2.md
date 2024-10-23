@@ -76,8 +76,8 @@ Maverick Protocol supports various wallets (MetaMask, Ledger, Coinbase Wallet, T
 
 | Name            | Account                                                                                                               | Type         |
 | --------------- | --------------------------------------------------------------------------------------------------------------------- | ------------ |
-| Team Multisig 1 | [0xcAf836A03D8ADcDfF48F6d0354061F468ae8b2A3](https://etherscan.io/address/0xcAf836A03D8ADcDfF48F6d0354061F468ae8b2A3) | Multisig 3/6 |
-| Team Multisig 2 | [0xA2206fe97eE8d2E689EFB96aE03be5F50BFAD027](https://etherscan.io/address/0xA2206fe97eE8d2E689EFB96aE03be5F50BFAD027) | Multisig 3/6 |
+| Undeclared Multisig 1 | [0xcAf836A03D8ADcDfF48F6d0354061F468ae8b2A3](https://etherscan.io/address/0xcAf836A03D8ADcDfF48F6d0354061F468ae8b2A3) | Multisig 3/6 |
+| Undeclared Multisig 2 | [0xA2206fe97eE8d2E689EFB96aE03be5F50BFAD027](https://etherscan.io/address/0xA2206fe97eE8d2E689EFB96aE03be5F50BFAD027) | Multisig 3/6 |
 
 ## Permissions
 
@@ -132,9 +132,9 @@ Token has no timelock for changes/upgrades. The OFT token when ownership is not 
 
 # Security Council
 
-| ✅ /❌ | Requirement                                             |
-| ------ | ------------------------------------------------------- |
-| ❌     | At least 7 signers                                      |
-| ❌     | At least 51% threshold                                  |
-| ❌     | At least 50% non-team signers                           |
-| ❌     | Signers are publicly announced (with name or pseudonym) |
+| ✅ /❌ | Undeclared Multisig 1 | Undeclared Multisig 2 |                       Requirement                       |
+|:----:|:---------------------:|:---------------------:|:-------------------------------------------------------:|
+| ✅    | ✅                     | ✅                     | At least 7 signers                                      |
+| ❌    | ❌                     | ❌                     | At least 51% threshold                                  |
+| ❌    | ❌                     | ❌                     | At least 50% non-team signers                           |
+| ❌    | ❌                     | ❌                     | Signers are publicly announced (with name or pseudonym) |
