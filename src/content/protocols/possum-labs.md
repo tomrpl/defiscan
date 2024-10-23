@@ -159,3 +159,5 @@ No time-locks have been found. All upgrades take place immediately.
 | ✅    | At least 51% threshold                                                     |
 | ❌    | At least 50% non-team signers                                              |
 | ❌    | Signers are publicly announced (with name or pseudonym)                    |
+[https://possum-labs.gitbook.io/docs/smart-contracts/treasury
+](https://possum-labs.gitbook.io/docs/smart-contracts/treasury)
