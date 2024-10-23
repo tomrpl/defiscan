@@ -1,7 +1,5 @@
-import React from "react";
 import { Metadata } from "next";
 import { protocols as allProtocols } from "#site/content";
-import { cn } from "@/lib/utils";
 import "@/styles/mdx.css";
 import { Mdx } from "@/components/mdx-component";
 import { ChevronLeft } from "lucide-react";
@@ -11,6 +9,7 @@ import { BigPizzaRosette } from "@/components/rosette/big-rosette";
 import { getRiskDescriptions } from "@/components/rosette/data-converter/data-converter";
 import { TooltipProvider } from "@/components/rosette/tooltip/tooltip";
 import { Badge } from "@/components/ui/badge";
+import { cn } from "@/lib/utils";
 
 interface ProtocolPageItemProps {
   params: {
@@ -18,26 +17,27 @@ interface ProtocolPageItemProps {
   };
 }
 
-async function getProtocolFromParams(params: ProtocolPageItemProps["params"]) {
-  const slug = params?.slug.join("/");
+async function getProtocolFromParams(slug: string[]) {
+  const slugString = slug.join("/");
   const protocol = allProtocols.find(
-    (protocol) => protocol.slugAsParams === slug
+    (protocol) => protocol.slugAsParams === slugString
   );
 
-  if (!protocol) {
-    return null;
-  }
-
-  return protocol;
+  return protocol || null;
 }
 
 export async function generateMetadata({
   params,
-}: ProtocolPageItemProps): Promise<Metadata> {
-  const protocol = await getProtocolFromParams(params);
+}: {
+  params: { slug: string[] };
+}): Promise<Metadata> {
+  const protocol = await getProtocolFromParams(params.slug);
 
   if (!protocol) {
-    return {};
+    return {
+      title: "Protocol not found",
+      description: "Protocol details could not be found.",
+    };
   }
 
   return {
@@ -49,21 +49,13 @@ export async function generateMetadata({
   };
 }
 
-export async function generateStaticParams(): Promise<
-  ProtocolPageItemProps["params"][]
-> {
-  return allProtocols.map((protocol) => ({
-    slug: protocol.slugAsParams.split("/"),
-  }));
-}
-
 export default async function ProtocolPageItem({
   params,
 }: ProtocolPageItemProps) {
-  const protocol = await getProtocolFromParams(params);
+  const protocol = await getProtocolFromParams(params.slug);
 
   if (!protocol) {
-    return {};
+    return <div>Protocol not found</div>; // Handle not found case
   }
 
   return (
@@ -75,7 +67,7 @@ export default async function ProtocolPageItem({
 
         <table className="table-auto border-separate border-spacing-y-2 border-spacing-x-4 -ml-4">
           <tbody>
-            <tr className="">
+            <tr>
               <td>Website</td>
               <td>
                 <a
@@ -86,7 +78,7 @@ export default async function ProtocolPageItem({
                 </a>
               </td>
             </tr>
-            <tr className="">
+            <tr>
               <td>X (Twitter)</td>
               <td>
                 <a href={protocol.x} className="text-blue-500 hover:underline">
@@ -94,21 +86,31 @@ export default async function ProtocolPageItem({
                 </a>
               </td>
             </tr>
-            <tr className="">
+            <tr>
               <td>GitHub</td>
               <td>
-                <a href={protocol.github} className="text-blue-500 hover:underline">
+                <a
+                  href={protocol.github}
+                  className="text-blue-500 hover:underline"
+                >
                   {protocol.github}
                 </a>
               </td>
             </tr>
-            <tr className="">
+            <tr>
               <td>Defillama</td>
-              <a href={"https://defillama.com/protocol/"+protocol.defillama_slug} className="text-blue-500 hover:underline">
-                {"https://defillama.com/protocol/" + protocol.defillama_slug}
+              <td>
+                <a
+                  href={
+                    "https://defillama.com/protocol/" + protocol.defillama_slug
+                  }
+                  className="text-blue-500 hover:underline"
+                >
+                  {"https://defillama.com/protocol/" + protocol.defillama_slug}
                 </a>
+              </td>
             </tr>
-            <tr className="">
+            <tr>
               <td>Chain</td>
               <td>{protocol.chain}</td>
             </tr>
@@ -119,16 +121,28 @@ export default async function ProtocolPageItem({
           Declaration
         </h1>
 
-        <p>This review has been submitted by {protocol.author} on {protocol.submission_date.split("T")[0]}.</p>
-        <p>It was reviewed and published by the DeFi Collective team on {protocol.publish_date.split("T")[0]}.</p>
         <p>
-          The {protocol.protocol} team has {(protocol.acknowledge_date.split("T")[0] == "1970-01-01") ? 
-          "NOT acknowledged the review" : "acknowledged the review on " + protocol.acknowledge_date.split("T")[0]}.
+          This review has been submitted by {protocol.author} on{" "}
+          {protocol.submission_date.split("T")[0]}.
         </p>
         <p>
-          {(protocol.update_date.split("T")[0] == "1970-01-01") ? 
-          "The review has not been updated since the initial submission" : 
-          "The last update to the review was made on " + protocol.update_date.split("T")[0]}.
+          It was reviewed and published by the DeFi Collective team on{" "}
+          {protocol.publish_date.split("T")[0]}.
+        </p>
+        <p>
+          The {protocol.protocol} team has{" "}
+          {protocol.acknowledge_date.split("T")[0] === "1970-01-01"
+            ? "NOT acknowledged the review"
+            : "acknowledged the review on " +
+              protocol.acknowledge_date.split("T")[0]}
+          .
+        </p>
+        <p>
+          {protocol.update_date.split("T")[0] === "1970-01-01"
+            ? "The review has not been updated since the initial submission"
+            : "The last update to the review was made on " +
+              protocol.update_date.split("T")[0]}
+          .
         </p>
 
         <h1 className="mt-10 mb-4 scroll-m-20 text-4xl font-bold text-primary tracking-tight">
