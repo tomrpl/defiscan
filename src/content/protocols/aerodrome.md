@@ -141,12 +141,12 @@ No _timelocks_ or other form of exit window have been found. All upgrades take p
 
 # Security Council
 
-| ✅ /❌ | Requirement                                             |
-| ------ | ------------------------------------------------------- |
-| ❌     | At least 7 signers                                      |
-| ✅     | At least 51% threshold                                  |
-| ❌     | At least 50% non-team signers                           |
-| ❌     | Signers are publicly announced (with name or pseudonym) |
+| ✅ /❌ | Aerodrome Foundation and Incentives | Public Goods Fund | Emergency Council | Undeclared Multisig |                       Requirement                       |
+|:----:|:-----------------------------------:|-------------------|-------------------|:-------------------:|:-------------------------------------------------------:|
+| ✅    | ❌                                   | ❌                 | ❌                 | ✅                   | At least 7 signers                                      |
+| ❌    | ❌                                   | ❌                 | ❌                 | ❌                   | At least 51% threshold                                  |
+| ❌    | ❌                                   | ❌                 | ❌                 | ❌                   | At least 50% non-team signers                           |
+| ❌    | ❌                                   | ❌                 | ❌                 | ❌                   | Signers are publicly announced (with name or pseudonym) |
 
 [https://aerodrome.finance/security#emergency
 ](https://aerodrome.finance/security#emergency)
