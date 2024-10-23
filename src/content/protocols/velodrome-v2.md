@@ -5,7 +5,7 @@ x: "https://twitter.com/VelodromeFi"
 github: "https://github.com/velodrome-finance"
 defillama_slug: "velodrome-v2"
 chain: "Optimism"
-stage: 1
+stage: 0
 risks: "['M','M','L','H','L']"
 author: "CookingCryptos, sagaciousyves"
 submission_date: "2024-10-23"
@@ -18,7 +18,7 @@ update_date: "1970-01-01"
 
 ## Chain
 
-This report covers the Velodrome v2 deployment on the Optimism mainnet. As Optimism is still evolving in terms of decentralization and governance, it does not yet meet the highest standard of decentralization (Stage 1 according to L2Beat).
+This report covers the Velodrome v2 deployment on the Optimism chain. Optimisim is an Ethereum L2 in Stage 1 according to L2BEAT.
 
 ## Upgradeability
 
@@ -28,11 +28,11 @@ We want to emphasize the presence of the `undeclared multisig`, which has been a
 
 ## Autonomy
 
-Velodrome v2 does not have external dependencies.
+Velodrome v2 does not have external dependencies 🎉
 
 ## Exit Window
 
-Control over permissioned functions is assigned to a compliant Security Council without an enforced exit window.
+Permissions are not protected by an appropriate exit window resulting in users not being able to withdraw funds in case of an unwanted update.
 
 ## Accessibility
 
@@ -166,17 +166,15 @@ No external dependency has been found.
 
 ## Exit Window
 
-No time-locks have been found. All upgrades take place immediately.
+No timelocks have been found protecting the various permissioned functions in the protocol. All updates take effect immediately.
 
 # Security Council
 
-| ✅ /❌ | Undeclared Multisig | Emergency Council |                       Requirement                       |
-|:----:|:-------------------:|:-----------------:|:-------------------------------------------------------:|
-|      | ✅                   | ✅                 | At least 7 signers                                      |
-|      | ❌                   | ✅                 | At least 51% threshold                                  |
-|      | ❌                   | ❌                 | At least 50% non-team signers                           |
-|      | ❌                   | ❌                 | Signers are publicly announced (with name or pseudonym) |
+|    Requirement                                          | Emergency Council | Undeclared Multisig |
+|-------------------------------------------------------- | :---------------: | :-----------------: |
+| At least 7 signers                                      | ✅                |         ✅          |
+| At least 51% threshold                                  | ❌                |         ✅          |
+| At least 50% non-team signers                           | ❌                |         ❌          |
+| Signers are publicly announced (with name or pseudonym) | ❌                |         ❌          |
 
-
-[https://velodrome.finance/security#contracts
-](https://velodrome.finance/security#contracts)
+Info sourced from here: [https://velodrome.finance/security#contracts](https://velodrome.finance/security#contracts).

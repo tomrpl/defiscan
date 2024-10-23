@@ -18,19 +18,25 @@ update_date: "1970-01-01"
 
 ## Chain
 
-This report covers the PoolTogether v5 deployment on Ethereum mainnet.
+This report covers the Liquity deployment on the Ethereum chain. Ethereum is considered fully decentralized according to this framework.
 
 ## Upgradeability
 
-The core protocol deployed by PoolTogether is immutable, meaning its core functions cannot be altered. However, since the protocol is fully permissionless, anyone can create a new prize vault and link it to various yield sources and utility contracts. Although the protocol itself is secure, malicious actors could deploy harmful yield source or utility contracts (e.g., LiquidationPair or Claimer) to steal underlying assets or prizes from the vault. Therefore, while the core infrastructure is immutable, care must be taken when interacting with new prize vaults.
+Permissions in the PoolTogether protocol are fully revoked, the protocol is immutable 🎉
+
+Note that anyone can create a new `PrizeVault` and link it to various, third-party yield sources and utility contracts. An attacker could deploy malicious yield sources or utility contracts (e.g., `LiquidationPair` or `Claimer`) through which users' funds or prizes could be lost or stolen. However, assessing these risks and possible mitigation measures is outside of the scope of the DeFiScan framework.
+
+As a result, the protocol earns an Upgradeability score of Low.
 
 ## Autonomy
 
-PoolTogether relies on the Witnet Oracle for randomness in prize draws. If the oracle fails, a new PrizePool and DrawManager must be deployed, though users can still claim prizes and withdraw deposits without issue. While the protocol allows anyone to create new prize vaults, the flexibility introduces risks of malicious vaults. However, users can still withdraw their full deposits under normal conditions. Overall, autonomy risks stem from oracle reliance and potential malicious vault setups, but the core protocol remains resilient, minimizing impact on user assets.
+The protocol relies on the Witnet Oracle for randomness in prize draws. If the oracle fails, a new PrizePool and DrawManager must be deployed, though users can still withdraw their deposits and accrued prices without interruption. 
+
+The protocol's Autonomy score thus is Low.
 
 ## Exit Window
 
-The contracts are not upgradable, there is no need for a long exit window for users to withdraw before updates.
+PoolTogether's contracts are fully immutable, no upgrades or contract changes can occur after deployment, removing the need for an exit window.
 
 ## Accessibility
 
@@ -58,7 +64,7 @@ PoolTogether provides access to the protocol through multiple independent interf
 
 ## Permission Owners
 
-All external permissions are revoked, the protocol is immutable.
+All external permissions are revoked, the protocol is immutable 🎉
 
 ## Permissions
 
@@ -93,13 +99,8 @@ In normal conditions depositors should always expect to be able to withdraw thei
 
 ## Exit Window
 
-The core protocol is completely immutable, thus no exit window is required.
+The protocol is completely immutable, thus no exit window is required 🎉
 
 # Security Council
 
-| ✅ /❌ | Requirement                                             |
-| ------ | ------------------------------------------------------- |
-| N/A    | At least 7 signers                                      |
-| N/A    | At least 51% threshold                                  |
-| N/A    | At least 50% non-team signers                           |
-| N/A    | Signers are publicly announced (with name or pseudonym) |
+The protocol is completely immutable, thus no Security Council is required 🎉

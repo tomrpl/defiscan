@@ -6,7 +6,7 @@ github: "https://github.com/PossumLabsCrypto"
 defillama_slug: "possum-labs"
 chain: "Arbitrum"
 stage: 0
-risks: "['M','L','H','L','H']"
+risks: "['M','H','H','L','M']"
 author: "stengarl, sagaciousyves"
 submission_date: "2024-10-23"
 publish_date: "2024-10-23"
@@ -18,21 +18,22 @@ update_date: "1970-01-01"
 
 ## Chain
 
-This report covers Possum Labs deployment on the Arbitrum mainnet. As Arbitrum is still evolving in terms of decentralization and governance, it does not yet meet the highest standard of decentralization (Stage 1 according to L2Beat).
+This report covers the Velodrome v2 deployment on the Arbitrum chain. Arbitrum is an Ethereum L2 in Stage 1 according to L2BEAT.
 
 ## Upgradeability
 
 Possum Labs consists of two main components: Core for Governance and Portals for Upfront Yield.
 
 Core Contracts:
-The core governance contracts of the Possum Labs protocol are fully immutable. This immutability ensures that users are protected from any risk of unexpected upgrades, censorship, or asset confiscation. The fixed nature of these contracts guarantees long-term stability and security, safeguarding user assets and maintaining the integrity of governance decisions.
+
+Permissions in the Core governance contracts are fully revoked, these contracts are immutable 🎉
 
 Portals and Adapters:
-The protocol also offers additional functionality through Portals, which allow users to swap yield into other tokens by leveraging the 1inch router. These Portals, however, operate using upgradable AdapterV1 contracts. These adapters provide flexibility in the system, enabling future adjustments or enhancements.
 
-Upgrade Process for Adapters:
-Although the core protocol contracts remain immutable, the AdapterV1 contracts associated with the Portals are upgradable. The multisig controlled by Possum Labs has the authority to propose a migration to a new adapter via the proposeMigrationDestination function. However, this process is not automatic. The proposed upgrade must be approved by token holders through a majority vote. This governance mechanism ensures that while upgrades are possible, they require community approval, reducing the risks associated with unilateral changes by a single entity.
-This balance between immutability for the core governance contracts and the potential for upgrades in the Portals ensures both stability and flexibility within the Possum Labs ecosystem.
+The protocol also offers additional functionality through Portals, which allow users to swap yield into other tokens by leveraging the 1inch router. These Portals expose permissions to upgrade the central `AdapterV1` contracts in order to enable future adjustments and enhancements. However, the upgrade to a new, flawed or malicious AdapterV1 contract can result in the loss or theft of user funds.
+
+The protocol's Upgradeability score thus is High.
+
 
 ## Autonomy
 
@@ -44,22 +45,23 @@ Arbitrageurs form another critical external entity within the ecosystem. They in
 
 Thus, the overall autonomy of Portals v2 is closely tied to these external entities. A Vaultka hack would result in asset losses, and a lack of arbitrageur participation would lead to inefficiencies in liquidity management, both of which would severely hinder the system’s performance and overall autonomy.
 
+As a result, the protocol's Autonomy score is High.
+
 ## Exit Window
 
-Each portal in Possum Labs corresponds to a principal type and is paired with an adapter contract. These adapter contracts are upgradable, meaning changes to the functionality are possible. The upgrade process is governed by a multisig mechanism controlled by Possum Labs, which has the ability to propose a new contract address for the adapter.
-The upgrade process follows a voting mechanism, the process is:
-Multisig Proposal: Possum Labs multisig proposes a new adapter contract.
-Community Vote: Token holders approve the change with a majority (>50%) vote.
-Exit Window: A 7-day delay after the vote passes allows users to exit the protocol if they disagree.
-Permissionless Migration: The migration is executed permissionlessly via executeMigration().
+The protocol's adapter contracts are upgradable with hybrid governance process consisting of the following steps:
+1. The Treasury Multisig proposes a new adapter contract
+2. Token holders approve the upgrade through an on-chain vote requiring a simple majority (>50% of Yes votes)
+3. Users can withdraw funds prior to the upgrade during a 7-day exit window
+4. The implementation of the vote, and Adapter upgrade, is executed permissionlessly via `executeMigration()`
 
-Though the adapters are upgradable, the core functionalities of the protocol, such as Portal interactions, can still operate without adapters. The V1 adapters simply add additional functionality, like the ability to swap PSM to any token via the 1inch router.
-
-Since the upgrade process includes a 7-day delay after a successful vote and is governed by token holder approval, the system ensures users have adequate time to review changes and exit if they disagree. This transparent process prioritizes user autonomy by allowing a clear window for action before the implementation of any updates.
+Given that the confirmation of an upgrade requires an on-chain vote BUT the exit window is only 7 days, the Exit Window score is Medium (we require a 30-day window for a Low score).
 
 ## Accessibility
 
-Currently, Possum Labs offers only a single frontend without any backup solution. However, the team has plans to make their products open-source and available for self-hosting once budget and time allow, ensuring that users will eventually have more flexibility and control over their access to the protocol.
+Currently, Possum Labs offers only a single frontend without any backup solution resulting in a High risk score.
+
+However, note that the team aims to open-source the user interface giving users a potential backup solution.
 
 # Technical Analysis
 
@@ -99,9 +101,9 @@ Currently, Possum Labs offers only a single frontend without any backup solution
 
 ## Permission Owners
 
-| Name     | Account                                                                                                               | Type         |
-| -------- | --------------------------------------------------------------------------------------------------------------------- | ------------ |
-| Treasury | [0xAb845D09933f52af5642FC87Dd8FBbf553fd7B33](https://etherscan.io/address/0xAb845D09933f52af5642FC87Dd8FBbf553fd7B33) | Multisig 2/3 |
+| Name              | Account                                                                                                               | Type         |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------- | ------------ |
+| Treasury Multisig | [0xAb845D09933f52af5642FC87Dd8FBbf553fd7B33](https://etherscan.io/address/0xAb845D09933f52af5642FC87Dd8FBbf553fd7B33) | Multisig 2/3 |
 
 ## Permissions
 
@@ -136,25 +138,29 @@ Currently, Possum Labs offers only a single frontend without any backup solution
 
 ## Dependencies
 
-Smart Contract Risks
+### Smart Contract Risks
+
 The reliance on third-party protocols like HMX and Vaultka introduces potential risks, as bugs in these underlying systems could impact user funds.
 
-Centralisation Risks
+### Centralisation Risks
+
 Certain staking assets within the Possum ecosystem are subject to centralized control, including potential blacklisting or custodial risks (e.g., USDC/.e, WBTC). Furthermore, the upgradeability of staked assets (HLP) and underlying protocols (HMX & Vaultka) could lead to compatibility issues with Portals after updates. Decisions made by centralized managers of these assets and protocols could potentially render interactions with Portals or underlying protocols impossible, potentially resulting in complete loss of user funds. It's important to note that Possum Labs has no control over these entities, and due to its immutable design, Portals cannot actively adapt to changes in underlying protocols or assets.
 
 ## Exit Window
 
 For each type of principal there exists a portal and a related adapter contract. Adapter contracts are upgradable. The Possum Labs multisig can propose a new address, but the token owners need to accept with a majority (>50%) vote. If the vote gets through, the new implementation is enforced 7 days after vote surpassed 50%. The migration is then triggered permissionlessly via executeMigration() on the old adapter contract itself.
+
 No time-locks have been found. All upgrades take place immediately.
 
 # Security Council
 
-| ✅ /❌ | Requirement                                             |
-| ------ | ------------------------------------------------------- |
-| ❌     | At least 7 signers                                      |
-| ✅     | At least 51% threshold                                  |
-| ❌     | At least 50% non-team signers                           |
-| ❌     | Signers are publicly announced (with name or pseudonym) |
 
-[https://possum-labs.gitbook.io/docs/smart-contracts/treasury
-](https://possum-labs.gitbook.io/docs/smart-contracts/treasury)
+| Requirement                                             | Treasury Multisig |
+| ------------------------------------------------------- | :---------------: |
+| At least 7 signers                                      | ❌                |
+| At least 51% threshold                                  | ✅                |
+| At least 50% non-team signers                           | ❌                |
+| Signers are publicly announced (with name or pseudonym) | ❌                |
+
+
+Info sourced from here: [https://possum-labs.gitbook.io/docs/smart-contracts/treasury](https://possum-labs.gitbook.io/docs/smart-contracts/treasury).

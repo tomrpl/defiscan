@@ -18,7 +18,7 @@ update_date: "1970-01-01"
 
 ## Chain
 
-Liquity v1 is deployed on the Ethereum mainnet.
+This report covers the Liquity deployment on the Ethereum chain. Ethereum is considered fully decentralized according to this framework.
 
 ## Upgradeability
 
@@ -67,7 +67,7 @@ A list of third-party frontends can be found here: [https://www.liquity.org/fron
 
 ## Permission Owners
 
-All external permissions are revoked, the protocol is immutable.
+All external permissions are revoked, the protocol is immutable 🎉
 
 ## Permissions
 
@@ -97,13 +97,8 @@ If both Chainlink and Tellor are frozen or untrusted the last good price is used
 
 ## Exit Window
 
-The protocol is completely immutable, thus no exit window is required.
+The protocol is completely immutable, thus no exit window is required 🎉
 
 # Security Council
 
-| ✅ /❌ | Requirement                                             |
-| ------ | ------------------------------------------------------- |
-| N/A    | At least 7 signers                                      |
-| N/A    | At least 51% threshold                                  |
-| N/A    | At least 50% non-team signers                           |
-| N/A    | Signers are publicly announced (with name or pseudonym) |
+The protocol is completely immutable, thus no Security Council is required 🎉

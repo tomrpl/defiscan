@@ -18,7 +18,7 @@ update_date: "1970-01-01"
 
 ## Chain
 
-DYAD is deployed on Ethereum mainnet.
+This report covers the Dyad deployment on the Ethereum chain. Ethereum is considered fully decentralized according to this framework.
 
 ## Upgradeability
 
@@ -31,7 +31,9 @@ DYAD Protocol relies heavily on Chainlink oracles for the price feeds of collate
 
 ## Exit Window
 
-DYAD Protocol does not provide an exit window for users in the event of contract changes. Specifically, the **VaultLicenser** allows the multisig to add or remove vaults without any timelock, which can result in the temporary locking of user funds. Similarly, the **VaultManagerV4** contract is upgradeable without a timelock, allowing immediate changes to critical functions like minting, burning, and liquidation. This absence of a delay before upgrades or vault removals means users have no window to react to unwanted changes.
+Permissions are not protected by an appropriate exit window resulting in users not being able to withdraw funds in case of an unwanted update.
+
+Specifically, the **VaultLicenser** allows the multisig to add or remove vaults without any timelock, which can result in the temporary locking of user funds. Similarly, the **VaultManagerV4** contract is upgradeable without a timelock, allowing immediate changes to critical functions like minting, burning, and liquidation.
 
 ## Accessibility
 
@@ -92,9 +94,11 @@ The protocol does not offer alternatives to replace or update the oracle depende
 
 # Security Council
 
-| ✅ /❌ | Requirement                                             |
-| ------ | ------------------------------------------------------- |
-| ❌     | At least 7 signers                                      |
-| ✅     | At least 51% threshold                                  |
-| ❌     | At least 50% non-team signers                           |
-| ❌     | Signers are publicly announced (with name or pseudonym) |
+| Requirement                                             | Team Multisig |
+| ------------------------------------------------------- | :-----------: |
+| At least 7 signers                                      | ❌            |
+| At least 51% threshold                                  | ✅            |
+| At least 50% non-team signers                           | ❌            |
+| Signers are publicly announced (with name or pseudonym) | ❌            |
+
+No information on the multisig in use found in the docs. 

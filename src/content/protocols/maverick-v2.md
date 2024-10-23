@@ -18,32 +18,33 @@ update_date: "1970-01-01"
 
 ## Chain
 
-This report covers the Maverick v2 deployment on Ethereum mainnet.
+This report covers the Maverick v2 deployment on the Ethereum chain. Ethereum is considered fully decentralized according to this framework.
 
 ## Upgradeability
 
 Maverick Protocol demonstrates partial upgradeability.
-While most contracts (MaverickV2IncentiveMatcher, MaverickV2PoolLens) have had ownership renounced, making them immutable, key contracts like MaverickV2Factory and the Maverick Token (OFT) remain configurable for the permission owner. These contracts allow changes to protocol fees, destination addresses, and security settings, which could potentially impact the protocol's performance.
-The multisig governance system adds a layer of control but does not fully decentralize decision-making. As a result, Maverick's upgradeability presents moderate risks.
+
+Most contracts (`MaverickV2IncentiveMatcher`, `MaverickV2PoolLens`) have had ownership, and the respective permissions, revoked. However, other contracts like `MaverickV2Factory` and `MaverickToken` (MAV token) still expose permissions. These permissions allow the owner to change protocol fees, destination addresses, and security settings (e.g. through the LayerZero protocol) without effective restrictions on the update values. Hence, these permissions potentially change the protocol's expected performance or affect users' unclaimed yield.
+
+As a result, the protocol's Upgradeability score is Medium.
 
 ## Autonomy
 
-Maverick Protocol relies on LayerZero for cross-chain communication, which introduces dependency risks due to its use of LayerZero’s DVN system (currently Google Cloud). If the DVN fails or behaves maliciously, it could disrupt cross-chain operations. While LayerZero’s decentralized design allows permissionless executors to step in if needed, Maverick can change key settings (e.g., trusted remotes) without user input, further affecting autonomy.
-Overall, Maverick’s autonomy is considered medium (M) due to its reliance on external validators and the protocol’s ability to adjust settings without community approval.
+Maverick's orotocol token (MAV) relies on the LayerZero protocol for bridging. In particular, if the DVN (currently Google Cloud) fails or behaves maliciously, it could disrupt cross-chain operations. While LayerZero’s decentralized design allows permissionless executors to step in if needed, existing permissions enable to change critical settings (e.g. trusted remotes) potentially affecting the expected behavior of the MAV token.
+
+The protocol's Autonomy score thus is considered Medium.
 
 ## Exit Window
 
-The only two contracts in Maverick Protocol that have upgrade/change potential are the MaverickV2Factory and the Maverick (MAV) Token.
+The only two contracts in Maverick protocol that expose permissions are `MaverickToken` (MAV) and `MaverickV2Factory`. The permissions found on the first are not protected with an exit window for users. Further, since `MaverickV2Factory` is not publicly verified, it remains unclear whether an exit window protects the permissions found in this contract.
 
-MaverickV2Factory: Since the full source code of this contract is not publicly verified, it remains unclear whether fee switches or other changes are enforced immediately or if a timelock or delay mechanism exists. This uncertainty raises concerns about the ability for users to exit in case of sudden changes.
-
-Maverick (MAV) Token: The token has no timelock for upgrades or changes. The OFT token allows the owners to modify destination addresses and security settings without any enforced exit window for users. This means that changes can be applied immediately, and users do not have an option to opt-out or withdraw assets during a waiting period before the changes take effect.
-
-Due to the lack of a defined exit window and the possibility of immediate changes to key contracts, users may have limited control and no advance warning to exit the protocol in case of unwanted modifications.
+As a result, the protocol's Exit Window score is High.
 
 ## Accessibility
 
-Maverick Protocol supports various wallets (MetaMask, Ledger, Coinbase Wallet, Trust Wallet, WalletConnect), but all connect to the same main interface on app.mav.xyz. No independent interfaces or self-hosted backup solutions are available.
+Only a single user interface, app.mav.xyz, exists without a backup solution for users if the interface is shutdown or users are censored.
+
+Hence, the Accessibility score is High.
 
 # Technical Analysis
 
@@ -113,12 +114,12 @@ The Protocol relies on Executors which trigger queued transaction on destination
 DVNs are validators of transaction packets that need to move cross-chain. They are chosen by the protocol with security settings. If the DVNs cease to exist, the protocol needs to update settings and select new DVNs. The DVNs have a reputation and earn fees for the validating activity, thus are incentivised to behave correctly. Maverick uses the default DVN which is google could: 0xD56e4eAb23cb81f43168F9F45211Eb027b9aC7cc (deterministic deployed address across all chains). Any protocol that relies on layerWero could choose to run their own DVN and install a malicious verifier algorithm to it, if there is no governance or internal security process is not set up to prevent a project from doing so.
 
 Maverick Token is deployed according to their docs [https://docs.mav.xyz/technical-reference/contract-addresses/v2-contract-addresses](https://docs.mav.xyz/technical-reference/contract-addresses/v2-contract-addresses) to the following chains:
-Arbitrum
-Base
-Mainnet
-zkSync Era
-Scroll
-BNB Chain
+- Arbitrum
+- Base
+- Mainnet
+- zkSync Era
+- Scroll
+- BNB Chain
 
 ## Exit Window
 
@@ -132,9 +133,12 @@ Token has no timelock for changes/upgrades. The OFT token when ownership is not 
 
 # Security Council
 
-| ✅ /❌ | Undeclared Multisig 1 | Undeclared Multisig 2 |                       Requirement                       |
-|:----:|:---------------------:|:---------------------:|:-------------------------------------------------------:|
-|      | ❌                     | ❌                     | At least 7 signers                                      |
-|      | ❌                     | ❌                     | At least 51% threshold                                  |
-|      | ❌                     | ❌                     | At least 50% non-team signers                           |
-|      | ❌                     | ❌                     | Signers are publicly announced (with name or pseudonym) |
+
+|    Requirement                                          | Undeclared Multisig 1 | Undeclared Multisig 2 |
+|-------------------------------------------------------- | :-------------------: | :-------------------: |
+| At least 7 signers                                      | ✅                    |         ✅             |
+| At least 51% threshold                                  | ❌                    |         ✅             |
+| At least 50% non-team signers                           | ❌                    |         ❌             |
+| Signers are publicly announced (with name or pseudonym) | ❌                    |         ❌             |
+
+No information on the multisig in use found in the docs. 

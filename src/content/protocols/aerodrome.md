@@ -18,7 +18,7 @@ update_date: "1970-01-01"
 
 ## Chain
 
-This report covers Aerodrome deployment on the Base mainnet. As Base is still evolving in terms of decentralization and governance, it does not yet meet the highest standard of decentralization (Stage 0 according to L2Beat).
+This report covers the Aerodrome deployment on the Base chain. Base is an Ethereum L2 in Stage 0 according to L2BEAT.
 
 ## Upgradeability
 
@@ -28,11 +28,11 @@ We want to emphasize the presence of the `undeclared multisig`, which has been a
 
 ## Autonomy
 
-Aerodrome does not have external dependencies.
+Aerodrome does not have external dependencies 🎉
 
 ## Exit Window
 
-Aerodrome protocol does not provide a sufficient exit window for users in case of an unwanted upgrade or contract change. Changes made by the governor or the emergency council, such as killing gauges, are enforced immediately after the related transaction is processed. This immediate enforcement leaves users with no window to exit or withdraw their assets before the change is applied.
+Permissions are not protected by an appropriate exit window resulting in users not being able to withdraw funds in case of an unwanted update.
 
 ## Accessibility
 
@@ -137,16 +137,15 @@ No external dependency has been found.
 
 ## Exit Window
 
-No _timelocks_ or other form of exit window have been found. All upgrades take place immediately.
+No timelocks have been found protecting the various permissioned functions in the protocol. All updates take effect immediately.
 
 # Security Council
 
-| ✅ /❌ | Aerodrome Foundation and Incentives | Public Goods Fund | Emergency Council | Undeclared Multisig |                       Requirement                       |
-| :----: | :---------------------------------: | ----------------- | ----------------- | :-----------------: | :-----------------------------------------------------: |
-|        |                 ❌                  | ❌                | ❌                |         ✅          |                   At least 7 signers                    |
-|        |                 ❌                  | ❌                | ❌                |         ❌          |                 At least 51% threshold                  |
-|        |                 ❌                  | ❌                | ❌                |         ❌          |              At least 50% non-team signers              |
-|        |                 ❌                  | ❌                | ❌                |         ❌          | Signers are publicly announced (with name or pseudonym) |
+|    Requirement                                          | Aerodrome Foundation and Incentives | Public Goods Fund | Emergency Council | Undeclared Multisig |
+|-------------------------------------------------------- | :---------------------------------: | ----------------- | ----------------- | :-----------------: |
+| At least 7 signers                                      |                 ❌                  | ❌                | ❌                |         ✅          |
+| At least 51% threshold                                  |                 ❌                  | ❌                | ❌                |         ❌          |
+| At least 50% non-team signers                           |                 ❌                  | ❌                | ❌                |         ❌          |
+| Signers are publicly announced (with name or pseudonym) |                 ❌                  | ❌                | ❌                |         ❌          |
 
-[https://aerodrome.finance/security#emergency
-](https://aerodrome.finance/security#emergency)
+Info sourced from here: [https://aerodrome.finance/security#emergency](https://aerodrome.finance/security#emergency).
