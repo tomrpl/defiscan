@@ -14,7 +14,6 @@ acknowledge_date: "1970-01-01"
 update_date: "1970-01-01"
 ---
 
-
 # Assessment
 
 ## Chain
@@ -24,6 +23,8 @@ This report covers Aerodrome deployment on the Base mainnet. As Base is still ev
 ## Upgradeability
 
 The emergency council (multisig of ecosystem advocates, claimed to be credibly neutral) has a lot of control in the Aerodrome system through killing and reviving gauges. Each gauge is linked to a pool. Voters and LP both incentivized through the Aerodrome Flywheel are affected by a killed gauge which is linked to the deposited (LP) or voted (Voter) pool such that for the period in which the gauge was killed, the expected rewards stay out for this period. LPs and Voters need to allocate their capital and votes differently for the next period to profit from rewards.
+
+We want to emphasize the presence of the `undeclared multisig`, which has been assigned to the owner role in multiple contracts, particularly in the FactoryRegistry contract. This contract grants the ability to approve or unapprove factories within the Aerodrome system. Claimed to allow extensibility of the system, it introduces severe risk of user funds if used maliciously. `approve()` allows the permission owner to approve a set of factories. The Router contract (`0xcF77a3Ba9A5CA399B7c97c74d54e5b1Beb874E43`) checks whether the submitted factory is approved with the function `isPoolFactoryApproved` exposed by the FactoryRegistry. If a factory is approved, the router allows swaps on the pools from this factory. LiquidityManagement (`addLiquidity()` or `removeLiquidity()`) is not affected, as it only allows pools from the original PoolFactory `0xF1046053aa5682b4F9a81b5481394DA16BE5FF5a`.
 
 ## Autonomy
 
@@ -35,15 +36,14 @@ Aerodrome protocol does not provide a sufficient exit window for users in case o
 
 ## Accessibility
 
-Aerodrome provides multiple access points for users, including both centralized interfaces ([aerodrome.finance](https://aerodrome.finance), [alt.aerodrome.finance](https://alt.aerodrome.finance)) and decentralized interfaces on IPFS ([aero.drome.eth](https://aero.drome.eth), [aero.drome.eth.limo](https://aero.drome.eth.limo), [aero.drome.eth.link](https://aero.drome.eth.link)). This diversity in user interfaces ensures redundancy, allowing users to access the protocol even if one interface becomes unavailable. 
-
+Aerodrome provides multiple access points for users, including both centralized interfaces ([aerodrome.finance](https://aerodrome.finance), [alt.aerodrome.finance](https://alt.aerodrome.finance)) and decentralized interfaces on IPFS ([aero.drome.eth](https://aero.drome.eth), [aero.drome.eth.limo](https://aero.drome.eth.limo), [aero.drome.eth.link](https://aero.drome.eth.link)). This diversity in user interfaces ensures redundancy, allowing users to access the protocol even if one interface becomes unavailable.
 
 # Technical Analysis
 
 ## Contracts
 
-|            Contract Name           |                   Address                  |
-|----------------------------------- |------------------------------------------- |
+| Contract Name                      | Address                                    |
+| ---------------------------------- | ------------------------------------------ |
 | AERO                               | 0x940181a94A35A4569E4529A3CDfB74e38FD98631 |
 | AirdropDistributor                 | 0xE4c69af018B2EA9e575026c0472B6531A2bC382F |
 | VeArtProxy                         | 0xE9992487b2EE03b7a91241695A58E0ef3654643E |
@@ -71,21 +71,19 @@ Aerodrome provides multiple access points for users, including both centralized 
 | UniversalRouter                    | 0x6Cb442acF35158D5eDa88fe602221b67B400Be3E |
 | SwapRouter                         | 0xBE6D8f0d05cC4be24d5167a3eF062215bE6D18a5 |
 
-
 ## Permission Owners
 
-| Name                                | Account                                                                                                                  | Type         |
-|-------------------------------------|--------------------------------------------------------------------------------------------------------------------------|--------------|
-| Aerodrome Foundation and Incentives | [0xBDE0c70BdC242577c52dFAD53389F82fd149EA5a](https://etherscan.io/address/0xBDE0c70BdC242577c52dFAD53389F82fd149EA5a)    | Multisig 3/5 |
-| Public Goods Fund                   | [0x834C0DA026d5F933C2c18Fa9F8Ba7f1f792fDa52 ](https://etherscan.io/address/0x834C0DA026d5F933C2c18Fa9F8Ba7f1f792fDa52)   | Multisig 3/5 |
-| Emergency Council                    | [0x99249b10593fCa1Ae9DAE6D4819F1A6dae5C013D](https://etherscan.io/address/0x99249b10593fCa1Ae9DAE6D4819F1A6dae5C013D)    | Multisig 3/5 |
-| Undeclared Multisig                 | [0xE6A41fE61E7a1996B59d508661e3f524d6A32075](https://etherscan.io/address/0xE6A41fE61E7a1996B59d508661e3f524d6A32075)    | Multisig 3/7 |
-
+| Name                                | Account                                                                                                                | Type         |
+| ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ------------ |
+| Aerodrome Foundation and Incentives | [0xBDE0c70BdC242577c52dFAD53389F82fd149EA5a](https://etherscan.io/address/0xBDE0c70BdC242577c52dFAD53389F82fd149EA5a)  | Multisig 3/5 |
+| Public Goods Fund                   | [0x834C0DA026d5F933C2c18Fa9F8Ba7f1f792fDa52 ](https://etherscan.io/address/0x834C0DA026d5F933C2c18Fa9F8Ba7f1f792fDa52) | Multisig 3/5 |
+| Emergency Council                   | [0x99249b10593fCa1Ae9DAE6D4819F1A6dae5C013D](https://etherscan.io/address/0x99249b10593fCa1Ae9DAE6D4819F1A6dae5C013D)  | Multisig 3/5 |
+| Undeclared Multisig                 | [0xE6A41fE61E7a1996B59d508661e3f524d6A32075](https://etherscan.io/address/0xE6A41fE61E7a1996B59d508661e3f524d6A32075)  | Multisig 3/7 |
 
 ## Permissions
 
 | Contract                   | Function                 | Impact                                                                                    | Owner                                                                  |
-|----------------------------|--------------------------|-------------------------------------------------------------------------------------------|------------------------------------------------------------------------|
+| -------------------------- | ------------------------ | ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
 | AERO                       | setMinter                | Sets the minter for the AERO token.                                                       | Minter contract 0xeB018363F0a9Af8f91F06FEe6613a751b2A33FE5 (immutable) |
 | AERO                       | mint                     | Allows the permission owner to mint new AERO tokens into existence.                       | Minter contract 0xeB018363F0a9Af8f91F06FEe6613a751b2A33FE5             |
 | AirdropDistributor         | renounceOwnership        | Renounces the ownership and disables all functions gated by onlyOwner modifier.           | 0x0 (renounced)                                                        |
@@ -137,19 +135,18 @@ Aerodrome provides multiple access points for users, including both centralized 
 
 No external dependency has been found.
 
-
 ## Exit Window
 
 No _timelocks_ or other form of exit window have been found. All upgrades take place immediately.
 
 # Security Council
 
-| ✅ /❌ | Requirement                                                                |
-|------|----------------------------------------------------------------------------|
-| ❌    | At least 7 signers                                                         |
-| ✅    | At least 51% threshold                                                     |
-| ❌    | At least 50% non-team signers                                              |
-| ❌    | Signers are publicly announced (with name or pseudonym)                    |
+| ✅ /❌ | Requirement                                             |
+| ------ | ------------------------------------------------------- |
+| ❌     | At least 7 signers                                      |
+| ✅     | At least 51% threshold                                  |
+| ❌     | At least 50% non-team signers                           |
+| ❌     | Signers are publicly announced (with name or pseudonym) |
 
 [https://aerodrome.finance/security#emergency
 ](https://aerodrome.finance/security#emergency)
