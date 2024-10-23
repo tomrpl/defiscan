@@ -148,7 +148,7 @@ No _timelocks_ or other form of exit window have been found. All upgrades take p
 | ✅ /❌ | Requirement                                                                |
 |------|----------------------------------------------------------------------------|
 | ❌    | At least 7 signers                                                         |
-| ❌    | At least 51% threshold                                                     |
+| ✅    | At least 51% threshold                                                     |
 | ❌    | At least 50% non-team signers                                              |
 | ❌    | Signers are publicly announced (with name or pseudonym)                    |
 
