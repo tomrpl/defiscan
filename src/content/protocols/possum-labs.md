@@ -37,13 +37,11 @@ The protocol's Upgradeability score thus is High.
 
 ## Autonomy
 
-The Possum Labs Portals v2 are integrated with two key external systems: Vaultka and Arbitrageurs, both of which play an essential role in ensuring the protocol’s functionality.
+Possum Labs Portals v2 rely heavily on Vaultka, a yield-generating protocol where assets are staked to generate returns. The stability and security of Vaultka are crucial for the Portals' functionality. If Vaultka were compromised, this could lead to asset losses, severely affecting the protocol’s operations and ability to generate yields. As a result, Vaultka is a critical external dependency, as the Portals cannot function independently without it.
 
-Vaultka is a yield-generating protocol where the assets deposited through the Portals are staked to generate returns. By relying on Vaultka to manage and grow the assets, the autonomy of the Portals depends significantly on the stability and security of Vaultka. If Vaultka were compromised, either through a hack or other failure, it could lead to the loss of staked assets, severely impacting the entire system. This dependency creates a potential vulnerability, as the Portals system cannot operate independently from Vaultka without compromising its yield-generating function.
+Arbitrageurs, on the other hand, exploit arbitrage opportunities when the value of accrued assets exceeds the fixed PSM required to buy them. Since their participation is permissionless, the system can function without their involvement. Therefore, arbitrageurs do not represent a critical dependency for the protocol’s autonomy.
 
-Arbitrageurs form another critical external entity within the ecosystem. They interact with the shared liquidity pools in Portals v2 to ensure price efficiency and maintain market dynamics. Without the participation of arbitrageurs, the liquidity pools would not function as intended, leading to potential imbalances in the system. Their involvement is crucial for maintaining liquidity flow and price parity across different pools and markets.
-
-Thus, the overall autonomy of Portals v2 is closely tied to these external entities. A Vaultka hack would result in asset losses, and a lack of arbitrageur participation would lead to inefficiencies in liquidity management, both of which would severely hinder the system’s performance and overall autonomy.
+In conclusion, the autonomy of Portals v2 depends largely on Vaultka, which remains a vital external dependency. While arbitrageurs enhance the system, their role is not essential for core functionality. 
 
 As a result, the protocol's Autonomy score is High.
 
