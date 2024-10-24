@@ -24,7 +24,7 @@ This report covers the Aerodrome deployment on the Base chain. Base is an Ethere
 
 The emergency council (multisig of ecosystem advocates, claimed to be credibly neutral) has a lot of control in the Aerodrome system through killing and reviving gauges. Each gauge is linked to a pool. Voters and LP both incentivized through the Aerodrome Flywheel are affected by a killed gauge which is linked to the deposited (LP) or voted (Voter) pool such that for the period in which the gauge was killed, the expected rewards stay out for this period. LPs and Voters need to allocate their capital and votes differently for the next period to profit from rewards.
 
-We want to emphasize the presence of the `undeclared multisig`, which has been assigned to the owner role in multiple contracts, particularly in the FactoryRegistry contract. This contract grants the ability to approve or unapprove factories within the Aerodrome system. Claimed to allow extensibility of the system, it introduces severe risk of user funds if used maliciously. `approve()` allows the permission owner to approve a set of factories. The Router contract (`0xcF77a3Ba9A5CA399B7c97c74d54e5b1Beb874E43`) checks whether the submitted factory is approved with the function `isPoolFactoryApproved` exposed by the FactoryRegistry. If a factory is approved, the router allows swaps on the pools from this factory. LiquidityManagement (`addLiquidity()` or `removeLiquidity()`) is not affected, as it only allows pools from the original PoolFactory `0x420DD381b31aEf6683db6B902084cB0FFECe40Da`.
+We want to emphasize the presence of the `undeclared multisig`, which has been assigned to the owner role in multiple contracts, particularly in the FactoryRegistry contract. This contract grants the ability to approve or unapprove factories within the Aerodrome system. It is claimed to allow extensibility of the system. In case of malicious factories added to the system user funds are protected as LP functions from the router (`0xcF77a3Ba9A5CA399B7c97c74d54e5b1Beb874E43`) only interact with pools from the default factory (`0x420DD381b31aEf6683db6B902084cB0FFECe40Da`). Swaps can be routed through new pools from new factories, but the swap functions have a protection against high slippage / steal of funds.
 
 ## Autonomy
 
@@ -141,8 +141,8 @@ No timelocks have been found protecting the various permissioned functions in th
 
 # Security Council
 
-|    Requirement                                          | Aerodrome Foundation and Incentives | Public Goods Fund | Emergency Council | Undeclared Multisig |
-|-------------------------------------------------------- | :---------------------------------: | ----------------- | ----------------- | :-----------------: |
+| Requirement                                             | Aerodrome Foundation and Incentives | Public Goods Fund | Emergency Council | Undeclared Multisig |
+| ------------------------------------------------------- | :---------------------------------: | ----------------- | ----------------- | :-----------------: |
 | At least 7 signers                                      |                 ❌                  | ❌                | ❌                |         ✅          |
 | At least 51% threshold                                  |                 ❌                  | ❌                | ❌                |         ❌          |
 | At least 50% non-team signers                           |                 ❌                  | ❌                | ❌                |         ❌          |
