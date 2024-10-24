@@ -6,7 +6,7 @@ github: "https://github.com/PossumLabsCrypto"
 defillama_slug: "possum-labs"
 chain: "Arbitrum"
 stage: 0
-risks: "['M','H','H','L','M']"
+risks: "['M','H','H','M','M']"
 author: "stengarl, sagaciousyves"
 submission_date: "2024-10-23"
 publish_date: "2024-10-23"
@@ -22,17 +22,15 @@ This report covers the Velodrome v2 deployment on the Arbitrum chain. Arbitrum i
 
 ## Upgradeability
 
-Possum Labs consists of two main components: Core for Governance and Portals for Upfront Yield.
+The Possum Labs protocol consists of three main components: Portals, Adapters, and Core-V1. 
 
-Core Contracts:
+Permissions in the Portals contracts are fully revoked, these contracts are immutable 🎉
 
-Permissions in the Core governance contracts are fully revoked, these contracts are immutable 🎉
+The Core-V1 contract, or `PossumCore` more specifically, exposes a permissioned function that allows a Multisig to update a whitelist with accounts eligible for PSM incentives. This permission thus allows its owner to censor a specific account from receiving further rewards. However, accrued rewards can still be claimed and so this is a Low risk permission. 
 
-Portals and Adapters:
+Furthermore, each Portal has an associated Adapter contract which enables interactions with external protocols such as swapping on 1Inch. These Adapter contracts are upgradeable with the permission to upgrade controlled by a hybrid governance system. Importantly, the upgrade could involve a new, flawed or malicious Adapter contract and can thus result in the loss or theft of user funds resulting in a High risk score.
 
-The protocol also offers additional functionality through Portals, which allow users to swap yield into other tokens by leveraging the 1inch router. These Portals expose permissions to upgrade the central `AdapterV1` contracts in order to enable future adjustments and enhancements. However, the upgrade to a new, flawed or malicious AdapterV1 contract can result in the loss or theft of user funds.
-
-The protocol's Upgradeability score thus is High.
+Overall, the protocol's Upgradeability risk score is High.
 
 
 ## Autonomy
