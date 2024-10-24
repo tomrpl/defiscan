@@ -18,7 +18,7 @@ update_date: "1970-01-01"
 
 ## Chain
 
-This report covers the Velodrome v2 deployment on the Arbitrum chain. Arbitrum is an Ethereum L2 in Stage 1 according to L2BEAT.
+This report covers the Possum Core and Possum Portals deployment on the Arbitrum chain. Arbitrum is an Ethereum L2 in Stage 1 according to L2BEAT.
 
 ## Upgradeability
 
@@ -32,20 +32,20 @@ Furthermore, each Portal has an associated Adapter contract which enables intera
 
 Overall, the protocol's Upgradeability risk score is High.
 
-
 ## Autonomy
 
 Possum Labs Portals v2 rely heavily on Vaultka, a yield-generating protocol where assets are staked to generate returns. The stability and security of Vaultka are crucial for the Portals' functionality. If Vaultka were compromised, this could lead to asset losses, severely affecting the protocol’s operations and ability to generate yields. As a result, Vaultka is a critical external dependency, as the Portals cannot function independently without it.
 
 Arbitrageurs, on the other hand, exploit arbitrage opportunities when the value of accrued assets exceeds the fixed PSM required to buy them. Since their participation is permissionless, the system can function without their involvement. Therefore, arbitrageurs do not represent a critical dependency for the protocol’s autonomy.
 
-In conclusion, the autonomy of Portals v2 depends largely on Vaultka, which remains a vital external dependency. While arbitrageurs enhance the system, their role is not essential for core functionality. 
+In conclusion, the autonomy of Portals v2 depends largely on Vaultka, which remains a vital external dependency. While arbitrageurs enhance the system, their role is not essential for core functionality.
 
 As a result, the protocol's Autonomy score is High.
 
 ## Exit Window
 
 The protocol's adapter contracts are upgradable with hybrid governance process consisting of the following steps:
+
 1. The Treasury Multisig proposes a new adapter contract
 2. Token holders approve the upgrade through an on-chain vote requiring a simple majority (>50% of Yes votes)
 3. Users can withdraw funds prior to the upgrade during a 7-day exit window
@@ -150,13 +150,11 @@ No time-locks have been found. All upgrades take place immediately.
 
 # Security Council
 
-
 | Requirement                                             | Treasury Multisig |
 | ------------------------------------------------------- | :---------------: |
-| At least 7 signers                                      | ❌                |
-| At least 51% threshold                                  | ✅                |
-| At least 50% non-team signers                           | ❌                |
-| Signers are publicly announced (with name or pseudonym) | ❌                |
-
+| At least 7 signers                                      |        ❌         |
+| At least 51% threshold                                  |        ✅         |
+| At least 50% non-team signers                           |        ❌         |
+| Signers are publicly announced (with name or pseudonym) |        ❌         |
 
 Info sourced from here: [https://possum-labs.gitbook.io/docs/smart-contracts/treasury](https://possum-labs.gitbook.io/docs/smart-contracts/treasury).

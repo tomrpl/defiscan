@@ -18,11 +18,11 @@ update_date: "1970-01-01"
 
 ## Chain
 
-This report covers the Liquity deployment on the Ethereum chain. Ethereum is considered fully decentralized according to this framework.
+This report covers the PoolTogether V5 deployment on the Ethereum chain. Ethereum is considered fully decentralized according to this framework.
 
 ## Upgradeability
 
-Permissions in the PoolTogether protocol are fully revoked, the protocol is immutable 🎉
+Permissions in the PoolTogether V5 protocol are fully revoked, the protocol is immutable 🎉
 
 Note that anyone can create a new `PrizeVault` and link it to various, third-party yield sources and utility contracts. An attacker could deploy malicious yield sources or utility contracts (e.g., `LiquidationPair` or `Claimer`) through which users' funds or prizes could be lost or stolen. However, assessing these risks and possible mitigation measures is outside of the scope of the DeFiScan framework.
 
@@ -30,7 +30,7 @@ As a result, the protocol earns an Upgradeability score of Low.
 
 ## Autonomy
 
-The protocol relies on the Witnet Oracle for randomness in prize draws. If the oracle fails, a new PrizePool and DrawManager must be deployed, though users can still withdraw their deposits and accrued prices without interruption. 
+The protocol relies on the Witnet Oracle for randomness in prize draws. If the oracle fails, a new PrizePool and DrawManager must be deployed, though users can still withdraw their deposits and accrued prices without interruption.
 
 The protocol's Autonomy score thus is Low.
 
