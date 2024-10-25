@@ -8,7 +8,7 @@ import { getRiskDescriptions } from "../rosette/data-converter/data-converter";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "../ui/button";
 import { ArrowUpDown } from "lucide-react";
-import { RiskArray, RiskLevel } from "@/lib/types";
+import { RiskArray } from "@/lib/types";
 
 export type Project = {
   logo: string;
@@ -33,7 +33,7 @@ export const columns: ColumnDef<Project>[] = [
           <img
             src={"/images/placeholder.png"}
             alt={protocol || ""}
-            className="w-16 h-16 object-cover"
+            className="min-w-16 min-h-16 max-w-16 max-h-16 object-cover"
           />
         );
 
@@ -41,7 +41,7 @@ export const columns: ColumnDef<Project>[] = [
         <img
           src={logo}
           alt={protocol || ""}
-          className="w-16 h-16 object-cover"
+          className="min-w-16 min-h-16 max-w-16 max-h-16 object-cover"
         />
       );
     },
