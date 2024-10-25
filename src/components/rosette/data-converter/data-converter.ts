@@ -1,5 +1,6 @@
 // Define the risk matrix lookup
 
+import { RiskArray, RiskLevel } from "@/lib/types";
 import { Sentiment } from "../types";
 
 const riskMatrix = {
@@ -51,13 +52,13 @@ type Category =
 const categories = Object.keys(riskMatrix) as Category[];
 
 // Create a function to get risk descriptions
-export function getRiskDescriptions(risks: string): {
+export function getRiskDescriptions(risks: RiskArray): {
   name: string;
   sentiment: Sentiment;
   description: string;
 }[] {
-  const parsedRisks = JSON.parse(risks.replace(/'/g, '"'));
-  return parsedRisks.map((level: Level, index: number) => {
+  // const parsedRisks = JSON.parse(risks.replace(/'/g, '"'));
+  return risks.map((level: RiskLevel, index: number) => {
     const category = categories[index];
     return {
       name: category,

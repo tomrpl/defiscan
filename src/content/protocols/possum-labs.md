@@ -6,7 +6,7 @@ github: "https://github.com/PossumLabsCrypto"
 defillama_slug: "possum-labs"
 chain: "Arbitrum"
 stage: 0
-risks: "['M','H','H','M','M']"
+risks: ["M", "H", "H", "M", "M"]
 author: "stengarl, sagaciousyves"
 submission_date: "2024-10-23"
 publish_date: "2024-10-23"
@@ -22,11 +22,11 @@ This report covers the Possum Core and Possum Portals deployment on the Arbitrum
 
 ## Upgradeability
 
-The Possum Labs protocol consists of three main components: Portals, Adapters, and Core-V1. 
+The Possum Labs protocol consists of three main components: Portals, Adapters, and Core-V1.
 
 Permissions in the Portals contracts are fully revoked, these contracts are immutable 🎉
 
-The Core-V1 contract, or `PossumCore` more specifically, exposes a permissioned function that allows a Multisig to update a whitelist with accounts eligible for PSM incentives. This permission thus allows its owner to censor a specific account from receiving further rewards. However, accrued rewards can still be claimed and so this is a Low risk permission. 
+The Core-V1 contract, or `PossumCore` more specifically, exposes a permissioned function that allows a Multisig to update a whitelist with accounts eligible for PSM incentives. This permission thus allows its owner to censor a specific account from receiving further rewards. However, accrued rewards can still be claimed and so this is a Low risk permission.
 
 Furthermore, each Portal has an associated Adapter contract which enables interactions with external protocols such as swapping on 1Inch. These Adapter contracts are upgradeable with the permission to upgrade controlled by a hybrid governance system. Importantly, the upgrade could involve a new, flawed or malicious Adapter contract and can thus result in the loss or theft of user funds resulting in a High risk score.
 

@@ -6,7 +6,7 @@ github: "https://github.com/velodrome-finance"
 defillama_slug: "velodrome-v2"
 chain: "Optimism"
 stage: 0
-risks: "['M','M','L','H','L']"
+risks: ["M", "M", "L", "H", "L"]
 author: "CookingCryptos, sagaciousyves"
 submission_date: "2024-10-23"
 publish_date: "2024-10-23"

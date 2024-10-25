@@ -6,7 +6,7 @@ github: "https://github.com/DyadStablecoin"
 defillama_slug: "dyad"
 chain: "Ethereum"
 stage: 0
-risks: "['L','H','H','H','M']"
+risks: ["L", "H", "H", "H", "M"]
 author: "CookingCryptos"
 submission_date: "2024-10-23"
 publish_date: "2024-10-23"
@@ -96,9 +96,9 @@ The protocol does not offer alternatives to replace or update the oracle depende
 
 | Requirement                                             | Team Multisig |
 | ------------------------------------------------------- | :-----------: |
-| At least 7 signers                                      | ❌            |
-| At least 51% threshold                                  | ✅            |
-| At least 50% non-team signers                           | ❌            |
-| Signers are publicly announced (with name or pseudonym) | ❌            |
+| At least 7 signers                                      |      ❌       |
+| At least 51% threshold                                  |      ✅       |
+| At least 50% non-team signers                           |      ❌       |
+| Signers are publicly announced (with name or pseudonym) |      ❌       |
 
-No information on the multisig in use found in the docs. 
+No information on the multisig in use found in the docs.

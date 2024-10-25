@@ -6,7 +6,7 @@ github: "https://github.com/maverickprotocol"
 defillama_slug: "maverick-v2"
 chain: "Ethereum"
 stage: 0
-risks: "['L','M','M','H','H']"
+risks: ["L", "M", "M", "H", "H"]
 author: "CookingCryptos, sagaciousyves"
 submission_date: "2024-10-23"
 publish_date: "2024-10-23"
@@ -75,15 +75,15 @@ Hence, the Accessibility score is High.
 
 ## Permission Owners
 
-| Name            | Account                                                                                                               | Type         |
-| --------------- | --------------------------------------------------------------------------------------------------------------------- | ------------ |
+| Name                  | Account                                                                                                               | Type         |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------- | ------------ |
 | Undeclared Multisig 1 | [0xcAf836A03D8ADcDfF48F6d0354061F468ae8b2A3](https://etherscan.io/address/0xcAf836A03D8ADcDfF48F6d0354061F468ae8b2A3) | Multisig 3/6 |
 | Undeclared Multisig 2 | [0xA2206fe97eE8d2E689EFB96aE03be5F50BFAD027](https://etherscan.io/address/0xA2206fe97eE8d2E689EFB96aE03be5F50BFAD027) | Multisig 3/6 |
 
 ## Permissions
 
 | Contract                   | Function                  | Impact                                                                                                                                                                                                                                                                           | Owner                                                             |
-|----------------------------|---------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------|
+| -------------------------- | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
 | MaverickV2Factory          | setProtocolFeeRatio       | This function allows the owner of the permission to set the protocol fee. Fees are applied to every trade in the AMM.                                                                                                                                                            | Undeclared Multisig 2                                             |
 | MaverickV2Factory          | setProtocolLendingFeeRate | Set the protocol lending fee rate.                                                                                                                                                                                                                                               | Undeclared Multisig 2                                             |
 | MaverickV2Factory          | setProtocolFeeReceiver    | Set the protocol fee receiver address. If protocol fee is non-zero, user will be able to permissionlessly push protocol fee from a given pool to this address.                                                                                                                   | Undeclared Multisig 2                                             |
@@ -114,6 +114,7 @@ The Protocol relies on Executors which trigger queued transaction on destination
 DVNs are validators of transaction packets that need to move cross-chain. They are chosen by the protocol with security settings. If the DVNs cease to exist, the protocol needs to update settings and select new DVNs. The DVNs have a reputation and earn fees for the validating activity, thus are incentivised to behave correctly. Maverick uses the default DVN which is google could: 0xD56e4eAb23cb81f43168F9F45211Eb027b9aC7cc (deterministic deployed address across all chains). Any protocol that relies on layerWero could choose to run their own DVN and install a malicious verifier algorithm to it, if there is no governance or internal security process is not set up to prevent a project from doing so.
 
 Maverick Token is deployed according to their docs [https://docs.mav.xyz/technical-reference/contract-addresses/v2-contract-addresses](https://docs.mav.xyz/technical-reference/contract-addresses/v2-contract-addresses) to the following chains:
+
 - Arbitrum
 - Base
 - Mainnet
@@ -133,12 +134,11 @@ Token has no timelock for changes/upgrades. The OFT token when ownership is not 
 
 # Security Council
 
+| Requirement                                             | Undeclared Multisig 1 | Undeclared Multisig 2 |
+| ------------------------------------------------------- | :-------------------: | :-------------------: |
+| At least 7 signers                                      |          ✅           |          ✅           |
+| At least 51% threshold                                  |          ❌           |          ✅           |
+| At least 50% non-team signers                           |          ❌           |          ❌           |
+| Signers are publicly announced (with name or pseudonym) |          ❌           |          ❌           |
 
-|    Requirement                                          | Undeclared Multisig 1 | Undeclared Multisig 2 |
-|-------------------------------------------------------- | :-------------------: | :-------------------: |
-| At least 7 signers                                      | ✅                    |         ✅             |
-| At least 51% threshold                                  | ❌                    |         ✅             |
-| At least 50% non-team signers                           | ❌                    |         ❌             |
-| Signers are publicly announced (with name or pseudonym) | ❌                    |         ❌             |
-
-No information on the multisig in use found in the docs. 
+No information on the multisig in use found in the docs.

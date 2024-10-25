@@ -8,13 +8,14 @@ import { getRiskDescriptions } from "../rosette/data-converter/data-converter";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "../ui/button";
 import { ArrowUpDown } from "lucide-react";
+import { RiskArray, RiskLevel } from "@/lib/types";
 
 export type Project = {
   logo: string;
   protocol: string;
   slug: string;
   stage: number;
-  risks: string;
+  risks: RiskArray;
   type: string;
   chain: string;
   tvl: number;
@@ -98,7 +99,7 @@ export const columns: ColumnDef<Project>[] = [
     accessorKey: "risks",
     header: "Risks",
     cell: ({ row }) => {
-      const risks = row.getValue("risks") as string;
+      const risks = row.getValue("risks") as RiskArray;
 
       return (
         <TooltipProvider>
