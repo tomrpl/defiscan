@@ -113,4 +113,5 @@ export interface PiechartProps {
   baseColor: string; // Base color for generating the palette
   chartTitle: string; // Title for the chart (e.g., "Projects by Stage")
   labelValueDescription: string; // The description below the value (e.g., "Level Two")
+  className: string;
 }

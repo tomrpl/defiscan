@@ -39,6 +39,7 @@ export function PiechartStage({
   baseColor,
   chartTitle,
   labelValueDescription,
+  className,
 }: PiechartProps) {
   const [data, setData] = React.useState<any>(null);
 
@@ -75,10 +76,10 @@ export function PiechartStage({
   }, []);
 
   return (
-    <div className="">
+    <div className={className}>
       <Card className="flex flex-col">
         <CardHeader className="items-center p-2 pb-0">
-          <CardTitle className="text-md">{chartTitle}</CardTitle>{" "}
+          <CardTitle className="text-sm md:text-md">{chartTitle}</CardTitle>{" "}
           {/* Parameterized here for chartTitle */}
           {/* <CardDescription>January - June 2024</CardDescription>  */}
         </CardHeader>

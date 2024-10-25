@@ -18,42 +18,50 @@ export default function Home() {
           DeFi Scan provides verifiable insights into the maturity and risks of
           DeFi infrastructure
         </h2>
-        <div className="flex flex-row w-full my-4">
-          <Chart />
+        <div className="flex flex-col w-full my-4 lg:flex-row">
+          <Chart className="w-full lg:w-2/3" />
 
-          <div className="flex flex-col w-1/4">
-            <PiechartStage
-              groupByKey="stage"
-              operation="count"
-              baseColor="#ae7ef4"
-              chartTitle="#Projects by Stage"
-              labelValueDescription="Stage-2"
-            />
-            <PiechartTvl
-              groupByKey="stage"
-              operation="sum"
-              baseColor="#ae7ef4"
-              chartTitle="TVL by Stage"
-              labelValueDescription="Total TVL"
-            />
-          </div>
-          <div className="flex flex-col w-1/4">
-            <PiechartChain
-              groupByKey="chain"
-              operation="count"
-              baseColor="#ae7ef4"
-              chartTitle="Projects by Chain"
-              labelValueDescription="Top Source"
-            />
-            <PiechartTvlByChain
-              groupByKey="chain"
-              operation="sum"
-              baseColor="#ae7ef4"
-              chartTitle="TVL by Chain"
-              labelValueDescription="Most TVL"
-            />
+          <div className="flex flex-col w-full lg:w-1/3 mt-4 lg:mt-0">
+            <div className="flex flex-row lg:w-full">
+              <PiechartStage
+                groupByKey="stage"
+                operation="count"
+                baseColor="#ae7ef4"
+                chartTitle="#Projects by Stage"
+                labelValueDescription="Stage-2"
+                className="w-1/2"
+              />
+              <PiechartTvl
+                groupByKey="stage"
+                operation="sum"
+                baseColor="#ae7ef4"
+                chartTitle="TVL by Stage"
+                labelValueDescription="Total TVL"
+                className="w-1/2 lg:mt-0"
+              />
+            </div>
+
+            <div className="flex flex-row lg:w-full mt-4 md:mt-0">
+              <PiechartChain
+                groupByKey="chain"
+                operation="count"
+                baseColor="#ae7ef4"
+                chartTitle="Projects by Chain"
+                labelValueDescription="Top Source"
+                className="w-1/2"
+              />
+              <PiechartTvlByChain
+                groupByKey="chain"
+                operation="sum"
+                baseColor="#ae7ef4"
+                chartTitle="TVL by Chain"
+                labelValueDescription="Most TVL"
+                className="w-1/2  lg:mt-0"
+              />
+            </div>
           </div>
         </div>
+
         <div className="space-x-4 mb-32">
           <Table />
         </div>

@@ -30,7 +30,11 @@ const chartConfig = {
   },
 } satisfies ChartConfig;
 
-function Chart() {
+type ChartProps = {
+  className?: string;
+};
+
+const Chart: React.FC<ChartProps> = ({ className }) => {
   const [data, setData] = useState();
   useEffect(() => {
     const fetchData = async () => {
@@ -41,7 +45,7 @@ function Chart() {
   }, []);
 
   return (
-    <Card className="w-2/3">
+    <Card className={"w-2/3" + className}>
       <CardHeader>
         <div className="-mt-4 -mb-">
           <CardDescription>Total Value Locked (TVL) in DeFi</CardDescription>
@@ -86,6 +90,6 @@ function Chart() {
       </CardContent>
     </Card>
   );
-}
+};
 
 export default Chart;
