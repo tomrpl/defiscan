@@ -83,17 +83,14 @@ const components = {
   ),
   hr: ({ ...props }) => <hr className="my-4 md:my-8" {...props} />,
   table: ({ className, ...props }: React.HTMLAttributes<HTMLTableElement>) => (
-    <table
-      className={cn(
-        className,
-        "w-full table-auto -ml-4"
-      )}
-      {...props}
-    />
+    <table className={cn(className, "w-full table-auto -ml-4")} {...props} />
   ),
   tr: ({ className, ...props }: React.HTMLAttributes<HTMLTableRowElement>) => (
     <tr
-      className={cn("even:bg-secondary m-0 border-t p-0", className)}
+      className={cn(
+        "even:bg-secondary break-words m-0 border-t p-0",
+        className
+      )}
       {...props}
     />
   ),
@@ -109,7 +106,7 @@ const components = {
   td: ({ className, ...props }: ComponentsProps) => (
     <td
       className={cn(
-        "border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right",
+        "border px-4 py-2 text-left break-words break-all lg:break-normal whitespace-normal [&[align=center]]:text-center [&[align=right]]:text-right",
         className
       )}
       {...props}
@@ -150,7 +147,7 @@ export function Mdx({ code }: MdxProps) {
   const Component = useMDXComponent(code);
 
   return (
-    <div>
+    <div className="">
       <Component components={components} />
     </div>
   );
