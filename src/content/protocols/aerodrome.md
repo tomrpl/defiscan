@@ -26,6 +26,8 @@ The emergency council (multisig of ecosystem advocates, claimed to be credibly n
 
 We want to emphasize the presence of the `undeclared multisig`, which has been assigned to the owner role in multiple contracts, particularly in the FactoryRegistry contract. This contract grants the ability to approve or unapprove factories within the Aerodrome system. It is claimed to allow extensibility of the system. In case of malicious factories added to the system user funds are protected as LP functions from the router (`0xcF77a3Ba9A5CA399B7c97c74d54e5b1Beb874E43`) only interact with pools from the default factory (`0x420DD381b31aEf6683db6B902084cB0FFECe40Da`). Swaps can be routed through new pools from new factories, but the swap functions have a protection against high slippage / steal of funds.
 
+Additionally the `undeclared multisig` has the privilege to whitelist/unwhitelist veNFTs to participate in voting during the last hour before an epoch flip represents a significant exception to the usual restrictions placed on voting. During this critical window, all standard veNFTs are blocked from influencing vote outcomes. However, whitelisted veNFTs retain their voting privileges, and their voting power remains calculated as it would under regular conditions, specifically via the balance check IVotingEscrow(ve).balanceOfNFT(\_tokenId).
+
 ## Autonomy
 
 Aerodrome does not have external dependencies 🎉
