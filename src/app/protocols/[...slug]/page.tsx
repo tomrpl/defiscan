@@ -20,7 +20,7 @@ interface ProtocolPageItemProps {
 }
 
 // Fetch protocol tvl and logo url from defillama
-export const fetchProtocolDescription = async (
+const fetchProtocolDescription = async (
   projectname: string
 ): Promise<string> => {
   const response = await fetch(`https://api.llama.fi/protocol/${projectname}`);
