@@ -185,7 +185,7 @@ export default async function ProtocolPageItem({
 
         <TooltipProvider>
           <BigPizzaRosette
-            className="mt-auto max-lg:hidden"
+            className="mt-auto"
             values={getRiskDescriptions(protocol.risks!)}
           />
         </TooltipProvider>
