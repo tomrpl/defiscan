@@ -116,6 +116,7 @@ export const columns: ColumnDef<Project>[] = [
     header: ({ column }) => {
       return (
         <Button
+          className="hidden md:flex"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -124,6 +125,9 @@ export const columns: ColumnDef<Project>[] = [
         </Button>
       );
     },
+    cell: ({ row }) => {
+      return <div className="hidden md:block">{row.getValue("type")}</div>;
+    },
     sortingFn: "alphanumeric", // use built-in sorting function by name
   },
   {
@@ -131,6 +135,7 @@ export const columns: ColumnDef<Project>[] = [
     header: ({ column }) => {
       return (
         <Button
+          className="hidden md:flex"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -139,6 +144,9 @@ export const columns: ColumnDef<Project>[] = [
         </Button>
       );
     },
+    cell: ({ row }) => {
+      return <div className="hidden md:block">{row.getValue("chain")}</div>;
+    },
     sortingFn: "alphanumeric", // use built-in sorting function by name
   },
   {
@@ -146,6 +154,7 @@ export const columns: ColumnDef<Project>[] = [
     header: ({ column }) => {
       return (
         <Button
+          className="hidden md:flex"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -156,7 +165,7 @@ export const columns: ColumnDef<Project>[] = [
     },
     cell: ({ row }) => {
       return (
-        <div className="font-medium">{formatUsd(row.getValue("tvl"))}</div>
+        <div className="hidden md:block">{formatUsd(row.getValue("tvl"))}</div>
       );
     },
     sortingFn: "alphanumeric", // use built-in sorting function by name

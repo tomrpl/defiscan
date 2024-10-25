@@ -14,7 +14,7 @@ export default function Home() {
         <h1 className="text-primary text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
           The Heartbeat of DeFi
         </h1>
-        <h2 className="text-muted-foreground leading-3 tracking-tight text-xl sm:text-xl md:text-1xl lg:text-2xl -mt-6">
+        <h2 className="text-muted-foreground tracking-tight text-md sm:text-xl md:text-1xl lg:text-2xl">
           DeFi Scan provides verifiable insights into the maturity and risks of
           DeFi infrastructure
         </h2>
