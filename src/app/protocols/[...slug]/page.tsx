@@ -36,7 +36,7 @@ async function getProtocolFromParams(slug: string[]) {
 
   const description = await fetchProtocolDescription(slugString);
 
-  return { ...protocol, description: description } || null;
+  return { ...protocol, description: description };
 }
 
 export async function generateMetadata({
