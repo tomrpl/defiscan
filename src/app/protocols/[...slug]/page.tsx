@@ -10,8 +10,6 @@ import { getRiskDescriptions } from "@/components/rosette/data-converter/data-co
 import { TooltipProvider } from "@/components/rosette/tooltip/tooltip";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
-import { Protocol } from "@/components/table/page";
-import { Project } from "@/components/table/columns";
 
 interface ProtocolPageItemProps {
   params: {
@@ -57,7 +55,7 @@ export async function generateMetadata({
     title: protocol.protocol,
     description: "DeFi Scan decentralization report for " + protocol.protocol,
     authors: {
-      name: protocol.author,
+      name: protocol.author!.join(", "),
     },
   };
 }
@@ -135,7 +133,7 @@ export default async function ProtocolPageItem({
         </h1>
 
         <p>
-          This review has been submitted by {protocol.author} on{" "}
+          This review has been submitted by {protocol.author!.join(", ")} on{" "}
           {protocol.submission_date!.split("T")[0]}.
         </p>
         <p>

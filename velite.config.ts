@@ -28,7 +28,7 @@ const protocols = defineCollection({
         s.literal("L").or(s.literal("M")).or(s.literal("H")),
         s.literal("L").or(s.literal("M")).or(s.literal("H")),
       ]),
-      author: s.string(),
+      author: s.array(s.string()),
       submission_date: s.isodate(),
       publish_date: s.isodate(),
       acknowledge_date: s.isodate(),

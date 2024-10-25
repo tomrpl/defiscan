@@ -15,11 +15,11 @@ export function formatDate(input: string | number) {
 }
 
 // Format the price above to USD using the locale, style, and currency.
-let USDollar = new Intl.NumberFormat('en-US', {
-  style: 'currency',
-  currency: 'USD',
+let USDollar = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
   minimumFractionDigits: 0,
-  maximumFractionDigits: 0
+  maximumFractionDigits: 0,
 });
 export function formatUsd(input: number) {
   return USDollar.format(input);

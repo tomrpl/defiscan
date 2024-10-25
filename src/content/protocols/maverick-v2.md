@@ -7,7 +7,7 @@ defillama_slug: "maverick-v2"
 chain: "Ethereum"
 stage: 0
 risks: ["L", "M", "M", "H", "H"]
-author: "CookingCryptos, sagaciousyves"
+author: ["CookingCryptos", "sagaciousyves"]
 submission_date: "2024-10-23"
 publish_date: "2024-10-23"
 acknowledge_date: "1970-01-01"
