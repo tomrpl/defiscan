@@ -10,6 +10,8 @@ import { getRiskDescriptions } from "@/components/rosette/data-converter/data-co
 import { TooltipProvider } from "@/components/rosette/tooltip/tooltip";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
+import { Protocol } from "@/components/table/page";
+import { Project } from "@/components/table/columns";
 
 interface ProtocolPageItemProps {
   params: {
@@ -17,13 +19,24 @@ interface ProtocolPageItemProps {
   };
 }
 
+// Fetch protocol tvl and logo url from defillama
+export const fetchProtocolDescription = async (
+  projectname: string
+): Promise<string> => {
+  const response = await fetch(`https://api.llama.fi/protocol/${projectname}`);
+  const data = await response.json();
+  return data.description || "Protocol description not found.";
+};
+
 async function getProtocolFromParams(slug: string[]) {
   const slugString = slug.join("/");
   const protocol = allProtocols.find(
     (protocol) => protocol.slugAsParams === slugString
   );
 
-  return protocol || null;
+  const description = await fetchProtocolDescription(slugString);
+
+  return { ...protocol, description: description } || null;
 }
 
 export async function generateMetadata({
@@ -123,27 +136,31 @@ export default async function ProtocolPageItem({
 
         <p>
           This review has been submitted by {protocol.author} on{" "}
-          {protocol.submission_date.split("T")[0]}.
+          {protocol.submission_date!.split("T")[0]}.
         </p>
         <p>
           It was reviewed and published by the DeFi Collective team on{" "}
-          {protocol.publish_date.split("T")[0]}.
+          {protocol.publish_date!.split("T")[0]}.
         </p>
         <p>
           The {protocol.protocol} team has{" "}
-          {protocol.acknowledge_date.split("T")[0] === "1970-01-01"
+          {protocol.acknowledge_date!.split("T")[0] === "1970-01-01"
             ? "NOT acknowledged the review"
             : "acknowledged the review on " +
-              protocol.acknowledge_date.split("T")[0]}
+              protocol.acknowledge_date!.split("T")[0]}
           .
         </p>
         <p>
-          {protocol.update_date.split("T")[0] === "1970-01-01"
+          {protocol.update_date!.split("T")[0] === "1970-01-01"
             ? "The review has not been updated since the initial submission"
             : "The last update to the review was made on " +
-              protocol.update_date.split("T")[0]}
+              protocol.update_date!.split("T")[0]}
           .
         </p>
+        <h1 className="mt-10 mb-4 scroll-m-20 text-4xl font-bold text-primary tracking-tight">
+          Summary
+        </h1>
+        <p>{protocol.description}</p>
 
         <h1 className="mt-10 mb-4 scroll-m-20 text-4xl font-bold text-primary tracking-tight">
           Stage
@@ -151,7 +168,7 @@ export default async function ProtocolPageItem({
 
         <TooltipProvider>
           <Badge
-            stage={protocol.stage}
+            stage={protocol.stage!}
             className={`${
               protocol.stage === 0
                 ? "bg-red-500"
@@ -171,10 +188,10 @@ export default async function ProtocolPageItem({
         <TooltipProvider>
           <BigPizzaRosette
             className="mt-auto max-lg:hidden"
-            values={getRiskDescriptions(protocol.risks)}
+            values={getRiskDescriptions(protocol.risks!)}
           />
         </TooltipProvider>
-        <Mdx code={protocol.body} />
+        <Mdx code={protocol.body!} />
         <hr className="mt-12" />
         <div className="flex justify-center py-6 lg:py-10">
           <Link href="/" className={cn(buttonVariants({ variant: "ghost" }))}>
