@@ -9,8 +9,8 @@ const Footer: React.FC = () => {
           &copy; {new Date().getFullYear()} DeFi Collective
         </div>
         <div>
-          <a href="/terms" className="mr-4">Terms</a>
-          <a href="/privacy" className="ml-4">Privacy</a>
+          <a href="/terms" className="mr-4" style={styles.pages}>Terms</a>
+          <a href="/privacy" className="ml-4" style={styles.pages}>Privacy</a>
         </div>
         <div style={styles.socialLinks}>
           <a href="https://twitter.com/DeFiCollective_" target="_blank" rel="noopener noreferrer" style={styles.icon}>
@@ -50,6 +50,11 @@ const styles: { [key: string]: React.CSSProperties } = {
     alignItems: 'center',
   },
   copyright: {
+    fontSize: '14px',
+    color: '#555',
+    textAlign: 'center',
+  },
+  pages: {
     fontSize: '14px',
     color: '#555',
     textAlign: 'center',

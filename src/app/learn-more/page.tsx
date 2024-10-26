@@ -26,7 +26,7 @@ export default function LearnMorePage() {
       <a href={`#${createIdFromTitle(titles[0])}`}>
         <h1
           id={createIdFromTitle(titles[0])}
-          className="inline-block text-4xl font-bold leading-3 tracking-tight text-primary lg:text-5xl"
+          className="inline-block leading-3 tracking-tight text-primary font-bold text-2xl sm:text-2xl md:text-3xl lg:text-4xl"
           style={{ scrollMarginTop: "100px" }} /* Adjust for header */
         >
           {titles[0]}
@@ -67,7 +67,7 @@ export default function LearnMorePage() {
           We here provide an overview of the framework. For a more detailed
           discussion, please refer to the introduction{" "}
           <a
-            href="https://deficollective.org/blog/"
+            href="https://deficollective.org/blog/introducing-defiscan/"
             className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
           >
             blog post
@@ -79,7 +79,7 @@ export default function LearnMorePage() {
       <a href={`#${createIdFromTitle(titles[1])}`}>
         <h1
           id={createIdFromTitle(titles[1])}
-          className="inline-block mt-10  text-4xl font-bold leading-3 tracking-tight text-primary lg:text-5xl"
+          className="inline-block mt-10 leading-3 tracking-tight text-primary font-bold text-2xl sm:text-2xl md:text-3xl lg:text-4xl"
           style={{ scrollMarginTop: "100px" }} /* Adjust for header */
         >
           {titles[1]}
@@ -200,7 +200,7 @@ export default function LearnMorePage() {
       <a href={`#${createIdFromTitle(titles[2])}`}>
         <h1
           id={createIdFromTitle(titles[2])}
-          className="inline-block mt-10  text-4xl font-bold leading-3 tracking-tight text-primary lg:text-5xl"
+          className="inline-block mt-10 leading-3 tracking-tight text-primary font-bold text-2xl sm:text-2xl md:text-3xl lg:text-4xl"
           style={{ scrollMarginTop: "100px" }} /* Adjust for header */
         >
           {titles[2]}
@@ -296,7 +296,7 @@ export default function LearnMorePage() {
       <a href={`#${createIdFromTitle(titles[3])}`}>
         <h1
           id={createIdFromTitle(titles[3])}
-          className="inline-block mt-10  text-4xl font-bold leading-3 tracking-tight text-primary lg:text-5xl"
+          className="inline-block mt-10 leading-3 tracking-tight text-primary font-bold text-2xl sm:text-2xl md:text-3xl lg:text-4xl"
           style={{ scrollMarginTop: "100px" }} /* Adjust for header */
         >
           {titles[3]}
