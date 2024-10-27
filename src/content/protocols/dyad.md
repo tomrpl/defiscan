@@ -14,30 +14,43 @@ acknowledge_date: "1970-01-01"
 update_date: "1970-01-01"
 ---
 
-# Assessment
+# Summary
+
+The DYAD protocol allows users to mint interest-free stablecoins against collateral types like ETH. Users have to deposit assets that are worth at least 150% of the value of their minted DYAD, or their position is liquidated. The excess value of all collateral in the system is tokenized, and users who own the token are able to utilize its value as part of their backing.
+
+# Overview
 
 ## Chain
 
-This report covers the Dyad deployment on the Ethereum chain. Ethereum is considered fully decentralized according to this framework.
+The DYAD protocol is deployed on the Ethereum chain and thus receives a "Low" risk score.
 
 ## Upgradeability
 
-DYAD Protocol relies on a multisig structure to control upgrades and critical contract functions. The **VaultManagerV4** contract is upgradeable through the ERC-1967 and UUPS proxy patterns, which means its logic can be altered at any time. This introduces a risk that upgrades could lead to temporary freezing of assets or disruptions, especially since there are no timelocks in place to delay upgrades or give users time to react. \
-The **VaultLicenser** allows the multisig to add or remove vaults, and removing a vault from the registry freezes the associated collateral, preventing users from accessing their funds. This centralized control over key contract functions and immediate upgrade potential introduces the possibility of temporary freezing of assets or changes to the protocol’s performance.
+A Multisig controls various critical functions in the DYAD protocol. 
+
+The _VaultManagerV4_ contract is upgradeable through the ERC-1967 and UUPS proxy patterns, which means its logic can be altered by the Multisig at any time. The _VaultManagerV4_ owns the permission to mint and burn DYAD tokens. Upgrading the implementation contract thus enables the Multisig to mint an arbitrary amount of the stablecoin.
+
+The Multisig also owns the permission to add or remove vaults through the _VaultLicenser_ contract. Removing a vault from the registry freezes the associated collateral and prevents users from accessing their funds.
+
+As a result, the protocol's Upgradeability risk score is "High".
 
 ## Autonomy
 
-DYAD Protocol relies heavily on Chainlink oracles for the price feeds of collateral assets (WETH, stETH, TBTC, and sUSDe). If one of these price feeds stops functioning or becomes untrusted, the respective collateral is frozen. Users cannot withdraw or redeem this collateral, and liquidations are paused for that specific asset. However, burning DYAD remains possible in such situations. The protocol has no fallback mechanism for updating the price feeds, as the reference addresses are immutable. A failure in the oracle system could result in temporary freezing of assets, but the protocol continues to operate for other collateral types.
+The DYAD protocol uses Chainlink oracles for the valuation of collateral assets (WETH, stETH, TBTC, and sUSDe). The Chainlink feeds are immutable and cannot be replaced. Sanity checks on the timeliness or validity of a price as well as a fallback are not implemented. A failure of Chainlink failure thus results in the freezing of collateral assets, and pausing of withdrawals, borrowing and liquidations.
+
+The Autonomy risk score is "High".
 
 ## Exit Window
 
-Permissions are not protected by an appropriate exit window resulting in users not being able to withdraw funds in case of an unwanted update.
+Permissions are not protected with an exit window resulting in users not being able to withdraw funds in case of an unwanted update.
 
-Specifically, the **VaultLicenser** allows the multisig to add or remove vaults without any timelock, which can result in the temporary locking of user funds. Similarly, the **VaultManagerV4** contract is upgradeable without a timelock, allowing immediate changes to critical functions like minting, burning, and liquidation.
+The risk score thus is "High".
 
 ## Accessibility
 
-Dyad Protocol offers a single user interface accessible through its main web app. However, a self-hosted backup solution is available via its open-source frontend code, hosted on GitHub at[ https://github.com/DyadStablecoin/frontend](https://github.com/DyadStablecoin/frontend). This allows users to host their own version of the dApp, providing an additional layer of accessibility and resilience in case the main interface becomes unavailable.
+Dyad Protocol offers a single user interface accessible through its website. The source code of the user interface is available on the public [ GitHub](https://github.com/DyadStablecoin/frontend). Users are thus able to host their own interface at reasonable financial cost.
+
+The risk score is "Medium".
 
 # Technical Analysis
 
@@ -75,7 +88,7 @@ Dyad Protocol offers a single user interface accessible through its main web app
 | Notes           | mintInsiderNft   | The mintInsiderNft function allows the owner to mint up to 4000 Notes (dNFT) for free. The limit of 4000 notes is constant and immutable.                                                                                                                                                                                                                                                                                                                                 | Team Multisig  |
 | KerosineManager | add              | The add function allows the owner of the permission to add new vaults. Each added vault allows a new type of collateral for backing DYAD. The max number of vaults is capped at 10 and this is immutable.                                                                                                                                                                                                                                                                 | Team Multisig  |
 | KerosineManager | remove           | The remove function allows the owner of the permission to remove vaults.                                                                                                                                                                                                                                                                                                                                                                                                  | Team Multisig  |
-| VaultManagerV4  | authorizeUpgrade | VaultManager is an upgradeable contract with ERC-1967 and UUPS pattern, thus the proxy upgrade logic is part of VaultManagerV4 contract. Calling \_authorizeUpgrade to upgrade VaultManagerV4 to a new implementation is permissioned and only allowed by the owner. As a result, users interacting with the VaultManager through Proxy contract 0xb62bdb1a6ac97a9b70957dd35357311e8859f0d7 need to be aware that the logic of the VaultManager could change at any time. | Team Multisig  |
+| VaultManagerV4  | authorizeUpgrade | VaultManager is an upgradeable contract with ERC-1967 and UUPS pattern, thus the proxy upgrade logic is part of VaultManagerV4 contract. Calling _authorizeUpgrade_ to upgrade VaultManagerV4 to a new implementation is permissioned and only allowed by the owner. As a result, users interacting with the VaultManager through Proxy contract `0xb62bdb1a6ac97a9b70957dd35357311e8859f0d7` need to be aware that the logic of the VaultManager could change at any time. | Team Multisig  |
 | VaultStakedUSDe | setDepositCap    | The function setDepositCap allows the owner of the permission to set a deposit cap for each depositor of this vault. This function only exists for the sUSDe vault.                                                                                                                                                                                                                                                                                                       | Team Multisig  |
 
 ## Dependencies

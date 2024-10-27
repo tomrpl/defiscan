@@ -14,19 +14,29 @@ acknowledge_date: "1970-01-01"
 update_date: "1970-01-01"
 ---
 
-# Assessment
+# Summary
+
+Liquity is a decentralized borrowing protocol that allows you to draw interest-free loans against Ether used as collateral. Loans are paid out in LUSD (a USD pegged stablecoin) and need to maintain a minimum collateral ratio of 110%.
+
+In addition to the collateral, the loans are secured by a Stability Pool containing LUSD and by fellow borrowers collectively acting as guarantors of last resort. Learn more about these mechanisms under Liquidation.
+
+# Overview
 
 ## Chain
 
-This report covers the Liquity deployment on the Ethereum chain. Ethereum is considered fully decentralized according to this framework.
+The Liquity protocol is deployed on the Ethereum chain and thus receives a "Low" risk score.
 
 ## Upgradeability
 
-All contracts are fully immutable, with all permissions renounced to the zero address (0x0). This means no upgrades, changes, or modifications can be made to the protocol’s functionality or parameters. The immutability ensures that there is no risk of unwanted upgrades, censorship, or asset confiscation.
+All permissions in the system have been renounced and the protocol is thus fully immutable. As a result, no upgrades or changes can be made to the protocol, its functions or parameters.
+
+The Upgradeability risk score thus is "Low".
 
 ## Autonomy
 
-Liquity relies on two external oracles, Chainlink (primary) and Tellor (fallback), but has a robust fallback mechanism in place, using the "last good price" if both oracles fail or become untrusted. This ensures the protocol can continue operating without interruption, minimizing the impact of oracle failure on its performance. Despite its reliance on external oracles, Liquity’s fallback systems reduce the risk of major disruptions or asset freezes.
+Liquity relies on two external oracles, Chainlink (primary) and Tellor (fallback), but has a robust fallback mechanism in place, using the "last good price" if both oracles fail or become untrusted. This ensures the protocol can continue operating without interruption, minimizing the impact of oracle failure on its performance. Despite its reliance on external oracles, Liquity’s fallback systems mitigates the risk of disruptions.
+
+The risk score is "Low".
 
 ## Exit Window
 
@@ -34,9 +44,11 @@ Liquity’s contracts are fully immutable, no upgrades or contract changes can o
 
 ## Accessibility
 
-Multiple user-facing apps (frontends) exist and are operated by independent, third-party providers ensuring that users have access even if one frontend is discontinued. Moreover, the source code and deployment instructions are available on GitHub allowing users to easily “self-host” their own frontend.
+Multiple user interfaces exist and are operated by independent actors ensuring access to the protocol and user funds even if an interface is shutdown or censors a user's transactions.
 
-A list of third-party frontends can be found here: [https://www.liquity.org/frontend#frontends](https://www.liquity.org/frontend#frontends)
+A list of third-party frontends can be found [here](https://www.liquity.org/frontend#frontends).
+
+The risk score thus is "Low"
 
 # Technical Analysis
 

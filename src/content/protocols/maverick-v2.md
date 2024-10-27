@@ -14,7 +14,15 @@ acknowledge_date: "1970-01-01"
 update_date: "1970-01-01"
 ---
 
-# Assessment
+# Summary
+
+Maverick helps its users to maximize capital efficiency by automating the concentration of liquidity as price moves. Higher capital efficiency leads to more liquid markets, which means better prices for traders and more fees for liquidity providers. This built-in feature also helps LPs to eliminate the high gas fees that come from adjusting positions around price themselves.
+
+Liquidity providers can also now choose to follow the price of an asset in a single direction, effectively making a bet on the price trajectory of a specific token. These directional bets are similar to single-sided liquidity strategies, in that the liquidity provider will be mostly or entirely exposed to a single asset in a given pool.
+
+Together, these technological innovations represent a paradigm shift in the way smart contracts manage liquidity. Maverick is the first Dynamic Distribution AMM, capable of automating liquidity strategies that before now have required daily maintenance or the use of metaprotocols.
+
+# Overview
 
 ## Chain
 

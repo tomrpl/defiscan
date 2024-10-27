@@ -14,11 +14,15 @@ acknowledge_date: "1970-01-01"
 update_date: "1970-01-01"
 ---
 
-# Assessment
+# Summary
+
+Possum Labs introduces frictionless and efficient yield trading. its network of yield related protocols creates a positive sum flywheel for PSM and our ecosystem partners.
+
+# Overview
 
 ## Chain
 
-This report covers the Possum Core and Possum Portals deployment on the Arbitrum chain. Arbitrum is an Ethereum L2 in Stage 1 according to L2BEAT.
+Possum is deployed on the Arbitrum chain, an Ethereum L2 in Stage 1 according to L2BEAT.
 
 ## Upgradeability
 

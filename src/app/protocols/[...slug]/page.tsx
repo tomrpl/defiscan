@@ -17,24 +17,13 @@ interface ProtocolPageItemProps {
   };
 }
 
-// Fetch protocol tvl and logo url from defillama
-const fetchProtocolDescription = async (
-  projectname: string
-): Promise<string> => {
-  const response = await fetch(`https://api.llama.fi/protocol/${projectname}`);
-  const data = await response.json();
-  return data.description || "Protocol description not found.";
-};
-
 async function getProtocolFromParams(slug: string[]) {
   const slugString = slug.join("/");
   const protocol = allProtocols.find(
     (protocol) => protocol.slugAsParams === slugString
   );
 
-  const description = await fetchProtocolDescription(slugString);
-
-  return { ...protocol, description: description };
+  return { ...protocol };
 }
 
 export async function generateMetadata({
@@ -155,10 +144,6 @@ export default async function ProtocolPageItem({
               protocol.update_date!.split("T")[0]}
           .
         </p>
-        <h1 className="mt-10 mb-4 scroll-m-20 text-4xl font-bold text-primary tracking-tight">
-          Summary
-        </h1>
-        <p>{protocol.description}</p>
 
         <h1 className="mt-10 mb-4 scroll-m-20 text-4xl font-bold text-primary tracking-tight">
           Stage
@@ -180,7 +165,7 @@ export default async function ProtocolPageItem({
         </TooltipProvider>
 
         <h1 className="mt-10 mb-4 scroll-m-20 text-4xl font-bold text-primary tracking-tight">
-          Scores
+          Risks
         </h1>
 
         <TooltipProvider>

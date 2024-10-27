@@ -14,31 +14,49 @@ acknowledge_date: "1970-01-01"
 update_date: "1970-01-01"
 ---
 
-# Assessment
+# Summary
+
+Aerodrome Finance is a next-generation AMM designed to serve as Base's central liquidity hub, combining a powerful liquidity incentive engine, vote-lock governance model, and friendly user experience. Aerodrome inherits the latest features from Velodrome V2.
+
+
+# Overview
 
 ## Chain
 
-This report covers the Aerodrome deployment on the Base chain. Base is an Ethereum L2 in Stage 0 according to L2BEAT.
+Aerodrome is deployed on the Base chain, an Ethereum L2 in Stage 0 according to L2BEAT.
+
+The protocol's Chain risk score thus is "High".
 
 ## Upgradeability
 
-The emergency council (multisig of ecosystem advocates, claimed to be credibly neutral) has a lot of control in the Aerodrome system through killing and reviving gauges. Each gauge is linked to a pool. Voters and LP both incentivized through the Aerodrome Flywheel are affected by a killed gauge which is linked to the deposited (LP) or voted (Voter) pool such that for the period in which the gauge was killed, the expected rewards stay out for this period. LPs and Voters need to allocate their capital and votes differently for the next period to profit from rewards.
+Different permissions in the protocol are owned by a number of Multisigs.  
 
-We want to emphasize the presence of the `undeclared multisig`, which has been assigned to the owner role in multiple contracts, particularly in the FactoryRegistry contract. This contract grants the ability to approve or unapprove factories within the Aerodrome system. It is claimed to allow extensibility of the system. In case of malicious factories added to the system user funds are protected as LP functions from the router (`0xcF77a3Ba9A5CA399B7c97c74d54e5b1Beb874E43`) only interact with pools from the default factory (`0x420DD381b31aEf6683db6B902084cB0FFECe40Da`). Swaps can be routed through new pools from new factories, but the swap functions have a protection against high slippage / steal of funds.
+The _Emergency Council_ (a Multisig) has the permission to _kill_ and _revive_ gauges. Gauges distribute rewards to LPs in the system in weekly periods. The amount of rewards per period is determined through an on-chain voting process among veNFT holders. The killing of a gauge results in the loss of all accumulated yield in the gauge.
 
-Additionally the `undeclared multisig` has the privilege to whitelist/unwhitelist veNFTs to participate in voting during the last hour before an epoch flip represents a significant exception to the usual restrictions placed on voting. During this critical window, all standard veNFTs are blocked from influencing vote outcomes. However, whitelisted veNFTs retain their voting privileges, and their voting power remains calculated as it would under regular conditions, specifically via the balance check IVotingEscrow(ve).balanceOfNFT(\_tokenId).
+The _Undeclared Multisig_, the multisig is not referenced in the docs, has the privilege to (un-) whitelist veNFTs to participate in the gauge rewards voting process during the last hour before an epoch ends. During this window, the whitelisted veNFTs are the only allowed voters and are thus able to control the final vote outcome. This permission thus too enables the permission owners to unilaterally change the accumulated yield in a gauge. 
+
+Furthermore, the `Undeclared Multisig` is assigned the owner role in multiple contracts and in particular in the _FactoryRegistry_ contract. This contract grants the ability to approve or unapprove factories within the Aerodrome system. Swaps are then routed through new pools from the approved factories. However, traders are protected from malicious factories (and pools) through a slippage tolerance which is enforced on the router. LPs too are not at risk of supplying liquidity in a malicious pool since only pools from the default factory are enabled for LP functions.
+
+Overall, the protocol thus receives a "Medium" risk score for Upgradeability.
+
 
 ## Autonomy
 
 Aerodrome does not have external dependencies 🎉
 
+The Autonomy risk score is "Low".
+
 ## Exit Window
 
-Permissions are not protected by an appropriate exit window resulting in users not being able to withdraw funds in case of an unwanted update.
+Permissions are not protected by an exit window resulting in users not being able to withdraw funds in case of an unwanted update.
+
+The protocol thus receives a "High" risk score.
 
 ## Accessibility
 
 Aerodrome provides multiple access points for users, including both centralized interfaces ([aerodrome.finance](https://aerodrome.finance), [alt.aerodrome.finance](https://alt.aerodrome.finance)) and decentralized interfaces on IPFS ([aero.drome.eth](https://aero.drome.eth), [aero.drome.eth.limo](https://aero.drome.eth.limo), [aero.drome.eth.link](https://aero.drome.eth.link)). This diversity in user interfaces ensures redundancy, allowing users to access the protocol even if one interface becomes unavailable.
+
+The Accessibility risk score thus is "Low".
 
 # Technical Analysis
 

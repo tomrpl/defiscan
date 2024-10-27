@@ -14,7 +14,11 @@ acknowledge_date: "1970-01-01"
 update_date: "1970-01-01"
 ---
 
-# Assessment
+# Summary
+
+
+
+# Overview
 
 ## Chain
 
@@ -26,7 +30,7 @@ Permissions in the PoolTogether V5 protocol are fully revoked, the protocol is i
 
 Note that anyone can create a new `PrizeVault` and link it to various, third-party yield sources and utility contracts. An attacker could deploy malicious yield sources or utility contracts (e.g., `LiquidationPair` or `Claimer`) through which users' funds or prizes could be lost or stolen. However, assessing these risks and possible mitigation measures is outside of the scope of the DeFiScan framework.
 
-As a result, the protocol earns an Upgradeability score of Low.
+As a result, the protocol earns an Upgradeability score of "Low".
 
 ## Autonomy
 
