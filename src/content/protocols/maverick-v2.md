@@ -60,26 +60,26 @@ Hence, the Accessibility score is High.
 
 | Contract Name                     | Address                                    |
 | --------------------------------- | ------------------------------------------ |
-| MaverickV2Factory                 | 0x0A7e848Aca42d879EF06507Fca0E7b33A0a63c1e |
-| MaverickV2PoolLens                | 0x6A9EB38DE5D349Fe751E0aDb4c0D9D391f94cc8D |
-| MaverickV2Quoter                  | 0xb40AfdB85a07f37aE217E7D6462e609900dD8D7A |
-| MaverickV2Router                  | 0x62e31802c6145A2D5E842EeD8efe01fC224422fA |
-| MaverickV2Position                | 0x116193c58B40D50687c0433B2aa0cC4AE00bC32c |
-| MaverickV2BoostedPositionFactory  | 0xd94C8f6D13Cf480FfAC686712C63471D1596cc29 |
-| MaverickV2BoostedPositionLens     | 0x12DD145927CECF616cbD196789c89C2573A53244 |
-| MaverickV2IncentiveMatcherFactory | 0x924Dd05c2325829fa4063CAbE1456273084009d7 |
-| MaverickV2VotingEscrowFactory     | 0x451d47fd6207781dc053551edFD98De8d5EB4Cda |
-| MaverickV2RewardFactory           | 0x63EF1a657cc53747689B201aa07A76E9ef22f8Fe |
-| MaverickV2RewardRouter            | 0xc0C3BC532690af8922a2f260c6e1dEb6CFaB45A0 |
-| MaverickV2VotingEscrowLens        | 0x102f936B0fc2E74dC34E45B601FaBaA522f381F0 |
-| MaverickToken                     | 0x7448c7456a97769F6cD04F1E83A4a23cCdC46aBD |
-| LegacyMaverickVe                  | 0x4949Ac21d5b2A0cCd303C20425eeb29DCcba66D8 |
-| MaverickVeV2                      | 0xC6addB3327A7D4b3b604227f82A6259Ca7112053 |
-| MaverickTokenIncentiveMatcher     | 0x9172a390Cb35a15a890293f59EA5aF250b234D55 |
-| MaverickV2Factory                 | 0x0A7e848Aca42d879EF06507Fca0E7b33A0a63c1e |
-| MaverickV2PoolLens                | 0x6A9EB38DE5D349Fe751E0aDb4c0D9D391f94cc8D |
-| MaverickV2Quoter                  | 0xb40AfdB85a07f37aE217E7D6462e609900dD8D7A |
-| MaverickV2Router                  | 0x62e31802c6145A2D5E842EeD8efe01fC224422fA |
+| MaverickV2Factory                 | [0x0A7e848Aca42d879EF06507Fca0E7b33A0a63c1e](https://etherscan.io/address/0x0A7e848Aca42d879EF06507Fca0E7b33A0a63c1e) |
+| MaverickV2PoolLens                | [0x6A9EB38DE5D349Fe751E0aDb4c0D9D391f94cc8D](https://etherscan.io/address/0x6A9EB38DE5D349Fe751E0aDb4c0D9D391f94cc8D) |
+| MaverickV2Quoter                  | [0xb40AfdB85a07f37aE217E7D6462e609900dD8D7A](https://etherscan.io/address/0xb40AfdB85a07f37aE217E7D6462e609900dD8D7A) |
+| MaverickV2Router                  | [0x62e31802c6145A2D5E842EeD8efe01fC224422fA](https://etherscan.io/address/0x62e31802c6145A2D5E842EeD8efe01fC224422fA) |
+| MaverickV2Position                | [0x116193c58B40D50687c0433B2aa0cC4AE00bC32c](https://etherscan.io/address/0x116193c58B40D50687c0433B2aa0cC4AE00bC32c) |
+| MaverickV2BoostedPositionFactory  | [0xd94C8f6D13Cf480FfAC686712C63471D1596cc29](https://etherscan.io/address/0xd94C8f6D13Cf480FfAC686712C63471D1596cc29) |
+| MaverickV2BoostedPositionLens     | [0x12DD145927CECF616cbD196789c89C2573A53244](https://etherscan.io/address/0x12DD145927CECF616cbD196789c89C2573A53244) |
+| MaverickV2IncentiveMatcherFactory | [0x924Dd05c2325829fa4063CAbE1456273084009d7](https://etherscan.io/address/0x924Dd05c2325829fa4063CAbE1456273084009d7) |
+| MaverickV2VotingEscrowFactory     | [0x451d47fd6207781dc053551edFD98De8d5EB4Cda](https://etherscan.io/address/0x451d47fd6207781dc053551edFD98De8d5EB4Cda) |
+| MaverickV2RewardFactory           | [0x63EF1a657cc53747689B201aa07A76E9ef22f8Fe](https://etherscan.io/address/0x63EF1a657cc53747689B201aa07A76E9ef22f8Fe) |
+| MaverickV2RewardRouter            | [0xc0C3BC532690af8922a2f260c6e1dEb6CFaB45A0](https://etherscan.io/address/0xc0C3BC532690af8922a2f260c6e1dEb6CFaB45A0) |
+| MaverickV2VotingEscrowLens        | [0x102f936B0fc2E74dC34E45B601FaBaA522f381F0](https://etherscan.io/address/0x102f936B0fc2E74dC34E45B601FaBaA522f381F0) |
+| MaverickToken                     | [0x7448c7456a97769F6cD04F1E83A4a23cCdC46aBD](https://etherscan.io/address/0x7448c7456a97769F6cD04F1E83A4a23cCdC46aBD) |
+| LegacyMaverickVe                  | [0x4949Ac21d5b2A0cCd303C20425eeb29DCcba66D8](https://etherscan.io/address/0x4949Ac21d5b2A0cCd303C20425eeb29DCcba66D8) |
+| MaverickVeV2                      | [0xC6addB3327A7D4b3b604227f82A6259Ca7112053](https://etherscan.io/address/0xC6addB3327A7D4b3b604227f82A6259Ca7112053) |
+| MaverickTokenIncentiveMatcher     | [0x9172a390Cb35a15a890293f59EA5aF250b234D55](https://etherscan.io/address/0x9172a390Cb35a15a890293f59EA5aF250b234D55) |
+| MaverickV2Factory                 | [0x0A7e848Aca42d879EF06507Fca0E7b33A0a63c1e](https://etherscan.io/address/0x0A7e848Aca42d879EF06507Fca0E7b33A0a63c1e) |
+| MaverickV2PoolLens                | [0x6A9EB38DE5D349Fe751E0aDb4c0D9D391f94cc8D](https://etherscan.io/address/0x6A9EB38DE5D349Fe751E0aDb4c0D9D391f94cc8D) |
+| MaverickV2Quoter                  | [0xb40AfdB85a07f37aE217E7D6462e609900dD8D7A](https://etherscan.io/address/0xb40AfdB85a07f37aE217E7D6462e609900dD8D7A) |
+| MaverickV2Router                  | [0x62e31802c6145A2D5E842EeD8efe01fC224422fA](https://etherscan.io/address/0x62e31802c6145A2D5E842EeD8efe01fC224422fA) |
 
 ## Permission Owners
 
