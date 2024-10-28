@@ -46,6 +46,8 @@ PoolTogether's contracts are fully immutable, no upgrades or contract changes ca
 
 PoolTogether provides access to the protocol through multiple independent interfaces such as [app.cabana.fi](https://app.cabana.fi) and [pooltime.app](https://pooltime.app), ensuring that users can still interact with the protocol even if one interface is unavailable. This diversity in access points helps minimize risks related to interface outages or downtime, offering more flexibility for users.
 
+The Accessibility risk score thus is "Low".
+
 # Technical Analysis
 
 ## Contracts
