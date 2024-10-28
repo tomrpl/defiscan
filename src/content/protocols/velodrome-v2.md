@@ -63,52 +63,52 @@ The Accessibility risk score thus is "Low".
 
 | Contract Name                          | Address                                    |
 | -------------------------------------- | ------------------------------------------ |
-| VeArtProxy                             | 0x4A9eA0dd5649eC4B6745c60d1769e2184C1782DD |
-| RewardsDistributor                     | 0x9D4736EC60715e71aFe72973f7885DCBC21EA99b |
-| FactoryRegistry                        | 0xF4c67CdEAaB8360370F41514d06e32CcD8aA1d7B |
-| Forwarder                              | 0x06824df38D1D77eADEB6baFCB03904E27429Ab74 |
-| GaugeFactory                           | 0x8391fE399640E7228A059f8Fa104b8a7B4835071 |
-| Gauge                                  | 0x987E7922367B23C4A5fa34C8C5B1385174A095d6 |
-| ManagedRewardsFactory                  | 0xcDd9585005095ac7447d1fDbC990C5CFB805cff0 |
-| Minter                                 | 0x6dc9E1C04eE59ed3531d73a72256C0da46D10982 |
-| PoolFactory                            | 0xF1046053aa5682b4F9a81b5481394DA16BE5FF5a |
-| Router                                 | 0xa062aE8A9c5e11aaA026fc2670B0D65cCc8B2858 |
-| SinkConverter                          | 0x585Af0b397AC42dbeF7f18395426BF878634f18D |
-| SinkDrain                              | 0xda03Dc399aF3F1545748243aAFbC5050A63B17eC |
-| SinkManager                            | 0x5aeE5F0E6C2055EbD776DB25F48f6c9A68ABcdaE |
-| SinkManagerFacilitator                 | 0x45fF00822E8235b86Cb605ac8295c14628cE78a4 |
-| VELO                                   | 0x9560e827aF36c94D2Ac33a39bCE1Fe78631088Db |
-| Voter                                  | 0x41C914ee0c7E1A5edCD0295623e6dC557B5aBf3C |
-| VotingEscrow                           | 0xFAf8FD17D9840595845582fCB047DF13f006787d |
-| VotingRewardsFactory                   | 0x756E7C245C69d351FfFBfb88bA234aa395AdA8ec |
-| RestrictedTeam                         | 0x0a16cB36b553ba2bB2339f3B206A965E9841d305 |
-| Splitter                               | 0x6666B2dF7A328Cf775778Ebad368F5f13e39eC4C |
-| PatchedManagedRewardsFactory           | 0x3F468e35f5c262a6E796bfe3be831Bf8b9142e9c |
-| RelayFactoryRegistry (called Registry) | 0x6b1253B116B5919932399295C75116d33F8EfF96 |
-| KeeperRegistry (called Registry)       | 0x7bC95b327DF9d6dE05C1A02F6D252986Fcf45AF7 |
-| OptimizerRegistry (called Registry)    | 0x7feF5407eD6C83f78eF82B3389FF89019095266B |
-| CLGaugeFactory                         | 0x327147eE440252b893A771345025B41A267Ad985 |
-| CLGauge                                | 0x7155b84A704F0657975827c65Ff6fe42e3A962bb |
-| MixedRouteQuoterV1                     | 0xFF79ec912bA114FD7989b9A2b90C65f0c1b44722 |
-| NonfungiblePositionManager             | 0x416b433906b1B72FA758e166e239c43d68dC6F29 |
-| NonfungibleTokenPositionDescriptor     | 0xccDf417f49a14bC2b23c71684de0304C56DEA165 |
-| CLFactory                              | 0xCc0bDDB707055e04e497aB22a59c2aF4391cd12F |
-| CLPool                                 | 0xc28aD28853A547556780BEBF7847628501A3bCbb |
-| QuoterV2                               | 0x89D8218ed5fF1e46d8dcd33fb0bbeE3be1621466 |
-| CustomSwapFeeModule                    | 0x7361E9079920fb75496E9764A2665d8ee5049D5f |
-| CustomUnstakedFeeModule                | 0xC565F7ba9c56b157Da983c4Db30e13F5f06C59D9 |
-| UniversalRouter                        | 0x4bF3E32de155359D1D75e8B474b66848221142fc |
-| SwapRouter                             | 0x0792a633F0c19c351081CF4B211F68F79bCc9676 |
-| VeloOracle                             | 0x07F544813E9Fb63D57a92f28FbD3FF0f7136F5cE |
-| SugarHelper                            | 0x495193DaebdE03E12857f4d3BB8984da2d447a69 |
-| LpMigrator                             | 0x3Fdb481B25b24824A2339a4A1AbD0B0BC7534e71 |
+| VeArtProxy                             | [0x4A9eA0dd5649eC4B6745c60d1769e2184C1782DD](https://optimistic.etherscan.io/address/0x4A9eA0dd5649eC4B6745c60d1769e2184C1782DD) |
+| RewardsDistributor                     | [0x9D4736EC60715e71aFe72973f7885DCBC21EA99b](https://optimistic.etherscan.io/address/0x9D4736EC60715e71aFe72973f7885DCBC21EA99b) |
+| FactoryRegistry                        | [0xF4c67CdEAaB8360370F41514d06e32CcD8aA1d7B](https://optimistic.etherscan.io/address/0xF4c67CdEAaB8360370F41514d06e32CcD8aA1d7B) |
+| Forwarder                              | [0x06824df38D1D77eADEB6baFCB03904E27429Ab74](https://optimistic.etherscan.io/address/0x06824df38D1D77eADEB6baFCB03904E27429Ab74) |
+| GaugeFactory                           | [0x8391fE399640E7228A059f8Fa104b8a7B4835071](https://optimistic.etherscan.io/address/0x8391fE399640E7228A059f8Fa104b8a7B4835071) |
+| Gauge                                  | [0x987E7922367B23C4A5fa34C8C5B1385174A095d6](https://optimistic.etherscan.io/address/0x987E7922367B23C4A5fa34C8C5B1385174A095d6) |
+| ManagedRewardsFactory                  | [0xcDd9585005095ac7447d1fDbC990C5CFB805cff0](https://optimistic.etherscan.io/address/0xcDd9585005095ac7447d1fDbC990C5CFB805cff0) |
+| Minter                                 | [0x6dc9E1C04eE59ed3531d73a72256C0da46D10982](https://optimistic.etherscan.io/address/0x6dc9E1C04eE59ed3531d73a72256C0da46D10982) |
+| PoolFactory                            | [0xF1046053aa5682b4F9a81b5481394DA16BE5FF5a](https://optimistic.etherscan.io/address/0xF1046053aa5682b4F9a81b5481394DA16BE5FF5a) |
+| Router                                 | [0xa062aE8A9c5e11aaA026fc2670B0D65cCc8B2858](https://optimistic.etherscan.io/address/0xa062aE8A9c5e11aaA026fc2670B0D65cCc8B2858) |
+| SinkConverter                          | [0x585Af0b397AC42dbeF7f18395426BF878634f18D](https://optimistic.etherscan.io/address/0x585Af0b397AC42dbeF7f18395426BF878634f18D) |
+| SinkDrain                              | [0xda03Dc399aF3F1545748243aAFbC5050A63B17eC](https://optimistic.etherscan.io/address/0xda03Dc399aF3F1545748243aAFbC5050A63B17eC) |
+| SinkManager                            | [0x5aeE5F0E6C2055EbD776DB25F48f6c9A68ABcdaE](https://optimistic.etherscan.io/address/0x5aeE5F0E6C2055EbD776DB25F48f6c9A68ABcdaE) |
+| SinkManagerFacilitator                 | [0x45fF00822E8235b86Cb605ac8295c14628cE78a4](https://optimistic.etherscan.io/address/0x45fF00822E8235b86Cb605ac8295c14628cE78a4) |
+| VELO                                   | [0x9560e827aF36c94D2Ac33a39bCE1Fe78631088Db](https://optimistic.etherscan.io/address/0x9560e827aF36c94D2Ac33a39bCE1Fe78631088Db) |
+| Voter                                  | [0x41C914ee0c7E1A5edCD0295623e6dC557B5aBf3C](https://optimistic.etherscan.io/address/0x41C914ee0c7E1A5edCD0295623e6dC557B5aBf3C) |
+| VotingEscrow                           | [0xFAf8FD17D9840595845582fCB047DF13f006787d](https://optimistic.etherscan.io/address/0xFAf8FD17D9840595845582fCB047DF13f006787d) |
+| VotingRewardsFactory                   | [0x756E7C245C69d351FfFBfb88bA234aa395AdA8ec](https://optimistic.etherscan.io/address/0x756E7C245C69d351FfFBfb88bA234aa395AdA8ec) |
+| RestrictedTeam                         | [0x0a16cB36b553ba2bB2339f3B206A965E9841d305](https://optimistic.etherscan.io/address/0x0a16cB36b553ba2bB2339f3B206A965E9841d305) |
+| Splitter                               | [0x6666B2dF7A328Cf775778Ebad368F5f13e39eC4C](https://optimistic.etherscan.io/address/0x6666B2dF7A328Cf775778Ebad368F5f13e39eC4C) |
+| PatchedManagedRewardsFactory           | [0x3F468e35f5c262a6E796bfe3be831Bf8b9142e9c](https://optimistic.etherscan.io/address/0x3F468e35f5c262a6E796bfe3be831Bf8b9142e9c) |
+| RelayFactoryRegistry (called Registry) | [0x6b1253B116B5919932399295C75116d33F8EfF96](https://optimistic.etherscan.io/address/0x6b1253B116B5919932399295C75116d33F8EfF96) |
+| KeeperRegistry (called Registry)       | [0x7bC95b327DF9d6dE05C1A02F6D252986Fcf45AF7](https://optimistic.etherscan.io/address/0x7bC95b327DF9d6dE05C1A02F6D252986Fcf45AF7) |
+| OptimizerRegistry (called Registry)    | [0x7feF5407eD6C83f78eF82B3389FF89019095266B](https://optimistic.etherscan.io/address/0x7feF5407eD6C83f78eF82B3389FF89019095266B) |
+| CLGaugeFactory                         | [0x327147eE440252b893A771345025B41A267Ad985](https://optimistic.etherscan.io/address/0x327147eE440252b893A771345025B41A267Ad985) |
+| CLGauge                                | [0x7155b84A704F0657975827c65Ff6fe42e3A962bb](https://optimistic.etherscan.io/address/0x7155b84A704F0657975827c65Ff6fe42e3A962bb) |
+| MixedRouteQuoterV1                     | [0xFF79ec912bA114FD7989b9A2b90C65f0c1b44722](https://optimistic.etherscan.io/address/0xFF79ec912bA114FD7989b9A2b90C65f0c1b44722) |
+| NonfungiblePositionManager             | [0x416b433906b1B72FA758e166e239c43d68dC6F29](https://optimistic.etherscan.io/address/0x416b433906b1B72FA758e166e239c43d68dC6F29) |
+| NonfungibleTokenPositionDescriptor     | [0xccDf417f49a14bC2b23c71684de0304C56DEA165](https://optimistic.etherscan.io/address/0xccDf417f49a14bC2b23c71684de0304C56DEA165) |
+| CLFactory                              | [0xCc0bDDB707055e04e497aB22a59c2aF4391cd12F](https://optimistic.etherscan.io/address/0xCc0bDDB707055e04e497aB22a59c2aF4391cd12F) |
+| CLPool                                 | [0xc28aD28853A547556780BEBF7847628501A3bCbb](https://optimistic.etherscan.io/address/0xc28aD28853A547556780BEBF7847628501A3bCbb) |
+| QuoterV2                               | [0x89D8218ed5fF1e46d8dcd33fb0bbeE3be1621466](https://optimistic.etherscan.io/address/0x89D8218ed5fF1e46d8dcd33fb0bbeE3be1621466) |
+| CustomSwapFeeModule                    | [0x7361E9079920fb75496E9764A2665d8ee5049D5f](https://optimistic.etherscan.io/address/0x7361E9079920fb75496E9764A2665d8ee5049D5f) |
+| CustomUnstakedFeeModule                | [0xC565F7ba9c56b157Da983c4Db30e13F5f06C59D9](https://optimistic.etherscan.io/address/0xC565F7ba9c56b157Da983c4Db30e13F5f06C59D9) |
+| UniversalRouter                        | [0x4bF3E32de155359D1D75e8B474b66848221142fc](https://optimistic.etherscan.io/address/0x4bF3E32de155359D1D75e8B474b66848221142fc) |
+| SwapRouter                             | [0x0792a633F0c19c351081CF4B211F68F79bCc9676](https://optimistic.etherscan.io/address/0x0792a633F0c19c351081CF4B211F68F79bCc9676) |
+| VeloOracle                             | [0x07F544813E9Fb63D57a92f28FbD3FF0f7136F5cE](https://optimistic.etherscan.io/address/0x07F544813E9Fb63D57a92f28FbD3FF0f7136F5cE) |
+| SugarHelper                            | [0x495193DaebdE03E12857f4d3BB8984da2d447a69](https://optimistic.etherscan.io/address/0x495193DaebdE03E12857f4d3BB8984da2d447a69) |
+| LpMigrator                             | [0x3Fdb481B25b24824A2339a4A1AbD0B0BC7534e71](https://optimistic.etherscan.io/address/0x3Fdb481B25b24824A2339a4A1AbD0B0BC7534e71) |
 
 ## Permission Owners
 
 | Name                | Account                                                                                                               | Type         |
 | ------------------- | --------------------------------------------------------------------------------------------------------------------- | ------------ |
-| Undeclared Multisig | [0xBA4BB89f4d1E66AA86B60696534892aE0cCf91F5](https://etherscan.io/address/0xBA4BB89f4d1E66AA86B60696534892aE0cCf91F5) | Multisig 3/7 |
-| Emergency Council   | [0x838352F4E3992187a33a04826273dB3992Ee2b3f](https://etherscan.io/address/0x838352F4E3992187a33a04826273dB3992Ee2b3f) | Multisig 4/7 |
+| Undeclared Multisig | [0xBA4BB89f4d1E66AA86B60696534892aE0cCf91F5](https://optimistic.etherscan.io/address/0xBA4BB89f4d1E66AA86B60696534892aE0cCf91F5) | Multisig 3/7 |
+| Emergency Council   | [0x838352F4E3992187a33a04826273dB3992Ee2b3f](https://optimistic.etherscan.io/address/0x838352F4E3992187a33a04826273dB3992Ee2b3f) | Multisig 4/7 |
 
 ## Permissions
 
