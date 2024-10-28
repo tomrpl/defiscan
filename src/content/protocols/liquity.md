@@ -103,7 +103,7 @@ All external permissions are revoked, the protocol is immutable 🎉
 
 The only external protocol dependency is an ETH/USD price feed (the Oracle) which is used to compute the value of users’ collateral when minting LUSD, redeeming LUSD or liquidating troves.
 
-The system relies on two different oracles: Chainlink is the primary oracle and Tellor is the fallback oracle in case the chainlink price feed is frozen or untrusted. The Chainlink price feed is deployed at ` 0x3D7aE7E594f2f2091Ad8798313450130d0Aba3a0`, the Tellor oracle is deployed at `0xAd430500ECDa11E38C9bCB08a702274b94641112`.
+The system relies on two different oracles: Chainlink is the primary oracle and Tellor is the fallback oracle in case the chainlink price feed is frozen or untrusted. The Chainlink price feed is deployed at `0x3D7aE7E594f2f2091Ad8798313450130d0Aba3a0`, the Tellor oracle is deployed at `0xAd430500ECDa11E38C9bCB08a702274b94641112`.
 
 If both Chainlink and Tellor are frozen or untrusted the last good price is used and the system keeps operating allowing users to withdraw their assets.
 
