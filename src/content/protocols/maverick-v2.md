@@ -38,7 +38,7 @@ As a result, the protocol's Upgradeability score is Medium.
 
 ## Autonomy
 
-Maverick's orotocol token (MAV) relies on the LayerZero protocol for bridging. In particular, if the DVN (currently Google Cloud) fails or behaves maliciously, it could disrupt cross-chain operations. While LayerZero’s decentralized design allows permissionless executors to step in if needed, existing permissions enable to change critical settings (e.g. trusted remotes) potentially affecting the expected behavior of the MAV token.
+Maverick's protocol token (MAV) relies on the LayerZero protocol for bridging. In particular, if the DVN (currently Google Cloud) fails or behaves maliciously, it could disrupt cross-chain operations. While LayerZero’s decentralized design allows permissionless executors to step in if needed, existing permissions enable to change critical settings (e.g. trusted remotes) potentially affecting the expected behavior of the MAV token.
 
 The protocol's Autonomy score thus is considered Medium.
 
