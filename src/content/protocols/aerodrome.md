@@ -64,32 +64,32 @@ The Accessibility risk score thus is "Low".
 
 | Contract Name                      | Address                                    |
 | ---------------------------------- | ------------------------------------------ |
-| AERO                               | 0x940181a94A35A4569E4529A3CDfB74e38FD98631 |
-| AirdropDistributor                 | 0xE4c69af018B2EA9e575026c0472B6531A2bC382F |
-| VeArtProxy                         | 0xE9992487b2EE03b7a91241695A58E0ef3654643E |
-| FactoryRegistry                    | 0x5C3F18F06CC09CA1910767A34a20F771039E37C0 |
-| Forwarder                          | 0x15e62707FCA7352fbE35F51a8D6b0F8066A05DCc |
-| GaugeFactory                       | 0x35f35cA5B132CaDf2916BaB57639128eAC5bbcb5 |
-| ManagedRewardsFactory              | 0xFdA1fb5A2a5B23638C7017950506a36dcFD2bDC3 |
-| Minter                             | 0xeB018363F0a9Af8f91F06FEe6613a751b2A33FE5 |
-| PoolFactory                        | 0x420DD381b31aEf6683db6B902084cB0FFECe40Da |
-| RewardsDistributor                 | 0x227f65131A261548b057215bB1D5Ab2997964C7d |
-| Router                             | 0xcF77a3Ba9A5CA399B7c97c74d54e5b1Beb874E43 |
-| Voter                              | 0x16613524e02ad97eDfeF371bC883F2F5d6C480A5 |
-| VotingEscrow                       | 0xeBf418Fe2512e7E6bd9b87a8F0f294aCDC67e6B4 |
-| VotingRewardsFactory               | 0x45cA74858C579E717ee29A86042E0d53B252B504 |
-| CLGaugeFactory                     | 0xD30677bd8dd15132F251Cb54CbDA552d2A05Fb08 |
-| CLGauge                            | 0xF5601F95708256A118EF5971820327F362442D2d |
-| MixedRouteQuoterV1                 | 0x0A5aA5D3a4d28014f967Bf0f29EAA3FF9807D5c6 |
-| NonfungiblePositionManager         | 0x827922686190790b37229fd06084350E74485b72 |
-| NonfungibleTokenPositionDescriptor | 0x01b0CaCB9A8004e08D075c919B5dF3b59FD53c55 |
-| CLFactory                          | 0x5e7BB104d84c7CB9B682AaC2F3d509f5F406809A |
-| CLPool                             | 0xeC8E5342B19977B4eF8892e02D8DAEcfa1315831 |
-| QuoterV2                           | 0x254cF9E1E6e233aa1AC962CB9B05b2cfeAaE15b0 |
-| CustomSwapFeeModule                | 0xF4171B0953b52Fa55462E4d76ecA1845Db69af00 |
-| CustomUnstakedFeeModule            | 0x0AD08370c76Ff426F534bb2AFFD9b5555338ee68 |
-| UniversalRouter                    | 0x6Cb442acF35158D5eDa88fe602221b67B400Be3E |
-| SwapRouter                         | 0xBE6D8f0d05cC4be24d5167a3eF062215bE6D18a5 |
+| AERO                               | [0x940181a94A35A4569E4529A3CDfB74e38FD98631](https://basescan.org/address/0x940181a94A35A4569E4529A3CDfB74e38FD98631) |
+| AirdropDistributor                 | [0xE4c69af018B2EA9e575026c0472B6531A2bC382F](https://basescan.org/address/0xE4c69af018B2EA9e575026c0472B6531A2bC382F) |
+| VeArtProxy                         | [0xE9992487b2EE03b7a91241695A58E0ef3654643E](https://basescan.org/address/0xE9992487b2EE03b7a91241695A58E0ef3654643E) |
+| FactoryRegistry                    | [0x5C3F18F06CC09CA1910767A34a20F771039E37C0](https://basescan.org/address/0x5C3F18F06CC09CA1910767A34a20F771039E37C0) |
+| Forwarder                          | [0x15e62707FCA7352fbE35F51a8D6b0F8066A05DCc](https://basescan.org/address/0x15e62707FCA7352fbE35F51a8D6b0F8066A05DCc) |
+| GaugeFactory                       | [0x35f35cA5B132CaDf2916BaB57639128eAC5bbcb5](https://basescan.org/address/0x35f35cA5B132CaDf2916BaB57639128eAC5bbcb5) |
+| ManagedRewardsFactory              | [0xFdA1fb5A2a5B23638C7017950506a36dcFD2bDC3](https://basescan.org/address/0xFdA1fb5A2a5B23638C7017950506a36dcFD2bDC3) |
+| Minter                             | [0xeB018363F0a9Af8f91F06FEe6613a751b2A33FE5](https://basescan.org/address/0xeB018363F0a9Af8f91F06FEe6613a751b2A33FE5) |
+| PoolFactory                        | [0x420DD381b31aEf6683db6B902084cB0FFECe40Da](https://basescan.org/address/0x420DD381b31aEf6683db6B902084cB0FFECe40Da) |
+| RewardsDistributor                 | [0x227f65131A261548b057215bB1D5Ab2997964C7d](https://basescan.org/address/0x227f65131A261548b057215bB1D5Ab2997964C7d) |
+| Router                             | [0xcF77a3Ba9A5CA399B7c97c74d54e5b1Beb874E43](https://basescan.org/address/0xcF77a3Ba9A5CA399B7c97c74d54e5b1Beb874E43) |
+| Voter                              | [0x16613524e02ad97eDfeF371bC883F2F5d6C480A5](https://basescan.org/address/0x16613524e02ad97eDfeF371bC883F2F5d6C480A5) |
+| VotingEscrow                       | [0xeBf418Fe2512e7E6bd9b87a8F0f294aCDC67e6B4](https://basescan.org/address/0xeBf418Fe2512e7E6bd9b87a8F0f294aCDC67e6B4) |
+| VotingRewardsFactory               | [0x45cA74858C579E717ee29A86042E0d53B252B504](https://basescan.org/address/0x45cA74858C579E717ee29A86042E0d53B252B504) |
+| CLGaugeFactory                     | [0xD30677bd8dd15132F251Cb54CbDA552d2A05Fb08](https://basescan.org/address/0xD30677bd8dd15132F251Cb54CbDA552d2A05Fb08) |
+| CLGauge                            | [0xF5601F95708256A118EF5971820327F362442D2d](https://basescan.org/address/0xF5601F95708256A118EF5971820327F362442D2d) |
+| MixedRouteQuoterV1                 | [0x0A5aA5D3a4d28014f967Bf0f29EAA3FF9807D5c6](https://basescan.org/address/0x0A5aA5D3a4d28014f967Bf0f29EAA3FF9807D5c6) |
+| NonfungiblePositionManager         | [0x827922686190790b37229fd06084350E74485b72](https://basescan.org/address/0x827922686190790b37229fd06084350E74485b72) |
+| NonfungibleTokenPositionDescriptor | [0x01b0CaCB9A8004e08D075c919B5dF3b59FD53c55](https://basescan.org/address/0x01b0CaCB9A8004e08D075c919B5dF3b59FD53c55) |
+| CLFactory                          | [0x5e7BB104d84c7CB9B682AaC2F3d509f5F406809A](https://basescan.org/address/0x5e7BB104d84c7CB9B682AaC2F3d509f5F406809A) |
+| CLPool                             | [0xeC8E5342B19977B4eF8892e02D8DAEcfa1315831](https://basescan.org/address/0xeC8E5342B19977B4eF8892e02D8DAEcfa1315831) |
+| QuoterV2                           | [0x254cF9E1E6e233aa1AC962CB9B05b2cfeAaE15b0](https://basescan.org/address/0x254cF9E1E6e233aa1AC962CB9B05b2cfeAaE15b0) |
+| CustomSwapFeeModule                | [0xF4171B0953b52Fa55462E4d76ecA1845Db69af00](https://basescan.org/address/0xF4171B0953b52Fa55462E4d76ecA1845Db69af00) |
+| CustomUnstakedFeeModule            | [0x0AD08370c76Ff426F534bb2AFFD9b5555338ee68](https://basescan.org/address/0x0AD08370c76Ff426F534bb2AFFD9b5555338ee68) |
+| UniversalRouter                    | [0x6Cb442acF35158D5eDa88fe602221b67B400Be3E](https://basescan.org/address/0x6Cb442acF35158D5eDa88fe602221b67B400Be3E) |
+| SwapRouter                         | [0xBE6D8f0d05cC4be24d5167a3eF062215bE6D18a5](https://basescan.org/address/0xBE6D8f0d05cC4be24d5167a3eF062215bE6D18a5) |
 
 ## Permission Owners
 
