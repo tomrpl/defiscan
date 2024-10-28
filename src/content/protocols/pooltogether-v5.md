@@ -16,21 +16,24 @@ update_date: "1970-01-01"
 
 # Summary
 
+PoolTogether-V5 is the newest version of the prize savings protocol; where yield on deposits is awarded as random prizes to depositors. This version is designed to be a hyperstructure; an autonomous, immutable protocol that can be permissionlessly extended by anyone.
 
+A prize savings protocol gives users a chance at a large upside without risking their deposit. Each day, the yield from deposits is awarded randomly as prizes. Users have a chance to win everyone else's yield!
 
 # Overview
 
 ## Chain
 
-This report covers the PoolTogether V5 deployment on the Ethereum chain. Ethereum is considered fully decentralized according to this framework.
+PoolTogether V5 is deployed on Ethereum mainnet, it thus receives a Chain risk score of "Low".
 
 ## Upgradeability
 
 Permissions in the PoolTogether V5 protocol are fully revoked, the protocol is immutable 🎉
 
-Note that anyone can create a new `PrizeVault` and link it to various, third-party yield sources and utility contracts. An attacker could deploy malicious yield sources or utility contracts (e.g., `LiquidationPair` or `Claimer`) through which users' funds or prizes could be lost or stolen. However, assessing these risks and possible mitigation measures is outside of the scope of the DeFiScan framework.
+> ⚠️
+> Anyone can create a new `PrizeVault` and link it to various, third-party yield sources and utility contracts. An attacker could deploy malicious yield sources or utility contracts (e.g., `LiquidationPair` or `Claimer`) through which users' funds or prizes could be lost or stolen. However, assessing these risks and possible mitigation measures is outside of the scope of the DeFiScan framework.
 
-As a result, the protocol earns an Upgradeability score of "Low".
+The protocol earns an Upgradeability risk score of "Low".
 
 ## Autonomy
 
