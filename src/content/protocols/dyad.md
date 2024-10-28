@@ -58,15 +58,15 @@ The risk score is "Medium".
 
 | Contract Name       | Address                                    |
 | ------------------- | ------------------------------------------ |
-| DYAD                | 0xfd03723a9a3abe0562451496a9a394d2c4bad4ab |
-| Notes               | 0xDc400bBe0B8B79C07A962EA99a642F5819e3b712 |
-| Licenser            | 0xb5bdE0Ba7b3e39226E5369e508D673fDF02bA8c1 |
-| VaultLicenser       | 0xfe81952a0a2c6ab603ef1b3cc69e1b6bffa92697 |
-| VaultManagerV4      | 0x259286552c3f5a76594d0bc24d499639f8652c99 |
-| ERC1967Proxy        | 0xb62bdb1a6ac97a9b70957dd35357311e8859f0d7 |
-| Kerosene            | 0xf3768D6e78E65FC64b8F12ffc824452130BD5394 |
-| KerosineManager     | 0xfccf9d9466ed79afed2abc46350bfb78f7b47b90 |
-| KerosineDenominator | 0x4b3dd4ceb943efd7d169a1baaeec63097601e88e |
+| DYAD                | [0xfd03723a9a3abe0562451496a9a394d2c4bad4ab](https://etherscan.io/address/0xfd03723a9a3abe0562451496a9a394d2c4bad4ab) |
+| Notes               | [0xDc400bBe0B8B79C07A962EA99a642F5819e3b712](https://etherscan.io/address/0xDc400bBe0B8B79C07A962EA99a642F5819e3b712) |
+| Licenser            | [0xb5bdE0Ba7b3e39226E5369e508D673fDF02bA8c1](https://etherscan.io/address/0xb5bdE0Ba7b3e39226E5369e508D673fDF02bA8c1) |
+| VaultLicenser       | [0xfe81952a0a2c6ab603ef1b3cc69e1b6bffa92697](https://etherscan.io/address/0xfe81952a0a2c6ab603ef1b3cc69e1b6bffa92697) |
+| VaultManagerV4      | [0x259286552c3f5a76594d0bc24d499639f8652c99](https://etherscan.io/address/0x259286552c3f5a76594d0bc24d499639f8652c99) |
+| ERC1967Proxy        | [0xb62bdb1a6ac97a9b70957dd35357311e8859f0d7](https://etherscan.io/address/0xb62bdb1a6ac97a9b70957dd35357311e8859f0d7) |
+| Kerosene            | [0xf3768D6e78E65FC64b8F12ffc824452130BD5394](https://etherscan.io/address/0xf3768D6e78E65FC64b8F12ffc824452130BD5394) |
+| KerosineManager     | [0xfccf9d9466ed79afed2abc46350bfb78f7b47b90](https://etherscan.io/address/0xfccf9d9466ed79afed2abc46350bfb78f7b47b90) |
+| KerosineDenominator | [0x4b3dd4ceb943efd7d169a1baaeec63097601e88e](https://etherscan.io/address/0x4b3dd4ceb943efd7d169a1baaeec63097601e88e) |
 
 ## Permission Owners
 
@@ -94,7 +94,7 @@ The risk score is "Medium".
 ## Dependencies
 
 The Dyad protocol relies on Chainlink price feeds for collateral valuation.
-In case one of the chainlink price feeds deployed to addresses `0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419` (WETH),` 0xCfE54B5cD566aB89272946F602D76Ea879CAb4a8` (stETH),` 0x8350b7De6a6a2C1368E7D4Bd968190e13E354297` (TBTC),` 0xFF3BC18cCBd5999CE63E788A1c250a88626aD099` (sUSDe) stops working the Dyad protocol will face disruption. For each collateral price feed that stops working the respective collateral in the vault is frozen. That means the specific collateral cannot be redeemed for DYAD and the collateral cannot be withdrawn even if the collateralisation ratio was above the 150% value. Additionally liquidations for this specific asset are paused. Burning DYAD remains always possible in case of frozen oracle prices.
+In case one of the chainlink price feeds deployed to addresses `[0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419](https://etherscan.io/address/0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419)` (WETH),` [0xCfE54B5cD566aB89272946F602D76Ea879CAb4a8](https://etherscan.io/address/0xCfE54B5cD566aB89272946F602D76Ea879CAb4a8)` (stETH),`[0x8350b7De6a6a2C1368E7D4Bd968190e13E354297](https://etherscan.io/address/0x8350b7De6a6a2C1368E7D4Bd968190e13E354297)` (TBTC),`[0xFF3BC18cCBd5999CE63E788A1c250a88626aD099](https://etherscan.io/address/0xFF3BC18cCBd5999CE63E788A1c250a88626aD099)` (sUSDe) stops working the Dyad protocol will face disruption. For each collateral price feed that stops working the respective collateral in the vault is frozen. That means the specific collateral cannot be redeemed for DYAD and the collateral cannot be withdrawn even if the collateralisation ratio was above the 150% value. Additionally liquidations for this specific asset are paused. Burning DYAD remains always possible in case of frozen oracle prices.
 
 The protocol does not offer alternatives to replace or update the oracle dependency, as the reference addresses for these feeds are immutable. Consequently, if any Chainlink feed is discontinued, the corresponding collateral could be lost without recovery options.
 
