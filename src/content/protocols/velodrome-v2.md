@@ -55,6 +55,8 @@ The protocol thus receives a "High" risk score.
 
 Velodrome provides several access points to the protocol, both decentralized and centralized. Decentralized links include [velo.drome.eth](https://velo.drome.eth), [velo.drome.eth.limo](https://velo.drome.eth.limo), and [velo.drome.eth.link](https://velo.drome.eth.link), while centralized options include [velodrome.finance](https://velodrome.finance) and [alt.velodrome.finance](https://alt.velodrome.finance). This diversity of user interfaces offers redundancy and reduces risks associated with access issues.
 
+The Accessibility risk score thus is "Low".
+
 # Technical Analysis
 
 ## Contracts
