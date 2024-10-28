@@ -31,7 +31,7 @@ The protocol's Chain risk score thus is "Medium".
 
 Different permissions in the protocol are owned by a number of Multisigs.  
 
-The _Emergency Council_ (a Multisig) has the permission to _kill_ and _revive_ gauges. Gauges distribute rewards to LPs in the system in weekly periods. The amount of rewards per period is determined through an on-chain voting process among veNFT holders. The killing of a gauge results in the loss of all accumulated yield in the gauge.
+The _Emergency Council_ (a Multisig) has the permission to _kill_ and _revive_ gauges. Gauges distribute rewards to LPs in the system in weekly periods. The amount of rewards per period is determined through an on-chain voting process among veNFT holders. The killing of a gauge results in the loss of all accumulated yield in the gauge for the current epoch. While this permission is intended to be used only in the case of a _malicious_ gauge, see e.g. the case of [killing the USDM gauge](https://gov.curve.fi/t/the-curve-emergency-dao-has-killed-the-usdm-gauge/2307) on Curve in November 2021, it can potentially also be abused if the permission owner is comprimised. 
 
 The _Undeclared Multisig_, the multisig is not referenced in the docs, has the privilege to (un-) whitelist veNFTs to participate in the gauge rewards voting process during the last hour before an epoch ends. During this window, the whitelisted veNFTs are the only allowed voters and are thus able to control the final vote outcome. This permission thus too enables the permission owners to unilaterally change the accumulated yield in a gauge. 
 
