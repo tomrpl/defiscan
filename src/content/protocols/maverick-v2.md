@@ -34,7 +34,9 @@ Maverick v2 is deployed on Ethereum mainnet.
 
 Permissions on most contracts in the Maverick V2 protocol (e.g. `MaverickV2IncentiveMatcher`, `MaverickV2PoolLens`) have been revoked.
 
-For other contracts (e.g. `MaverickV2Factory` and `MaverickToken`) permissions still exist and allow the owner to change protocol fees, destination addresses, and security configurations (e.g. through the LayerZero protocol). These permissions are not protected with effective restrictions e.g. on the update values. Ultimately, these permissions potentially affect users' unclaimed yield and may materially change the expected performance of the protocol.
+On other contracts permissions still exist and are not protected with adequate restrictions. In particular, the `MaverickToken` (MAV token) integrates with the _LayerZero_ protocol for cross-chain compatibility and exposes a number of permissioned functions. For example the `setTrustedRemote` allows the permission owner to add arbitrary MAV token implementations on other chains. Adding a flawed or malicious implementation may result in the minting of unbacked MAV tokens that dillute the overall supply. 
+
+As a result, the existing permissions potentially affect (the value of) users' unclaimed yield or otherwise materially change the expected performance of the protocol.
 
 > ⚠️ MaverickV2Factory is NOT verified on a public block explorer. For the MaverickV2Factory we currently rely on the technical documentation provided by the Maverick Team. As a consequence the full scope of permissions and their definitive impact cannot be assessed.
 
