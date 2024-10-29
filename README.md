@@ -1,4 +1,10 @@
-# DeFi Scan
+# DeFiScan
+
+A public website for the monitoring of the maturity and risks of DeFi technology.
+
+Read more about the methodology behind the DeFi stages and risks in this [post](https://deficollective.org/blog/introducing-defiscan).
+
+DeFiScan is built and maintained by the [DeFi Collective](https://DeFiCollective.org), a non-profit organization with the mission to make DeFi more transparent and secure for all.
 
 ## Getting started
 
@@ -7,7 +13,7 @@ To run the website on your local machine, follow these steps:
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/deficollective/defi-pulse.git
+   git clone https://github.com/deficollective/defi-scan.git
    ```
 
    After successful cloned. Head over to the project directory
@@ -46,12 +52,12 @@ To run the website on your local machine, follow these steps:
 
 - **Add New Protocol**:
 
-New protocols can be added as an `.mdx` file in the `content` folder.
+New protocols reviews can be added as an `.md` file in the `content` folder.
 
 `Important`:
 
-- Make sure to name the file with dash(`-`) and without space. Example: `liquity-v1.mdx`
-- The `.mdx` file needs to follow the protocol report structure outlined [here](src/content/template.md)
+- Make sure to name the file with dash (`-`) and without space. Example: `liquity-v1.md`
+- The `.md` file needs to follow the protocol report structure outlined [here](src/content/template.md)
 
 ## Acknowledgement
 
