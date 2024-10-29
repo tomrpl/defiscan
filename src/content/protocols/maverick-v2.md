@@ -151,7 +151,7 @@ Token has no timelock for changes/upgrades. The OFT token when ownership is not 
 | Requirement                                             | Undeclared Multisig 1 | Undeclared Multisig 2 |
 | ------------------------------------------------------- | :-------------------: | :-------------------: |
 | At least 7 signers                                      |          ✅           |          ✅           |
-| At least 51% threshold                                  |          ❌           |          ✅           |
+| At least 51% threshold                                  |          ❌           |          ❌           |
 | At least 50% non-team signers                           |          ❌           |          ❌           |
 | Signers are publicly announced (with name or pseudonym) |          ❌           |          ❌           |
 
