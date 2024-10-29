@@ -32,7 +32,7 @@ Maverick v2 is deployed on Ethereum mainnet.
 
 ## Upgradeability
 
-Permissions on most contracts in the Maverick V2 protocol (e.g. `MaverickV2IncentiveMatcher`, `MaverickV2PoolLens`) have been revoked. 
+Permissions on most contracts in the Maverick V2 protocol (e.g. `MaverickV2IncentiveMatcher`, `MaverickV2PoolLens`) have been revoked.
 
 For other contracts (e.g. `MaverickV2Factory` and `MaverickToken`) permissions still exist and allow the owner to change protocol fees, destination addresses, and security configurations (e.g. through the LayerZero protocol). These permissions are not protected with effective restrictions e.g. on the update values. Ultimately, these permissions potentially affect users' unclaimed yield and may materially change the expected performance of the protocol.
 
@@ -48,7 +48,7 @@ Maverick's protocol token (MAV) relies on the LayerZero protocol for bridging. I
 
 ## Exit Window
 
-The only two contracts in Maverick protocol that expose permissions are `MaverickToken` (MAV) and `MaverickV2Factory`. The permissions found on the first are not protected with an exit window for users. 
+The only two contracts in Maverick protocol that expose permissions are `MaverickToken` (MAV) and `MaverickV2Factory`. The permissions found on the first are not protected with an exit window for users.
 
 Further, since `MaverickV2Factory` is not publicly verified, it remains unclear whether an exit window protects the permissions found in this contract.
 
@@ -64,8 +64,8 @@ Only a single user interface, app.mav.xyz, exists without a backup solution for 
 
 ## Contracts
 
-| Contract Name                     | Address                                    |
-| --------------------------------- | ------------------------------------------ |
+| Contract Name                     | Address                                                                                                               |
+| --------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
 | MaverickV2Factory                 | [0x0A7e848Aca42d879EF06507Fca0E7b33A0a63c1e](https://etherscan.io/address/0x0A7e848Aca42d879EF06507Fca0E7b33A0a63c1e) |
 | MaverickV2PoolLens                | [0x6A9EB38DE5D349Fe751E0aDb4c0D9D391f94cc8D](https://etherscan.io/address/0x6A9EB38DE5D349Fe751E0aDb4c0D9D391f94cc8D) |
 | MaverickV2Quoter                  | [0xb40AfdB85a07f37aE217E7D6462e609900dD8D7A](https://etherscan.io/address/0xb40AfdB85a07f37aE217E7D6462e609900dD8D7A) |
@@ -82,10 +82,6 @@ Only a single user interface, app.mav.xyz, exists without a backup solution for 
 | LegacyMaverickVe                  | [0x4949Ac21d5b2A0cCd303C20425eeb29DCcba66D8](https://etherscan.io/address/0x4949Ac21d5b2A0cCd303C20425eeb29DCcba66D8) |
 | MaverickVeV2                      | [0xC6addB3327A7D4b3b604227f82A6259Ca7112053](https://etherscan.io/address/0xC6addB3327A7D4b3b604227f82A6259Ca7112053) |
 | MaverickTokenIncentiveMatcher     | [0x9172a390Cb35a15a890293f59EA5aF250b234D55](https://etherscan.io/address/0x9172a390Cb35a15a890293f59EA5aF250b234D55) |
-| MaverickV2Factory                 | [0x0A7e848Aca42d879EF06507Fca0E7b33A0a63c1e](https://etherscan.io/address/0x0A7e848Aca42d879EF06507Fca0E7b33A0a63c1e) |
-| MaverickV2PoolLens                | [0x6A9EB38DE5D349Fe751E0aDb4c0D9D391f94cc8D](https://etherscan.io/address/0x6A9EB38DE5D349Fe751E0aDb4c0D9D391f94cc8D) |
-| MaverickV2Quoter                  | [0xb40AfdB85a07f37aE217E7D6462e609900dD8D7A](https://etherscan.io/address/0xb40AfdB85a07f37aE217E7D6462e609900dD8D7A) |
-| MaverickV2Router                  | [0x62e31802c6145A2D5E842EeD8efe01fC224422fA](https://etherscan.io/address/0x62e31802c6145A2D5E842EeD8efe01fC224422fA) |
 
 ## Permission Owners
 
