@@ -36,7 +36,7 @@ Permissions on most contracts in the Maverick V2 protocol (e.g. `MaverickV2Incen
 
 For other contracts (e.g. `MaverickV2Factory` and `MaverickToken`) permissions still exist and allow the owner to change protocol fees, destination addresses, and security configurations (e.g. through the LayerZero protocol). These permissions are not protected with effective restrictions e.g. on the update values. Ultimately, these permissions potentially affect users' unclaimed yield and may materially change the expected performance of the protocol.
 
-> ⚠️ MaverickV2Factory is NOT verified on a public block explorer and the full scope of permissions and their impact cannot be assessed.
+> ⚠️ MaverickV2Factory is NOT verified on a public block explorer. For the MaverickV2Factory we currently rely on the technical documentation provided by the Maverick Team. As a consequence the full scope of permissions and their definitive impact cannot be assessed.
 
 > Upgradeability score: M
 
