@@ -51,7 +51,7 @@ New protocols can be added as an `.mdx` file in the `content` folder.
 `Important`:
 
 - Make sure to name the file with dash(`-`) and without space. Example: `liquity-v1.mdx`
-- The `.mdx` file needs to follow the protocol report structure outlined [here](todo)
+- The `.mdx` file needs to follow the protocol report structure outlined [here](src/content/template.md)
 
 ## Acknowledgement
 
