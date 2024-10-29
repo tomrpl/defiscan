@@ -25,7 +25,7 @@ Velodrome Finance is a next-generation AMM that combines the best of Curve, Conv
 
 Velodrome is deployed on the Optimism chain, an Ethereum L2 in Stage 1 according to L2BEAT.
 
-The protocol's Chain risk score thus is "Medium".
+> Chain score: M
 
 ## Upgradeability
 
@@ -37,25 +37,25 @@ The _Undeclared Multisig_, the multisig is not referenced in the docs, has the p
 
 Furthermore, the `Undeclared Multisig` is assigned the owner role in multiple contracts and in particular in the _FactoryRegistry_ contract. This contract grants the ability to approve or unapprove factories within the Velodrome system. Swaps are then routed through new pools from the approved factories. However, traders are protected from malicious factories (and pools) through a slippage tolerance which is enforced on the router. LPs too are not at risk of supplying liquidity in a malicious pool since only pools from the default factory are enabled for LP functions.
 
-Overall, the protocol thus receives a "Medium" risk score for Upgradeability.
+> Upgradeability score: M
 
 ## Autonomy
 
 Velodrome does not have external dependencies 🎉
 
-The Autonomy risk score is "Low".
+> Autonomy score: L
 
 ## Exit Window
 
 Permissions are not protected by an exit window resulting in users not being able to withdraw funds in case of an unwanted update.
 
-The protocol thus receives a "High" risk score.
+> Exit Window score: H
 
 ## Accessibility
 
 Velodrome provides several access points to the protocol, both decentralized and centralized. Decentralized links include [velo.drome.eth](https://velo.drome.eth), [velo.drome.eth.limo](https://velo.drome.eth.limo), and [velo.drome.eth.link](https://velo.drome.eth.link), while centralized options include [velodrome.finance](https://velodrome.finance) and [alt.velodrome.finance](https://alt.velodrome.finance). This diversity of user interfaces offers redundancy and reduces risks associated with access issues.
 
-The Accessibility risk score thus is "Low".
+> Accessibility score: L
 
 # Technical Analysis
 

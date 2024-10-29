@@ -16,7 +16,7 @@ update_date: "1970-01-01"
 
 # Summary
 
-Maverick helps its users to maximize capital efficiency by automating the concentration of liquidity as price moves. Higher capital efficiency leads to more liquid markets, which means better prices for traders and more fees for liquidity providers. This built-in feature also helps LPs to eliminate the high gas fees that come from adjusting positions around price themselves.
+Maverick is a DEX supporting concentrated liquidity positions for LPs and the automation thereof with the goal of increasing capital efficiency and market liquidity. This results in better prices for traders and more fees for liquidity providers. This built-in feature also helps LPs to eliminate the high gas fees that come from adjusting positions around price themselves.
 
 Liquidity providers can also now choose to follow the price of an asset in a single direction, effectively making a bet on the price trajectory of a specific token. These directional bets are similar to single-sided liquidity strategies, in that the liquidity provider will be mostly or entirely exposed to a single asset in a given pool.
 
@@ -26,33 +26,39 @@ Together, these technological innovations represent a paradigm shift in the way 
 
 ## Chain
 
-This report covers the Maverick v2 deployment on the Ethereum chain. Ethereum is considered fully decentralized according to this framework.
+Maverick v2 is deployed on Ethereum mainnet.
+
+> Chain score: L
 
 ## Upgradeability
 
-Maverick Protocol demonstrates partial upgradeability.
+Permissions on most contracts in the Maverick V2 protocol (e.g. `MaverickV2IncentiveMatcher`, `MaverickV2PoolLens`) have been revoked. 
 
-Most contracts (`MaverickV2IncentiveMatcher`, `MaverickV2PoolLens`) have had ownership, and the respective permissions, revoked. However, other contracts like `MaverickV2Factory` and `MaverickToken` (MAV token) still expose permissions. These permissions allow the owner to change protocol fees, destination addresses, and security settings (e.g. through the LayerZero protocol) without effective restrictions on the update values. Hence, these permissions potentially change the protocol's expected performance or affect users' unclaimed yield.
+For other contracts (e.g. `MaverickV2Factory` and `MaverickToken`) permissions still exist and allow the owner to change protocol fees, destination addresses, and security configurations (e.g. through the LayerZero protocol). These permissions are not protected with effective restrictions e.g. on the update values. Ultimately, these permissions potentially affect users' unclaimed yield and may materially change the expected performance of the protocol.
 
-As a result, the protocol's Upgradeability score is Medium.
+> ⚠️ MaverickV2Factory is NOT verified on a public block explorer and the full scope of permissions and their impact cannot be assessed.
+
+> Upgradeability score: M
 
 ## Autonomy
 
 Maverick's protocol token (MAV) relies on the LayerZero protocol for bridging. In particular, if the DVN (currently Google Cloud) fails or behaves maliciously, it could disrupt cross-chain operations. While LayerZero’s decentralized design allows permissionless executors to step in if needed, existing permissions enable to change critical settings (e.g. trusted remotes) potentially affecting the expected behavior of the MAV token.
 
-The protocol's Autonomy score thus is considered Medium.
+> Autonomy score: M
 
 ## Exit Window
 
-The only two contracts in Maverick protocol that expose permissions are `MaverickToken` (MAV) and `MaverickV2Factory`. The permissions found on the first are not protected with an exit window for users. Further, since `MaverickV2Factory` is not publicly verified, it remains unclear whether an exit window protects the permissions found in this contract.
+The only two contracts in Maverick protocol that expose permissions are `MaverickToken` (MAV) and `MaverickV2Factory`. The permissions found on the first are not protected with an exit window for users. 
 
-As a result, the protocol's Exit Window score is High.
+Further, since `MaverickV2Factory` is not publicly verified, it remains unclear whether an exit window protects the permissions found in this contract.
+
+> Exit Window score: H
 
 ## Accessibility
 
 Only a single user interface, app.mav.xyz, exists without a backup solution for users if the interface is shutdown or users are censored.
 
-Hence, the Accessibility score is High.
+> Accessibility score: H
 
 # Technical Analysis
 
@@ -121,7 +127,7 @@ The Protocol relies on Executors which trigger queued transaction on destination
 
 DVNs are validators of transaction packets that need to move cross-chain. They are chosen by the protocol with security settings. If the DVNs cease to exist, the protocol needs to update settings and select new DVNs. The DVNs have a reputation and earn fees for the validating activity, thus are incentivised to behave correctly. Maverick uses the default DVN which is google could: 0xD56e4eAb23cb81f43168F9F45211Eb027b9aC7cc (deterministic deployed address across all chains). Any protocol that relies on layerWero could choose to run their own DVN and install a malicious verifier algorithm to it, if there is no governance or internal security process is not set up to prevent a project from doing so.
 
-Maverick Token is deployed according to their docs [https://docs.mav.xyz/technical-reference/contract-addresses/v2-contract-addresses](https://docs.mav.xyz/technical-reference/contract-addresses/v2-contract-addresses) to the following chains:
+Maverick Token is deployed according to their [docs](https://docs.mav.xyz/technical-reference/contract-addresses/v2-contract-addresses) to the following chains:
 
 - Arbitrum
 - Base

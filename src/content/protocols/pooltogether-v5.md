@@ -24,32 +24,35 @@ A prize savings protocol gives users a chance at a large upside without risking 
 
 ## Chain
 
-PoolTogether V5 is deployed on Ethereum mainnet, it thus receives a Chain risk score of "Low".
+PoolTogether V5 is deployed on Ethereum mainnet.
+
+> Chain score: L
 
 ## Upgradeability
 
 Permissions in the PoolTogether V5 protocol are fully revoked, the protocol is immutable 🎉
 
-> ⚠️
-> Anyone can create a new `PrizeVault` and link it to various, third-party yield sources and utility contracts. An attacker could deploy malicious yield sources or utility contracts (e.g., `LiquidationPair` or `Claimer`) through which users' funds or prizes could be lost or stolen. However, assessing these risks and possible mitigation measures is outside of the scope of the DeFiScan framework.
+> ⚠️ Note that anyone can create a new `PrizeVault` and link it to various, third-party yield sources and utility contracts. An attacker could deploy malicious yield sources or utility contracts (e.g., `LiquidationPair` or `Claimer`) through which users' funds or prizes could be lost or stolen. However, assessing third-party integrations with a protocol is outside of the scope of the DeFiScan framework.
 
-The protocol earns an Upgradeability risk score of "Low".
+> Upgradeability score: L
 
 ## Autonomy
 
-The protocol relies on the Witnet Oracle for randomness in prize draws. If the oracle fails, a new PrizePool and DrawManager must be deployed, though users can still withdraw their deposits and accrued prices without interruption.
+The protocol relies on the Witnet Oracle for randomness in prize draws. If the oracle fails, a new PrizePool and DrawManager must be deployed, though users can still withdraw their deposits and accrued rewards without interruption and are thus not affected by an oracle failure.
 
-The protocol's Autonomy score thus is Low.
+> Autonomy score: L
 
 ## Exit Window
 
-PoolTogether's contracts are fully immutable, no upgrades or contract changes can occur after deployment, removing the need for an exit window.
+PoolTogether's contracts are fully immutable, no upgrades or changes can be made, removing the need for an exit window.
+
+> Exit Window score: L
 
 ## Accessibility
 
 PoolTogether provides access to the protocol through multiple independent interfaces such as [app.cabana.fi](https://app.cabana.fi) and [pooltime.app](https://pooltime.app), ensuring that users can still interact with the protocol even if one interface is unavailable. This diversity in access points helps minimize risks related to interface outages or downtime, offering more flexibility for users.
 
-The Accessibility risk score thus is "Low".
+> Accessibility score: L
 
 # Technical Analysis
 

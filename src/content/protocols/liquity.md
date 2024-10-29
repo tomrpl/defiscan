@@ -24,23 +24,27 @@ In addition to the collateral, the loans are secured by a Stability Pool contain
 
 ## Chain
 
-The Liquity protocol is deployed on the Ethereum chain and thus receives a "Low" risk score.
+The Liquity protocol is deployed on Ethereum mainnet.
+
+> Chain score: L
 
 ## Upgradeability
 
-All permissions in the system have been renounced and the protocol is thus fully immutable. As a result, no upgrades or changes can be made to the protocol, its functions or parameters.
+All permissions in the system have been renounced and the protocol is fully immutable. No upgrades or changes can be made to the protocol, its functions or parameters.
 
-The Upgradeability risk score thus is "Low".
+> Upgradeability score: L
 
 ## Autonomy
 
 Liquity relies on two external oracles, Chainlink (primary) and Tellor (fallback), but has a robust fallback mechanism in place, using the "last good price" if both oracles fail or become untrusted. This ensures the protocol can continue operating without interruption, minimizing the impact of oracle failure on its performance. Despite its reliance on external oracles, Liquity’s fallback systems mitigates the risk of disruptions.
 
-The risk score is "Low".
+> Autonomy score: L
 
 ## Exit Window
 
-Liquity’s contracts are fully immutable, no upgrades or contract changes can occur after deployment, removing the need for an exit window.
+Liquity’s contracts are fully immutable, no upgrades or changes can be made, removing the need for an exit window.
+
+> Exit Window score: L
 
 ## Accessibility
 
@@ -48,7 +52,7 @@ Multiple user interfaces exist and are operated by independent actors ensuring a
 
 A list of third-party frontends can be found [here](https://www.liquity.org/frontend#frontends).
 
-The risk score thus is "Low"
+> Accessibility score: L
 
 # Technical Analysis
 

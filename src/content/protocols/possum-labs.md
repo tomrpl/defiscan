@@ -24,27 +24,29 @@ Possum Labs introduces frictionless and efficient yield trading. its network of 
 
 Possum is deployed on the Arbitrum chain, an Ethereum L2 in Stage 1 according to L2BEAT.
 
+> Chain score: M
+
 ## Upgradeability
 
 The Possum Labs protocol consists of three main components: Portals, Adapters, and Core-V1.
 
 Permissions in the Portals contracts are fully revoked, these contracts are immutable 🎉
 
-The Core-V1 contract, or `PossumCore` more specifically, exposes a permissioned function that allows a Multisig to update a whitelist with accounts eligible for PSM incentives. This permission thus allows its owner to censor a specific account from receiving further rewards. However, accrued rewards can still be claimed and so this is a Low risk permission.
+The Core-V1 contract, or `PossumCore` more specifically, exposes a permissioned function that allows a Multisig to update a whitelist with accounts eligible for PSM incentives. This permission thus allows its owner to censor a specific account from receiving further rewards. However, users remain unaffected by this since they are still able to claim any accumulated yield.
 
-Furthermore, each Portal has an associated Adapter contract which enables interactions with external protocols such as swapping on 1Inch. These Adapter contracts are upgradeable with the permission to upgrade controlled by a hybrid governance system. Importantly, the upgrade could involve a new, flawed or malicious Adapter contract and can thus result in the loss or theft of user funds resulting in a High risk score.
+Furthermore, each Portal has an associated Adapter contract which enables interactions with external protocols such as swapping on 1Inch. These Adapter contracts are upgradeable with the permission to upgrade controlled by a hybrid governance system. Importantly, the upgrade could involve a new, flawed or malicious Adapter contract and can thus result in the loss or theft of user funds.
 
-Overall, the protocol's Upgradeability risk score is High.
+> Upgradeability score: H
 
 ## Autonomy
 
-Possum Labs Portals v2 rely heavily on Vaultka, a yield-generating protocol where assets are staked to generate returns. The stability and security of Vaultka are crucial for the Portals' functionality. If Vaultka were compromised, this could lead to asset losses, severely affecting the protocol’s operations and ability to generate yields. As a result, Vaultka is a critical external dependency, as the Portals cannot function independently without it.
+Possum Labs Portals v2 rely heavily on Vaultka, a yield-generating protocol where assets are staked to generate returns. The stability and security of Vaultka are crucial for the Portals' functionality. If Vaultka were compromised, this could lead to the loss of user funds, loss of unclaimed yield, and otherwise materially change the protocol's expected behavior.
 
-Arbitrageurs, on the other hand, exploit arbitrage opportunities when the value of accrued assets exceeds the fixed PSM required to buy them. Since their participation is permissionless, the system can function without their involvement. Therefore, arbitrageurs do not represent a critical dependency for the protocol’s autonomy.
+Arbitrageurs, on the other hand, exploit arbitrage opportunities when the value of accrued assets exceeds the fixed PSM required to buy them. Their participation is permissionless and the protocol does not rely on a direct user-service provider relationship. Instead, the protocol directly incentivizes Arbitrageurs and participation is open to all. As a result, the protocol does not depend on individual external "service providers" to fulfull this role.
 
-In conclusion, the autonomy of Portals v2 depends largely on Vaultka, which remains a vital external dependency. While arbitrageurs enhance the system, their role is not essential for core functionality.
+In conclusion, Vaultka, and other potential Portal v2 integrations, introduce an important external dependency in the Possum protocol.
 
-As a result, the protocol's Autonomy score is High.
+> Autonomy score: H
 
 ## Exit Window
 
@@ -55,13 +57,15 @@ The protocol's adapter contracts are upgradable with hybrid governance process c
 3. Users can withdraw funds prior to the upgrade during a 7-day exit window
 4. The implementation of the vote, and Adapter upgrade, is executed permissionlessly via `executeMigration()`
 
-Given that the confirmation of an upgrade requires an on-chain vote BUT the exit window is only 7 days, the Exit Window score is Medium (we require a 30-day window for a Low score).
+Hence, protocol upgrades are initiated by a Multisig but protected with a 7-day exit window for users.
+
+> Exit Window score: M
 
 ## Accessibility
 
-Currently, Possum Labs offers only a single frontend without any backup solution resulting in a High risk score.
+Currently, Possum Labs offers only a single user interface without a backup solution in case of the shutdown of the user interface or censoring of users.
 
-However, note that the team aims to open-source the user interface giving users a potential backup solution.
+> Accessibility score: L
 
 # Technical Analysis
 
@@ -137,12 +141,6 @@ However, note that the team aims to open-source the user interface giving users 
 | LINK Portal Adapter (AdapterV1)            | proposeMigrationDestination | Allow the contract owner to propose a new Adapter contract for migration. The principal stakers need to accept with >50% of the staked capital in an on-chain vote.                                                                                                                                                                                                                                                                                                                   | Treasury                                     |
 
 ## Dependencies
-
-### Smart Contract Risks
-
-The reliance on third-party protocols like HMX and Vaultka introduces potential risks, as bugs in these underlying systems could impact user funds.
-
-### Centralisation Risks
 
 Certain staking assets within the Possum ecosystem are subject to centralized control, including potential blacklisting or custodial risks (e.g., USDC/.e, WBTC). Furthermore, the upgradeability of staked assets (HLP) and underlying protocols (HMX & Vaultka) could lead to compatibility issues with Portals after updates. Decisions made by centralized managers of these assets and protocols could potentially render interactions with Portals or underlying protocols impossible, potentially resulting in complete loss of user funds. It's important to note that Possum Labs has no control over these entities, and due to its immutable design, Portals cannot actively adapt to changes in underlying protocols or assets.
 

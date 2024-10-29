@@ -25,7 +25,7 @@ Aerodrome Finance is a next-generation AMM designed to serve as Base's central l
 
 Aerodrome is deployed on the Base chain, an Ethereum L2 in Stage 0 according to L2BEAT.
 
-The protocol's Chain risk score thus is "High".
+> Chain score: H
 
 ## Upgradeability
 
@@ -37,26 +37,26 @@ The _Undeclared Multisig_, the multisig is not referenced in the docs, has the p
 
 Furthermore, the `Undeclared Multisig` is assigned the owner role in multiple contracts and in particular in the _FactoryRegistry_ contract. This contract grants the ability to approve or unapprove factories within the Aerodrome system. Swaps are then routed through new pools from the approved factories. However, traders are protected from malicious factories (and pools) through a slippage tolerance which is enforced on the router. LPs too are not at risk of supplying liquidity in a malicious pool since only pools from the default factory are enabled for LP functions.
 
-Overall, the protocol thus receives a "Medium" risk score for Upgradeability.
+> Upgradeability score: M
 
 
 ## Autonomy
 
 Aerodrome does not have external dependencies 🎉
 
-The Autonomy risk score is "Low".
+> Autonomy score: L
 
 ## Exit Window
 
 Permissions are not protected by an exit window resulting in users not being able to withdraw funds in case of an unwanted update.
 
-The protocol thus receives a "High" risk score.
+> Exit Window score: H
 
 ## Accessibility
 
 Aerodrome provides multiple access points for users, including both centralized interfaces ([aerodrome.finance](https://aerodrome.finance), [alt.aerodrome.finance](https://alt.aerodrome.finance)) and decentralized interfaces on IPFS ([aero.drome.eth](https://aero.drome.eth), [aero.drome.eth.limo](https://aero.drome.eth.limo), [aero.drome.eth.link](https://aero.drome.eth.link)). This diversity in user interfaces ensures redundancy, allowing users to access the protocol even if one interface becomes unavailable.
 
-The Accessibility risk score thus is "Low".
+> Accessibility score: L
 
 # Technical Analysis
 

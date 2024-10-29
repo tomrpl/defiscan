@@ -22,35 +22,37 @@ The DYAD protocol allows users to mint interest-free stablecoins against collate
 
 ## Chain
 
-The DYAD protocol is deployed on the Ethereum chain and thus receives a "Low" risk score.
+The DYAD protocol is deployed on Ethereum mainnet. 
+
+> Chain score: L
 
 ## Upgradeability
 
-A Multisig controls various critical functions in the DYAD protocol. 
+A Multisig controls various functions in the DYAD protocol including the following: 
 
 The _VaultManagerV4_ contract is upgradeable through the ERC-1967 and UUPS proxy patterns, which means its logic can be altered by the Multisig at any time. The _VaultManagerV4_ owns the permission to mint and burn DYAD tokens. Upgrading the implementation contract thus enables the Multisig to mint an arbitrary amount of the stablecoin.
 
 The Multisig also owns the permission to add or remove vaults through the _VaultLicenser_ contract. Removing a vault from the registry freezes the associated collateral and prevents users from accessing their funds.
 
-As a result, the protocol's Upgradeability risk score is "High".
+> Upgradeability score: H
 
 ## Autonomy
 
 The DYAD protocol uses Chainlink oracles for the valuation of collateral assets (WETH, stETH, TBTC, and sUSDe). The Chainlink feeds are immutable and cannot be replaced. Sanity checks on the timeliness or validity of a price as well as a fallback are not implemented. A failure of Chainlink failure thus results in the freezing of collateral assets, and pausing of withdrawals, borrowing and liquidations.
 
-The Autonomy risk score is "High".
+> Autonomy score: H
 
 ## Exit Window
 
 Permissions are not protected with an exit window resulting in users not being able to withdraw funds in case of an unwanted update.
 
-The risk score thus is "High".
+> Exit Window score: H
 
 ## Accessibility
 
 Dyad Protocol offers a single user interface accessible through its website. The source code of the user interface is available on the public [ GitHub](https://github.com/DyadStablecoin/frontend). Users are thus able to host their own interface at reasonable financial cost.
 
-The risk score is "Medium".
+> Accessibility score: M
 
 # Technical Analysis
 
