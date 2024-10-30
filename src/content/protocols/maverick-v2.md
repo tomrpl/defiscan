@@ -44,7 +44,9 @@ As a result, these existing permissions potentially result in the arbitrary mint
 
 ## Autonomy
 
-Maverick's protocol token (MAV) relies on the LayerZero protocol for bridging. In particular, if the DVN (currently Google Cloud) fails or behaves maliciously, it could disrupt cross-chain operations. While LayerZero’s decentralized design allows permissionless executors to step in if needed, existing permissions enable to change critical settings (e.g. trusted remotes) potentially affecting the expected behavior of the MAV token.
+Maverick's protocol token (MAV) relies on the LayerZero protocol for cross-chain compatibility. The LayerZero protocol relies on permissioned validators (DVN). These validators are responsible for the validation of cross-chain transaction data created by users who want to bridge MAV tokens. Currently, Maverick has configured the "default" validator service which runs on Google Cloud. 
+
+A failure of these validators requires manual intervention by the Maverick Multisig and can result in the temporary censoring of users and the freezing of their funds. In the current stage of the Maverick Protocol, this mostly affects users unclaimed (or claimed) rewards which are paid in MAV tokens on the various chains.
 
 > Autonomy score: M
 
