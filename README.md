@@ -1,3 +1,5 @@
+![DeFiScan Logo](./public/images/defiscan_by_tdc_color_for_light_background.svg)
+
 # DeFiScan
 
 A public website for the monitoring of the maturity and risks of DeFi technology.
