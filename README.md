@@ -63,6 +63,12 @@ New protocols reviews can be added as an `.md` file in the `content` folder.
 
 ## Acknowledgement
 
+### L2Beat
+
 This project utilizes the pizza diagrams developed and used inside L2Beat. We are grateful for their commitment to open access and knowledge sharing.
 
 Their original work is open-sourced under the permissive MIT License, and we acknowledge their contribution.
+
+### DefiLlama
+
+We also thank DefiLlama for providing comprehensive DeFi data through their API, specifically the historical chain TVL and protocol data that powers our analytics. Their commitment to transparent and accessible DeFi data has been invaluable to this project.
