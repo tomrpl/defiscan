@@ -6,7 +6,7 @@ github: "https://github.com/maverickprotocol"
 defillama_slug: "maverick-v2"
 chain: "Ethereum"
 stage: 0
-risks: ["L", "M", "M", "H", "H"]
+risks: ["L", "H", "M", "H", "H"]
 author: ["CookingCryptos", "sagaciousyves"]
 submission_date: "2024-10-23"
 publish_date: "2024-10-23"
@@ -34,13 +34,13 @@ Maverick v2 is deployed on Ethereum mainnet.
 
 Permissions on most contracts in the Maverick V2 protocol (e.g. `MaverickV2IncentiveMatcher`, `MaverickV2PoolLens`) have been revoked.
 
-On other contracts permissions still exist and are not protected with adequate restrictions. In particular, the `MaverickToken` (MAV token) integrates with the _LayerZero_ protocol for cross-chain compatibility and exposes a number of permissioned functions. For example the `setTrustedRemote` allows the permission owner to add arbitrary MAV token implementations on other chains. Adding a flawed or malicious implementation may result in the minting of unbacked MAV tokens that dillute the overall supply. 
+On other contracts permissions still exist and are not protected with adequate restrictions. In particular, the `MaverickToken` (MAV token) integrates with the _LayerZero_ protocol for cross-chain compatibility and exposes a number of permissioned functions. For example the `setTrustedRemote` allows the permission owner to add arbitrary MAV token implementations on other chains which, if flawed or malicious, can result in the arbitrary minting of MAV tokens. Similarly, the `setConfig` function enables designating custom cross-chain transaction data validators (DVNs) which, if flawed or malicious, can result in the operator sending arbitrary transaction data that is wrongly validated and executed.
 
-As a result, the existing permissions potentially affect (the value of) users' unclaimed yield or otherwise materially change the expected performance of the protocol.
+As a result, these existing permissions potentially result in the arbitrary minting of new MAV tokens that dillute the overall supply and thus lead to the theft or loss of user funds (in particular unclaimed rewards that are distributed in the MAV token).
 
 > ⚠️ MaverickV2Factory is NOT verified on a public block explorer. For the MaverickV2Factory we currently rely on the technical documentation provided by the Maverick Team. As a consequence the full scope of permissions and their definitive impact cannot be assessed.
 
-> Upgradeability score: M
+> Upgradeability score: H
 
 ## Autonomy
 
@@ -118,13 +118,16 @@ Only a single user interface, app.mav.xyz, exists without a backup solution for 
 ## Dependencies
 
 Maverick Protocol relies on LayerZero for cross-chain communication and transaction validation.
-LayerZero Protocol is itself fully permissionless and censorship resistant through its immutable nature. The protocol itself will exist indefinitely even if Layer0 Labs ceases to exist. Layer0 Labs is responsible for deploying immutable endpoints on every chain that integrates with Layer0 and the different endpoints reference each other. This means if Layer0 ceases to exist, no new blockchains are added to the cross-chain network, but new organisations can step in and create a new cross-chain network.
 
-The Protocol relies on Executors which trigger queued transaction on destination chains. The set of executors can be customised by the respective protocol, in this case maverick. However, it’s also fully permissionless, even if the designated executors do not execute the transaction on the destination chain, any user can step in and execute the transaction.
+LayerZero Protocol itself is immutable and fully permissionless. The protocol will exist indefinitely even if Layer0 Labs, the company that developed the LayerZero Protocol, ceases to exist. Layer0 Labs' role in the LayerZero protocol is reduced to deploying immutable _Endpoints_ on new chains. These endpoints reference each other and thereby enable the cross-chain communication network. If Layer0 Labs ceases to exist, no new chains are added to the cross-chain network, but the existing network is not affected.
 
-DVNs are validators of transaction packets that need to move cross-chain. They are chosen by the protocol with security settings. If the DVNs cease to exist, the protocol needs to update settings and select new DVNs. The DVNs have a reputation and earn fees for the validating activity, thus are incentivised to behave correctly. Maverick uses the default DVN which is google could: 0xD56e4eAb23cb81f43168F9F45211Eb027b9aC7cc (deterministic deployed address across all chains). Any protocol that relies on layerWero could choose to run their own DVN and install a malicious verifier algorithm to it, if there is no governance or internal security process is not set up to prevent a project from doing so.
+The LayerZero Protocol further relies on a _Decentralized Validator Network_ (DVN), these are validators of transaction data that needs to move cross-chain. These validators are configured by the protocol, the Maverick Multisig in this case, with their security settings. If the configured DVNs fail, the Maverick Multisig needs to update its security settings and configure new DVNs. The DVNs themselves have a reputation and earn fees for the validating cross-chain transaction data and are thus incentivised to behave correctly and maintain an appropriate uptime. Maverick uses the "default" DVNs which run on the Google Cloud under the address: [0xD56e4eAb23cb81f43168F9F45211Eb027b9aC7cc](https://etherscan.io/address/0xD56e4eAb23cb81f43168F9F45211Eb027b9aC7cc) (deterministically deployed across all chains). 
 
-Maverick Token is deployed according to their [docs](https://docs.mav.xyz/technical-reference/contract-addresses/v2-contract-addresses) to the following chains:
+Any protocol that relies on LayerZero could choose to run their own DVN. A flawed or unstable DVN can result in downtimes and the temporary freezing of funds. A malicious DVN can run a malicious verifier algorithm allowing the operator to steal user funds.
+
+Finally, the LayerZero Protocol relies on _Executors_ which trigger queued transactions on destination chains. The set of executors can be customised by the respective protocol, in this case maverick. However, it’s also fully permissionless, even if the designated executors do not execute the transaction on the destination chain, any user can step in and execute the transaction. Users' transactions can thus not be censored through the _Executor_ set.
+
+According to their [docs](https://docs.mav.xyz/technical-reference/contract-addresses/v2-contract-addresses) the MAV token is currently deployed on the following chains through the LayerZero protocol:
 
 - Arbitrum
 - Base
