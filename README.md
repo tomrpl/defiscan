@@ -1,7 +1,5 @@
 ![DeFiScan Logo](./public/images/defiscan_by_tdc_color_for_light_background.svg)
 
-# DeFiScan
-
 A public website for the monitoring of the maturity and risks of DeFi technology.
 
 Read more about the methodology behind the DeFi stages and risks in this [post](https://deficollective.org/blog/introducing-defiscan).
