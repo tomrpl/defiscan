@@ -79,7 +79,7 @@ export function DataTable<TData, TValue>({
       <Table className="table-auto w-full border-collapse">
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (
-            <TableRow key={headerGroup.id}>
+            <TableRow key={headerGroup.id} className="hover:bg-background">
               {headerGroup.headers.map((header) => {
                 return (
                   <TableHead key={header.id} className="border-b px-4 py-2">
@@ -104,7 +104,7 @@ export function DataTable<TData, TValue>({
                   handleRowClick((row as any).original.slug);
                 }}
                 data-state={row.getIsSelected() && "selected"}
-                className="hover:bg-gray-100 cursor-pointer transition"
+                className="hover:bg-accent cursor-pointer transition"
               >
                 {row.getVisibleCells().map((cell) => (
                   <TableCell key={cell.id}>

@@ -87,17 +87,14 @@ const components = {
   ),
   tr: ({ className, ...props }: React.HTMLAttributes<HTMLTableRowElement>) => (
     <tr
-      className={cn(
-        "even:bg-secondary break-words m-0 border-t p-0",
-        className
-      )}
+      className={cn("even:bg-accent break-words m-0 border-t p-0", className)}
       {...props}
     />
   ),
   th: ({ className, ...props }: ComponentsProps) => (
     <th
       className={cn(
-        "border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right",
+        "border border-secondary px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right",
         className
       )}
       {...props}
@@ -106,7 +103,7 @@ const components = {
   td: ({ className, ...props }: ComponentsProps) => (
     <td
       className={cn(
-        "border px-4 py-2 text-left break-words break-all lg:break-normal whitespace-normal [&[align=center]]:text-center [&[align=right]]:text-right",
+        "border border-secondary px-4 py-2 text-left break-words break-all lg:break-normal whitespace-normal [&[align=center]]:text-center [&[align=right]]:text-right",
         className
       )}
       {...props}
@@ -124,7 +121,7 @@ const components = {
   code: ({ className, ...props }: ComponentsProps) => (
     <code
       className={cn(
-        "relative rounded border px-[0.3rem] py-[0.2rem] !bg-secondary font-code font-light !text-sm",
+        "relative rounded border px-[0.3rem] py-[0.2rem] !bg-secondary/50 font-code font-light !text-sm",
         className
       )}
       {...props}

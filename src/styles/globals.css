@@ -4,25 +4,43 @@
 
 @layer base {
   :root {
-    --background: 270 100% 95%;
-    --foreground: 270 5% 0%;
-    --card: 270 50% 90%;
-    --card-foreground: 270 5% 10%;
-    --popover: 270 100% 95%;
-    --popover-foreground: 270 100% 0%;
-    --primary: 270 95.2% 75.3%;
-    --primary-foreground: 0 0% 0%;
-    --secondary: 270 30% 70%;
-    --secondary-foreground: 0 0% 0%;
-    --muted: 232 30% 85%;
-    --muted-foreground: 270 5% 35%;
-    --accent: 232 30% 80%;
-    --accent-foreground: 270 5% 10%;
+    /* Main backgrounds and foregrounds */
+    --background: 277 89% 89%; /* Light Lavender */
+    --foreground: 0 0% 10%; /* Anthracite */
+
+    /* Card styles */
+    --card: 277 89% 89%; /* Lavender */
+    --card-foreground: 0 0% 10%; /* Anthracite */
+
+    /* Popover styles */
+    --popover: 277 89% 89%; /* Light Lavender */
+    --popover-foreground: 0 0% 10%; /* Anthracite */
+
+    /* Primary colors */
+    --primary: 280 93% 23%; /* Dark Purple */
+    --primary-foreground: 0 0% 100%; /* White */
+
+    /* Secondary colors */
+    --secondary: 278 68% 42%; /* Purple */
+    --secondary-foreground: 0 0% 100%; /* White */
+
+    /* Muted styles */
+    --muted: 0 0% 85%; /* Light Gray */
+    --muted-foreground: 0 0% 35%; /* Dark Grey */
+
+    /* Accent colors */
+    --accent: 278 59% 65%; /* Lavender */
+    --accent-foreground: 0 0% 10%; /* Anthracite */
+
     --destructive: 0 100% 30%;
-    --destructive-foreground: 270 5% 90%;
-    --border: 270 30% 50%;
-    --input: 270 30% 18%;
-    --ring: 270 95.2% 75.3%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border and input styles */
+    --border: 278 59% 65%; /* Lavender */
+    --input: 0 0% 85%; /* Light Gray */
+    --ring: 278 68% 42%; /* Purple */
+
+    /* Radius */
     --radius: 0.5rem;
   }
 }

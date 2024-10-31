@@ -26,7 +26,7 @@ const fetchDefiStats = async () => {
 const chartConfig = {
   tvl: {
     label: "TVL",
-    color: "#ae7ef4",
+    color: "#7c22b2",
   },
 } satisfies ChartConfig;
 

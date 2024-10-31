@@ -68,7 +68,7 @@ export default function LearnMorePage() {
           discussion, please refer to the introduction{" "}
           <a
             href="https://deficollective.org/blog/introducing-defiscan/"
-            className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+            className="font-medium text-primary hover:underline"
           >
             blog post
           </a>
@@ -107,7 +107,7 @@ export default function LearnMorePage() {
 
           <tbody>
             <tr
-              className="hover:bg-gray-100 transition"
+              className="hover:bg-accent transition"
               onClick={() => (window.location.href = "#chain")}
             >
               <td className="px-6 py-4 border">Chain</td>
@@ -118,7 +118,7 @@ export default function LearnMorePage() {
               </td>
             </tr>
             <tr
-              className="hover:bg-gray-100 transition"
+              className="hover:bg-accent transition"
               onClick={() => (window.location.href = "#upgradability")}
             >
               <td className="px-6 py-4 border">Upgradeability</td>
@@ -136,7 +136,7 @@ export default function LearnMorePage() {
               </td>
             </tr>
             <tr
-              className="hover:bg-gray-100 transition"
+              className="hover:bg-accent transition"
               onClick={() => (window.location.href = "#autonomy")}
             >
               <td className="px-6 py-4 border">Autonomy</td>
@@ -156,7 +156,7 @@ export default function LearnMorePage() {
               </td>
             </tr>
             <tr
-              className="hover:bg-gray-100 transition"
+              className="hover:bg-accent transition"
               onClick={() => (window.location.href = "#exit-window")}
             >
               <td className="px-6 py-4 border">Exit Window</td>
@@ -174,7 +174,7 @@ export default function LearnMorePage() {
               </td>
             </tr>
             <tr
-              className="hover:bg-gray-100 transition"
+              className="hover:bg-accent transition"
               onClick={() => (window.location.href = "#accessibility")}
             >
               <td className="px-6 py-4 border">Accessibility</td>
@@ -218,7 +218,7 @@ export default function LearnMorePage() {
           </thead>
 
           <tbody>
-            <tr className="hover:bg-gray-100 transition">
+            <tr className="hover:bg-accent transition">
               <td className="px-6 py-4 border ">Stage 0</td>
               <td className="px-6 py-4 border ">
                 This is the first stage of a DeFi protocol where basic
@@ -241,7 +241,7 @@ export default function LearnMorePage() {
                 </ul>
               </td>
             </tr>
-            <tr className="hover:bg-gray-100 transition">
+            <tr className="hover:bg-accent transition">
               <td className="px-6 py-4 border">Stage 1</td>
               <td className="px-6 py-4 border">
                 In the second stage, risks from critical permissions and
@@ -268,7 +268,7 @@ export default function LearnMorePage() {
                 </ul>
               </td>
             </tr>
-            <tr className="hover:bg-gray-100 transition">
+            <tr className="hover:bg-accent transition">
               <td className="px-6 py-4 border">Stage 2</td>
               <td className="px-6 py-4 border">
                 The final stage is reached when critical permissions have either
