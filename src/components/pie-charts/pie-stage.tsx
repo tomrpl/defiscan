@@ -20,7 +20,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart";
-import { fetchProtocolTVL } from "../table/page";
+import { defiLlama } from "@/services/defillama";
 import {
   aggregateByKey,
   extendWithColor,
@@ -44,7 +44,7 @@ export function PiechartStage({
   const [data, setData] = React.useState<any>(null);
 
   const fetchData = async () => {
-    const data = await fetchProtocolTVL();
+    const data = await defiLlama.getProtocolsWithCache();
     // filter
     const filtered = data
       .map((val) => {

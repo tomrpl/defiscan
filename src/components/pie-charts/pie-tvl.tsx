@@ -20,7 +20,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart";
-import { fetchProtocolTVL } from "../table/page";
+
 import {
   aggregateByKey,
   extendWithColor,
@@ -28,6 +28,7 @@ import {
   PiechartProps,
   Project,
 } from "./shared/functions";
+import { defiLlama } from "@/services/defillama";
 
 export const description = "A donut chart with text";
 
@@ -44,7 +45,7 @@ export function PiechartTvl({
   const [data, setData] = React.useState<any>(null);
 
   const fetchData = async () => {
-    const data = await fetchProtocolTVL();
+    const data = await defiLlama.getProtocolsWithCache();
     // filter
     const filtered = data
       .map((val) => {
