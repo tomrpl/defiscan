@@ -4,6 +4,7 @@ import React, { HTMLAttributes } from "react";
 import * as runtime from "react/jsx-runtime";
 
 import Image from "next/image";
+import { ResponsiveTable } from "./responsive-table";
 
 const useMDXComponent = (code: string) => {
   const fn = new Function(code);
@@ -83,7 +84,9 @@ const components = {
   ),
   hr: ({ ...props }) => <hr className="my-4 md:my-8" {...props} />,
   table: ({ className, ...props }: React.HTMLAttributes<HTMLTableElement>) => (
-    <table className={cn(className, "w-full table-auto -ml-4")} {...props} />
+    <ResponsiveTable className={cn(className, "w-full table-auto -ml-4")}>
+      {props.children}
+    </ResponsiveTable>
   ),
   tr: ({ className, ...props }: React.HTMLAttributes<HTMLTableRowElement>) => (
     <tr
