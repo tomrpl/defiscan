@@ -1,11 +1,7 @@
 import React from "react";
-// import Table from "@/components/table";
 import Chart from "@/components/chart";
-import { PiechartStage } from "@/components/pie-charts/pie-stage";
-import { PiechartTvl } from "@/components/pie-charts/pie-tvl";
 import Table from "@/components/table/page";
-import { PiechartTvlByChain } from "@/components/pie-charts/pie-tvl-chain";
-import { PiechartChain } from "@/components/pie-charts/pie-chain";
+import { PieChartComponent } from "@/components/pie-charts/piechart";
 
 export default function Home() {
   return (
@@ -19,7 +15,7 @@ export default function Home() {
 
           <div className="flex flex-col w-full lg:w-1/3 mt-4 lg:mt-0">
             <div className="flex flex-row lg:w-full">
-              <PiechartStage
+              <PieChartComponent
                 groupByKey="stage"
                 operation="count"
                 baseColor="#ae7ef4"
@@ -27,7 +23,7 @@ export default function Home() {
                 labelValueDescription="Stage-2"
                 className="w-1/2"
               />
-              <PiechartTvl
+              <PieChartComponent
                 groupByKey="stage"
                 operation="sum"
                 baseColor="#ae7ef4"
@@ -38,7 +34,7 @@ export default function Home() {
             </div>
 
             <div className="flex flex-row lg:w-full mt-4 md:mt-0">
-              <PiechartChain
+              <PieChartComponent
                 groupByKey="chain"
                 operation="count"
                 baseColor="#ae7ef4"
@@ -46,13 +42,13 @@ export default function Home() {
                 labelValueDescription="Top Source"
                 className="w-1/2"
               />
-              <PiechartTvlByChain
+              <PieChartComponent
                 groupByKey="chain"
                 operation="sum"
                 baseColor="#ae7ef4"
                 chartTitle="TVL by Chain"
                 labelValueDescription="Most TVL"
-                className="w-1/2  lg:mt-0"
+                className="w-1/2 lg:mt-0"
               />
             </div>
           </div>
