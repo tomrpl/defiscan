@@ -128,7 +128,7 @@ const IntroSection = () => (
     <a href={`#${createIdFromTitle("WTF is DeFiScan?")}`}>
       <h1
         id={createIdFromTitle("WTF is DeFiScan?")}
-        className="inline-block leading-3 tracking-tight text-primary font-bold text-2xl sm:text-2xl md:text-3xl lg:text-4xl"
+        className="inline-block tracking-tight text-primary font-bold text-2xl sm:text-2xl md:text-3xl lg:text-4xl"
         style={{ scrollMarginTop: "100px" }}
       >
         {introContent.title}
@@ -166,7 +166,7 @@ const RisksSection = () => (
     <a href={`#${createIdFromTitle("DeFi Centralization Risks")}`}>
       <h1
         id={createIdFromTitle("DeFi Centralization Risks")}
-        className="inline-block mt-10 leading-3 tracking-tight text-primary font-bold text-2xl sm:text-2xl md:text-3xl lg:text-4xl"
+        className="inline-block mt-10 tracking-tight text-primary font-bold text-2xl sm:text-2xl md:text-3xl lg:text-4xl"
         style={{ scrollMarginTop: "100px" }}
       >
         DeFi Centralization Risks
@@ -247,7 +247,7 @@ const StagesSection = () => (
     <a href={`#${createIdFromTitle("DeFi Stages Framework")}`}>
       <h1
         id={createIdFromTitle("DeFi Stages Framework")}
-        className="inline-block mt-10 leading-3 tracking-tight text-primary font-bold text-2xl sm:text-2xl md:text-3xl lg:text-4xl"
+        className="inline-block mt-10 tracking-tight text-primary font-bold text-2xl sm:text-2xl md:text-3xl lg:text-4xl"
         style={{ scrollMarginTop: "100px" }}
       >
         DeFi Stages Framework
@@ -320,7 +320,7 @@ const SecurityCouncilSection = () => (
     <a href={`#${createIdFromTitle("Security Council Requirements")}`}>
       <h1
         id={createIdFromTitle("Security Council Requirements")}
-        className="inline-block mt-10 leading-3 tracking-tight text-primary font-bold text-2xl sm:text-2xl md:text-3xl lg:text-4xl"
+        className="mt-10 text-primary font-bold text-2xl sm:text-2xl md:text-3xl lg:text-4xl"
         style={{ scrollMarginTop: "100px" }}
       >
         Security Council Requirements
