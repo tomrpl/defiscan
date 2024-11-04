@@ -10,7 +10,7 @@ export default function Header() {
         <div className="flex items-center space-x-3">
           <Link href="/" className="flex items-center space-x-3 text-primary">
             <img
-              src={"/images/defiscan_by_tdc_color_for_light_background.svg"}
+              src={"/images/defiscan_by_dc_color_for_light_background.svg"}
               width="200"
               // height="50"
             />
