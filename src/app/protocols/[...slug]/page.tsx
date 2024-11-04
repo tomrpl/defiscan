@@ -144,6 +144,8 @@ export default async function ProtocolPageItem({
               protocol.update_date!.split("T")[0]}
           .
         </p>
+        <p>This content is provided "as is" and "as available". Read more in our  
+          <a href={"../../terms"} className="text-blue-500 hover:underline"> Terms</a>.</p>
 
         <h1 className="mt-10 mb-4 scroll-m-20 text-4xl font-bold text-primary tracking-tight">
           Stage

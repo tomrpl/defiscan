@@ -1,6 +1,6 @@
 ---
 protocol: "Maverick-v2"
-website: "app.mav.xyz"
+website: "https://app.mav.xyz"
 x: "https://x.com/mavprotocol"
 github: "https://github.com/maverickprotocol"
 defillama_slug: "maverick-v2"
@@ -60,7 +60,9 @@ Further, since `MaverickV2Factory` is not publicly verified, it remains unclear 
 
 ## Accessibility
 
-Only a single user interface, app.mav.xyz, exists without a backup solution for users if the interface is shutdown or users are censored.
+Liquidity on the Maverick-v2 DEX is available to traders through various aggregators including Odos, paraswap, 1Inch, 0x Protocol and Cow Swap.
+
+However, LPs are able to access Maverick-v2, and their positions therein, only through a single user interface, app.mav.xyz. A backup solution, in case the interface is shutdown or users are censored, does not exist.
 
 > Accessibility score: H
 
