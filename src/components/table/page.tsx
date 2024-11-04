@@ -4,26 +4,11 @@ import { Project, columns } from "./columns";
 import { DataTable } from "./data-table";
 import { protocols } from "#site/content";
 import { useEffect, useState } from "react";
-
-// Define the type for the protocol data fetched from DeFiLlama
-export interface Protocol {
-  slug: string;
-  tvl: number;
-  logo: string;
-  category: string;
-  [key: string]: any; // Add other fields that might be present in the fetched data
-}
-
-// Fetch protocol tvl and logo url from defillama
-export const fetchProtocolTVL = async (): Promise<Protocol[]> => {
-  const response = await fetch("https://api.llama.fi/protocols");
-  const data = await response.json();
-  return data;
-};
+import { defiLlama } from "@/services/defillama";
 
 export const getData = async (): Promise<Project[]> => {
   // fetch
-  const data = await fetchProtocolTVL();
+  const data = await defiLlama.getProtocolsWithCache();
   // merge
   const merged = data
     .map((val) => {

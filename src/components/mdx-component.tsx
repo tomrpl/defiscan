@@ -4,6 +4,7 @@ import React, { HTMLAttributes } from "react";
 import * as runtime from "react/jsx-runtime";
 
 import Image from "next/image";
+import { ResponsiveTable } from "./responsive-table";
 
 const useMDXComponent = (code: string) => {
   const fn = new Function(code);
@@ -83,21 +84,20 @@ const components = {
   ),
   hr: ({ ...props }) => <hr className="my-4 md:my-8" {...props} />,
   table: ({ className, ...props }: React.HTMLAttributes<HTMLTableElement>) => (
-    <table className={cn(className, "w-full table-auto -ml-4")} {...props} />
+    <ResponsiveTable className={cn(className, "w-full table-auto -ml-4")}>
+      {props.children}
+    </ResponsiveTable>
   ),
   tr: ({ className, ...props }: React.HTMLAttributes<HTMLTableRowElement>) => (
     <tr
-      className={cn(
-        "even:bg-secondary break-words m-0 border-t p-0",
-        className
-      )}
+      className={cn("even:bg-accent break-words m-0 border-t p-0", className)}
       {...props}
     />
   ),
   th: ({ className, ...props }: ComponentsProps) => (
     <th
       className={cn(
-        "border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right",
+        "border border-secondary px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right",
         className
       )}
       {...props}
@@ -106,7 +106,7 @@ const components = {
   td: ({ className, ...props }: ComponentsProps) => (
     <td
       className={cn(
-        "border px-4 py-2 text-left break-words break-all lg:break-normal whitespace-normal [&[align=center]]:text-center [&[align=right]]:text-right",
+        "border border-secondary px-4 py-2 text-left break-words break-all lg:break-normal whitespace-normal [&[align=center]]:text-center [&[align=right]]:text-right",
         className
       )}
       {...props}
@@ -124,7 +124,7 @@ const components = {
   code: ({ className, ...props }: ComponentsProps) => (
     <code
       className={cn(
-        "relative rounded border px-[0.3rem] py-[0.2rem] !bg-secondary font-code font-light !text-sm",
+        "relative rounded border px-[0.3rem] py-[0.2rem] !bg-secondary/50 font-code font-light !text-sm",
         className
       )}
       {...props}

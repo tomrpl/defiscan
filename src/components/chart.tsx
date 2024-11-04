@@ -15,18 +15,12 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart";
-
-// Fetch defi stats from defillama
-const fetchDefiStats = async () => {
-  const response = await fetch("https://api.llama.fi/v2/historicalChainTvl");
-  const data = await response.json();
-  return data.filter((x: { date: number; tvl: number }) => x.date > 1577833200);
-};
+import { ChainTvlData, defiLlama } from "@/services/defillama";
 
 const chartConfig = {
   tvl: {
     label: "TVL",
-    color: "#ae7ef4",
+    color: "#7c22b2",
   },
 } satisfies ChartConfig;
 
@@ -35,10 +29,11 @@ type ChartProps = {
 };
 
 const Chart: React.FC<ChartProps> = ({ className }) => {
-  const [data, setData] = useState();
+  const [data, setData] = useState<ChainTvlData[]>();
+
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetchDefiStats();
+      const data = await defiLlama.getHistoricalChainTvl();
       setData(data);
     };
     fetchData();

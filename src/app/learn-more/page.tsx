@@ -1,11 +1,119 @@
 "use client";
-
 import React from "react";
-// import { Metadata } from "next";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
-// export const metadata: Metadata = {
-//   title: "Learn more",
-// };
+// Data structures
+const introContent = {
+  title: "WTF is DeFiScan?",
+  paragraphs: [
+    "The maturity of DeFi technology progresses through a number of stages characterized by different degrees of decentralization. Upon deployment, DeFi protocols often expose critical risks from central dependencies and permissions which are controlled by centralized operators. As the protocol matures, these risks are eliminated e.g. through the introduction of fallback mechanisms, Security Councils and exit windows. To date, however, these stages have not been formalized resulting in a lack of transparency around the maturity and related risks of DeFi protocols.",
+    "DeFi Scan offers a framework formalizing the decentralization stages of DeFi technology and allowing, for the first time, to assess and monitor the technology's maturity in a verifiable manner. This framework consists of two parts:",
+  ],
+  bulletPoints: [
+    'A centralization risk scoring system based on a scale of "High", "Medium" and "Low" severity risks',
+    "A formalization of the decentralization stages which relates directly to the risk scores achieved by a DeFi protocol",
+  ],
+  blogLink: {
+    text: "blog post",
+    url: "https://deficollective.org/blog/introducing-defiscan/",
+  },
+};
+
+const riskData = [
+  {
+    category: "Chain",
+    risks: {
+      high: "L2Beat Stage 0",
+      medium: "L2Beat Stage 1",
+      low: "Ethereum mainnet or a comparable L1, or L2Beat Stage 2",
+    },
+    anchor: "chain",
+  },
+  {
+    category: "Upgradeability",
+    risks: {
+      high: "Possible upgrades may result in the theft or loss of user funds",
+      medium:
+        "Possible upgrades may result in the theft or loss of unclaimed yield or may otherwise materially change the system (but user funds remain unaffected)",
+      low: "Possible upgrades do not materially change the system (or result in the theft or loss of user funds and unclaimed yield)",
+    },
+    anchor: "upgradability",
+  },
+  {
+    category: "Autonomy",
+    risks: {
+      high: "Failure of a dependency may result in the theft or loss of user funds",
+      medium:
+        "Failure of a dependency may result in the theft or loss of unclaimed yield or may otherwise materially change the performance of the system (but user funds remain unaffected)",
+      low: "Failure of a dependency does not materially change the performance of the system (or result in the theft or loss of user funds and unclaimed yield)",
+    },
+    anchor: "autonomy",
+  },
+  {
+    category: "Exit Window",
+    risks: {
+      high: "Permissions are NOT protected with an exit window or the exit window is less than 7 days",
+      medium:
+        "Permissions are protected with an exit window of at least 7 days",
+      low: "Permissions are fully revoked OR transferred to an on-chain governance process AND protected with an exit window of at least 30 days",
+    },
+    anchor: "exit-window",
+  },
+  {
+    category: "Accessibility",
+    risks: {
+      high: "A single user interface exists without a backup solution resulting in the temporary freezing of user funds if the interface is shutdown",
+      medium:
+        "A single user interface exists with public access to a backup solution such as a self-hosting app",
+      low: "Multiple independent user interfaces exist, e.g. websites, in-wallet access, etc., guaranteeing access to user funds even if one interface is shutdown",
+    },
+    anchor: "accessibility",
+  },
+];
+
+const stagesData = [
+  {
+    stage: "Stage 0",
+    description:
+      "This is the first stage of a DeFi protocol where basic requirements give the technology a decentralized foundation. Critical permissions are still controlled by centralized operators and external dependencies may expose critical risks to users. Yet, its foundation allows for the gradual decentralization and elimination of these risks.",
+    qualifications: [
+      "✅ Blockchain-based, financial protocol",
+      "✅ Assets are not in custody by centralized entity",
+      "✅ Public documentation exists that outlines the protocol components and expected performance",
+      "✅ Source-available codebase",
+      "✅ Verified contracts",
+    ],
+  },
+  {
+    stage: "Stage 1",
+    description:
+      "In the second stage, risks from critical permissions and dependencies are significantly reduced by either revoking critical permissions, or establishing a Security Council to control such permissions, or enforcing an exit window of at least 7 days so users can withdraw funds in case of an unwanted protocol update. Critical risks from external dependencies are mitigated by the implementation of appropriate fallback mechanisms. Furthermore, the underlying chain cannot censor users' transactions and a backup user interface exists guaranteeing access to user funds.",
+    qualifications: [
+      '✅ At least "Medium" risk score for Chain, Autonomy, Accessibility',
+      '✅ IF Exit Window receives "High" risk, THEN control over permissions MUST be transferred to a Security Council',
+    ],
+  },
+  {
+    stage: "Stage 2",
+    description:
+      "The final stage is reached when critical permissions have either been revoked or delegated to an on-chain governance system with ample time for users to exit in case of an unwanted protocol update. Risks from external dependencies have been further reduced such that users' funds and unclaimed yield remain unaffected by a failure. In addition, different independent user interfaces and a fully decentralized underlying chain guarantee access to users' funds at any time.",
+    qualifications: [
+      '✅ At least "Low" risk score for Chain, Autonomy, Exit Window, Accessibility',
+    ],
+  },
+];
+
+const securityCouncilRequirements = [
+  "At least 7 signers",
+  "At least 51% threshold",
+  "At least 50% non-team signers",
+  "Signers are publicly announced (with name or pseudonym)",
+];
 
 function createIdFromTitle(title: string) {
   return title
@@ -14,308 +122,232 @@ function createIdFromTitle(title: string) {
     .replace(/[^\w-]+/g, "");
 }
 
-export default function LearnMorePage() {
-  const titles = [
-    "WTF is DeFiScan?",
-    "DeFi Centralization Risks",
-    "DeFi Stages Framework",
-    "Security Council Requirements",
-  ];
-  return (
-    <div className="container relative mb-20 max-w-6xl py-6 lg:py-10">
-      <a href={`#${createIdFromTitle(titles[0])}`}>
-        <h1
-          id={createIdFromTitle(titles[0])}
-          className="inline-block leading-3 tracking-tight text-primary font-bold text-2xl sm:text-2xl md:text-3xl lg:text-4xl"
-          style={{ scrollMarginTop: "100px" }} /* Adjust for header */
+// Components
+const IntroSection = () => (
+  <>
+    <a href={`#${createIdFromTitle("WTF is DeFiScan?")}`}>
+      <h1
+        id={createIdFromTitle("WTF is DeFiScan?")}
+        className="inline-block leading-3 tracking-tight text-primary font-bold text-2xl sm:text-2xl md:text-3xl lg:text-4xl"
+        style={{ scrollMarginTop: "100px" }}
+      >
+        {introContent.title}
+      </h1>
+    </a>
+
+    <div className="flex-1 mt-6 text-center text-muted-foreground lg:text-start xl:text-base">
+      {introContent.paragraphs.map((paragraph, index) => (
+        <p key={index} className={index > 0 ? "mt-4" : ""}>
+          {paragraph}
+        </p>
+      ))}
+      <ul className="list-disc ml-6">
+        {introContent.bulletPoints.map((point, index) => (
+          <li key={index}>{point}</li>
+        ))}
+      </ul>
+      <p className="mt-4">
+        We here provide an overview of the framework. For a more detailed
+        discussion, please refer to the introduction{" "}
+        <a
+          href={introContent.blogLink.url}
+          className="font-medium text-primary hover:underline"
         >
-          {titles[0]}
-        </h1>
-      </a>
+          {introContent.blogLink.text}
+        </a>
+        .
+      </p>
+    </div>
+  </>
+);
 
-      <div className="flex-1 mt-6 text-center text-muted-foreground lg:text-start xl:text-base">
-        <p>
-          The maturity of DeFi technology progresses through a number of stages
-          characterized by different degrees of decentralization. Upon
-          deployment, DeFi protocols often expose critical risks from central
-          dependencies and permissions which are controlled by centralized
-          operators. As the protocol matures, these risks are eliminated e.g.
-          through the introduction of fallback mechanisms, Security Councils and
-          exit windows. To date, however, these stages have not been formalized
-          resulting in a lack of transparency around the maturity and related
-          risks of DeFi protocols.
-        </p>
+const RisksSection = () => (
+  <>
+    <a href={`#${createIdFromTitle("DeFi Centralization Risks")}`}>
+      <h1
+        id={createIdFromTitle("DeFi Centralization Risks")}
+        className="inline-block mt-10 leading-3 tracking-tight text-primary font-bold text-2xl sm:text-2xl md:text-3xl lg:text-4xl"
+        style={{ scrollMarginTop: "100px" }}
+      >
+        DeFi Centralization Risks
+      </h1>
+    </a>
 
-        <p className="mt-4">
-          DeFi Scan offers a framework formalizing the decentralization stages
-          of DeFi technology and allowing, for the first time, to assess and
-          monitor the technology’s maturity in a verifiable manner. This
-          framework consists of two parts:
-        </p>
-        <ul className="list-disc ml-6">
-          <li>
-            A centralization risk scoring system based on a scale of “High”,
-            “Medium” and “Low” severity risks
-          </li>
-          <li>
-            A formalization of the decentralization stages which relates
-            directly to the risk scores achieved by a DeFi protocol
-          </li>
-        </ul>
-
-        <p className="mt-4">
-          We here provide an overview of the framework. For a more detailed
-          discussion, please refer to the introduction{" "}
-          <a
-            href="https://deficollective.org/blog/introducing-defiscan/"
-            className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-          >
-            blog post
-          </a>
-          .
-        </p>
+    <div className="flex-1 mt-6 text-center text-muted-foreground lg:text-start xl:text-base">
+      {/* Mobile Accordion View */}
+      <div className="md:hidden">
+        <Accordion type="single" collapsible className="w-full">
+          {riskData.map((item, index) => (
+            <AccordionItem key={index} value={`item-${index}`}>
+              <AccordionTrigger className="text-lg font-semibold">
+                {item.category}
+              </AccordionTrigger>
+              <AccordionContent>
+                <div className="space-y-4">
+                  <div>
+                    <span className="inline-block mb-2 px-2 py-1 bg-red-500 text-white rounded">
+                      High
+                    </span>
+                    <p className="text-sm">{item.risks.high}</p>
+                  </div>
+                  <div>
+                    <span className="inline-block mb-2 px-2 py-1 bg-yellow-500 text-white rounded">
+                      Medium
+                    </span>
+                    <p className="text-sm">{item.risks.medium}</p>
+                  </div>
+                  <div>
+                    <span className="inline-block mb-2 px-2 py-1 bg-green-500 text-white rounded">
+                      Low
+                    </span>
+                    <p className="text-sm">{item.risks.low}</p>
+                  </div>
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
       </div>
 
-      <a href={`#${createIdFromTitle(titles[1])}`}>
-        <h1
-          id={createIdFromTitle(titles[1])}
-          className="inline-block mt-10 leading-3 tracking-tight text-primary font-bold text-2xl sm:text-2xl md:text-3xl lg:text-4xl"
-          style={{ scrollMarginTop: "100px" }} /* Adjust for header */
-        >
-          {titles[1]}
-        </h1>
-      </a>
-
-      <div className="flex-1 mt-6 text-center text-muted-foreground lg:text-start xl:text-base">
+      {/* Desktop Table View */}
+      <div className="hidden md:block">
         <table className="table-auto w-full border-collapse border">
-          <thead className="border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right">
+          <thead>
             <tr>
-              <td className="border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right">
+              <td className="border px-4 py-2 text-left font-bold">
                 Risk / Scores
               </td>
-              <td className="border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right">
-                High
-              </td>
-              <td className="border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right">
-                Medium
-              </td>
-              <td className="border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right">
-                Low
-              </td>
+              <td className="border px-4 py-2 text-left font-bold">High</td>
+              <td className="border px-4 py-2 text-left font-bold">Medium</td>
+              <td className="border px-4 py-2 text-left font-bold">Low</td>
             </tr>
           </thead>
-
           <tbody>
-            <tr
-              className="hover:bg-gray-100 transition"
-              onClick={() => (window.location.href = "#chain")}
-            >
-              <td className="px-6 py-4 border">Chain</td>
-              <td className="transition px-6 py-4 border">L2Beat Stage 0</td>
-              <td className="transition px-6 py-4 border">L2Beat Stage 1</td>
-              <td className="transition px-6 py-4 border">
-                Ethereum mainnet or a comparable L1, or L2Beat Stage 2
-              </td>
-            </tr>
-            <tr
-              className="hover:bg-gray-100 transition"
-              onClick={() => (window.location.href = "#upgradability")}
-            >
-              <td className="px-6 py-4 border">Upgradeability</td>
-              <td className="px-6 py-4 border">
-                Possible upgrades may result in the theft or loss of user funds
-              </td>
-              <td className="px-6 py-4 border">
-                Possible upgrades may result in the theft or loss of unclaimed
-                yield or may otherwise materially change the system (but user
-                funds remain unaffected)
-              </td>
-              <td className="px-6 py-4 border">
-                Possible upgrades do not materially change the system (or result
-                in the theft or loss of user funds and unclaimed yield)
-              </td>
-            </tr>
-            <tr
-              className="hover:bg-gray-100 transition"
-              onClick={() => (window.location.href = "#autonomy")}
-            >
-              <td className="px-6 py-4 border">Autonomy</td>
-              <td className="px-6 py-4 border">
-                Failure of a dependency may result in the theft or loss of user
-                funds
-              </td>
-              <td className="px-6 py-4 border">
-                Failure of a dependency may result in the theft or loss of
-                unclaimed yield or may otherwise materially change the
-                performance of the system (but user funds remain unaffected)
-              </td>
-              <td className="px-6 py-4 border">
-                Failure of a dependency does not materially change the
-                performance of the system (or result in the theft or loss of
-                user funds and unclaimed yield)
-              </td>
-            </tr>
-            <tr
-              className="hover:bg-gray-100 transition"
-              onClick={() => (window.location.href = "#exit-window")}
-            >
-              <td className="px-6 py-4 border">Exit Window</td>
-              <td className="px-6 py-4 border">
-                Permissions are NOT protected with an exit window or the exit
-                window is less than 7 days
-              </td>
-              <td className="px-6 py-4 border">
-                Permissions are protected with an exit window of at least 7 days
-              </td>
-              <td className="px-6 py-4 border">
-                Permissions are fully revoked OR transferred to an on-chain
-                governance process AND protected with an exit window of at least
-                30 days
-              </td>
-            </tr>
-            <tr
-              className="hover:bg-gray-100 transition"
-              onClick={() => (window.location.href = "#accessibility")}
-            >
-              <td className="px-6 py-4 border">Accessibility</td>
-              <td className="px-6 py-4 border">
-                A single user interface exists without a backup solution
-                resulting in the temporary freezing of user funds if the
-                interface is shutdown
-              </td>
-              <td className="px-6 py-4 border">
-                A single user interface exists with public access to a backup
-                solution such as a self-hosting app
-              </td>
-              <td className="px-6 py-4 border">
-                Multiple independent user interfaces exist, e.g. websites,
-                in-wallet access, etc., guaranteeing access to user funds even
-                if one interface is shutdown
-              </td>
-            </tr>
+            {riskData.map((item) => (
+              <tr
+                key={item.category}
+                className="hover:bg-accent transition"
+                onClick={() => (window.location.href = `#${item.anchor}`)}
+              >
+                <td className="px-6 py-4 border">{item.category}</td>
+                <td className="px-6 py-4 border">{item.risks.high}</td>
+                <td className="px-6 py-4 border">{item.risks.medium}</td>
+                <td className="px-6 py-4 border">{item.risks.low}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
+    </div>
+  </>
+);
 
-      <a href={`#${createIdFromTitle(titles[2])}`}>
-        <h1
-          id={createIdFromTitle(titles[2])}
-          className="inline-block mt-10 leading-3 tracking-tight text-primary font-bold text-2xl sm:text-2xl md:text-3xl lg:text-4xl"
-          style={{ scrollMarginTop: "100px" }} /* Adjust for header */
-        >
-          {titles[2]}
-        </h1>
-      </a>
+const StagesSection = () => (
+  <>
+    <a href={`#${createIdFromTitle("DeFi Stages Framework")}`}>
+      <h1
+        id={createIdFromTitle("DeFi Stages Framework")}
+        className="inline-block mt-10 leading-3 tracking-tight text-primary font-bold text-2xl sm:text-2xl md:text-3xl lg:text-4xl"
+        style={{ scrollMarginTop: "100px" }}
+      >
+        DeFi Stages Framework
+      </h1>
+    </a>
 
-      <div className="flex-1 mt-6 text-center text-muted-foreground lg:text-start xl:text-base">
-        <table className="table-auto w-full border-collapse border ">
-          <thead className="border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right">
+    <div className="flex-1 mt-6 text-center text-muted-foreground lg:text-start xl:text-base">
+      {/* Mobile Accordion View */}
+      <div className="md:hidden">
+        <Accordion type="single" collapsible className="w-full">
+          {stagesData.map((stage, index) => (
+            <AccordionItem key={index} value={`stage-${index}`}>
+              <AccordionTrigger className="text-lg font-semibold">
+                {stage.stage}
+              </AccordionTrigger>
+              <AccordionContent>
+                <div className="space-y-4">
+                  <div>
+                    <h3 className="font-semibold mb-2">Description</h3>
+                    <p className="text-sm">{stage.description}</p>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-2">Qualification</h3>
+                    <ul className="list-none text-sm space-y-2">
+                      {stage.qualifications.map((qual, idx) => (
+                        <li key={idx}>{qual}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      </div>
+
+      {/* Desktop Table View */}
+      <div className="hidden md:block">
+        <table className="table-auto w-full border-collapse border">
+          <thead>
             <tr>
-              <td className="px-6 py-4 border ">Stage</td>
-              <td className="px-6 py-4 border ">Description</td>
-              <td className="px-6 py-4 border ">Qualification</td>
+              <td className="px-6 py-4 border font-bold">Stage</td>
+              <td className="px-6 py-4 border font-bold">Description</td>
+              <td className="px-6 py-4 border font-bold">Qualification</td>
             </tr>
           </thead>
-
           <tbody>
-            <tr className="hover:bg-gray-100 transition">
-              <td className="px-6 py-4 border ">Stage 0</td>
-              <td className="px-6 py-4 border ">
-                This is the first stage of a DeFi protocol where basic
-                requirements give the technology a decentralized foundation.
-                Critical permissions are still controlled by centralized
-                operators and external dependencies may expose critical risks to
-                users. Yet, its foundation allows for the gradual
-                decentralization and elimination of these risks.
-              </td>
-              <td className="px-6 py-4 border ">
-                <ul className="list-none list-inside">
-                  <li>✅ Blockchain-based, financial protocol</li>
-                  <li>✅ Assets are not in custody by centralized entity</li>
-                  <li>
-                    ✅ Public documentation exists that outlines the protocol
-                    components and expected performance
-                  </li>
-                  <li>✅ Source-available codebase</li>
-                  <li>✅ Verified contracts</li>
-                </ul>
-              </td>
-            </tr>
-            <tr className="hover:bg-gray-100 transition">
-              <td className="px-6 py-4 border">Stage 1</td>
-              <td className="px-6 py-4 border">
-                In the second stage, risks from critical permissions and
-                dependencies are significantly reduced by either revoking
-                critical permissions, or establishing a Security Council to
-                control such permissions, or enforcing an exit window of at
-                least 7 days so users can withdraw funds in case of an unwanted
-                protocol update. Critical risks from external dependencies are
-                mitigated by the implementation of appropriate fallback
-                mechanisms. Furthermore, the underlying chain cannot censor
-                users’ transactions and a backup user interface exists
-                guaranteeing access to user funds.
-              </td>
-              <td className="px-6 py-4 border">
-                <ul className="list-none list-inside">
-                  <li>
-                    ✅ At least "Medium" risk score for Chain, Autonomy,
-                    Accessibility
-                  </li>
-                  <li>
-                    ✅ IF Exit Window receives "High" risk, THEN control over
-                    permissions MUST be transferred to a Security Council
-                  </li>
-                </ul>
-              </td>
-            </tr>
-            <tr className="hover:bg-gray-100 transition">
-              <td className="px-6 py-4 border">Stage 2</td>
-              <td className="px-6 py-4 border">
-                The final stage is reached when critical permissions have either
-                been revoked or delegated to an on-chain governance system with
-                ample time for users to exit in case of an unwanted protocol
-                update. Risks from external dependencies have been further
-                reduced such that users’ funds and unclaimed yield remain
-                unaffected by a failure. In addition, different independent user
-                interfaces and a fully decentralized underlying chain guarantee
-                access to users’ funds at any time.
-              </td>
-              <td className="px-6 py-4 border">
-                <ul className="list-none list-inside">
-                  <li>
-                    ✅ At least "Low" risk score for Chain, Autonomy, Exit
-                    Window, Accessibility
-                  </li>
-                </ul>
-              </td>
-            </tr>
+            {stagesData.map((stage) => (
+              <tr key={stage.stage} className="hover:bg-accent transition">
+                <td className="px-6 py-4 border">{stage.stage}</td>
+                <td className="px-6 py-4 border">{stage.description}</td>
+                <td className="px-6 py-4 border">
+                  <ul className="list-none list-inside">
+                    {stage.qualifications.map((qual, index) => (
+                      <li key={index}>{qual}</li>
+                    ))}
+                  </ul>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
+    </div>
+  </>
+);
 
-      <a href={`#${createIdFromTitle(titles[3])}`}>
-        <h1
-          id={createIdFromTitle(titles[3])}
-          className="inline-block mt-10 leading-3 tracking-tight text-primary font-bold text-2xl sm:text-2xl md:text-3xl lg:text-4xl"
-          style={{ scrollMarginTop: "100px" }} /* Adjust for header */
-        >
-          {titles[3]}
-        </h1>
-      </a>
+const SecurityCouncilSection = () => (
+  <>
+    <a href={`#${createIdFromTitle("Security Council Requirements")}`}>
+      <h1
+        id={createIdFromTitle("Security Council Requirements")}
+        className="inline-block mt-10 leading-3 tracking-tight text-primary font-bold text-2xl sm:text-2xl md:text-3xl lg:text-4xl"
+        style={{ scrollMarginTop: "100px" }}
+      >
+        Security Council Requirements
+      </h1>
+    </a>
 
-      <div className="flex-1 my-6 text-center text-muted-foreground lg:text-start xl:text-base">
-        <p>
-          Any multisig account with the following requirements is an acceptable
-          Security Council setup:
-        </p>
+    <div className="flex-1 my-6 text-left text-muted-foreground lg:text-start xl:text-base">
+      <p className="mb-4">
+        Any multisig account with the following requirements is an acceptable
+        Security Council setup:
+      </p>
+      <ul className="list-disc ml-6">
+        {securityCouncilRequirements.map((requirement, index) => (
+          <li key={index}>{requirement}</li>
+        ))}
+      </ul>
+    </div>
+  </>
+);
 
-        <ul className="list-disc ml-6">
-          <li>At least 7 signers</li>
-          <li>At least 51% threshold</li>
-          <li>At least 50% non-team signers</li>
-          <li>Signers are publicly announced (with name or pseudonym)</li>
-        </ul>
-      </div>
+export default function LearnMorePage() {
+  return (
+    <div className="container relative mb-20 max-w-6xl py-6 lg:py-10">
+      <IntroSection />
+      <RisksSection />
+      <StagesSection />
+      <SecurityCouncilSection />
     </div>
   );
 }
