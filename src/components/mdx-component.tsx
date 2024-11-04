@@ -86,7 +86,7 @@ const components = {
   ),
   hr: ({ ...props }) => <hr className="my-4 md:my-8" {...props} />,
   table: ({ className, ...props }: React.HTMLAttributes<HTMLTableElement>) => (
-    <ResponsiveTable className={cn(className, "w-full table-auto -ml-4")}>
+    <ResponsiveTable className={cn(className, "w-full table-auto")}>
       {props.children}
     </ResponsiveTable>
   ),
