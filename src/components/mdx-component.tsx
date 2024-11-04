@@ -2,9 +2,12 @@
 import { cn } from "@/lib/utils";
 import React, { HTMLAttributes } from "react";
 import * as runtime from "react/jsx-runtime";
+import { AnchorHTMLAttributes } from "react";
 
 import Image from "next/image";
 import { ResponsiveTable } from "./responsive-table";
+
+type AnchorProps = AnchorHTMLAttributes<HTMLAnchorElement>;
 
 const useMDXComponent = (code: string) => {
   const fn = new Function(code);
@@ -41,17 +44,26 @@ const components = {
       {...props}
     />
   ),
-  a: ({ className, ...props }: ComponentsProps) => (
-    <a
-      target="_blank"
-      rel="noopener noreferrer"
-      className={cn(
-        "font-medium underline text-primary underline-offset-4",
-        className
-      )}
-      {...props}
-    />
-  ),
+  a: ({ className, href = "", ...props }: AnchorProps) => {
+    const isInternal = href.startsWith("#") || href.startsWith("/");
+
+    return (
+      <a
+        className={cn(
+          "font-medium underline text-primary underline-offset-4",
+          className
+        )}
+        href={href}
+        {...(!isInternal
+          ? {
+              target: "_blank",
+              rel: "noopener noreferrer",
+            }
+          : {})}
+        {...props}
+      />
+    );
+  },
   p: ({ className, ...props }: ComponentsProps) => (
     <p
       className={cn("leading-7 [&:not(:first-child)]:mt-6", className)}
