@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { FaTwitter, FaLinkedinIn, FaDiscord, FaGithub } from "react-icons/fa";
+import { FaLinkedinIn, FaDiscord, FaGithub } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 const Footer: React.FC = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -66,7 +67,7 @@ const Footer: React.FC = () => {
             rel="noopener noreferrer"
             className="text-gray-500 hover:text-blue-500 transition-colors duration-200"
           >
-            <FaTwitter size={24} />
+            <FaXTwitter size={24} />
           </a>
           <a
             href="https://www.linkedin.com/company/defi-collective"
