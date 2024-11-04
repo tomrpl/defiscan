@@ -119,7 +119,7 @@ export function DataTable<TData, TValue>({
   };
 
   return (
-    <div className="rounded-md w-full px-4 md:px-8">
+    <div className="rounded-md w-full">
       <div className="flex flex-row items-center py-2">
         <Input
           placeholder="Search protocol"

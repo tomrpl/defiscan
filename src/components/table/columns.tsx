@@ -51,7 +51,7 @@ export const columns: ColumnDef<Project>[] = [
     header: ({ column }) => {
       return (
         <Button
-          className="text-left sm:text-xs md:text-sm justify-start p-0"
+          className="text-left justify-start p-0 text-xs md:text-sm"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -70,7 +70,7 @@ export const columns: ColumnDef<Project>[] = [
     header: ({ column }) => {
       return (
         <Button
-          className="sm:text-xs md:text-sm p-0"
+          className="p-0 text-xs md:text-sm"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -91,7 +91,7 @@ export const columns: ColumnDef<Project>[] = [
                 : stage === 1
                   ? "bg-yellow-500"
                   : "bg-green-500"
-            } text-white py-1 rounded`}
+            } text-white py-1 rounded "text-lg"`}
           >
             {"Stage " + stage}
           </Badge>
@@ -103,7 +103,7 @@ export const columns: ColumnDef<Project>[] = [
   {
     accessorKey: "risks",
     header: ({ column }) => {
-      return <p className="sm:text-xs md:text-sm">Risks</p>;
+      return <p className="text-xs md:text-sm">Risks</p>;
     },
     cell: ({ row }) => {
       const risks = row.getValue("risks") as RiskArray;

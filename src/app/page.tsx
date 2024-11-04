@@ -54,7 +54,7 @@ export default function Home() {
           </div>
         </div>
         <p className="text-sm text-gray-500 -mt-10">Data source: DefiLlama</p>
-        <div className="space-x-4 mb-32">
+        <div className="mb-32">
           <Table />
         </div>
       </div>
