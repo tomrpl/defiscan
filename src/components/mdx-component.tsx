@@ -20,7 +20,7 @@ const components = {
   h1: ({ className, ...props }: ComponentsProps) => (
     <h1
       className={cn(
-        "mt-10 mb-4 scroll-m-20 text-4xl font-bold text-primary tracking-tight",
+        "mt-10 mb-4 scroll-m-20 text-2xl md:text-4xl font-bold text-primary tracking-tight",
         className
       )}
       {...props}
@@ -29,7 +29,7 @@ const components = {
   h2: ({ className, ...props }: ComponentsProps) => (
     <h2
       className={cn(
-        "mt-10 scroll-m-20 pb-1 text-2xl font-semibold text-primary tracking-tight first:mt-0",
+        "mt-10 scroll-m-20 pb-1 text-lg md:text-2xl font-semibold text-primary tracking-tight first:mt-0",
         className
       )}
       {...props}
@@ -38,7 +38,7 @@ const components = {
   h3: ({ className, ...props }: ComponentsProps) => (
     <h3
       className={cn(
-        "mt-8 scroll-m-20 text-xl font-semibold text-primary tracking-tight",
+        "mt-8 scroll-m-20 text-base md:text-xl font-semibold text-primary tracking-tight",
         className
       )}
       {...props}
@@ -66,15 +66,24 @@ const components = {
   },
   p: ({ className, ...props }: ComponentsProps) => (
     <p
-      className={cn("leading-7 [&:not(:first-child)]:mt-6", className)}
+      className={cn(
+        "text-wrap text-sm md:text-base leading-7 [&:not(:first-child)]:mt-6",
+        className
+      )}
       {...props}
     />
   ),
   ul: ({ className, ...props }: ComponentsProps) => (
-    <ul className={cn("my-6 ml-6 list-disc", className)} {...props} />
+    <ul
+      className={cn("my-6 ml-6 text-sm md:text-base list-disc", className)}
+      {...props}
+    />
   ),
   ol: ({ className, ...props }: ComponentsProps) => (
-    <ol className={cn("my-6 ml-6 list-decimal", className)} {...props} />
+    <ol
+      className={cn("my-6 ml-6 text-sm md:text-base list-decimal", className)}
+      {...props}
+    />
   ),
   li: ({ className, ...props }: ComponentsProps) => (
     <li className={cn("mt-2", className)} {...props} />

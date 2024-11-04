@@ -119,7 +119,7 @@ export const ResponsiveTable: React.FC<ResponsiveTableProps> = ({
 
           return (
             <AccordionItem key={index} value={`item-${index}`}>
-              <AccordionTrigger className="text-lg font-semibold">
+              <AccordionTrigger className="text-sm lg:text-lg font-semibold text-left">
                 <div dangerouslySetInnerHTML={{ __html: displayTitle }} />
               </AccordionTrigger>
               <AccordionContent>
