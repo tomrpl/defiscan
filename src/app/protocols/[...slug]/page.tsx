@@ -73,6 +73,8 @@ export default async function ProtocolPageItem({
               <td>Website</td>
               <td>
                 <a
+                  target="_blank"
+                  rel="noopener noreferrer"
                   href={protocol.website}
                   className="text-blue-500 hover:underline"
                 >
@@ -83,7 +85,12 @@ export default async function ProtocolPageItem({
             <tr>
               <td>X (Twitter)</td>
               <td>
-                <a href={protocol.x} className="text-blue-500 hover:underline">
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={protocol.x}
+                  className="text-blue-500 hover:underline"
+                >
                   {protocol.x}
                 </a>
               </td>
@@ -103,6 +110,8 @@ export default async function ProtocolPageItem({
               <td>Defillama</td>
               <td>
                 <a
+                  target="_blank"
+                  rel="noopener noreferrer"
                   href={
                     "https://defillama.com/protocol/" + protocol.defillama_slug
                   }
@@ -146,8 +155,19 @@ export default async function ProtocolPageItem({
               protocol.update_date!.split("T")[0]}
           .
         </p>
-        <p>This content is provided "as is" and "as available". Read more in our  
-          <a href={"../../terms"} className="text-blue-500 hover:underline"> Terms</a>.</p>
+        <p>
+          This content is provided "as is" and "as available". Read more in our
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href={"../../terms"}
+            className="text-blue-500 hover:underline"
+          >
+            {" "}
+            Terms
+          </a>
+          .
+        </p>
 
         <h1 className="mt-10 mb-4 scroll-m-20 text-4xl font-bold text-primary tracking-tight">
           Stage
