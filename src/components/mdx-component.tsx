@@ -96,19 +96,21 @@ const components = {
       {...props}
     />
   ),
-  th: ({ className, ...props }: ComponentsProps) => (
+
+  th: ({ className, style, ...props }: ComponentsProps) => (
     <th
       className={cn(
-        "border border-secondary px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right",
+        "border border-secondary px-4 py-2 text-left font-bold [text-align:left!important]",
         className
       )}
       {...props}
     />
   ),
-  td: ({ className, ...props }: ComponentsProps) => (
+
+  td: ({ className, style, ...props }: ComponentsProps) => (
     <td
       className={cn(
-        "border border-secondary px-4 py-2 text-left break-words break-all lg:break-normal whitespace-normal [&[align=center]]:text-center [&[align=right]]:text-right",
+        "border border-secondary px-4 py-2 text-left break-words break-all lg:break-normal whitespace-normal [text-align:left!important]",
         className
       )}
       {...props}
