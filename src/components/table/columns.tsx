@@ -33,7 +33,7 @@ export const columns: ColumnDef<Project>[] = [
           <img
             src={"/images/placeholder.png"}
             alt={protocol || ""}
-            className="min-w-16 min-h-16 max-w-16 max-h-16 object-cover"
+            className="min-w-8 min-h-8 max-w-10 max-h-10 md:max-w-12 md:max-h-12 object-cover"
           />
         );
 
@@ -41,7 +41,7 @@ export const columns: ColumnDef<Project>[] = [
         <img
           src={logo}
           alt={protocol || ""}
-          className="min-w-16 min-h-16 max-w-16 max-h-16 object-cover"
+          className="min-w-8 min-h-8 max-w-10 max-h-10 md:max-w-12 md:max-h-12 object-cover"
         />
       );
     },
@@ -51,6 +51,7 @@ export const columns: ColumnDef<Project>[] = [
     header: ({ column }) => {
       return (
         <Button
+          className="text-left sm:text-xs md:text-sm justify-start p-0"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -59,6 +60,9 @@ export const columns: ColumnDef<Project>[] = [
         </Button>
       );
     },
+    cell: ({ row }) => {
+      return <p className="text-xs md:text-sm">{row.getValue("protocol")}</p>;
+    },
     sortingFn: "alphanumeric", // use built-in sorting function by name
   },
   {
@@ -66,6 +70,7 @@ export const columns: ColumnDef<Project>[] = [
     header: ({ column }) => {
       return (
         <Button
+          className="sm:text-xs md:text-sm p-0"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
@@ -86,7 +91,7 @@ export const columns: ColumnDef<Project>[] = [
                 : stage === 1
                   ? "bg-yellow-500"
                   : "bg-green-500"
-            } text-white px-2 py-1 rounded`}
+            } text-white py-1 rounded`}
           >
             {"Stage " + stage}
           </Badge>
@@ -97,7 +102,9 @@ export const columns: ColumnDef<Project>[] = [
   },
   {
     accessorKey: "risks",
-    header: "Risks",
+    header: ({ column }) => {
+      return <p className="sm:text-xs md:text-sm">Risks</p>;
+    },
     cell: ({ row }) => {
       const risks = row.getValue("risks") as RiskArray;
 
@@ -116,58 +123,82 @@ export const columns: ColumnDef<Project>[] = [
     header: ({ column }) => {
       return (
         <Button
-          className="hidden md:flex"
+          // Remove hidden class to prevent layout shift
+          className="md:flex hidden w-0 md:w-auto overflow-hidden p-0"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
-          Type
-          <ArrowUpDown className="ml-2 h-4 w-4" />
+          <span className="hidden md:inline">Type</span>
+          <ArrowUpDown className="ml-2 h-4 w-4 hidden md:inline" />
         </Button>
       );
     },
     cell: ({ row }) => {
-      return <div className="hidden md:block">{row.getValue("type")}</div>;
+      return (
+        <div className="w-0 md:w-auto overflow-hidden whitespace-nowrap">
+          <span className="hidden md:inline">{row.getValue("type")}</span>
+        </div>
+      );
     },
-    sortingFn: "alphanumeric", // use built-in sorting function by name
+    sortingFn: "alphanumeric",
+    meta: {
+      responsiveHidden: true, // This column will hide on mobile
+    },
   },
   {
     accessorKey: "chain",
     header: ({ column }) => {
       return (
         <Button
-          className="hidden md:flex"
+          // Remove hidden class to prevent layout shift
+          className="md:flex hidden w-0 md:w-auto overflow-hidden p-0"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
-          Chain
-          <ArrowUpDown className="ml-2 h-4 w-4" />
+          <span className="hidden md:inline">Chain</span>
+          <ArrowUpDown className="ml-2 h-4 w-4 hidden md:inline" />
         </Button>
       );
     },
     cell: ({ row }) => {
-      return <div className="hidden md:block">{row.getValue("chain")}</div>;
+      return (
+        <div className="w-0 md:w-auto overflow-hidden whitespace-nowrap">
+          <span className="hidden md:inline">{row.getValue("chain")}</span>
+        </div>
+      );
     },
-    sortingFn: "alphanumeric", // use built-in sorting function by name
+    sortingFn: "alphanumeric",
+    meta: {
+      responsiveHidden: true, // This column will hide on mobile
+    },
   },
   {
     accessorKey: "tvl",
     header: ({ column }) => {
       return (
         <Button
-          className="hidden md:flex"
+          // Remove hidden class to prevent layout shift
+          className="md:flex hidden w-0 md:w-auto overflow-hidden p-0"
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
-          TVL
-          <ArrowUpDown className="ml-2 h-4 w-4" />
+          <span className="hidden md:inline">TVL</span>
+          <ArrowUpDown className="ml-2 h-4 w-4 hidden md:inline" />
         </Button>
       );
     },
     cell: ({ row }) => {
       return (
-        <div className="hidden md:block">{formatUsd(row.getValue("tvl"))}</div>
+        <div className="w-0 md:w-auto overflow-hidden whitespace-nowrap">
+          <span className="hidden md:inline">
+            {formatUsd(row.getValue("tvl"))}
+          </span>
+        </div>
       );
     },
-    sortingFn: "alphanumeric", // use built-in sorting function by name
+    sortingFn: "alphanumeric",
+    meta: {
+      responsiveHidden: true, // This column will hide on mobile
+    },
   },
 ];

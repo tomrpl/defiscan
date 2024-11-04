@@ -47,7 +47,7 @@ export default function Table() {
   }, []);
 
   return (
-    <div className="container mx-auto">
+    <div className="mx-auto w-full">
       <DataTable columns={columns} data={data || []} />
     </div>
   );
