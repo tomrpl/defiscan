@@ -51,6 +51,7 @@ const components = {
       <a
         className={cn(
           "font-medium underline text-primary underline-offset-4",
+          !isInternal ? "text-xs sm:text-sm md:text-base" : "",
           className
         )}
         href={href}
