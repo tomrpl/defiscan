@@ -13,13 +13,13 @@ To run the website on your local machine, follow these steps:
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/deficollective/defi-scan.git
+   git clone https://github.com/deficollective/defiscan.git
    ```
 
    After successful cloned. Head over to the project directory
 
    ```bash
-   cd defi-scan
+   cd defiscan
    ```
 
 2. **Install Dependencies**:
@@ -56,7 +56,7 @@ New protocols reviews can be added as an `.md` file in the `content` folder.
 
 `Important`:
 
-- Make sure to name the file with dash (`-`) and without space. Example: `liquity-v1.md`
+- Make sure to name the file with dash (`-`) and without space. Example: `liquity-v2.md`
 - The `.md` file needs to follow the protocol report structure outlined [here](src/content/template.md)
 
 ## Acknowledgement
