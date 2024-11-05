@@ -9,9 +9,9 @@ import {
 
 // Data structures
 const introContent = {
-  title: "WTF is DeFiScan?",
+  title: "What is DeFiScan?",
   paragraphs: [
-    "The maturity of DeFi technology progresses through a number of stages characterized by different degrees of decentralization. Upon deployment, DeFi protocols often expose critical risks from central dependencies and permissions which are controlled by centralized operators. As the protocol matures, these risks are eliminated e.g. through the introduction of fallback mechanisms, Security Councils and exit windows. To date, however, these stages have not been formalized resulting in a lack of transparency around the maturity and related risks of DeFi protocols.",
+    "The maturity of DeFi technology progresses through several stages characterized by different degrees of decentralization. Upon deployment, DeFi protocols often expose critical risks from central dependencies and permissions controlled by centralized operators. As the protocol matures, these risks are eliminated e.g. through the introduction of fallback mechanisms, Security Councils and exit windows. To date, however, these stages have not been formalized resulting in a lack of transparency around the maturity and related risks of DeFi protocols.",
     "DeFiScan offers a framework formalizing the decentralization stages of DeFi technology and allowing, for the first time, to assess and monitor the technology's maturity in a verifiable manner. This framework consists of two parts:",
   ],
   bulletPoints: [
@@ -83,7 +83,7 @@ const stagesData = [
       "This is the first stage of a DeFi protocol where basic requirements give the technology a decentralized foundation. Critical permissions are still controlled by centralized operators and external dependencies may expose critical risks to users. Yet, its foundation allows for the gradual decentralization and elimination of these risks.",
     qualifications: [
       "✅ Blockchain-based, financial protocol",
-      "✅ Assets are not in custody by centralized entity",
+      "✅ Assets are not in custody by a centralized entity",
       "✅ Public documentation exists that outlines the protocol components and expected performance",
       "✅ Source-available codebase",
       "✅ Verified contracts",
@@ -94,7 +94,7 @@ const stagesData = [
     description:
       "In the second stage, risks from critical permissions and dependencies are significantly reduced by either revoking critical permissions, or establishing a Security Council to control such permissions, or enforcing an exit window of at least 7 days so users can withdraw funds in case of an unwanted protocol update. Critical risks from external dependencies are mitigated by the implementation of appropriate fallback mechanisms. Furthermore, the underlying chain cannot censor users' transactions and a backup user interface exists guaranteeing access to user funds.",
     qualifications: [
-      '✅ At least "Medium" risk score for Chain, Autonomy, Accessibility',
+      '✅ At least a "Medium" risk score for Chain, Autonomy, Accessibility',
       '✅ IF Exit Window receives "High" risk, THEN control over permissions MUST be transferred to a Security Council',
     ],
   },
@@ -147,7 +147,7 @@ const IntroSection = () => (
         ))}
       </ul>
       <p className="mt-4">
-        We here provide an overview of the framework. For a more detailed
+        Here we provide an overview of the framework. For a more detailed
         discussion, please refer to the introduction{" "}
         <a
           href={introContent.blogLink.url}
@@ -329,7 +329,11 @@ const SecurityCouncilSection = () => (
 
     <div className="flex-1 my-6 text-left text-muted-foreground lg:text-start xl:text-base">
       <p className="mb-4">
-        Any multisig account with the following requirements is an acceptable
+        A Security Council can represent an effective intermediate step of decentralized control over permissions that cannot be revoked or protected with an Exit Window.
+        In particular, a Security Council enables a protocol to mitigate risks of centralized control over such permissions and enter Stage 1.
+      </p>
+      <p className="mb-4">
+        Any multisig account with the following minimal requirements is an acceptable
         Security Council setup:
       </p>
       <ul className="list-disc ml-6">
