@@ -22,7 +22,7 @@ export default function PrivacyPage() {
         <p>
           This privacy policy ("<strong>Privacy Policy</strong>") explains how
           we process and protect your personal data when you use this Website
-          provided via https://deficollective.org or DeFi Scan provided at [URL]
+          provided via https://deficollective.org or DeFiScan provided at https://defiscan.info
           (collectively the "<strong>Website</strong>").
         </p>
 
@@ -109,7 +109,7 @@ export default function PrivacyPage() {
             </li>
             <li>
               To collaborate with you based on your requests in connection with
-              DeFi Scan.
+              DeFiScan.
             </li>
             <li>
               To provide you with news, newsletters, and general information
@@ -183,10 +183,10 @@ export default function PrivacyPage() {
           purposes of understanding and optimizing their website. Matomo is used
           to analyze the behavior of the website visitors to identify potential
           pitfalls; not found pages, search engine indexing issues, which
-          contents are the most appreciated… Once the data is processed (number
+          contents are the most appreciated. Once the data is processed (number
           of visitors reaching a not found page, viewing only one page…), Matomo
           is generating reports for website owners to take action, for example
-          changing the layout of the pages, publishing some fresh content… etc.
+          changing the layout of the pages, publishing some fresh content etc.
           We do not use cookies with Matomo. For more information on how Matomo
           works, please refer to their <a href="https://matomo.org">Website </a>
           and{" "}

@@ -12,7 +12,7 @@ const introContent = {
   title: "WTF is DeFiScan?",
   paragraphs: [
     "The maturity of DeFi technology progresses through a number of stages characterized by different degrees of decentralization. Upon deployment, DeFi protocols often expose critical risks from central dependencies and permissions which are controlled by centralized operators. As the protocol matures, these risks are eliminated e.g. through the introduction of fallback mechanisms, Security Councils and exit windows. To date, however, these stages have not been formalized resulting in a lack of transparency around the maturity and related risks of DeFi protocols.",
-    "DeFi Scan offers a framework formalizing the decentralization stages of DeFi technology and allowing, for the first time, to assess and monitor the technology's maturity in a verifiable manner. This framework consists of two parts:",
+    "DeFiScan offers a framework formalizing the decentralization stages of DeFi technology and allowing, for the first time, to assess and monitor the technology's maturity in a verifiable manner. This framework consists of two parts:",
   ],
   bulletPoints: [
     'A centralization risk scoring system based on a scale of "High", "Medium" and "Low" severity risks',

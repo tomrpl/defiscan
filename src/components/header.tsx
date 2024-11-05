@@ -8,7 +8,7 @@ export default function Navbar() {
 
   const navLinks = [
     { href: "/learn-more", label: "Learn more" },
-    { href: "/submit-report", label: "Submit report" },
+    { href: "/submit-review", label: "Submit review" },
   ];
 
   return (
