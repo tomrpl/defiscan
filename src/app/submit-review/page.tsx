@@ -89,6 +89,15 @@ export default function SubmitReviewPage() {
           </li>
         </ol>
       </div>
+      <p className="mt-10">
+      <strong>Note</strong>, by submitting a PR with a protocol review, you agree that the DeFi Collective may freely use the submitted content. Please see our{" "}
+            <a
+              href="/terms"
+              className="text-blue-600 underline"
+            >
+              Terms
+            </a>.
+      </p>
     </div>
   );
 }
