@@ -18,7 +18,6 @@ update_date: "1970-01-01"
 
 Aerodrome Finance is a next-generation AMM designed to serve as Base's central liquidity hub, combining a powerful liquidity incentive engine, vote-lock governance model, and friendly user experience. Aerodrome inherits the latest features from Velodrome V2.
 
-
 # Overview
 
 ## Chain
@@ -29,16 +28,19 @@ Aerodrome is deployed on the Base chain, an Ethereum L2 in Stage 0 according to 
 
 ## Upgradeability
 
-Different permissions in the protocol are owned by a number of Multisigs.  
+Different permissions in the protocol are owned by a number of Multisigs.
 
-The _Emergency Council_ (a Multisig) has the permission to _kill_ and _revive_ gauges. Gauges distribute rewards to LPs in the system in weekly periods. The amount of rewards per period is determined through an on-chain voting process among veNFT holders. The killing of a gauge results in the loss of all accumulated yield in the gauge for the current epoch. While this permission is intended to be used only in the case of a _malicious_ gauge, see e.g. the case of [killing the USDM gauge](https://gov.curve.fi/t/the-curve-emergency-dao-has-killed-the-usdm-gauge/2307) on Curve in November 2021, it can potentially also be abused if the permission owner is comprimised.
+One upgradability regarding voter and LP reward has to be noted. The _Emergency Council_ (a Multisig) has the permission to _kill_ and _revive_ gauges. Gauges distribute rewards to LPs in the system in weekly periods. The amount of rewards per period is determined through an on-chain voting process among veNFT holders. The upgrade (_kill_ and _revive_ gauges) has no impact on user funds nor can it lead to loss of unclaimed yield for users. That is why this particular upgradability itself is rated low regarding centralisation risk. The following paragraph goes into more detail on how this is the case.
 
-The _Undeclared Multisig_, the multisig is not referenced in the docs, has the privilege to (un-) whitelist veNFTs to participate in the gauge rewards voting process during the last hour before an epoch ends. During this window, the whitelisted veNFTs are the only allowed voters and are thus able to control the final vote outcome. This permission thus too enables the permission owners to unilaterally change the accumulated yield in a gauge. 
+After each period, VELO tokens from the `Minter` contract flow into the `Voter` contract via calling `updatePeriod()`. Once the tokens are in the `Voter` contract, they flow according to the voting weight to each `Gauge` through calling `distribute()` on the `Voter` contract. Once the VELO tokens ended up in the different `Gauge` contracts, the users can claim their reward no matter of the living status of the `Gauge`. It's the function call `distribute()` that sends the tokens to the `Gauge` which reverts if the `Gauge` is killed. For rewards to be claimable for users the function calls `updatePeriod()` and `distribute()` need to occur in succession and the killing of the `Gauge` before either one of them results in yield not being available to the user. But, since both functions are public everyone, can call them. And thus during the first block of each period where `updatePeriod()` is callable, the permission owner that kills the `Gauge` needs to frontrun the transactions which are calling `updatePeriod()` and `distribute()`. This centralisation vector is thus not definitive and only probabilistic.
+
+Voter on the other hand receive claim on yield with calling `vote()` on the `Voter` contract. Function `vote()` will revert if the `Gauge` is killed, but votes that went through received in the same transaction claims on yield that cannot be withhold by the protocol (state change in Reward Contract).
+
+Moreover the _Undeclared Multisig_, the multisig is not referenced in the docs, has the privilege to (un-) whitelist veNFTs to participate in the gauge rewards voting process during the last hour before an epoch ends. During this window, the whitelisted veNFTs are the only allowed voters and are thus able to control the final vote outcome. This permission thus too enables the permission owners to unilaterally change the accumulated yield in a gauge.
 
 Furthermore, the `Undeclared Multisig` is assigned the owner role in multiple contracts and in particular in the _FactoryRegistry_ contract. This contract grants the ability to approve or unapprove factories within the Aerodrome system. Swaps are then routed through new pools from the approved factories. However, traders are protected from malicious factories (and pools) through a slippage tolerance which is enforced on the router. LPs too are not at risk of supplying liquidity in a malicious pool since only pools from the default factory are enabled for LP functions.
 
 > Upgradeability score: M
-
 
 ## Autonomy
 
@@ -62,8 +64,8 @@ Aerodrome provides multiple access points for users, including both centralized 
 
 ## Contracts
 
-| Contract Name                      | Address                                    |
-| ---------------------------------- | ------------------------------------------ |
+| Contract Name                      | Address                                                                                                               |
+| ---------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
 | AERO                               | [0x940181a94A35A4569E4529A3CDfB74e38FD98631](https://basescan.org/address/0x940181a94A35A4569E4529A3CDfB74e38FD98631) |
 | AirdropDistributor                 | [0xE4c69af018B2EA9e575026c0472B6531A2bC382F](https://basescan.org/address/0xE4c69af018B2EA9e575026c0472B6531A2bC382F) |
 | VeArtProxy                         | [0xE9992487b2EE03b7a91241695A58E0ef3654643E](https://basescan.org/address/0xE9992487b2EE03b7a91241695A58E0ef3654643E) |
