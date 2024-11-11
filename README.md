@@ -1,4 +1,4 @@
-![DeFiScan Logo](./public/images/defiscan_by_tdc_color_for_light_background.svg)
+![DeFiScan Logo](./public/images/defiscan_by_dc_color_for_light_background.svg)
 
 A public website for the monitoring of the maturity and risks of DeFi technology.
 
@@ -13,13 +13,13 @@ To run the website on your local machine, follow these steps:
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/deficollective/defi-scan.git
+   git clone https://github.com/deficollective/defiscan.git
    ```
 
    After successful cloned. Head over to the project directory
 
    ```bash
-   cd defi-scan
+   cd defiscan
    ```
 
 2. **Install Dependencies**:
@@ -57,7 +57,7 @@ New protocol reviews can be added as a `.md` files in the `content/protocols` fo
 
 **Important:**
 
-- Make sure to name the file with dash (`-`) and without space. Example: `liquity-v1.md`
+- Make sure to name the file with dash (`-`) and without space. Example: `liquity-v2.md`
 - The `.md` file needs to follow the protocol report structure outlined [here](src/content/template.md)
 
 

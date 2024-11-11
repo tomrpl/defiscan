@@ -10,8 +10,8 @@ const lexend = Lexend({ subsets: ["latin"], variable: "--font-lexend" });
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | DeFi Scan",
-    default: "DeFi Scan",
+    template: "%s | DeFiScan",
+    default: "DeFiScan",
   },
 };
 

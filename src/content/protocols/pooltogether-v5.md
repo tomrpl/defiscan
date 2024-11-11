@@ -30,9 +30,9 @@ PoolTogether V5 is deployed on Ethereum mainnet.
 
 ## Upgradeability
 
-Permissions in the PoolTogether V5 protocol are fully revoked, the protocol is immutable 🎉
+Permissions in the PoolTogether-v5 protocol are fully revoked, the protocol is immutable 🎉
 
-> ⚠️ Note that anyone can create a new `PrizeVault` and link it to various, third-party yield sources and utility contracts. An attacker could deploy malicious yield sources or utility contracts (e.g., `LiquidationPair` or `Claimer`) through which users' funds or prizes could be lost or stolen. However, assessing third-party integrations with a protocol is outside of the scope of the DeFiScan framework.
+> ⚠️ Note that PoolTogether-v5 relies on third-party protocols, in particular as yield sources, which themselves could include upgradeable contracts. It is outside of the scope of this review to analyze these protocols too. 
 
 > Upgradeability score: L
 
@@ -40,11 +40,15 @@ Permissions in the PoolTogether V5 protocol are fully revoked, the protocol is i
 
 The protocol relies on the Witnet Oracle for randomness in prize draws. If the oracle fails, a new PrizePool and DrawManager must be deployed, though users can still withdraw their deposits and accrued rewards without interruption and are thus not affected by an oracle failure.
 
+> ⚠️ Note that anyone can create a new `PrizeVault` from the `PriceVaultFactory` and link it to third-party yield sources and utility contracts (e.g., `LiquidationPair` or `Claimer`). A flawed or malicious implementation of these contracts could result in the loss or theft of user funds. While it is outside of the scope of this review to analyze the underlying yield sources, it is important to note that PoolTogether v5 does NOT rely on a single external yield source and that PriceVaults are strictly isolated meaning that users only inherit the risks of the vault they are deposited in.
+
 > Autonomy score: L
 
 ## Exit Window
 
 PoolTogether's contracts are fully immutable, no upgrades or changes can be made, removing the need for an exit window.
+
+> ⚠️ Note that PoolTogether-v5 relies on third-party protocols, in particular as yield sources, which themselves could exhibit upgradeable contracts. It is outside of the scope of this review to analyze whether appropriate Exit Windows exist on these protocols too. 
 
 > Exit Window score: L
 
@@ -107,7 +111,9 @@ The oracle endpoint is referenced in the RngWitnet contract without any way to c
 
 ### Underlying yield source (linked ERC4626 in a Prize Vault)
 
-In normal conditions depositors should always expect to be able to withdraw their full deposit amount and no more as long as global withdrawal limits meet or exceed their balance. However, since the protocol is fully permissionless everyone can create a new prize vault and link yield source and utility contracts to it. The yield source and the utility contracts like LiquidationPair or Claimer can be implemented with malicious intent, stealing underlying principal or stealing prize. However, a malicious vault doesn’t affect other vaults nor the protocol in general.
+In normal conditions depositors should always expect to be able to withdraw their full deposit amount and no more as long as global withdrawal limits meet or exceed their balance. However, since the protocol is fully permissionless everyone can create a new prize vault and link yield source and utility contracts to it. The yield source and the utility contracts like LiquidationPair or Claimer can be implemented with malicious intent, stealing underlying principal or stealing prize. 
+
+__While a price vault, or its underlying yield source, can be based on a flawed implementation or be malicious, vaults are strictly isolated meaning that users only assume the risk of a specific vault and yield source but do not inherit risks from other vaults.__
 
 ## Exit Window
 

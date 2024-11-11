@@ -39,7 +39,7 @@ export interface BadgeProps
 function Badge({ className, variant, stage, ...props }: BadgeProps) {
   return (
     <Tooltip>
-      <TooltipTrigger className="flex size-full items-center justify-start pl-2">
+      <TooltipTrigger className="flex size-4/5 lg:size-full items-center justify-start">
         <div className={cn(badgeVariants({ variant }), className)} {...props} />
       </TooltipTrigger>
       <TooltipContent fitContent>

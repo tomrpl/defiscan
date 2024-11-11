@@ -9,6 +9,7 @@ import {
   getSortedRowModel,
   SortingState,
   useReactTable,
+  Table as TableType,
 } from "@tanstack/react-table";
 
 import {
@@ -21,12 +22,56 @@ import {
 } from "@/components/ui/table";
 import { Input } from "@/components/ui/input";
 
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
 }
+
+// Define the extended ColumnMeta type
+type ExtendedColumnMeta = {
+  responsiveHidden?: boolean;
+};
+
+const getInitialVisibility = (columns: ColumnDef<any, any>[]) => {
+  const initialState: Record<string, boolean> = {};
+
+  columns.forEach((column) => {
+    // Assuming you add a `responsiveHidden` property to columns you want hidden on mobile
+    if (typeof column.id === "string") {
+      initialState[column.id] = !(column.meta as ExtendedColumnMeta)
+        ?.responsiveHidden;
+    }
+  });
+
+  return initialState;
+};
+
+const useResponsiveColumns = (
+  table: TableType<any>,
+  mobileBreakpoint = 800
+) => {
+  useEffect(() => {
+    const handleResize = () => {
+      const isMobile = window.innerWidth < mobileBreakpoint;
+
+      // Get all columns that should be responsive
+      const responsiveColumns = table
+        .getAllColumns()
+        .filter((column: any) => column.columnDef.meta?.responsiveHidden);
+
+      // Toggle visibility for all responsive columns
+      responsiveColumns.forEach((column: any) => {
+        column.toggleVisibility(!isMobile);
+      });
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [table, mobileBreakpoint]);
+};
 
 export function DataTable<TData, TValue>({
   columns,
@@ -35,17 +80,26 @@ export function DataTable<TData, TValue>({
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
 
+  const initialVisibility = useMemo(
+    () => getInitialVisibility(columns),
+    [columns]
+  );
+
+  const [columnVisibility, setColumnVisibility] = useState(initialVisibility);
+
   const table = useReactTable({
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
     onSortingChange: setSorting,
     getSortedRowModel: getSortedRowModel(),
+    onColumnVisibilityChange: setColumnVisibility,
     onColumnFiltersChange: setColumnFilters,
     getFilteredRowModel: getFilteredRowModel(),
     state: {
       sorting,
       columnFilters,
+      columnVisibility,
     },
     initialState: {
       sorting: [
@@ -57,13 +111,15 @@ export function DataTable<TData, TValue>({
     },
   });
 
+  useResponsiveColumns(table);
+
   // Navigate to the protocol's page when the row is clicked
   const handleRowClick = (slug: string) => {
     window.location.href = slug;
   };
 
   return (
-    <div className="rounded-md">
+    <div className="rounded-md w-full">
       <div className="flex flex-row items-center py-2">
         <Input
           placeholder="Search protocol"
@@ -76,7 +132,7 @@ export function DataTable<TData, TValue>({
           className="max-w-sm border border-grey"
         />
       </div>
-      <Table className="table-auto w-full border-collapse">
+      <Table className="">
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (
             <TableRow key={headerGroup.id} className="hover:bg-background">

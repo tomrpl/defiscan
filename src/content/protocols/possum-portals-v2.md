@@ -1,12 +1,12 @@
 ---
-protocol: "Possum-Labs"
+protocol: "Possum-Portals-v2"
 website: "https://www.possumlabs.io"
 x: "https://x.com/Possum_Labs"
 github: "https://github.com/PossumLabsCrypto"
 defillama_slug: "possum-labs"
 chain: "Arbitrum"
 stage: 0
-risks: ["M", "H", "H", "M", "M"]
+risks: ["M", "H", "H", "M", "H"]
 author: ["stengarl", "sagaciousyves"]
 submission_date: "2024-10-23"
 publish_date: "2024-10-23"
@@ -28,19 +28,19 @@ Possum is deployed on the Arbitrum chain, an Ethereum L2 in Stage 1 according to
 
 ## Upgradeability
 
-The Possum Labs protocol consists of three main components: Portals, Adapters, and Core-V1.
+The Possum Portals v2 protocol consists of two main components: _Portals_ and _Adapters_.
 
 Permissions in the Portals contracts are fully revoked, these contracts are immutable 🎉
 
-The Core-V1 contract, or `PossumCore` more specifically, exposes a permissioned function that allows a Multisig to update a whitelist with accounts eligible for PSM incentives. This permission thus allows its owner to censor a specific account from receiving further rewards. However, users remain unaffected by this since they are still able to claim any accumulated yield.
+Each Portal has an associated Adapter contract which enables interactions with external protocols such as swapping on 1Inch. These Adapter contracts are upgradeable with the permission owned by a hybrid governance system. Upgrades could involve a new, flawed or malicious Adapter implementation and can thus result in the loss or theft of user funds.
 
-Furthermore, each Portal has an associated Adapter contract which enables interactions with external protocols such as swapping on 1Inch. These Adapter contracts are upgradeable with the permission to upgrade controlled by a hybrid governance system. Importantly, the upgrade could involve a new, flawed or malicious Adapter contract and can thus result in the loss or theft of user funds.
+Furthermore, governance, through the _Core-v1_ module, allows PSM stakers to allocate capital to various Portals or Possum accounts more generally and thereby enable different products. A Multisig owns the permission to update a whitelist with accounts eligible for capital allocations. Removing an account from the whitelist effectively censors it for future rewards. Users can still withdraw funds and unclaimed yield and thus are unaffected by this.
 
 > Upgradeability score: H
 
 ## Autonomy
 
-Possum Labs Portals v2 rely heavily on Vaultka, a yield-generating protocol where assets are staked to generate returns. The stability and security of Vaultka are crucial for the Portals' functionality. If Vaultka were compromised, this could lead to the loss of user funds, loss of unclaimed yield, and otherwise materially change the protocol's expected behavior.
+Portals-v2 rely on Vaultka, a yield-generating protocol where assets are staked to generate returns. The stability and security of Vaultka are crucial for the Portals' functionality. If Vaultka were compromised, this could lead to the loss of user funds, loss of unclaimed yield, and otherwise materially change the protocol's expected behavior.
 
 Arbitrageurs, on the other hand, exploit arbitrage opportunities when the value of accrued assets exceeds the fixed PSM required to buy them. Their participation is permissionless and the protocol does not rely on a direct user-service provider relationship. Instead, the protocol directly incentivizes Arbitrageurs and participation is open to all. As a result, the protocol does not depend on individual external "service providers" to fulfull this role.
 
@@ -50,14 +50,14 @@ In conclusion, Vaultka, and other potential Portal v2 integrations, introduce an
 
 ## Exit Window
 
-The protocol's adapter contracts are upgradable with hybrid governance process consisting of the following steps:
+The protocol's Adapter contracts are upgradable with hybrid governance process consisting of the following steps:
 
-1. The Treasury Multisig proposes a new adapter contract
-2. Token holders approve the upgrade through an on-chain vote requiring a simple majority (>50% of Yes votes)
+1. The Treasury Multisig proposes a new Adapter contract
+2. Stakers in the Portal, associated with the specific Adapter, approve the upgrade through an on-chain vote requiring a simple majority (>50% of Yes votes)
 3. Users can withdraw funds prior to the upgrade during a 7-day exit window
 4. The implementation of the vote, and Adapter upgrade, is executed permissionlessly via `executeMigration()`
 
-Hence, protocol upgrades are initiated by a Multisig but protected with a 7-day exit window for users.
+It is important to note that a new Adapter implementation is only proposed by the Multisig but then has to be accepted by the Stakers in the respective Portal. If accepted, a 7-day exit window for all users is enforced.
 
 > Exit Window score: M
 
@@ -65,7 +65,7 @@ Hence, protocol upgrades are initiated by a Multisig but protected with a 7-day 
 
 Currently, Possum Labs offers only a single user interface without a backup solution in case of the shutdown of the user interface or censoring of users.
 
-> Accessibility score: L
+> Accessibility score: H
 
 # Technical Analysis
 

@@ -6,9 +6,12 @@ github: "https://github.com/projectgithub"
 defillama_slug: "the slug used by https://defillama.com"
 chain: "the name of the chain on which the protocol is deployed"
 stage: 0
-risks: "['x','x','x','x','x']"
-author: "your author name"
-date: "yyyy-mm-dd"
+risks: ["x","x","x","x","x"]
+author: ["author-1", "author-2"]
+submission_date: "1970-01-01"
+publish_date: "1970-01-01"
+acknowledge_date: "1970-01-01"
+update_date: "1970-01-01"
 ---
 
 # Summary

@@ -2,9 +2,12 @@
 import { cn } from "@/lib/utils";
 import React, { HTMLAttributes } from "react";
 import * as runtime from "react/jsx-runtime";
+import { AnchorHTMLAttributes } from "react";
 
 import Image from "next/image";
 import { ResponsiveTable } from "./responsive-table";
+
+type AnchorProps = AnchorHTMLAttributes<HTMLAnchorElement>;
 
 const useMDXComponent = (code: string) => {
   const fn = new Function(code);
@@ -17,7 +20,7 @@ const components = {
   h1: ({ className, ...props }: ComponentsProps) => (
     <h1
       className={cn(
-        "mt-10 mb-4 scroll-m-20 text-4xl font-bold text-primary tracking-tight",
+        "mt-10 mb-4 scroll-m-20 text-2xl md:text-4xl font-bold text-primary tracking-tight",
         className
       )}
       {...props}
@@ -26,7 +29,7 @@ const components = {
   h2: ({ className, ...props }: ComponentsProps) => (
     <h2
       className={cn(
-        "mt-10 scroll-m-20 pb-1 text-2xl font-semibold text-primary tracking-tight first:mt-0",
+        "mt-10 scroll-m-20 pb-1 text-lg md:text-2xl font-semibold text-primary tracking-tight first:mt-0",
         className
       )}
       {...props}
@@ -35,32 +38,53 @@ const components = {
   h3: ({ className, ...props }: ComponentsProps) => (
     <h3
       className={cn(
-        "mt-8 scroll-m-20 text-xl font-semibold text-primary tracking-tight",
+        "mt-8 scroll-m-20 text-base md:text-xl font-semibold text-primary tracking-tight",
         className
       )}
       {...props}
     />
   ),
-  a: ({ className, ...props }: ComponentsProps) => (
-    <a
-      className={cn(
-        "font-medium underline text-primary underline-offset-4",
-        className
-      )}
-      {...props}
-    />
-  ),
+  a: ({ className, href = "", ...props }: AnchorProps) => {
+    const isInternal = href.startsWith("#") || href.startsWith("/");
+
+    return (
+      <a
+        className={cn(
+          "font-medium underline text-primary underline-offset-4",
+          !isInternal ? "text-xs sm:text-sm md:text-base" : "",
+          className
+        )}
+        href={href}
+        {...(!isInternal
+          ? {
+              target: "_blank",
+              rel: "noopener noreferrer",
+            }
+          : {})}
+        {...props}
+      />
+    );
+  },
   p: ({ className, ...props }: ComponentsProps) => (
     <p
-      className={cn("leading-7 [&:not(:first-child)]:mt-6", className)}
+      className={cn(
+        "text-wrap text-sm md:text-base leading-7 [&:not(:first-child)]:mt-6",
+        className
+      )}
       {...props}
     />
   ),
   ul: ({ className, ...props }: ComponentsProps) => (
-    <ul className={cn("my-6 ml-6 list-disc", className)} {...props} />
+    <ul
+      className={cn("my-6 ml-6 text-sm md:text-base list-disc", className)}
+      {...props}
+    />
   ),
   ol: ({ className, ...props }: ComponentsProps) => (
-    <ol className={cn("my-6 ml-6 list-decimal", className)} {...props} />
+    <ol
+      className={cn("my-6 ml-6 text-sm md:text-base list-decimal", className)}
+      {...props}
+    />
   ),
   li: ({ className, ...props }: ComponentsProps) => (
     <li className={cn("mt-2", className)} {...props} />
@@ -84,7 +108,7 @@ const components = {
   ),
   hr: ({ ...props }) => <hr className="my-4 md:my-8" {...props} />,
   table: ({ className, ...props }: React.HTMLAttributes<HTMLTableElement>) => (
-    <ResponsiveTable className={cn(className, "w-full table-auto -ml-4")}>
+    <ResponsiveTable className={cn(className, "w-full table-auto")}>
       {props.children}
     </ResponsiveTable>
   ),
@@ -94,19 +118,21 @@ const components = {
       {...props}
     />
   ),
-  th: ({ className, ...props }: ComponentsProps) => (
+
+  th: ({ className, style, ...props }: ComponentsProps) => (
     <th
       className={cn(
-        "border border-secondary px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right",
+        "border border-secondary px-4 py-2 text-left font-bold [text-align:left!important]",
         className
       )}
       {...props}
     />
   ),
-  td: ({ className, ...props }: ComponentsProps) => (
+
+  td: ({ className, style, ...props }: ComponentsProps) => (
     <td
       className={cn(
-        "border border-secondary px-4 py-2 text-left break-words break-all lg:break-normal whitespace-normal [&[align=center]]:text-center [&[align=right]]:text-right",
+        "border border-secondary px-4 py-2 text-left break-words break-all lg:break-normal whitespace-normal [text-align:left!important]",
         className
       )}
       {...props}

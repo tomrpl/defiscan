@@ -5,7 +5,7 @@ import { PieChartComponent } from "@/components/pie-charts/piechart";
 
 export default function Home() {
   return (
-    <section className="space-y-10 pb-8 md:pb-12 md:pt-10 lg:py-10">
+    <section className="mx-auto pb-8 md:pb-12 md:pt-10 lg:py-10">
       <div className="container mt-6 flex max-w-5xl flex-col gap-10 text-left xl:mt-0">
         <h1 className="text-primary font-bold text-2xl sm:text-2xl md:text-3xl lg:text-4xl">
           Verifiable insights into the maturity and risks of DeFi
@@ -54,7 +54,7 @@ export default function Home() {
           </div>
         </div>
         <p className="text-sm text-gray-500 -mt-10">Data source: DefiLlama</p>
-        <div className="space-x-4 mb-32">
+        <div className="mb-32">
           <Table />
         </div>
       </div>

@@ -63,63 +63,72 @@ export default async function ProtocolPageItem({
   return (
     <article className="container relative mx-auto py-6 lg:py-10">
       <div>
-        <h1 className="mt-2 mb-8 inline-block text-4xl font-bold capitalize leading-tight text-primary lg:text-5xl">
+        <h1 className="mt-2 mb-8 inline-block text-2xl md:text-4xl font-bold capitalize leading-tight text-primary lg:text-5xl">
           {protocol.protocol}
         </h1>
 
         <table className="table-auto border-separate border-spacing-y-2 border-spacing-x-4 -ml-4">
           <tbody>
             <tr>
-              <td>Website</td>
-              <td>
+              <td className="whitespace-nowrap">Website</td>
+              <td className="break-all max-w-xs">
                 <a
+                  target="_blank"
+                  rel="noopener noreferrer"
                   href={protocol.website}
-                  className="text-blue-500 hover:underline"
+                  className="text-blue-500 hover:underline text-sm md:text-base"
                 >
                   {protocol.website}
                 </a>
               </td>
             </tr>
             <tr>
-              <td>X (Twitter)</td>
-              <td>
-                <a href={protocol.x} className="text-blue-500 hover:underline">
+              <td className="whitespace-nowrap">X (Twitter)</td>
+              <td className="break-all max-w-xs">
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={protocol.x}
+                  className="text-blue-500 hover:underline text-sm md:text-base"
+                >
                   {protocol.x}
                 </a>
               </td>
             </tr>
             <tr>
-              <td>GitHub</td>
-              <td>
+              <td className="whitespace-nowrap">GitHub</td>
+              <td className="break-all max-w-xs">
                 <a
                   href={protocol.github}
-                  className="text-blue-500 hover:underline"
+                  className="text-blue-500 hover:underline text-sm md:text-base"
                 >
                   {protocol.github}
                 </a>
               </td>
             </tr>
             <tr>
-              <td>Defillama</td>
-              <td>
+              <td className="whitespace-nowrap">Defillama</td>
+              <td className="break-all max-w-xs">
                 <a
+                  target="_blank"
+                  rel="noopener noreferrer"
                   href={
                     "https://defillama.com/protocol/" + protocol.defillama_slug
                   }
-                  className="text-blue-500 hover:underline"
+                  className="text-blue-500 hover:underline text-sm md:text-base"
                 >
                   {"https://defillama.com/protocol/" + protocol.defillama_slug}
                 </a>
               </td>
             </tr>
             <tr>
-              <td>Chain</td>
-              <td>{protocol.chain}</td>
+              <td className="whitespace-nowrap">Chain</td>
+              <td className="break-all max-w-xs">{protocol.chain}</td>
             </tr>
           </tbody>
         </table>
 
-        <h1 className="mt-10 mb-4 scroll-m-20 text-4xl font-bold text-primary tracking-tight">
+        <h1 className="mt-10 mb-4 scroll-m-20 text-2xl md:text-4xl font-bold text-primary tracking-tight">
           Declaration
         </h1>
 
@@ -146,8 +155,21 @@ export default async function ProtocolPageItem({
               protocol.update_date!.split("T")[0]}
           .
         </p>
+        <p>
+          This content is provided "as is" and "as available". Read more in our
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href={"../../terms"}
+            className="text-blue-500 hover:underline"
+          >
+            {" "}
+            Terms
+          </a>
+          .
+        </p>
 
-        <h1 className="mt-10 mb-4 scroll-m-20 text-4xl font-bold text-primary tracking-tight">
+        <h1 className="mt-10 mb-4 scroll-m-20 text-2xl md:text-4xl font-bold text-primary tracking-tight">
           Stage
         </h1>
 
@@ -166,7 +188,7 @@ export default async function ProtocolPageItem({
           </Badge>
         </TooltipProvider>
 
-        <h1 className="mt-10 mb-4 scroll-m-20 text-4xl font-bold text-primary tracking-tight">
+        <h1 className="mt-10 mb-4 scroll-m-20 text-2xl md:text-4xl font-bold text-primary tracking-tight">
           Risks
         </h1>
 
