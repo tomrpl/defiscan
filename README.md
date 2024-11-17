@@ -50,14 +50,16 @@ To run the website on your local machine, follow these steps:
 
 ---
 
-- **Add New Protocol**:
 
-New protocols reviews can be added as an `.md` file in the `content` folder.
+## Add New Protocol Review
 
-`Important`:
+New protocol reviews can be added as a `.md` files in the `content/protocols` folder.
+
+**Important:**
 
 - Make sure to name the file with dash (`-`) and without space. Example: `liquity-v2.md`
 - The `.md` file needs to follow the protocol report structure outlined [here](src/content/template.md)
+
 
 ## Acknowledgement
 
